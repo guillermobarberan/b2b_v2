@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config" name="ADD_SENDER" path="/api/b2b/catalog/transfers/MandatoryField/ADD_SENDER" id="b5620f66-d78f-4a75-ad87-4df1d0cd341b">
+  <con:settings id="14032667-0503-44ed-9168-3ceceb432c06">
+    <con:setting id="b5620f66-d78f-4a75-ad87-4df1d0cd341bfileName">ADD_SENDER</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="ADD_SENDER" id="a17b9756-752c-4a74-9039-7e8039ad4530" method="GET">
+    <con:settings/>
+    <con:parameters>
+      <con:parameter>
+        <con:name>Authorization</con:name>
+        <con:value>diaspo-agente-1@eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJORTBJSmw4eGpabkNXb3NSeEhZdXAtUVBfWGtNVVd6Q182TTFxbVdLWmxjIn0.eyJleHAiOjE3MTAyNDc2MTAsImlhdCI6MTcxMDI0NzMxMCwianRpIjoiYjhlOGI4MTUtMmJmZi00M2I2LWFmNTEtNTFiMmM3YzNjYjlhIiwiaXNzIjoiaHR0cHM6Ly9zc28ubW9uZXl0cmFucy5ldS9yZWFsbXMvYjJiIiwic3ViIjoiN2MyYjkyZTEtM2U5My00Zjk3LTlhMTAtZjU3YWUyMmUyYjUzIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiZGlhc3BvLWFnZW50ZS0xIiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6WyIvKiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiZGlhc3BvIl19LCJzY29wZSI6InVwZGF0ZS1zbWlsZSByZWFkLXRyYW5zZmVyLWNhdGFsb2cgcmVhZC1maW5hbnRpYWwgdXBkYXRlLXRyYW5zZmVycyByZWFkLWNhdGFsb2cgdXBkYXRlLWN1c3RvbWVycyByZWFkLWFjcXVpcmluZyByZWFkLXNtaWxlLWNhdGFsb2ciLCJjbGllbnRIb3N0IjoiOTAuNjkuMTQxLjE5MCIsImNsaWVudEFkZHJlc3MiOiI5MC42OS4xNDEuMTkwIiwiY2xpZW50X2lkIjoiZGlhc3BvLWFnZW50ZS0xIn0.PAdgAbeHJneIbl0yaxTCPCny1HuP1eJwd4u1lX5cHrYNdgXj9IYFmKg6T-mNnQNVRCStF93BEpp03zRMKZie6ukj1Bby0BkmCPVcaRvATt2t-ztgEw5W9fWwoOKzHBkqV_1oXf5vsRG4Kl_FQu_NGm6KnpTZUQlkk06yGFXw86iodRyVuYecVbSj_fu7BsV_XSzRGtNEGvwd1AK_UXX4lOJF4KwfjrWNGRtf9bfy0NwL1cMwgXJ9aIW1Hr1435NqcUNg-loortYGUWalRgdk1UfswJJZCq4opnaqFExuBLD8k0mYWL11T7avxsEqCqpZn45C4IRf4bm0PhPMNjLtLw</con:value>
+        <con:style>HEADER</con:style>
+        <con:default/>
+        <con:path xsi:nil="true"/>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+      <con:parameter>
+        <con:name>MT-DELEGATED-AUTH</con:name>
+        <con:value>1</con:value>
+        <con:style>HEADER</con:style>
+        <con:default/>
+        <con:path xsi:nil="true"/>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+    </con:parameters>
+    <con:request name="Mandatory fields back" id="b7306791-dd97-402b-9705-ec0f5c6f387d" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>https://multiservices-be-cld-ts.moneytrans.eu</con:endpoint>
+      <con:request/>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters>
+        <con:entry key="Authorization" value="diaspo-agente-1@eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJORTBJSmw4eGpabkNXb3NSeEhZdXAtUVBfWGtNVVd6Q182TTFxbVdLWmxjIn0.eyJleHAiOjE3MTAyNDc2MTAsImlhdCI6MTcxMDI0NzMxMCwianRpIjoiYjhlOGI4MTUtMmJmZi00M2I2LWFmNTEtNTFiMmM3YzNjYjlhIiwiaXNzIjoiaHR0cHM6Ly9zc28ubW9uZXl0cmFucy5ldS9yZWFsbXMvYjJiIiwic3ViIjoiN2MyYjkyZTEtM2U5My00Zjk3LTlhMTAtZjU3YWUyMmUyYjUzIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiZGlhc3BvLWFnZW50ZS0xIiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6WyIvKiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiZGlhc3BvIl19LCJzY29wZSI6InVwZGF0ZS1zbWlsZSByZWFkLXRyYW5zZmVyLWNhdGFsb2cgcmVhZC1maW5hbnRpYWwgdXBkYXRlLXRyYW5zZmVycyByZWFkLWNhdGFsb2cgdXBkYXRlLWN1c3RvbWVycyByZWFkLWFjcXVpcmluZyByZWFkLXNtaWxlLWNhdGFsb2ciLCJjbGllbnRIb3N0IjoiOTAuNjkuMTQxLjE5MCIsImNsaWVudEFkZHJlc3MiOiI5MC42OS4xNDEuMTkwIiwiY2xpZW50X2lkIjoiZGlhc3BvLWFnZW50ZS0xIn0.PAdgAbeHJneIbl0yaxTCPCny1HuP1eJwd4u1lX5cHrYNdgXj9IYFmKg6T-mNnQNVRCStF93BEpp03zRMKZie6ukj1Bby0BkmCPVcaRvATt2t-ztgEw5W9fWwoOKzHBkqV_1oXf5vsRG4Kl_FQu_NGm6KnpTZUQlkk06yGFXw86iodRyVuYecVbSj_fu7BsV_XSzRGtNEGvwd1AK_UXX4lOJF4KwfjrWNGRtf9bfy0NwL1cMwgXJ9aIW1Hr1435NqcUNg-loortYGUWalRgdk1UfswJJZCq4opnaqFExuBLD8k0mYWL11T7avxsEqCqpZn45C4IRf4bm0PhPMNjLtLw"/>
+        <con:entry key="MT-DELEGATED-AUTH" value="1"/>
+      </con:parameters>
+      <con:parameterOrder>
+        <con:entry>Authorization</con:entry>
+        <con:entry>MT-DELEGATED-AUTH</con:entry>
+      </con:parameterOrder>
+    </con:request>
+  </con:method>
+  <con:method name="ADD_SENDER 2" id="07e476ba-777d-469c-97e5-e19e726a098a" method="GET">
+    <con:settings/>
+    <con:parameters>
+      <con:parameter>
+        <con:name>Authorization</con:name>
+        <con:value>diaspo-agente-1@eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJORTBJSmw4eGpabkNXb3NSeEhZdXAtUVBfWGtNVVd6Q182TTFxbVdLWmxjIn0.eyJleHAiOjE3MTAyNDc2MTAsImlhdCI6MTcxMDI0NzMxMCwianRpIjoiYjhlOGI4MTUtMmJmZi00M2I2LWFmNTEtNTFiMmM3YzNjYjlhIiwiaXNzIjoiaHR0cHM6Ly9zc28ubW9uZXl0cmFucy5ldS9yZWFsbXMvYjJiIiwic3ViIjoiN2MyYjkyZTEtM2U5My00Zjk3LTlhMTAtZjU3YWUyMmUyYjUzIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiZGlhc3BvLWFnZW50ZS0xIiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6WyIvKiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiZGlhc3BvIl19LCJzY29wZSI6InVwZGF0ZS1zbWlsZSByZWFkLXRyYW5zZmVyLWNhdGFsb2cgcmVhZC1maW5hbnRpYWwgdXBkYXRlLXRyYW5zZmVycyByZWFkLWNhdGFsb2cgdXBkYXRlLWN1c3RvbWVycyByZWFkLWFjcXVpcmluZyByZWFkLXNtaWxlLWNhdGFsb2ciLCJjbGllbnRIb3N0IjoiOTAuNjkuMTQxLjE5MCIsImNsaWVudEFkZHJlc3MiOiI5MC42OS4xNDEuMTkwIiwiY2xpZW50X2lkIjoiZGlhc3BvLWFnZW50ZS0xIn0.PAdgAbeHJneIbl0yaxTCPCny1HuP1eJwd4u1lX5cHrYNdgXj9IYFmKg6T-mNnQNVRCStF93BEpp03zRMKZie6ukj1Bby0BkmCPVcaRvATt2t-ztgEw5W9fWwoOKzHBkqV_1oXf5vsRG4Kl_FQu_NGm6KnpTZUQlkk06yGFXw86iodRyVuYecVbSj_fu7BsV_XSzRGtNEGvwd1AK_UXX4lOJF4KwfjrWNGRtf9bfy0NwL1cMwgXJ9aIW1Hr1435NqcUNg-loortYGUWalRgdk1UfswJJZCq4opnaqFExuBLD8k0mYWL11T7avxsEqCqpZn45C4IRf4bm0PhPMNjLtLw</con:value>
+        <con:style>HEADER</con:style>
+        <con:default/>
+        <con:path xsi:nil="true"/>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+      <con:parameter>
+        <con:name>MT-DELEGATED-AUTH</con:name>
+        <con:value>1</con:value>
+        <con:style>HEADER</con:style>
+        <con:default/>
+        <con:path xsi:nil="true"/>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+    </con:parameters>
+    <con:request name="Mandatory fields back Copy" id="9e309adc-f47d-4a4d-9e4a-ba6fb19ad1fd" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>https://multiservices-be-cld-ts.moneytrans.eu</con:endpoint>
+      <con:request/>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters>
+        <con:entry key="Authorization" value="diaspo-agente-1@eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJORTBJSmw4eGpabkNXb3NSeEhZdXAtUVBfWGtNVVd6Q182TTFxbVdLWmxjIn0.eyJleHAiOjE3MTAyNDc2MTAsImlhdCI6MTcxMDI0NzMxMCwianRpIjoiYjhlOGI4MTUtMmJmZi00M2I2LWFmNTEtNTFiMmM3YzNjYjlhIiwiaXNzIjoiaHR0cHM6Ly9zc28ubW9uZXl0cmFucy5ldS9yZWFsbXMvYjJiIiwic3ViIjoiN2MyYjkyZTEtM2U5My00Zjk3LTlhMTAtZjU3YWUyMmUyYjUzIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiZGlhc3BvLWFnZW50ZS0xIiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6WyIvKiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiZGlhc3BvIl19LCJzY29wZSI6InVwZGF0ZS1zbWlsZSByZWFkLXRyYW5zZmVyLWNhdGFsb2cgcmVhZC1maW5hbnRpYWwgdXBkYXRlLXRyYW5zZmVycyByZWFkLWNhdGFsb2cgdXBkYXRlLWN1c3RvbWVycyByZWFkLWFjcXVpcmluZyByZWFkLXNtaWxlLWNhdGFsb2ciLCJjbGllbnRIb3N0IjoiOTAuNjkuMTQxLjE5MCIsImNsaWVudEFkZHJlc3MiOiI5MC42OS4xNDEuMTkwIiwiY2xpZW50X2lkIjoiZGlhc3BvLWFnZW50ZS0xIn0.PAdgAbeHJneIbl0yaxTCPCny1HuP1eJwd4u1lX5cHrYNdgXj9IYFmKg6T-mNnQNVRCStF93BEpp03zRMKZie6ukj1Bby0BkmCPVcaRvATt2t-ztgEw5W9fWwoOKzHBkqV_1oXf5vsRG4Kl_FQu_NGm6KnpTZUQlkk06yGFXw86iodRyVuYecVbSj_fu7BsV_XSzRGtNEGvwd1AK_UXX4lOJF4KwfjrWNGRtf9bfy0NwL1cMwgXJ9aIW1Hr1435NqcUNg-loortYGUWalRgdk1UfswJJZCq4opnaqFExuBLD8k0mYWL11T7avxsEqCqpZn45C4IRf4bm0PhPMNjLtLw"/>
+        <con:entry key="MT-DELEGATED-AUTH" value="1"/>
+      </con:parameters>
+      <con:parameterOrder>
+        <con:entry>Authorization</con:entry>
+        <con:entry>MT-DELEGATED-AUTH</con:entry>
+      </con:parameterOrder>
+    </con:request>
+  </con:method>
+</con:resource>

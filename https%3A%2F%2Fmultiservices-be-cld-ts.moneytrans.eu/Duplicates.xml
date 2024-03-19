@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config" name="Duplicates" path="/api/b2b/customer/Duplicates" id="5060d149-7086-4e0e-8fc8-d9df6a6aae01">
+  <con:settings id="0dd78730-bca6-413b-949a-4dcf8ecd0526">
+    <con:setting id="5060d149-7086-4e0e-8fc8-d9df6a6aae01fileName">Duplicates</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="Duplicates" id="527991b5-cd2a-498d-85d8-b6f7ba58de70" method="POST">
+    <con:settings/>
+    <con:parameters>
+      <con:parameter>
+        <con:name>Content-Type</con:name>
+        <con:value>application/json</con:value>
+        <con:style>HEADER</con:style>
+        <con:default/>
+        <con:path xsi:nil="true"/>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+      <con:parameter>
+        <con:name>Authorization</con:name>
+        <con:value>diaspo-agente-1@eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJORTBJSmw4eGpabkNXb3NSeEhZdXAtUVBfWGtNVVd6Q182TTFxbVdLWmxjIn0.eyJleHAiOjE3MDk2Mzc0MzIsImlhdCI6MTcwOTYzNzEzMiwianRpIjoiNTM5ZTEzYTAtODFhMC00Nzg3LTgxMjktNjZhNGY1NDlkZmMyIiwiaXNzIjoiaHR0cHM6Ly9zc28ubW9uZXl0cmFucy5ldS9yZWFsbXMvYjJiIiwic3ViIjoiN2MyYjkyZTEtM2U5My00Zjk3LTlhMTAtZjU3YWUyMmUyYjUzIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiZGlhc3BvLWFnZW50ZS0xIiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6WyIvKiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiZGlhc3BvIl19LCJzY29wZSI6InVwZGF0ZS1zbWlsZSByZWFkLXRyYW5zZmVyLWNhdGFsb2cgcmVhZC1maW5hbnRpYWwgdXBkYXRlLXRyYW5zZmVycyByZWFkLWNhdGFsb2cgdXBkYXRlLWN1c3RvbWVycyByZWFkLWFjcXVpcmluZyByZWFkLXNtaWxlLWNhdGFsb2ciLCJjbGllbnRIb3N0IjoiOTAuNjkuMTQxLjE5MCIsImNsaWVudEFkZHJlc3MiOiI5MC42OS4xNDEuMTkwIiwiY2xpZW50X2lkIjoiZGlhc3BvLWFnZW50ZS0xIn0.kvGicO8fyMUBt8Bvx7VxFQK4JCenxjBKLTk7rDY08ARM8-KPKtteFQR7w1Eh-VrDQMJSMqvu9PBe9EyjIFdsScKcW7MR6gE0kZ7he9H2CG0qIo-Pk7lOQV-olfjBYDtucHDPcqdWTqyvUQDZsTRktW180zHUaCs55X_BkkbhNo_6CfH1lqT9YCaZHyf_3N8odbzNnr-q17VfS1RrDooUPMvRfhoxMWMhzrB028UtCHbQyEBvYD7Fuhz5Im85qghGQm9f3BVs4LvuYN7qxEtzMBuvS_lJcf10FDka6r4DhQ6JrGM2oFvb3qcd3b3Lv3jztgLwPIMlEtsXwr1IalPdhQ</con:value>
+        <con:style>HEADER</con:style>
+        <con:default/>
+        <con:path xsi:nil="true"/>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+      <con:parameter>
+        <con:name>MT-DELEGATED-AUTH</con:name>
+        <con:value>1</con:value>
+        <con:style>HEADER</con:style>
+        <con:default/>
+        <con:path xsi:nil="true"/>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+    </con:parameters>
+    <con:representation type="FAULT">
+      <con:mediaType>text/html; charset=UTF-8</con:mediaType>
+      <con:status>400</con:status>
+      <con:params/>
+      <con:element>html</con:element>
+    </con:representation>
+    <con:representation type="REQUEST">
+      <con:mediaType>application/json</con:mediaType>
+      <con:params/>
+    </con:representation>
+    <con:request name="Duplicates back" id="cbdbaebe-c56f-4537-9a2c-03a17f0b6f66" mediaType="application/json" postQueryString="false">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+      </con:settings>
+      <con:endpoint>https://multiservices-be-cld-ts.moneytrans.eu</con:endpoint>
+      <con:request>{\r
+  "Type": "SCU",\r
+  "Duplicated": [\r
+    "2521701",\r
+    "2554292"\r
+  ],\r
+  "ValidCode": "2554292"\r
+}</con:request>
+      <con:originalUri>https://multiservices-be-cld-ts.moneytrans.eu/api/b2b/customer/Duplicates</con:originalUri>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters>
+        <con:entry key="Authorization" value="${#Project#clientIdBack}"/>
+        <con:entry key="Content-Type" value="application/json"/>
+        <con:entry key="MT-DELEGATED-AUTH" value="1"/>
+      </con:parameters>
+      <con:parameterOrder>
+        <con:entry>Content-Type</con:entry>
+        <con:entry>Authorization</con:entry>
+        <con:entry>MT-DELEGATED-AUTH</con:entry>
+      </con:parameterOrder>
+    </con:request>
+  </con:method>
+</con:resource>

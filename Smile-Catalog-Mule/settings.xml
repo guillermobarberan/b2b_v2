@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testSuite xmlns:con="http://eviware.com/soapui/config" id="8f43beca-a8cc-448a-a178-1c2017516059" name="Smile Catalog Mule">
+  <con:settings id="2c7263b5-77b4-457b-991c-2ee33d195a36">
+    <con:setting id="8f43beca-a8cc-448a-a178-1c2017516059fileName">Smile-Catalog-Mule</con:setting>
+  </con:settings>
+  <con:runType>SEQUENTIAL</con:runType>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testSuite>

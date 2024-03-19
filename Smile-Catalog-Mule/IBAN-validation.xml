@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase xmlns:con="http://eviware.com/soapui/config" id="acc43870-12ba-4988-ac80-394e569c8e1f" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="IBAN validation" searchProperties="true" timeout="0">
+  <con:settings id="d188b764-4a95-4602-9850-d54774da215c">
+    <con:setting id="acc43870-12ba-4988-ac80-394e569c8e1ffileName">IBAN-validation</con:setting>
+  </con:settings>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testCase>

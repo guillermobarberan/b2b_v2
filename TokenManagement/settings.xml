@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testSuite xmlns:con="http://eviware.com/soapui/config" id="26266a9c-047f-454c-ab00-59880c39c4f8" name="TokenManagement">
+  <con:settings id="daa1c083-a4f0-48d6-9898-d08d2fd4f1af">
+    <con:setting id="26266a9c-047f-454c-ab00-59880c39c4f8fileName">TokenManagement</con:setting>
+  </con:settings>
+  <con:runType>SEQUENTIAL</con:runType>
+  <con:properties>
+    <con:property>
+      <con:name>back_access_token</con:name>
+      <con:value>eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJORTBJSmw4eGpabkNXb3NSeEhZdXAtUVBfWGtNVVd6Q182TTFxbVdLWmxjIn0.eyJleHAiOjE3MTA4NzkwMzcsImlhdCI6MTcxMDg3ODczNywianRpIjoiZmRhYjQ5ZDgtNDEyYS00YzdkLWIxMTctN2FmYjg1NmEwOGY3IiwiaXNzIjoiaHR0cHM6Ly9zc28ubW9uZXl0cmFucy5ldS9yZWFsbXMvYjJiIiwic3ViIjoiN2MyYjkyZTEtM2U5My00Zjk3LTlhMTAtZjU3YWUyMmUyYjUzIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiZGlhc3BvLWFnZW50ZS0xIiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6WyIvKiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiZGlhc3BvIl19LCJzY29wZSI6InVwZGF0ZS1zbWlsZSByZWFkLXRyYW5zZmVyLWNhdGFsb2cgcmVhZC1maW5hbnRpYWwgdXBkYXRlLXRyYW5zZmVycyByZWFkLWNhdGFsb2cgdXBkYXRlLWN1c3RvbWVycyByZWFkLWFjcXVpcmluZyByZWFkLXNtaWxlLWNhdGFsb2ciLCJjbGllbnRIb3N0IjoiMTkwLjIxOC4xNDEuMTc2IiwiY2xpZW50QWRkcmVzcyI6IjE5MC4yMTguMTQxLjE3NiIsImNsaWVudF9pZCI6ImRpYXNwby1hZ2VudGUtMSJ9.FpCnRaW5Ld1xUhfCOwhen0M5dr-9vFWlHGGha_yETloG0yCnseGhOdCa_5c2YmjInj7fgqbEGWWyfLoPPMXCbNlrWj30bR_EZJ-E23e386eWZ8hhhAXjNHo-AbWbZNMS0CZVKP6oa7Sf6Md9rmvYeVENnqtFsQTpnwPkm4b3SZv3ElY8EIff0SF40Qxs_UMn2CkLPYi96EhqJZQlKhuWkH417L_q-mQYOB8hu6yb2ue3SMLpZuprsW5KSZOzS0EHmngBmIiu0ZY4pgdG7wuihdevqUBrG8tz-RnpnqYQ0Io3cINEjmJz-3NNdt9ahsWXTQbZOQIWoIAe3riu_szMcg</con:value>
+    </con:property>
+    <con:property>
+      <con:name>mule_access_token</con:name>
+      <con:value/>
+    </con:property>
+  </con:properties>
+  <con:reportParameters/>
+</con:testSuite>

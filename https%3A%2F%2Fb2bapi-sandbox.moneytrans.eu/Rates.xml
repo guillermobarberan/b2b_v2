@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config" name="Rates" path="/v2/transfers/catalogs/rates" id="8a988fd5-2b7d-46c1-a485-5d3f6bffc8d3">
+  <con:settings id="90356a5e-20cb-45bd-b7d4-200fa00fd270">
+    <con:setting id="8a988fd5-2b7d-46c1-a485-5d3f6bffc8d3fileName">Rates</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="Rates" id="b384b163-18ac-4a68-a965-f43e5947f048" method="GET">
+    <con:settings/>
+    <con:parameters>
+      <con:parameter required="true">
+        <con:name>destinationCountryCode</con:name>
+        <con:value>AGO</con:value>
+        <con:style>QUERY</con:style>
+        <con:default>AGO</con:default>
+        <con:path xsi:nil="true"/>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>destinationCurrencyCode</con:name>
+        <con:value>AOA</con:value>
+        <con:style>QUERY</con:style>
+        <con:default>AOA</con:default>
+        <con:path xsi:nil="true"/>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>payerCode</con:name>
+        <con:value>2234</con:value>
+        <con:style>QUERY</con:style>
+        <con:default>2234</con:default>
+        <con:path xsi:nil="true"/>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+      <con:parameter>
+        <con:name>Content-Type</con:name>
+        <con:value>application/json</con:value>
+        <con:style>HEADER</con:style>
+        <con:default/>
+        <con:path xsi:nil="true"/>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+      <con:parameter>
+        <con:name>ApiKey</con:name>
+        <con:value>MtH7QzFHJx93798344h5Uzi4RvtTOp092p</con:value>
+        <con:style>HEADER</con:style>
+        <con:default/>
+        <con:path xsi:nil="true"/>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+      <con:parameter>
+        <con:name>ApiSignature</con:name>
+        <con:value>vVPGjOnz6BR0xfxCs0gYTUe/mNo/WhB8QC7ulKrtPR0=</con:value>
+        <con:style>HEADER</con:style>
+        <con:default/>
+        <con:path xsi:nil="true"/>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+      <con:parameter>
+        <con:name>clientId</con:name>
+        <con:value>diaspo-agente-1</con:value>
+        <con:style>HEADER</con:style>
+        <con:default/>
+        <con:path xsi:nil="true"/>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+      <con:parameter>
+        <con:name>Authorization</con:name>
+        <con:value>Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJORTBJSmw4eGpabkNXb3NSeEhZdXAtUVBfWGtNVVd6Q182TTFxbVdLWmxjIn0.eyJleHAiOjE3MTAxNjQzMTMsImlhdCI6MTcxMDE2NDAxMywianRpIjoiMTU4ZmJkNjEtYjY5Zi00MDBmLWJlNmEtZDNiZTlmZjgxNjMyIiwiaXNzIjoiaHR0cHM6Ly9zc28ubW9uZXl0cmFucy5ldS9yZWFsbXMvYjJiIiwic3ViIjoiN2MyYjkyZTEtM2U5My00Zjk3LTlhMTAtZjU3YWUyMmUyYjUzIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiZGlhc3BvLWFnZW50ZS0xIiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6WyIvKiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiZGlhc3BvIl19LCJzY29wZSI6InVwZGF0ZS1zbWlsZSByZWFkLXRyYW5zZmVyLWNhdGFsb2cgcmVhZC1maW5hbnRpYWwgdXBkYXRlLXRyYW5zZmVycyByZWFkLWNhdGFsb2cgdXBkYXRlLWN1c3RvbWVycyByZWFkLWFjcXVpcmluZyByZWFkLXNtaWxlLWNhdGFsb2ciLCJjbGllbnRIb3N0IjoiOTAuNjkuMTQxLjE5MCIsImNsaWVudEFkZHJlc3MiOiI5MC42OS4xNDEuMTkwIiwiY2xpZW50X2lkIjoiZGlhc3BvLWFnZW50ZS0xIn0.Q8Q-ygOsjtUYNTc5T4F35xEpWz7PsP48QFt3yI07qBnBOH1U_bfiAyyKz4TImU4o_OtX1vPKN2WqNPRm2shkjkCPSTr4Sb7w_vuoacOhK6qMVWWsdX3hSUJaA0TVS7SmnHNP2IX1o_0IT00Bf0BV_5TKzfxukWTkhwJchmsczu0AHzHyHaD47cvXgcF_YF71K8ZoJWlPoWS-BxhGIYdVywzUA-LE_SU0lpBt7hOP5WleD406IudMXAQE0B6_QErXVKJba5X_-m_JmNTE9fYj4QUngNOkR3AAfoCYM3GyIp0XL7kEwmuaXkeI9hYAcCsQUFMYBUkK-fjT0ITafeAkCA</con:value>
+        <con:style>HEADER</con:style>
+        <con:default/>
+        <con:path xsi:nil="true"/>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+    </con:parameters>
+    <con:request name="Transfer rates mule" id="4d435ba5-5a20-4c74-9147-d958d46209dd" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>https://b2bapi-sandbox.moneytrans.eu</con:endpoint>
+      <con:request/>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters>
+        <con:entry key="Authorization" value="Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJORTBJSmw4eGpabkNXb3NSeEhZdXAtUVBfWGtNVVd6Q182TTFxbVdLWmxjIn0.eyJleHAiOjE3MTAxNjQzMTMsImlhdCI6MTcxMDE2NDAxMywianRpIjoiMTU4ZmJkNjEtYjY5Zi00MDBmLWJlNmEtZDNiZTlmZjgxNjMyIiwiaXNzIjoiaHR0cHM6Ly9zc28ubW9uZXl0cmFucy5ldS9yZWFsbXMvYjJiIiwic3ViIjoiN2MyYjkyZTEtM2U5My00Zjk3LTlhMTAtZjU3YWUyMmUyYjUzIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiZGlhc3BvLWFnZW50ZS0xIiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6WyIvKiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiZGlhc3BvIl19LCJzY29wZSI6InVwZGF0ZS1zbWlsZSByZWFkLXRyYW5zZmVyLWNhdGFsb2cgcmVhZC1maW5hbnRpYWwgdXBkYXRlLXRyYW5zZmVycyByZWFkLWNhdGFsb2cgdXBkYXRlLWN1c3RvbWVycyByZWFkLWFjcXVpcmluZyByZWFkLXNtaWxlLWNhdGFsb2ciLCJjbGllbnRIb3N0IjoiOTAuNjkuMTQxLjE5MCIsImNsaWVudEFkZHJlc3MiOiI5MC42OS4xNDEuMTkwIiwiY2xpZW50X2lkIjoiZGlhc3BvLWFnZW50ZS0xIn0.Q8Q-ygOsjtUYNTc5T4F35xEpWz7PsP48QFt3yI07qBnBOH1U_bfiAyyKz4TImU4o_OtX1vPKN2WqNPRm2shkjkCPSTr4Sb7w_vuoacOhK6qMVWWsdX3hSUJaA0TVS7SmnHNP2IX1o_0IT00Bf0BV_5TKzfxukWTkhwJchmsczu0AHzHyHaD47cvXgcF_YF71K8ZoJWlPoWS-BxhGIYdVywzUA-LE_SU0lpBt7hOP5WleD406IudMXAQE0B6_QErXVKJba5X_-m_JmNTE9fYj4QUngNOkR3AAfoCYM3GyIp0XL7kEwmuaXkeI9hYAcCsQUFMYBUkK-fjT0ITafeAkCA"/>
+        <con:entry key="ApiKey" value="MtH7QzFHJx93798344h5Uzi4RvtTOp092p"/>
+        <con:entry key="clientId" value="diaspo-agente-1"/>
+        <con:entry key="destinationCurrencyCode" value="AOA"/>
+        <con:entry key="payerCode" value="2234"/>
+        <con:entry key="ApiSignature" value="vVPGjOnz6BR0xfxCs0gYTUe/mNo/WhB8QC7ulKrtPR0="/>
+        <con:entry key="destinationCountryCode" value="AGO"/>
+        <con:entry key="Content-Type" value="application/json"/>
+      </con:parameters>
+      <con:parameterOrder>
+        <con:entry>destinationCountryCode</con:entry>
+        <con:entry>destinationCurrencyCode</con:entry>
+        <con:entry>payerCode</con:entry>
+        <con:entry>Content-Type</con:entry>
+        <con:entry>ApiKey</con:entry>
+        <con:entry>ApiSignature</con:entry>
+        <con:entry>clientId</con:entry>
+        <con:entry>Authorization</con:entry>
+      </con:parameterOrder>
+    </con:request>
+  </con:method>
+</con:resource>

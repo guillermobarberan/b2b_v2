@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase xmlns:con="http://eviware.com/soapui/config" id="c54b2fcb-4998-42fe-aa8c-44e7b30cb8ea" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="Token mule" searchProperties="true" timeout="0">
+  <con:settings id="f43ec898-a8f1-4751-b7be-4ea18ff5fc46">
+    <con:setting id="c54b2fcb-4998-42fe-aa8c-44e7b30cb8eafileName">Token-mule</con:setting>
+  </con:settings>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testCase>

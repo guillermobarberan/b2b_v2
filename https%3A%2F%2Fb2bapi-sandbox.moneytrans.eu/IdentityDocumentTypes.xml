@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config" name="IdentityDocumentTypes" path="/v2/catalogs/identityDocumentTypes" id="0a987379-45dc-4821-8cd8-fe018efcc520">
+  <con:settings id="a753e244-4dc5-4735-8b3c-48d0a19813f0">
+    <con:setting id="0a987379-45dc-4821-8cd8-fe018efcc520fileName">IdentityDocumentTypes</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="IdentityDocumentTypes" id="fc54eddc-e565-43f5-b7c9-003f0963f0bb" method="GET">
+    <con:settings/>
+    <con:parameters>
+      <con:parameter>
+        <con:name>Content-Type</con:name>
+        <con:value>application/json</con:value>
+        <con:style>HEADER</con:style>
+        <con:default/>
+        <con:path xsi:nil="true"/>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+      <con:parameter>
+        <con:name>ApiKey</con:name>
+        <con:value>MtH7QzFHJx93798344h5Uzi4RvtTOp092p</con:value>
+        <con:style>HEADER</con:style>
+        <con:default/>
+        <con:path xsi:nil="true"/>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+      <con:parameter>
+        <con:name>ApiSignature</con:name>
+        <con:value>RD5ijsFWpbK0WigF1Sw7xKyd7d/UURW6vFSFxt3lu4A=</con:value>
+        <con:style>HEADER</con:style>
+        <con:default/>
+        <con:path xsi:nil="true"/>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+      <con:parameter>
+        <con:name>clientId</con:name>
+        <con:value>diaspo-agente-1</con:value>
+        <con:style>HEADER</con:style>
+        <con:default/>
+        <con:path xsi:nil="true"/>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+      <con:parameter>
+        <con:name>Authorization</con:name>
+        <con:value>Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJORTBJSmw4eGpabkNXb3NSeEhZdXAtUVBfWGtNVVd6Q182TTFxbVdLWmxjIn0.eyJleHAiOjE3MTAxNDk3ODMsImlhdCI6MTcxMDE0OTQ4MywianRpIjoiM2M4ZWZmNjQtOGY4Zi00YjcyLWI0ZGItZTJhMWY3ZmI0Yzg1IiwiaXNzIjoiaHR0cHM6Ly9zc28ubW9uZXl0cmFucy5ldS9yZWFsbXMvYjJiIiwic3ViIjoiN2MyYjkyZTEtM2U5My00Zjk3LTlhMTAtZjU3YWUyMmUyYjUzIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiZGlhc3BvLWFnZW50ZS0xIiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6WyIvKiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiZGlhc3BvIl19LCJzY29wZSI6InVwZGF0ZS1zbWlsZSByZWFkLXRyYW5zZmVyLWNhdGFsb2cgcmVhZC1maW5hbnRpYWwgdXBkYXRlLXRyYW5zZmVycyByZWFkLWNhdGFsb2cgdXBkYXRlLWN1c3RvbWVycyByZWFkLWFjcXVpcmluZyByZWFkLXNtaWxlLWNhdGFsb2ciLCJjbGllbnRIb3N0IjoiOTAuNjkuMTQxLjE5MCIsImNsaWVudEFkZHJlc3MiOiI5MC42OS4xNDEuMTkwIiwiY2xpZW50X2lkIjoiZGlhc3BvLWFnZW50ZS0xIn0.bHk9JfnW7S5Zz0qjmviKSoYJ-PTbfA6vIDctyqAbmiM1PshrlICzpG9fmd9hLqY9bbfmLFPBuGCeyZbgy3pDNqht07pIxmM1NNvGRc91Dfg7yY2vX7mlrdcuf-UlQrExdnenWI1pdaHBESQ6XT6FsG_hnfUHt9SiFxkTZIZC4hG0JVApINPp25JQwkt20bFxUuAqz4gNQ7X-TrXF4f1TKA_hcjFYX3cwb1MwB6FmkWfW6okddRCwV1JPLPiA_nDsmQQc1pTCFU0RU0P48XvzFr_f44G_25GzSKFK8wSmprGYvNnWwhN9plhvS1cUg1gNFrTTehRnMO6vtFa3q5593g</con:value>
+        <con:style>HEADER</con:style>
+        <con:default/>
+        <con:path xsi:nil="true"/>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+    </con:parameters>
+    <con:request name="ID DOC types mule" id="2348a243-e783-492f-96fe-315779226942" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>https://b2bapi-sandbox.moneytrans.eu</con:endpoint>
+      <con:request/>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters>
+        <con:entry key="Authorization" value="Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJORTBJSmw4eGpabkNXb3NSeEhZdXAtUVBfWGtNVVd6Q182TTFxbVdLWmxjIn0.eyJleHAiOjE3MTAxNDk3ODMsImlhdCI6MTcxMDE0OTQ4MywianRpIjoiM2M4ZWZmNjQtOGY4Zi00YjcyLWI0ZGItZTJhMWY3ZmI0Yzg1IiwiaXNzIjoiaHR0cHM6Ly9zc28ubW9uZXl0cmFucy5ldS9yZWFsbXMvYjJiIiwic3ViIjoiN2MyYjkyZTEtM2U5My00Zjk3LTlhMTAtZjU3YWUyMmUyYjUzIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiZGlhc3BvLWFnZW50ZS0xIiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6WyIvKiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiZGlhc3BvIl19LCJzY29wZSI6InVwZGF0ZS1zbWlsZSByZWFkLXRyYW5zZmVyLWNhdGFsb2cgcmVhZC1maW5hbnRpYWwgdXBkYXRlLXRyYW5zZmVycyByZWFkLWNhdGFsb2cgdXBkYXRlLWN1c3RvbWVycyByZWFkLWFjcXVpcmluZyByZWFkLXNtaWxlLWNhdGFsb2ciLCJjbGllbnRIb3N0IjoiOTAuNjkuMTQxLjE5MCIsImNsaWVudEFkZHJlc3MiOiI5MC42OS4xNDEuMTkwIiwiY2xpZW50X2lkIjoiZGlhc3BvLWFnZW50ZS0xIn0.bHk9JfnW7S5Zz0qjmviKSoYJ-PTbfA6vIDctyqAbmiM1PshrlICzpG9fmd9hLqY9bbfmLFPBuGCeyZbgy3pDNqht07pIxmM1NNvGRc91Dfg7yY2vX7mlrdcuf-UlQrExdnenWI1pdaHBESQ6XT6FsG_hnfUHt9SiFxkTZIZC4hG0JVApINPp25JQwkt20bFxUuAqz4gNQ7X-TrXF4f1TKA_hcjFYX3cwb1MwB6FmkWfW6okddRCwV1JPLPiA_nDsmQQc1pTCFU0RU0P48XvzFr_f44G_25GzSKFK8wSmprGYvNnWwhN9plhvS1cUg1gNFrTTehRnMO6vtFa3q5593g"/>
+        <con:entry key="ApiKey" value="MtH7QzFHJx93798344h5Uzi4RvtTOp092p"/>
+        <con:entry key="clientId" value="diaspo-agente-1"/>
+        <con:entry key="ApiSignature" value="RD5ijsFWpbK0WigF1Sw7xKyd7d/UURW6vFSFxt3lu4A="/>
+        <con:entry key="Content-Type" value="application/json"/>
+      </con:parameters>
+      <con:parameterOrder>
+        <con:entry>Content-Type</con:entry>
+        <con:entry>ApiKey</con:entry>
+        <con:entry>ApiSignature</con:entry>
+        <con:entry>clientId</con:entry>
+        <con:entry>Authorization</con:entry>
+      </con:parameterOrder>
+    </con:request>
+  </con:method>
+</con:resource>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config" name="74" path="/api/b2b/acquiring/PAC/149330/74" id="d37c0a69-9d0e-4d9e-b81d-91a2468bea09">
+  <con:settings id="4e7d8b72-591d-4697-966d-f2b10eadce7c">
+    <con:setting id="d37c0a69-9d0e-4d9e-b81d-91a2468bea09fileName">74</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="74" id="a9d1085a-c027-462b-99dc-e24c2c17c44d" method="GET">
+    <con:settings/>
+    <con:parameters>
+      <con:parameter>
+        <con:name>Authorization</con:name>
+        <con:value>diaspo-agente-1@eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJORTBJSmw4eGpabkNXb3NSeEhZdXAtUVBfWGtNVVd6Q182TTFxbVdLWmxjIn0.eyJleHAiOjE3MTAyNTAxODIsImlhdCI6MTcxMDI0OTg4MiwianRpIjoiMWVkMDI0NDAtOGQ1Ny00NTc4LTk5YTYtYjI5ZjVlZjRhNzIxIiwiaXNzIjoiaHR0cHM6Ly9zc28ubW9uZXl0cmFucy5ldS9yZWFsbXMvYjJiIiwic3ViIjoiN2MyYjkyZTEtM2U5My00Zjk3LTlhMTAtZjU3YWUyMmUyYjUzIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiZGlhc3BvLWFnZW50ZS0xIiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6WyIvKiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiZGlhc3BvIl19LCJzY29wZSI6InVwZGF0ZS1zbWlsZSByZWFkLXRyYW5zZmVyLWNhdGFsb2cgcmVhZC1maW5hbnRpYWwgdXBkYXRlLXRyYW5zZmVycyByZWFkLWNhdGFsb2cgdXBkYXRlLWN1c3RvbWVycyByZWFkLWFjcXVpcmluZyByZWFkLXNtaWxlLWNhdGFsb2ciLCJjbGllbnRIb3N0IjoiOTAuNjkuMTQxLjE5MCIsImNsaWVudEFkZHJlc3MiOiI5MC42OS4xNDEuMTkwIiwiY2xpZW50X2lkIjoiZGlhc3BvLWFnZW50ZS0xIn0.UdGph78tF7_rQYxbJgrhEFN6EkgZSsKk2xQdi7wb2DkM6ehForTxB74X1Zhib7ymKU5ys2KWuzNlkDkOE1ZtWpxyujvGANSHh_BNhknV5YZSdwAUZnXjj15WEm_LHIsb85VOcjWQublWn6qlY6zdZz8KQcxly-cg4tAgg3X62U4EXwAtP_2ZnCVovQ8ISnuccDQJw2BB7pzqdMBGx_9O23evZJzcYRJB9halzqussVyrtuBYlzYHeokr1wrZM7HJ-u3l_nZ5AX0QXtZ5rnXaNMb9f3TuZRrTiQjisF4qB1vDbQxcOg2rktP5ml2nsD394f3ruiWG54JcwxbtZQtPBQ</con:value>
+        <con:style>HEADER</con:style>
+        <con:default/>
+        <con:path xsi:nil="true"/>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+      <con:parameter>
+        <con:name>MT-DELEGATED-AUTH</con:name>
+        <con:value>1</con:value>
+        <con:style>HEADER</con:style>
+        <con:default/>
+        <con:path xsi:nil="true"/>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+    </con:parameters>
+    <con:request name="Acquiring Smile back" id="6b419b66-160d-4b30-b42c-799e4ca0313f" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>https://multiservices-be-cld-ts.moneytrans.eu</con:endpoint>
+      <con:request/>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters>
+        <con:entry key="Authorization" value="diaspo-agente-1@eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJORTBJSmw4eGpabkNXb3NSeEhZdXAtUVBfWGtNVVd6Q182TTFxbVdLWmxjIn0.eyJleHAiOjE3MTAyNTAxODIsImlhdCI6MTcxMDI0OTg4MiwianRpIjoiMWVkMDI0NDAtOGQ1Ny00NTc4LTk5YTYtYjI5ZjVlZjRhNzIxIiwiaXNzIjoiaHR0cHM6Ly9zc28ubW9uZXl0cmFucy5ldS9yZWFsbXMvYjJiIiwic3ViIjoiN2MyYjkyZTEtM2U5My00Zjk3LTlhMTAtZjU3YWUyMmUyYjUzIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiZGlhc3BvLWFnZW50ZS0xIiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6WyIvKiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiZGlhc3BvIl19LCJzY29wZSI6InVwZGF0ZS1zbWlsZSByZWFkLXRyYW5zZmVyLWNhdGFsb2cgcmVhZC1maW5hbnRpYWwgdXBkYXRlLXRyYW5zZmVycyByZWFkLWNhdGFsb2cgdXBkYXRlLWN1c3RvbWVycyByZWFkLWFjcXVpcmluZyByZWFkLXNtaWxlLWNhdGFsb2ciLCJjbGllbnRIb3N0IjoiOTAuNjkuMTQxLjE5MCIsImNsaWVudEFkZHJlc3MiOiI5MC42OS4xNDEuMTkwIiwiY2xpZW50X2lkIjoiZGlhc3BvLWFnZW50ZS0xIn0.UdGph78tF7_rQYxbJgrhEFN6EkgZSsKk2xQdi7wb2DkM6ehForTxB74X1Zhib7ymKU5ys2KWuzNlkDkOE1ZtWpxyujvGANSHh_BNhknV5YZSdwAUZnXjj15WEm_LHIsb85VOcjWQublWn6qlY6zdZz8KQcxly-cg4tAgg3X62U4EXwAtP_2ZnCVovQ8ISnuccDQJw2BB7pzqdMBGx_9O23evZJzcYRJB9halzqussVyrtuBYlzYHeokr1wrZM7HJ-u3l_nZ5AX0QXtZ5rnXaNMb9f3TuZRrTiQjisF4qB1vDbQxcOg2rktP5ml2nsD394f3ruiWG54JcwxbtZQtPBQ"/>
+        <con:entry key="MT-DELEGATED-AUTH" value="1"/>
+      </con:parameters>
+      <con:parameterOrder>
+        <con:entry>Authorization</con:entry>
+        <con:entry>MT-DELEGATED-AUTH</con:entry>
+      </con:parameterOrder>
+    </con:request>
+  </con:method>
+</con:resource>

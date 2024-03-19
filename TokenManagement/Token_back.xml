@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase xmlns:con="http://eviware.com/soapui/config" id="e371607b-6b9c-4326-a3ab-6d2ec5fc1ae5" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="Token_back" searchProperties="true" timeout="0">
+  <con:settings id="e210e0f8-0fd9-4f93-aeea-90aad68cf699">
+    <con:setting id="e371607b-6b9c-4326-a3ab-6d2ec5fc1ae5fileName">Token_back</con:setting>
+  </con:settings>
+  <con:testStep type="restrequest" name="Token back" id="70cfeaa9-0299-4cea-8847-26e81170af94">
+    <con:settings/>
+    <con:config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" service="https://sso.moneytrans.eu" resourcePath="/realms/b2b/protocol/openid-connect/token" methodName="Token" xsi:type="con:RestRequestStep">
+      <con:restRequest name="Token back" id="4754a766-46c1-4e07-97e7-d4e5bcf69287" mediaType="application/x-www-form-urlencoded" postQueryString="true">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment>&lt;con:entry key="ApiSignature" value="ucNdMXcvipctalQhhj/VaOSxaU2YqhXVsfN4OU1KGcE=" xmlns:con="http://eviware.com/soapui/config"/>&lt;con:entry key="ApiKey" value="MtH7QzFHJx93798344h5Uzi4RvtTOp092p" xmlns:con="http://eviware.com/soapui/config"/>&lt;/xml-fragment></con:setting>
+          <con:setting id="RecordRequestRepresentations">false</con:setting>
+        </con:settings>
+        <con:endpoint>https://sso.moneytrans.eu</con:endpoint>
+        <con:request/>
+        <con:originalUri>https://sso.moneytrans.eu/realms/b2b/protocol/openid-connect/token</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="790be1fe-3971-458d-8ad4-e4c8e54f56e1" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="5fae7c79-f9a5-4ef8-8753-58516347c137" name="Response SLA">
+          <con:configuration>
+            <SLA>5000</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters>
+          <con:entry key="ApiKey" value="MtH7QzFHJx93798344h5Uzi4RvtTOp092p"/>
+          <con:entry key="grant_type" value="client_credentials"/>
+          <con:entry key="ApiSignature" value="ucNdMXcvipctalQhhj/VaOSxaU2YqhXVsfN4OU1KGcE="/>
+          <con:entry key="client_secret" value="tKl5TYi9lMVZbVvlyAIkSL0CQBvnmR3T"/>
+          <con:entry key="client_id" value="diaspo-agente-1"/>
+          <con:entry key="Content-Type" value="application/x-www-form-urlencoded"/>
+        </con:parameters>
+        <con:parameterOrder>
+          <con:entry>client_id</con:entry>
+          <con:entry>client_secret</con:entry>
+          <con:entry>grant_type</con:entry>
+          <con:entry>Content-Type</con:entry>
+          <con:entry>ApiKey</con:entry>
+          <con:entry>ApiSignature</con:entry>
+        </con:parameterOrder>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="transfer" name="PropertyTransfer" id="5534a51a-39d7-434e-9b1a-791898ba26ca">
+    <con:settings/>
+    <con:config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="con:PropertyTransfersStep">
+      <con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="false" ignoreEmpty="false" transferToAll="false" entitize="false" transferChildNodes="false">
+        <con:name>access_token</con:name>
+        <con:sourceType>Response</con:sourceType>
+        <con:sourceStep>Token back</con:sourceStep>
+        <con:sourcePath>$['access_token']</con:sourcePath>
+        <con:targetType>back_access_token</con:targetType>
+        <con:targetStep>#TestSuite#</con:targetStep>
+        <con:targetPath/>
+        <con:type>JSONPATH</con:type>
+        <con:upgraded>true</con:upgraded>
+      </con:transfers>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testCase>

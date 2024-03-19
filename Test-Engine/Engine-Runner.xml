@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase xmlns:con="http://eviware.com/soapui/config" id="4f21ebdc-d46a-4554-951b-31aed847c6cc" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="Engine Runner" searchProperties="true" timeout="0">
+  <con:settings id="9cf756f4-34cc-4f08-83f4-93d84939e1ed">
+    <con:setting id="4f21ebdc-d46a-4554-951b-31aed847c6ccfileName">Engine-Runner</con:setting>
+  </con:settings>
+  <con:testStep type="properties" name="mule v2" id="6583e50d-f1bd-48f9-95ff-286ef6b33659">
+    <con:settings/>
+    <con:config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="con:PropertiesStep" saveFirst="true">
+      <con:properties>
+        <con:property>
+          <con:name>ApiKey</con:name>
+          <con:value>MtH7QzFHJx93798344h5Uzi4RvtTOp092p</con:value>
+        </con:property>
+        <con:property>
+          <con:name>multiservices</con:name>
+          <con:value>https://multiservices-be-cld-ts.moneytrans.eu/api</con:value>
+        </con:property>
+        <con:property>
+          <con:name>baseMuleUrl</con:name>
+          <con:value>b2bapi-sandbox.moneytrans.eu</con:value>
+        </con:property>
+        <con:property>
+          <con:name>apiSecret</con:name>
+          <con:value>642f06870d99A68b349c2e4c319f53F839Af939695F530647bF9B20132AdD9D3</con:value>
+        </con:property>
+        <con:property>
+          <con:name>ApiSignature</con:name>
+          <con:value>rxFPHQHtqqo417Gh9pzhY0kmuAx8doiMlxwc4/JPsyw=</con:value>
+        </con:property>
+        <con:property>
+          <con:name>clientIdBack</con:name>
+          <con:value>diaspo-agente-1</con:value>
+        </con:property>
+        <con:property>
+          <con:name>authBack</con:name>
+          <con:value>${mule v2#clientIdBack}@${#[TokenManagement]#back_access_token}</con:value>
+        </con:property>
+      </con:properties>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="groovy" name="TesCasesRunner" id="e5d5d9a9-2aab-48a5-8c33-d2f270363668">
+    <con:settings/>
+    <con:config>
+      <script>import javax.crypto.Mac
+import javax.crypto.spec.SecretKeySpec
+import java.security.InvalidKeyException
+import java.security.NoSuchAlgorithmException
+import groovy.json.JsonSlurper
+import java.time.Instant
+import java.util.*
+
+// Smile Catalog Back
+	testExecutionEnginneSmileCatalogBack("IBAN validation");
+	testExecutionEnginneSmileCatalogBack("Initial deposit");
+	testExecutionEnginneSmileCatalogBack("Annual_maintenance");
+	testExecutionEnginneSmileCatalogBack("monthly_maintenance");
+
+// Smile Catalog Mule
+	testExecutionEnginneSmileCatalogMule("IBAN validation");
+	testExecutionEnginneSmileCatalogMule("Initial deposit");
+	testExecutionEnginneSmileCatalogMule("Annual_maintenance");
+	testExecutionEnginneSmileCatalogMule("monthly_maintenance");
+
+def testExecutionEnginneSmileCatalogBack (String issueType ){
+	 switch(issueType) {            
+	         //There is case statement defined for 4 cases 
+	         // Each case statement section has a break condition to exit the loop 
+	         case "IBAN validation": 
+	               TestCaseEnginne("TokenManagement", "Token_back") 
+				//stringToSignTokenBack (method, requestPath, back_access_token, clientIdBack)
+        			stringToSignTokenBack ('${#[Smile Catalog Back#IBAN validation]#method}', '${#[Smile Catalog Back#IBAN validation]#requestPath}', '${#[TokenManagement]#back_access_token}', '${mule v2#clientIdBack}')
+        			TestCaseEnginne("Smile Catalog Back", "IBAN validation")
+	            break; 
+
+	         case "Initial deposit": 
+	            log.info("The value of issueType is $issueType"); 
+	            break; 
+
+	         case "Annual_maintenance": 
+	            log.info("The value of issueType is $issueType"); 
+	            break; 
+
+	          case "monthly_maintenance": 
+	            log.info("The value of issueType is $issueType"); 
+	            break;    
+
+	         default: 
+	            log.info("The Issue Type Value is unknown"); 
+	            break; 
+	      }
+}
+
+// Smile Catalog Mule
+def testExecutionEnginneSmileCatalogMule (String issueType ){
+	 switch(issueType) {            
+	         //There is case statement defined for 4 cases 
+	         // Each case statement section has a break condition to exit the loop 
+	         case "IBAN validation": 
+	            log.info("The value of issueType is $issueType"); 
+	            break; 
+
+	         case "Initial deposit": 
+	            log.info("The value of issueType is $issueType"); 
+	            break; 
+
+	         case "Annual_maintenance": 
+	            log.info("The value of issueType is $issueType"); 
+	            break; 
+
+	          case "monthly_maintenance": 
+	            log.info("The value of issueType is $issueType"); 
+	            break;    
+
+	         default: 
+	            log.info("The Issue Type Value is unknown"); 
+	            break; 
+	      }
+}
+
+
+
+// There is  statement defined for stringToSignTokenBack
+def stringToSignTokenBack (String method, String requestPath, String back_access_token, String clientIdBack){
+	def envBaseUrl = context.expand( '${mule v2#baseMuleUrl}' )
+	def secret = context.expand( '${mule v2#apiSecret}' )
+	def apiKey = context.expand( '${mule v2#ApiKey}' )
+
+	def stringToSign = method + ":" + envBaseUrl + requestPath + ":"
+	def fecha = Instant.now().toEpochMilli() / 100000 as long
+
+	stringToSign += fecha
+	log.info " fecha: " + fecha
+	log.info " Groovy stringToSign: " +stringToSign  
+	
+	def signBytes = hmacSha256(stringToSign, secret)
+	def signHex = signBytes.encodeBase64().toString()
+
+	log.info " Groovy computed signature: " +signHex + "." + " Text signed: " + stringToSign 
+	testRunner.testCase.getTestStepByName("mule v2").setPropertyValue("ApiSignature",signHex)
+	testRunner.testCase.getTestStepByName("mule v2").setPropertyValue("authBack", clientIdBack + "@" + back_access_token )
+}
+
+
+
+def stringToSignTokenMule (String method, String requestPath, String back_access_token, String clientIdBack){
+	
+	def testSuite = testRunner.testCase.testSuite.project.getTestSuiteByName(TestSuiteByName);           
+	def testCase = testSuite.getTestCaseByName(TestCaseByName);                                                       
+	def totalTestSteps = testCase.getTestSteps().size();  
+
+}
+
+
+// There is  statement defined for TestCaseEnginne Runner
+def TestCaseEnginne(String TestSuiteByName, String TestCaseByName) {
+	
+	def testSuite = testRunner.testCase.testSuite.project.getTestSuiteByName(TestSuiteByName);           
+	def testCase = testSuite.getTestCaseByName(TestCaseByName);    
+	def totalTestSteps = testCase.getTestSteps().size();   
+
+		log.info testSuite
+		log.info testCase
+		log.info totalTestSteps
+		
+		for(n in (0..totalTestSteps - 1))
+		{    
+		    log.info "------------------------------------------------------------" 
+		    def testStepName = testCase.getTestStepAt(n).name;
+		    log.info testStepName
+		    log.info n
+		   
+				    if(n>=0){
+				    		if (testCase.getTestStepByName(testStepName).disabled != true) {
+							log.info "testStepName: " + n + ": " + testStepName;
+				          	def testStep = testCase.getTestStepByName(testStepName);
+				        		runner = testStep.run(testRunner, context);
+				        		log.info ("testStep   >>> 1   " + runner.getStatus().toString());
+				            }
+				    }
+		}
+}
+
+
+def hmacSha256(String data, String key) {
+    try {
+        Mac mac = Mac.getInstance("HmacSHA256")
+        SecretKeySpec secretKeySpec = new SecretKeySpec(key.getBytes(), "HmacSHA256")
+        mac.init(secretKeySpec)
+        return mac.doFinal(data.getBytes())
+    } catch (NoSuchAlgorithmException | InvalidKeyException e) {
+        throw new RuntimeException("Error al calcular HMAC SHA256", e)
+    }
+}</script>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="groovy" name="Groovy Script" id="d4f1a1c0-b7e2-46dd-b578-8869a4b14e31">
+    <con:settings/>
+    <con:config>
+      <script>def testSuite = testRunner.testCase.testSuite.project.getTestSuiteByName("Smile Catalog Back");           
+	def testCase = testSuite.getTestCaseByName("IBAN validation");    
+	def totalTestSteps = testCase.getTestSteps().size();  
+	def TestStepByName = testCase.getTestStepByName("IBAN validation")
+	def LocalResponse = TestStepByName.getPropertyValue("Request")
+	
+	log.info testSuite
+	log.info testCase
+	log.info totalTestSteps
+	log.info LocalResponse</script>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testCase>

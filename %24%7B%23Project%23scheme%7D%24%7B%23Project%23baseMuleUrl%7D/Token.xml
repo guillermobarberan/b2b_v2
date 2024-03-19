@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config" name="Token" path="/v2/authentications/token" id="c9609cfd-1665-4481-a253-6cbc940ded16">
+  <con:settings id="4d5cdfd0-b596-4cbb-849a-0955aef77db6">
+    <con:setting id="c9609cfd-1665-4481-a253-6cbc940ded16fileName">Token</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="Token" id="36f98b3d-7535-463a-963f-eab8c6f1c2c9" method="POST">
+    <con:settings/>
+    <con:parameters>
+      <con:parameter>
+        <con:name>ApiKey</con:name>
+        <con:value>MtH7QzFHJx93798344h5Uzi4RvtTOp092p</con:value>
+        <con:style>HEADER</con:style>
+        <con:default/>
+        <con:path xsi:nil="true"/>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+      <con:parameter>
+        <con:name>ApiSignature</con:name>
+        <con:value>gHOCQ2JvufUhqGHR9KaUy0+1wfc/s+rwILDhLDnUBS8=</con:value>
+        <con:style>HEADER</con:style>
+        <con:default/>
+        <con:path xsi:nil="true"/>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+    </con:parameters>
+    <con:request name="Token mule" id="5c59ee2d-2af2-4dc3-8ec3-49710f7fefee" mediaType="application/json" postQueryString="false">
+      <con:settings/>
+      <con:endpoint>${#Project#scheme}${#Project#baseMuleUrl}</con:endpoint>
+      <con:request>{\r
+  "clientSecret": "tKl5TYi9lMVZbVvlyAIkSL0CQBvnmR3T",\r
+  "clientId": "diaspo-agente-1"\r
+}</con:request>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters>
+        <con:entry key="ApiKey" value="MtH7QzFHJx93798344h5Uzi4RvtTOp092p"/>
+        <con:entry key="ApiSignature" value="gHOCQ2JvufUhqGHR9KaUy0+1wfc/s+rwILDhLDnUBS8="/>
+      </con:parameters>
+      <con:parameterOrder>
+        <con:entry>ApiKey</con:entry>
+        <con:entry>ApiSignature</con:entry>
+      </con:parameterOrder>
+    </con:request>
+  </con:method>
+</con:resource>

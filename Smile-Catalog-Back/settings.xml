@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testSuite xmlns:con="http://eviware.com/soapui/config" id="6d94c27d-5a9c-4ad5-991b-f997c0cd7ac3" name="Smile Catalog Back">
+  <con:settings id="0a3be55d-4d54-4589-9f7c-d0bed738b18c">
+    <con:setting id="6d94c27d-5a9c-4ad5-991b-f997c0cd7ac3fileName">Smile-Catalog-Back</con:setting>
+  </con:settings>
+  <con:runType>SEQUENTIAL</con:runType>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testSuite>

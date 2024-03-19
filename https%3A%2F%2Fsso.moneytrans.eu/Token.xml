@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config" name="Token" path="/realms/b2b/protocol/openid-connect/token" id="1957ca79-bfb1-48a5-9d13-2ee64cb03f7c">
+  <con:settings id="d75310c2-2502-4ad9-9fb7-4aeeb1af7841">
+    <con:setting id="1957ca79-bfb1-48a5-9d13-2ee64cb03f7cfileName">Token</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="Token" id="bef9a8ef-4da7-4392-bbf0-2f63f484ed20" method="POST">
+    <con:settings/>
+    <con:parameters>
+      <con:parameter required="true">
+        <con:name>client_id</con:name>
+        <con:value/>
+        <con:style>QUERY</con:style>
+        <con:default/>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>client_secret</con:name>
+        <con:value/>
+        <con:style>QUERY</con:style>
+        <con:default/>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>grant_type</con:name>
+        <con:value/>
+        <con:style>QUERY</con:style>
+        <con:default/>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>Content-Type</con:name>
+        <con:value/>
+        <con:style>HEADER</con:style>
+        <con:default/>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>ApiKey</con:name>
+        <con:value/>
+        <con:style>HEADER</con:style>
+        <con:default/>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>ApiSignature</con:name>
+        <con:value/>
+        <con:style>HEADER</con:style>
+        <con:default/>
+      </con:parameter>
+    </con:parameters>
+    <con:representation type="REQUEST">
+      <con:mediaType>application/x-www-form-urlencoded</con:mediaType>
+      <con:params/>
+    </con:representation>
+    <con:representation type="FAULT">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>400 415</con:status>
+      <con:params/>
+      <con:element xmlns:tok="https://sso.moneytrans.eu/realms/b2b/protocol/openid-connect/token">tok:Fault</con:element>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:element xmlns:tok="https://sso.moneytrans.eu/realms/b2b/protocol/openid-connect/token">tok:Response</con:element>
+    </con:representation>
+    <con:representation type="REQUEST">
+      <con:mediaType>application/json</con:mediaType>
+      <con:params/>
+    </con:representation>
+    <con:request name="Token back" id="4754a766-46c1-4e07-97e7-d4e5bcf69287" mediaType="application/x-www-form-urlencoded" postQueryString="true">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment>&lt;con:entry key="ApiSignature" value="ucNdMXcvipctalQhhj/VaOSxaU2YqhXVsfN4OU1KGcE=" xmlns:con="http://eviware.com/soapui/config"/>&lt;con:entry key="ApiKey" value="MtH7QzFHJx93798344h5Uzi4RvtTOp092p" xmlns:con="http://eviware.com/soapui/config"/>&lt;/xml-fragment></con:setting>
+        <con:setting id="RecordRequestRepresentations">false</con:setting>
+      </con:settings>
+      <con:endpoint>https://sso.moneytrans.eu</con:endpoint>
+      <con:request/>
+      <con:originalUri>https://sso.moneytrans.eu/realms/b2b/protocol/openid-connect/token</con:originalUri>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters>
+        <con:entry key="ApiKey" value="MtH7QzFHJx93798344h5Uzi4RvtTOp092p"/>
+        <con:entry key="grant_type" value="client_credentials"/>
+        <con:entry key="ApiSignature" value="ucNdMXcvipctalQhhj/VaOSxaU2YqhXVsfN4OU1KGcE="/>
+        <con:entry key="client_secret" value="tKl5TYi9lMVZbVvlyAIkSL0CQBvnmR3T"/>
+        <con:entry key="client_id" value="diaspo-agente-1"/>
+        <con:entry key="Content-Type" value="application/x-www-form-urlencoded"/>
+      </con:parameters>
+      <con:parameterOrder>
+        <con:entry>client_id</con:entry>
+        <con:entry>client_secret</con:entry>
+        <con:entry>grant_type</con:entry>
+        <con:entry>Content-Type</con:entry>
+        <con:entry>ApiKey</con:entry>
+        <con:entry>ApiSignature</con:entry>
+      </con:parameterOrder>
+    </con:request>
+  </con:method>
+</con:resource>

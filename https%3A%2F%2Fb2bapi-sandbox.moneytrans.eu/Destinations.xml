@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config" name="Destinations" path="/v2/transfers/catalogs/destinations" id="0639d847-d3e3-4d14-8f85-b5242c8ffe8b">
+  <con:settings id="13cd9167-fe70-410a-993f-0d204c65a347">
+    <con:setting id="0639d847-d3e3-4d14-8f85-b5242c8ffe8bfileName">Destinations</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="Destinations" id="bfb8fce8-df6e-4e06-a551-5011fc78ff21" method="GET">
+    <con:settings/>
+    <con:parameters>
+      <con:parameter required="true">
+        <con:name>destinationCountryCode</con:name>
+        <con:value>MAR</con:value>
+        <con:style>QUERY</con:style>
+        <con:default>MAR</con:default>
+        <con:path xsi:nil="true"/>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>sourceCountryCode</con:name>
+        <con:value>FRA</con:value>
+        <con:style>QUERY</con:style>
+        <con:default>FRA</con:default>
+        <con:path xsi:nil="true"/>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>paymentModeCode</con:name>
+        <con:value>OF</con:value>
+        <con:style>QUERY</con:style>
+        <con:default>OF</con:default>
+        <con:path xsi:nil="true"/>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>destinationCurrencyCode</con:name>
+        <con:value>MAD</con:value>
+        <con:style>QUERY</con:style>
+        <con:default>MAD</con:default>
+        <con:path xsi:nil="true"/>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+      <con:parameter>
+        <con:name>Content-Type</con:name>
+        <con:value>application/json</con:value>
+        <con:style>HEADER</con:style>
+        <con:default/>
+        <con:path xsi:nil="true"/>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+      <con:parameter>
+        <con:name>ApiKey</con:name>
+        <con:value>MtH7QzFHJx93798344h5Uzi4RvtTOp092p</con:value>
+        <con:style>HEADER</con:style>
+        <con:default/>
+        <con:path xsi:nil="true"/>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+      <con:parameter>
+        <con:name>ApiSignature</con:name>
+        <con:value>JD1RDLPBWw3fa/IL33uW2OsNDfMI5aNtEXLx/i9xgSw=</con:value>
+        <con:style>HEADER</con:style>
+        <con:default/>
+        <con:path xsi:nil="true"/>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+      <con:parameter>
+        <con:name>clientId</con:name>
+        <con:value>diaspo-agente-1</con:value>
+        <con:style>HEADER</con:style>
+        <con:default/>
+        <con:path xsi:nil="true"/>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+      <con:parameter>
+        <con:name>Authorization</con:name>
+        <con:value>Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJORTBJSmw4eGpabkNXb3NSeEhZdXAtUVBfWGtNVVd6Q182TTFxbVdLWmxjIn0.eyJleHAiOjE3MTAxNjUzNTIsImlhdCI6MTcxMDE2NTA1MiwianRpIjoiYjNhMTBlNGYtMWNhNi00MTRjLWFhNWQtZDVlY2M5ZWZjOTVmIiwiaXNzIjoiaHR0cHM6Ly9zc28ubW9uZXl0cmFucy5ldS9yZWFsbXMvYjJiIiwic3ViIjoiN2MyYjkyZTEtM2U5My00Zjk3LTlhMTAtZjU3YWUyMmUyYjUzIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiZGlhc3BvLWFnZW50ZS0xIiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6WyIvKiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiZGlhc3BvIl19LCJzY29wZSI6InVwZGF0ZS1zbWlsZSByZWFkLXRyYW5zZmVyLWNhdGFsb2cgcmVhZC1maW5hbnRpYWwgdXBkYXRlLXRyYW5zZmVycyByZWFkLWNhdGFsb2cgdXBkYXRlLWN1c3RvbWVycyByZWFkLWFjcXVpcmluZyByZWFkLXNtaWxlLWNhdGFsb2ciLCJjbGllbnRIb3N0IjoiOTAuNjkuMTQxLjE5MCIsImNsaWVudEFkZHJlc3MiOiI5MC42OS4xNDEuMTkwIiwiY2xpZW50X2lkIjoiZGlhc3BvLWFnZW50ZS0xIn0.EQZy6Rg8etLvkhEgV4WDHq402J8cC7TE5TYsxInFQDAt0rIZVp0YDOV-w95LaS3jk1ENgMQz_JIUsvMgWpkZmcoRHBOdiEZ0oze8zp-P7irCdkUZHTmS1w_czeSnOj-5rA47z0Ik-2x5-lNX9147mv1UqHtC3ov3f681swTpLMsVrqxJVGxNi-56ikncelxIlWBcS1mUS0nNIZRTlZPBh4_UU03cXLmFVh93HB9oHcesphgKyqd842p1rF8IhMOWNXdMJz2PZmis1NOt_a5E_ghT-r_ErJAV3NUU2tYu_zOr1452VtyXlMIwCUzbrYV2YYNJrXu5Ydrhuj21YAi2Ew</con:value>
+        <con:style>HEADER</con:style>
+        <con:default/>
+        <con:path xsi:nil="true"/>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+    </con:parameters>
+    <con:request name="Transfer destinations mule" id="2db01c25-c39a-43c8-8ca7-911864edee59" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>https://b2bapi-sandbox.moneytrans.eu</con:endpoint>
+      <con:request/>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters>
+        <con:entry key="Authorization" value="Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJORTBJSmw4eGpabkNXb3NSeEhZdXAtUVBfWGtNVVd6Q182TTFxbVdLWmxjIn0.eyJleHAiOjE3MTAxNjUzNTIsImlhdCI6MTcxMDE2NTA1MiwianRpIjoiYjNhMTBlNGYtMWNhNi00MTRjLWFhNWQtZDVlY2M5ZWZjOTVmIiwiaXNzIjoiaHR0cHM6Ly9zc28ubW9uZXl0cmFucy5ldS9yZWFsbXMvYjJiIiwic3ViIjoiN2MyYjkyZTEtM2U5My00Zjk3LTlhMTAtZjU3YWUyMmUyYjUzIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiZGlhc3BvLWFnZW50ZS0xIiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6WyIvKiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiZGlhc3BvIl19LCJzY29wZSI6InVwZGF0ZS1zbWlsZSByZWFkLXRyYW5zZmVyLWNhdGFsb2cgcmVhZC1maW5hbnRpYWwgdXBkYXRlLXRyYW5zZmVycyByZWFkLWNhdGFsb2cgdXBkYXRlLWN1c3RvbWVycyByZWFkLWFjcXVpcmluZyByZWFkLXNtaWxlLWNhdGFsb2ciLCJjbGllbnRIb3N0IjoiOTAuNjkuMTQxLjE5MCIsImNsaWVudEFkZHJlc3MiOiI5MC42OS4xNDEuMTkwIiwiY2xpZW50X2lkIjoiZGlhc3BvLWFnZW50ZS0xIn0.EQZy6Rg8etLvkhEgV4WDHq402J8cC7TE5TYsxInFQDAt0rIZVp0YDOV-w95LaS3jk1ENgMQz_JIUsvMgWpkZmcoRHBOdiEZ0oze8zp-P7irCdkUZHTmS1w_czeSnOj-5rA47z0Ik-2x5-lNX9147mv1UqHtC3ov3f681swTpLMsVrqxJVGxNi-56ikncelxIlWBcS1mUS0nNIZRTlZPBh4_UU03cXLmFVh93HB9oHcesphgKyqd842p1rF8IhMOWNXdMJz2PZmis1NOt_a5E_ghT-r_ErJAV3NUU2tYu_zOr1452VtyXlMIwCUzbrYV2YYNJrXu5Ydrhuj21YAi2Ew"/>
+        <con:entry key="paymentModeCode" value="OF"/>
+        <con:entry key="sourceCountryCode" value="FRA"/>
+        <con:entry key="ApiKey" value="MtH7QzFHJx93798344h5Uzi4RvtTOp092p"/>
+        <con:entry key="clientId" value="diaspo-agente-1"/>
+        <con:entry key="destinationCurrencyCode" value="MAD"/>
+        <con:entry key="ApiSignature" value="JD1RDLPBWw3fa/IL33uW2OsNDfMI5aNtEXLx/i9xgSw="/>
+        <con:entry key="destinationCountryCode" value="MAR"/>
+        <con:entry key="Content-Type" value="application/json"/>
+      </con:parameters>
+      <con:parameterOrder>
+        <con:entry>destinationCountryCode</con:entry>
+        <con:entry>sourceCountryCode</con:entry>
+        <con:entry>paymentModeCode</con:entry>
+        <con:entry>destinationCurrencyCode</con:entry>
+        <con:entry>Content-Type</con:entry>
+        <con:entry>ApiKey</con:entry>
+        <con:entry>ApiSignature</con:entry>
+        <con:entry>clientId</con:entry>
+        <con:entry>Authorization</con:entry>
+      </con:parameterOrder>
+    </con:request>
+  </con:method>
+</con:resource>

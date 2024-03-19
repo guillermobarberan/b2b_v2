@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config" name="Calculator" path="/api/b2b/transfers/calculator" id="2973f896-be80-4a50-a1d7-bd10b970dd4a">
+  <con:settings id="ab1bb65e-e255-44c1-8900-0514e64c81fe">
+    <con:setting id="2973f896-be80-4a50-a1d7-bd10b970dd4afileName">Calculator</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="Calculator" id="1b56f644-f694-4368-870b-74674f27b3a4" method="GET">
+    <con:settings/>
+    <con:parameters>
+      <con:parameter required="true">
+        <con:name>SourceValue</con:name>
+        <con:value>20</con:value>
+        <con:style>QUERY</con:style>
+        <con:default>20</con:default>
+        <con:path xsi:nil="true"/>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>SourceValueWithFees</con:name>
+        <con:value>0</con:value>
+        <con:style>QUERY</con:style>
+        <con:default>0</con:default>
+        <con:path xsi:nil="true"/>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>ISODestCountry</con:name>
+        <con:value>MAR</con:value>
+        <con:style>QUERY</con:style>
+        <con:default>MAR</con:default>
+        <con:path xsi:nil="true"/>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>DestValue</con:name>
+        <con:value>0</con:value>
+        <con:style>QUERY</con:style>
+        <con:default>0</con:default>
+        <con:path xsi:nil="true"/>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>ISODestCurrency</con:name>
+        <con:value>MAD</con:value>
+        <con:style>QUERY</con:style>
+        <con:default>MAD</con:default>
+        <con:path xsi:nil="true"/>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>CustomerCode</con:name>
+        <con:value>5463354</con:value>
+        <con:style>QUERY</con:style>
+        <con:default>5463354</con:default>
+        <con:path xsi:nil="true"/>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>PayerCode</con:name>
+        <con:value>1707</con:value>
+        <con:style>QUERY</con:style>
+        <con:default>1707</con:default>
+        <con:path xsi:nil="true"/>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>DestPaymentTypeCode</con:name>
+        <con:value>OF</con:value>
+        <con:style>QUERY</con:style>
+        <con:default>OF</con:default>
+        <con:path xsi:nil="true"/>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+      <con:parameter>
+        <con:name>Authorization</con:name>
+        <con:value>diaspo-agente-1@eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJORTBJSmw4eGpabkNXb3NSeEhZdXAtUVBfWGtNVVd6Q182TTFxbVdLWmxjIn0.eyJleHAiOjE3MDk2NTk1MDksImlhdCI6MTcwOTY1OTIwOSwianRpIjoiNzU4ZDJmYmUtNzA5Yi00MWM4LTk0ZTUtNWRiMDRkZjhmNDUyIiwiaXNzIjoiaHR0cHM6Ly9zc28ubW9uZXl0cmFucy5ldS9yZWFsbXMvYjJiIiwic3ViIjoiN2MyYjkyZTEtM2U5My00Zjk3LTlhMTAtZjU3YWUyMmUyYjUzIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiZGlhc3BvLWFnZW50ZS0xIiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6WyIvKiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiZGlhc3BvIl19LCJzY29wZSI6InVwZGF0ZS1zbWlsZSByZWFkLXRyYW5zZmVyLWNhdGFsb2cgcmVhZC1maW5hbnRpYWwgdXBkYXRlLXRyYW5zZmVycyByZWFkLWNhdGFsb2cgdXBkYXRlLWN1c3RvbWVycyByZWFkLWFjcXVpcmluZyByZWFkLXNtaWxlLWNhdGFsb2ciLCJjbGllbnRIb3N0IjoiOTAuNjkuMTQxLjE5MCIsImNsaWVudEFkZHJlc3MiOiI5MC42OS4xNDEuMTkwIiwiY2xpZW50X2lkIjoiZGlhc3BvLWFnZW50ZS0xIn0.GmD7sNC_bkFMqAcYu1lb-f3EwmPY5f9zihiTBHRBFgfAybxjDUnE_Bn_1n9n5BD5jPEboMuY9BXNX3NdWIF02qm30ume9VlRS2WeH6kUom74thSWudtkWhnpGXUGcJVfKMBlXb2t_bXbfBoEBi1DHJd3USMaSkOq5YCfzUKhz1AjLKQ6x7gpRQNfIQTDCT-NjOihARaHBHUaKS4T3y5jTBnkKbqf6h_TKbFjBVdywWcLxGEj_Z8_UTQeTuYAKmN1C_VUeYhTNX1o1xjVoQWrR4VrPl3TBXEQgUCq59TFlZvn6Nz1NXhzgruDAtBk2oHPcQGMYX57tT9RGyVk3vP0tQ</con:value>
+        <con:style>HEADER</con:style>
+        <con:default/>
+        <con:path xsi:nil="true"/>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+      <con:parameter>
+        <con:name>MT-DELEGATED-AUTH</con:name>
+        <con:value>1</con:value>
+        <con:style>HEADER</con:style>
+        <con:default/>
+        <con:path xsi:nil="true"/>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+    </con:parameters>
+    <con:request name="Calculation back" id="bc2cecc3-55f9-4f43-b993-bb95ce4b43c5" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>https://multiservices-be-cld-ts.moneytrans.eu</con:endpoint>
+      <con:request/>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters>
+        <con:entry key="SourceValue" value="20"/>
+        <con:entry key="Authorization" value="diaspo-agente-1@eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJORTBJSmw4eGpabkNXb3NSeEhZdXAtUVBfWGtNVVd6Q182TTFxbVdLWmxjIn0.eyJleHAiOjE3MDk2NTk1MDksImlhdCI6MTcwOTY1OTIwOSwianRpIjoiNzU4ZDJmYmUtNzA5Yi00MWM4LTk0ZTUtNWRiMDRkZjhmNDUyIiwiaXNzIjoiaHR0cHM6Ly9zc28ubW9uZXl0cmFucy5ldS9yZWFsbXMvYjJiIiwic3ViIjoiN2MyYjkyZTEtM2U5My00Zjk3LTlhMTAtZjU3YWUyMmUyYjUzIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiZGlhc3BvLWFnZW50ZS0xIiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6WyIvKiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiZGlhc3BvIl19LCJzY29wZSI6InVwZGF0ZS1zbWlsZSByZWFkLXRyYW5zZmVyLWNhdGFsb2cgcmVhZC1maW5hbnRpYWwgdXBkYXRlLXRyYW5zZmVycyByZWFkLWNhdGFsb2cgdXBkYXRlLWN1c3RvbWVycyByZWFkLWFjcXVpcmluZyByZWFkLXNtaWxlLWNhdGFsb2ciLCJjbGllbnRIb3N0IjoiOTAuNjkuMTQxLjE5MCIsImNsaWVudEFkZHJlc3MiOiI5MC42OS4xNDEuMTkwIiwiY2xpZW50X2lkIjoiZGlhc3BvLWFnZW50ZS0xIn0.GmD7sNC_bkFMqAcYu1lb-f3EwmPY5f9zihiTBHRBFgfAybxjDUnE_Bn_1n9n5BD5jPEboMuY9BXNX3NdWIF02qm30ume9VlRS2WeH6kUom74thSWudtkWhnpGXUGcJVfKMBlXb2t_bXbfBoEBi1DHJd3USMaSkOq5YCfzUKhz1AjLKQ6x7gpRQNfIQTDCT-NjOihARaHBHUaKS4T3y5jTBnkKbqf6h_TKbFjBVdywWcLxGEj_Z8_UTQeTuYAKmN1C_VUeYhTNX1o1xjVoQWrR4VrPl3TBXEQgUCq59TFlZvn6Nz1NXhzgruDAtBk2oHPcQGMYX57tT9RGyVk3vP0tQ"/>
+        <con:entry key="ISODestCurrency" value="MAD"/>
+        <con:entry key="DestValue" value="0"/>
+        <con:entry key="PayerCode" value="1707"/>
+        <con:entry key="ISODestCountry" value="MAR"/>
+        <con:entry key="CustomerCode" value="5463354"/>
+        <con:entry key="SourceValueWithFees" value="0"/>
+        <con:entry key="DestPaymentTypeCode" value="OF"/>
+        <con:entry key="MT-DELEGATED-AUTH" value="1"/>
+      </con:parameters>
+      <con:parameterOrder>
+        <con:entry>SourceValue</con:entry>
+        <con:entry>SourceValueWithFees</con:entry>
+        <con:entry>ISODestCountry</con:entry>
+        <con:entry>DestValue</con:entry>
+        <con:entry>ISODestCurrency</con:entry>
+        <con:entry>CustomerCode</con:entry>
+        <con:entry>PayerCode</con:entry>
+        <con:entry>DestPaymentTypeCode</con:entry>
+        <con:entry>Authorization</con:entry>
+        <con:entry>MT-DELEGATED-AUTH</con:entry>
+      </con:parameterOrder>
+    </con:request>
+  </con:method>
+</con:resource>
