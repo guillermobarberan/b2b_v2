@@ -25,7 +25,7 @@
         </con:property>
         <con:property>
           <con:name>ApiSignature</con:name>
-          <con:value>rxFPHQHtqqo417Gh9pzhY0kmuAx8doiMlxwc4/JPsyw=</con:value>
+          <con:value>aV0D1VmrVe075KzWMYonF+es7xwT0lpc0N0WeykU+k4=</con:value>
         </con:property>
         <con:property>
           <con:name>clientIdBack</con:name>
@@ -38,7 +38,205 @@
       </con:properties>
     </con:config>
   </con:testStep>
-  <con:testStep type="groovy" name="TesCasesRunner" id="e5d5d9a9-2aab-48a5-8c33-d2f270363668">
+  <con:testStep type="groovy" name="TesCasesRunnerSmileCatalog" id="e5d5d9a9-2aab-48a5-8c33-d2f270363668">
+    <con:settings/>
+    <con:config>
+      <script>import javax.crypto.Mac
+import javax.crypto.spec.SecretKeySpec
+import java.security.InvalidKeyException
+import java.security.NoSuchAlgorithmException
+import groovy.json.JsonSlurper
+import java.time.Instant
+import java.util.*
+
+// Smile Catalog Back cambio pequeño
+	testExecutionEnginneSmileCatalogBack("IBAN validation");
+	testExecutionEnginneSmileCatalogBack("Initial deposit");
+	testExecutionEnginneSmileCatalogBack("Annual_maintenance");
+	testExecutionEnginneSmileCatalogBack("monthly_maintenance");
+
+// Smile Catalog Mule
+	testExecutionEnginneSmileCatalogMule("IBAN validation");
+	testExecutionEnginneSmileCatalogMule("Initial deposit");
+	testExecutionEnginneSmileCatalogMule("Annual_maintenance");
+	testExecutionEnginneSmileCatalogMule("monthly_maintenance");
+
+def testExecutionEnginneSmileCatalogBack (String issueType ){
+	 switch(issueType) {            
+	         //There is case statement defined for 4 cases 
+	         // Each case statement section has a break condition to exit the loop 
+	         case "IBAN validation": 
+	               TestCaseEnginne("TokenManagement", "Token_back") 
+				//stringToSignTokenBack (method, requestPath, back_access_token, clientIdBack)
+				def Body = OurBody (String TestSuiteByName, String TestCaseByName)
+        			stringToSignTokenBack ('${#[Smile Catalog Back#IBAN validation]#method}', '${#[Smile Catalog Back#IBAN validation]#requestPath}', '${#[TokenManagement]#back_access_token}', '${mule v2#clientIdBack}', Body)
+        			TestCaseEnginne("Smile Catalog Back", "IBAN validation")
+	            break; 
+
+	         case "Initial deposit": 
+	            log.info("The value of issueType is $issueType"); 
+	            break; 
+
+	         case "Annual_maintenance": 
+	            log.info("The value of issueType is $issueType"); 
+	            break; 
+
+	          case "monthly_maintenance": 
+	            log.info("The value of issueType is $issueType"); 
+	            break;    
+
+	         default: 
+	            log.info("The Issue Type Value is unknown"); 
+	            break; 
+	      }
+}
+
+// Smile Catalog Mule
+def testExecutionEnginneSmileCatalogMule (String issueType ){
+	 switch(issueType) {            
+	         //There is case statement defined for 4 cases 
+	         // Each case statement section has a break condition to exit the loop 
+	         case "IBAN validation": 
+			  def bodyMule = context.expand( '${#[TokenManagement]#bodyMule}' )
+	         	  stringToSignTokenMule( ,bodyMule)
+	            log.info("The value of issueType is $issueType"); 
+	            break; 
+
+	         case "Initial deposit": 
+	            log.info("The value of issueType is $issueType"); 
+	            break; 
+
+	         case "Annual_maintenance": 
+	            log.info("The value of issueType is $issueType"); 
+	            break; 
+
+	          case "monthly_maintenance": 
+	            log.info("The value of issueType is $issueType"); 
+	            break;    
+
+	         default: 
+	            log.info("The Issue Type Value is unknown"); 
+	            break; 
+	      }
+}
+
+
+
+// There is  statement defined for stringToSignTokenBack
+def stringToSignTokenBack (String method, String requestPath, String back_access_token, String clientIdBack, String Body){
+	def envBaseUrl = context.expand( '${mule v2#baseMuleUrl}' )
+	def secret = context.expand( '${mule v2#apiSecret}' )
+	def apiKey = context.expand( '${mule v2#ApiKey}' )
+
+	def stringToSign = method + ":" + envBaseUrl + requestPath + ":"
+	def fecha = Instant.now().toEpochMilli() / 100000 as long
+
+	stringToSign += fecha
+	log.info " fecha: " + fecha
+	log.info " Groovy stringToSign: " +stringToSign  
+
+	if (method == "PUT") || (method == "POST") {
+		log.info " Body: " + Body 
+		stringToSign += Body
+	}
+	
+	def signBytes = hmacSha256(stringToSign, secret)
+	def signHex = signBytes.encodeBase64().toString()
+
+	log.info " Groovy computed signature: " +signHex + "." + " Text signed: " + stringToSign 
+	testRunner.testCase.getTestStepByName("mule v2").setPropertyValue("ApiSignature",signHex)
+	testRunner.testCase.getTestStepByName("mule v2").setPropertyValue("authBack", clientIdBack + "@" + back_access_token )
+}
+
+
+
+def stringToSignTokenMule (String method, String requestPath, String back_access_token, String clientIdBack, String Body){
+	def envBaseUrl = context.expand( '${mule v2#baseMuleUrl}' )
+	def secret = context.expand( '${mule v2#apiSecret}' )
+	def apiKey = context.expand( '${mule v2#ApiKey}' )
+
+	def stringToSign = method + ":" + envBaseUrl + requestPath + ":"
+	def fecha = Instant.now().toEpochMilli() / 100000 as long
+
+	stringToSign += fecha
+	log.info " fecha: " + fecha
+	log.info " Groovy stringToSign: " +stringToSign  
+
+	if (method == "PUT") || (method == "POST") {
+		log.info " Body: " + Body 
+		stringToSign += Body
+	}
+	
+	def signBytes = hmacSha256(stringToSign, secret)
+	def signHex = signBytes.encodeBase64().toString()
+
+	log.info " Groovy computed signature: " +signHex + "." + " Text signed: " + stringToSign 
+	testRunner.testCase.getTestStepByName("mule v2").setPropertyValue("ApiSignature",signHex)
+	testRunner.testCase.getTestStepByName("mule v2").setPropertyValue("authBack", clientIdBack + "@" + back_access_token )
+}
+
+
+
+def OurBody (String TestSuiteByName, String TestCaseByName){
+	
+	def testSuite = testRunner.testCase.testSuite.project.getTestSuiteByName(TestSuiteByName);           
+	def testCase = testSuite.getTestCaseByName(TestCaseByName);                                                       
+	def totalTestSteps = testCase.getTestSteps().size();  
+	def TestStepByName = testCase.getTestStepByName(TestCaseByName)
+	def LocalResponse = TestStepByName.getPropertyValue("Request")
+
+return LocalResponse
+}
+
+
+
+
+
+
+
+// There is  statement defined for TestCaseEnginne Runner
+def TestCaseEnginne(String TestSuiteByName, String TestCaseByName) {
+	
+	def testSuite = testRunner.testCase.testSuite.project.getTestSuiteByName(TestSuiteByName);           
+	def testCase = testSuite.getTestCaseByName(TestCaseByName);    
+	def totalTestSteps = testCase.getTestSteps().size();   
+
+		log.info testSuite
+		log.info testCase
+		log.info totalTestSteps
+		
+		for(n in (0..totalTestSteps - 1))
+		{    
+		    log.info "------------------------------------------------------------" 
+		    def testStepName = testCase.getTestStepAt(n).name;
+		    log.info testStepName
+		    log.info n
+		   
+				    if(n>=0){
+				    		if (testCase.getTestStepByName(testStepName).disabled != true) {
+							log.info "testStepName: " + n + ": " + testStepName;
+				          	def testStep = testCase.getTestStepByName(testStepName);
+				        		runner = testStep.run(testRunner, context);
+				        		log.info ("testStep   >>> 1   " + runner.getStatus().toString());
+				            }
+				    }
+		}
+}
+
+
+def hmacSha256(String data, String key) {
+    try {
+        Mac mac = Mac.getInstance("HmacSHA256")
+        SecretKeySpec secretKeySpec = new SecretKeySpec(key.getBytes(), "HmacSHA256")
+        mac.init(secretKeySpec)
+        return mac.doFinal(data.getBytes())
+    } catch (NoSuchAlgorithmException | InvalidKeyException e) {
+        throw new RuntimeException("Error al calcular HMAC SHA256", e)
+    }
+}</script>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="groovy" name="TesCasesRunnerAgentFinance" id="7c7e6696-7bd9-454d-893e-072a89ca41ef">
     <con:settings/>
     <con:config>
       <script>import javax.crypto.Mac
