@@ -25,7 +25,7 @@
         </con:property>
         <con:property>
           <con:name>ApiSignature</con:name>
-          <con:value>aV0D1VmrVe075KzWMYonF+es7xwT0lpc0N0WeykU+k4=</con:value>
+          <con:value>EJAzIJmceI1gsmuK2a60IMLMVrWyjmenzvVQEU6qgO0=</con:value>
         </con:property>
         <con:property>
           <con:name>clientIdBack</con:name>
@@ -34,6 +34,14 @@
         <con:property>
           <con:name>authBack</con:name>
           <con:value>${mule v2#clientIdBack}@${#[TokenManagement]#back_access_token}</con:value>
+        </con:property>
+        <con:property>
+          <con:name>authMule</con:name>
+          <con:value>Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJORTBJSmw4eGpabkNXb3NSeEhZdXAtUVBfWGtNVVd6Q182TTFxbVdLWmxjIn0.eyJleHAiOjE3MTIxOTkxNzcsImlhdCI6MTcxMjE5ODg3NywianRpIjoiMDc3Y2JiZmMtMjNiMS00YmFkLTg2YjMtOWNhNGZkOGRhNDFhIiwiaXNzIjoiaHR0cHM6Ly9zc28ubW9uZXl0cmFucy5ldS9yZWFsbXMvYjJiIiwic3ViIjoiN2MyYjkyZTEtM2U5My00Zjk3LTlhMTAtZjU3YWUyMmUyYjUzIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiZGlhc3BvLWFnZW50ZS0xIiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6WyIvKiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiZGlhc3BvIl19LCJzY29wZSI6InVwZGF0ZS1zbWlsZSByZWFkLXRyYW5zZmVyLWNhdGFsb2cgcmVhZC1maW5hbnRpYWwgdXBkYXRlLXRyYW5zZmVycyByZWFkLWNhdGFsb2cgdXBkYXRlLWN1c3RvbWVycyByZWFkLWFjcXVpcmluZyByZWFkLXNtaWxlLWNhdGFsb2ciLCJjbGllbnRIb3N0IjoiMTguMjAwLjE3Ni4xNTUiLCJjbGllbnRBZGRyZXNzIjoiMTguMjAwLjE3Ni4xNTUiLCJjbGllbnRfaWQiOiJkaWFzcG8tYWdlbnRlLTEifQ.RRdR1Rru8dBRP8BdR6R63vsQbqeT6IEQsUpm44JCbQ3uNz6u1EJP7fPnqbitJaMjXbhnBn6fuSAaUASIUYEBWM8QChcBahW_665_2V4NaD9vdMRDs8buX85_vP3ekfrV3_5ZXQKcC5iJvqwHVP3yyXzfqBdebQeCnnVtytW8tUTnaysBL_UlQgKdJjnjBBu-wHVdoCNaF7WVKZzGOjW3H4yjtLga-2dBzISPnrG_uZQujZbuKy0U8g4Re5QgpTBQxYLuZ7MvTseTANxDl1WD8zd3nqdiiMwqV8Gtg4iiGNthWA8L0DDIygIZDrobz6NWmdhWzXyaygLd0vITig5a8g</con:value>
+        </con:property>
+        <con:property>
+          <con:name>clientIdMule</con:name>
+          <con:value>diaspo-agente-1</con:value>
         </con:property>
       </con:properties>
     </con:config>
@@ -49,17 +57,17 @@ import groovy.json.JsonSlurper
 import java.time.Instant
 import java.util.*
 
-// Smile Catalog Back cambio pequeño
-	testExecutionEnginneSmileCatalogBack("IBAN validation");
-	testExecutionEnginneSmileCatalogBack("Initial deposit");
-	testExecutionEnginneSmileCatalogBack("Annual_maintenance");
-	testExecutionEnginneSmileCatalogBack("monthly_maintenance");
+// Smile Catalog Back
+//	testExecutionEnginneSmileCatalogBack("IBAN validation");
+//	testExecutionEnginneSmileCatalogBack("Initial deposit");
+//	testExecutionEnginneSmileCatalogBack("Annual_maintenance");
+//	testExecutionEnginneSmileCatalogBack("monthly_maintenance");
 
 // Smile Catalog Mule
 	testExecutionEnginneSmileCatalogMule("IBAN validation");
-	testExecutionEnginneSmileCatalogMule("Initial deposit");
-	testExecutionEnginneSmileCatalogMule("Annual_maintenance");
-	testExecutionEnginneSmileCatalogMule("monthly_maintenance");
+//	testExecutionEnginneSmileCatalogMule("Initial deposit");
+//	testExecutionEnginneSmileCatalogMule("Annual_maintenance");
+//	testExecutionEnginneSmileCatalogMule("monthly_maintenance");
 
 def testExecutionEnginneSmileCatalogBack (String issueType ){
 	 switch(issueType) {            
@@ -97,8 +105,9 @@ def testExecutionEnginneSmileCatalogMule (String issueType ){
 	         //There is case statement defined for 4 cases 
 	         // Each case statement section has a break condition to exit the loop 
 	         case "IBAN validation": 
-			  def bodyMule = context.expand( '${#[TokenManagement]#bodyMule}' )
-	         	  stringToSignTokenMule( ,bodyMule)
+			  stringToSignTokenMule (context.expand('${#[TokenManagement]#method}'), context.expand('${#[TokenManagement]#requestPath}') ,context.expand('${#[TokenManagement]#bodyMule}'))
+			  stringToSignLayerMule (context.expand( '${#[Smile Catalog Mule#IBAN validation]#method}' ),context.expand( '${#[Smile Catalog Mule#IBAN validation]#requestPath}'),'' )
+			  TestCaseEnginne("Smile Catalog Mule", "IBAN validation")
 	            log.info("The value of issueType is $issueType"); 
 	            break; 
 
@@ -120,8 +129,6 @@ def testExecutionEnginneSmileCatalogMule (String issueType ){
 	      }
 }
 
-
-
 // There is  statement defined for stringToSignTokenBack
 def stringToSignTokenBack (String method, String requestPath, String back_access_token, String clientIdBack, String Body){
 	def envBaseUrl = context.expand( '${mule v2#baseMuleUrl}' )
@@ -131,15 +138,15 @@ def stringToSignTokenBack (String method, String requestPath, String back_access
 	def stringToSign = method + ":" + envBaseUrl + requestPath + ":"
 	def fecha = Instant.now().toEpochMilli() / 100000 as long
 
+	if (method == "PUT" || method == "POST") {
+		log.info " Body: " + Body 
+		stringToSign += Body
+	}
+
 	stringToSign += fecha
 	log.info " fecha: " + fecha
 	log.info " Groovy stringToSign: " +stringToSign  
 
-	if (method == "PUT") || (method == "POST") {
-		log.info " Body: " + Body 
-		stringToSign += Body
-	}
-	
 	def signBytes = hmacSha256(stringToSign, secret)
 	def signHex = signBytes.encodeBase64().toString()
 
@@ -149,8 +156,7 @@ def stringToSignTokenBack (String method, String requestPath, String back_access
 }
 
 
-
-def stringToSignTokenMule (String method, String requestPath, String back_access_token, String clientIdBack, String Body){
+def stringToSignTokenMule (String method, String requestPath, String Body){
 	def envBaseUrl = context.expand( '${mule v2#baseMuleUrl}' )
 	def secret = context.expand( '${mule v2#apiSecret}' )
 	def apiKey = context.expand( '${mule v2#ApiKey}' )
@@ -158,23 +164,47 @@ def stringToSignTokenMule (String method, String requestPath, String back_access
 	def stringToSign = method + ":" + envBaseUrl + requestPath + ":"
 	def fecha = Instant.now().toEpochMilli() / 100000 as long
 
-	stringToSign += fecha
-	log.info " fecha: " + fecha
-	log.info " Groovy stringToSign: " +stringToSign  
-
-	if (method == "PUT") || (method == "POST") {
+	if (method == "PUT" || method == "POST") {
 		log.info " Body: " + Body 
 		stringToSign += Body
 	}
+
+	stringToSign += fecha
+	log.info " fecha: " + fecha
+	log.info " Groovy stringToSign: " +stringToSign  
 	
 	def signBytes = hmacSha256(stringToSign, secret)
 	def signHex = signBytes.encodeBase64().toString()
 
 	log.info " Groovy computed signature: " +signHex + "." + " Text signed: " + stringToSign 
 	testRunner.testCase.getTestStepByName("mule v2").setPropertyValue("ApiSignature",signHex)
-	testRunner.testCase.getTestStepByName("mule v2").setPropertyValue("authBack", clientIdBack + "@" + back_access_token )
+	TestCaseEnginne('TokenManagement', 'Token mule')
+	testRunner.testCase.getTestStepByName("mule v2").setPropertyValue("authMule", "Bearer " + context.expand( '${#[TokenManagement]#mule_access_token}' ) )
 }
 
+def stringToSignLayerMule (String method, String requestPath, String Body){
+	def envBaseUrl = context.expand( '${mule v2#baseMuleUrl}' )
+	def secret = context.expand( '${mule v2#apiSecret}' )
+	def apiKey = context.expand( '${mule v2#ApiKey}' )
+
+	def stringToSign = method + ":" + envBaseUrl + requestPath + ":"
+	def fecha = Instant.now().toEpochMilli() / 100000 as long
+
+	if (method == "PUT" || method == "POST") {
+		log.info " Body: " + Body 
+		stringToSign += Body
+	}
+
+	stringToSign += fecha
+	log.info " fecha: " + fecha
+	log.info " Groovy stringToSign: " +stringToSign  
+	
+	def signBytes = hmacSha256(stringToSign, secret)
+	def signHex = signBytes.encodeBase64().toString()
+
+	log.info " Groovy computed signature: " +signHex + "." + " Text signed: " + stringToSign 
+	testRunner.testCase.getTestStepByName("mule v2").setPropertyValue("ApiSignature",signHex)
+}
 
 
 def OurBody (String TestSuiteByName, String TestCaseByName){
@@ -187,167 +217,6 @@ def OurBody (String TestSuiteByName, String TestCaseByName){
 
 return LocalResponse
 }
-
-
-
-
-
-
-
-// There is  statement defined for TestCaseEnginne Runner
-def TestCaseEnginne(String TestSuiteByName, String TestCaseByName) {
-	
-	def testSuite = testRunner.testCase.testSuite.project.getTestSuiteByName(TestSuiteByName);           
-	def testCase = testSuite.getTestCaseByName(TestCaseByName);    
-	def totalTestSteps = testCase.getTestSteps().size();   
-
-		log.info testSuite
-		log.info testCase
-		log.info totalTestSteps
-		
-		for(n in (0..totalTestSteps - 1))
-		{    
-		    log.info "------------------------------------------------------------" 
-		    def testStepName = testCase.getTestStepAt(n).name;
-		    log.info testStepName
-		    log.info n
-		   
-				    if(n>=0){
-				    		if (testCase.getTestStepByName(testStepName).disabled != true) {
-							log.info "testStepName: " + n + ": " + testStepName;
-				          	def testStep = testCase.getTestStepByName(testStepName);
-				        		runner = testStep.run(testRunner, context);
-				        		log.info ("testStep   >>> 1   " + runner.getStatus().toString());
-				            }
-				    }
-		}
-}
-
-
-def hmacSha256(String data, String key) {
-    try {
-        Mac mac = Mac.getInstance("HmacSHA256")
-        SecretKeySpec secretKeySpec = new SecretKeySpec(key.getBytes(), "HmacSHA256")
-        mac.init(secretKeySpec)
-        return mac.doFinal(data.getBytes())
-    } catch (NoSuchAlgorithmException | InvalidKeyException e) {
-        throw new RuntimeException("Error al calcular HMAC SHA256", e)
-    }
-}</script>
-    </con:config>
-  </con:testStep>
-  <con:testStep type="groovy" name="TesCasesRunnerAgentFinance" id="7c7e6696-7bd9-454d-893e-072a89ca41ef">
-    <con:settings/>
-    <con:config>
-      <script>import javax.crypto.Mac
-import javax.crypto.spec.SecretKeySpec
-import java.security.InvalidKeyException
-import java.security.NoSuchAlgorithmException
-import groovy.json.JsonSlurper
-import java.time.Instant
-import java.util.*
-
-// Smile Catalog Back cambio pequeño
-	testExecutionEnginneSmileCatalogBack("IBAN validation");
-	testExecutionEnginneSmileCatalogBack("Initial deposit");
-	testExecutionEnginneSmileCatalogBack("Annual_maintenance");
-	testExecutionEnginneSmileCatalogBack("monthly_maintenance");
-
-// Smile Catalog Mule
-	testExecutionEnginneSmileCatalogMule("IBAN validation");
-	testExecutionEnginneSmileCatalogMule("Initial deposit");
-	testExecutionEnginneSmileCatalogMule("Annual_maintenance");
-	testExecutionEnginneSmileCatalogMule("monthly_maintenance");
-
-def testExecutionEnginneSmileCatalogBack (String issueType ){
-	 switch(issueType) {            
-	         //There is case statement defined for 4 cases 
-	         // Each case statement section has a break condition to exit the loop 
-	         case "IBAN validation": 
-	               TestCaseEnginne("TokenManagement", "Token_back") 
-				//stringToSignTokenBack (method, requestPath, back_access_token, clientIdBack)
-        			stringToSignTokenBack ('${#[Smile Catalog Back#IBAN validation]#method}', '${#[Smile Catalog Back#IBAN validation]#requestPath}', '${#[TokenManagement]#back_access_token}', '${mule v2#clientIdBack}')
-        			TestCaseEnginne("Smile Catalog Back", "IBAN validation")
-	            break; 
-
-	         case "Initial deposit": 
-	            log.info("The value of issueType is $issueType"); 
-	            break; 
-
-	         case "Annual_maintenance": 
-	            log.info("The value of issueType is $issueType"); 
-	            break; 
-
-	          case "monthly_maintenance": 
-	            log.info("The value of issueType is $issueType"); 
-	            break;    
-
-	         default: 
-	            log.info("The Issue Type Value is unknown"); 
-	            break; 
-	      }
-}
-
-// Smile Catalog Mule
-def testExecutionEnginneSmileCatalogMule (String issueType ){
-	 switch(issueType) {            
-	         //There is case statement defined for 4 cases 
-	         // Each case statement section has a break condition to exit the loop 
-	         case "IBAN validation": 
-	            log.info("The value of issueType is $issueType"); 
-	            break; 
-
-	         case "Initial deposit": 
-	            log.info("The value of issueType is $issueType"); 
-	            break; 
-
-	         case "Annual_maintenance": 
-	            log.info("The value of issueType is $issueType"); 
-	            break; 
-
-	          case "monthly_maintenance": 
-	            log.info("The value of issueType is $issueType"); 
-	            break;    
-
-	         default: 
-	            log.info("The Issue Type Value is unknown"); 
-	            break; 
-	      }
-}
-
-
-
-// There is  statement defined for stringToSignTokenBack
-def stringToSignTokenBack (String method, String requestPath, String back_access_token, String clientIdBack){
-	def envBaseUrl = context.expand( '${mule v2#baseMuleUrl}' )
-	def secret = context.expand( '${mule v2#apiSecret}' )
-	def apiKey = context.expand( '${mule v2#ApiKey}' )
-
-	def stringToSign = method + ":" + envBaseUrl + requestPath + ":"
-	def fecha = Instant.now().toEpochMilli() / 100000 as long
-
-	stringToSign += fecha
-	log.info " fecha: " + fecha
-	log.info " Groovy stringToSign: " +stringToSign  
-	
-	def signBytes = hmacSha256(stringToSign, secret)
-	def signHex = signBytes.encodeBase64().toString()
-
-	log.info " Groovy computed signature: " +signHex + "." + " Text signed: " + stringToSign 
-	testRunner.testCase.getTestStepByName("mule v2").setPropertyValue("ApiSignature",signHex)
-	testRunner.testCase.getTestStepByName("mule v2").setPropertyValue("authBack", clientIdBack + "@" + back_access_token )
-}
-
-
-
-def stringToSignTokenMule (String method, String requestPath, String back_access_token, String clientIdBack){
-	
-	def testSuite = testRunner.testCase.testSuite.project.getTestSuiteByName(TestSuiteByName);           
-	def testCase = testSuite.getTestCaseByName(TestCaseByName);                                                       
-	def totalTestSteps = testCase.getTestSteps().size();  
-
-}
-
 
 // There is  statement defined for TestCaseEnginne Runner
 def TestCaseEnginne(String TestSuiteByName, String TestCaseByName) {

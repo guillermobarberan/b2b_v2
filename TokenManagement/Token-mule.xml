@@ -1,8 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:testCase xmlns:con="http://eviware.com/soapui/config" id="c54b2fcb-4998-42fe-aa8c-44e7b30cb8ea" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="Token mule" searchProperties="true" timeout="0">
+<con:testCase xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="c54b2fcb-4998-42fe-aa8c-44e7b30cb8ea" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="Token mule" searchProperties="true" timeout="0">
   <con:settings id="f43ec898-a8f1-4751-b7be-4ea18ff5fc46">
     <con:setting id="c54b2fcb-4998-42fe-aa8c-44e7b30cb8eafileName">Token-mule</con:setting>
   </con:settings>
+  <con:testStep type="restrequest" name="Token Mule" id="42ae7192-bd64-46c1-8421-663520079b1d">
+    <con:settings/>
+    <con:config service="https://b2bapi-sandbox.moneytrans.eu" resourcePath="/v2/authentications/token" methodName="Token Mule" xsi:type="con:RestRequestStep">
+      <con:restRequest name="Token Mule" id="ed368aa1-9bd5-4511-8af9-dfca31214f2c" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment>&lt;con:entry key="ApiKey" value="${#[Test Engine#Engine Runner#mule v2]#ApiKey}" xmlns:con="http://eviware.com/soapui/config"/>&lt;con:entry key="ApiSignature" value="${#[Test Engine#Engine Runner#mule v2]#ApiSignature}" xmlns:con="http://eviware.com/soapui/config"/>&lt;con:entry key="Content-Type" value="application/json" xmlns:con="http://eviware.com/soapui/config"/>&lt;/xml-fragment></con:setting>
+          <con:setting id="RecordRequestRepresentations">false</con:setting>
+        </con:settings>
+        <con:endpoint>https://b2bapi-sandbox.moneytrans.eu</con:endpoint>
+        <con:request>{\r
+   "clientSecret" : "tKl5TYi9lMVZbVvlyAIkSL0CQBvnmR3T",\r
+   "clientId" : "diaspo-agente-1"\r
+}</con:request>
+        <con:originalUri>https://b2bapi-sandbox.moneytrans.eu/v2/authentications/token</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="d3381db0-e8d1-4d63-9173-b271d5dee25a" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="09c4faa2-eb7d-4ad1-b2e9-0c5fcc25cdde" name="Response SLA">
+          <con:configuration>
+            <SLA>2000</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="transfer" name="PropertyTransfer" id="0222261c-19b7-47a7-8dc3-ef38c9687001">
+    <con:settings/>
+    <con:config xsi:type="con:PropertyTransfersStep">
+      <con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false">
+        <con:name>accessToken</con:name>
+        <con:sourceType>Response</con:sourceType>
+        <con:sourceStep>Token Mule</con:sourceStep>
+        <con:sourcePath>$['accessToken']</con:sourcePath>
+        <con:targetType>mule_access_token</con:targetType>
+        <con:targetStep>#TestSuite#</con:targetStep>
+        <con:targetPath/>
+        <con:type>JSONPATH</con:type>
+        <con:upgraded>true</con:upgraded>
+      </con:transfers>
+    </con:config>
+  </con:testStep>
   <con:properties/>
   <con:reportParameters/>
 </con:testCase>

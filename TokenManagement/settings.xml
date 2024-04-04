@@ -11,11 +11,19 @@
     </con:property>
     <con:property>
       <con:name>mule_access_token</con:name>
-      <con:value/>
+      <con:value>eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJORTBJSmw4eGpabkNXb3NSeEhZdXAtUVBfWGtNVVd6Q182TTFxbVdLWmxjIn0.eyJleHAiOjE3MTIxOTkxNzcsImlhdCI6MTcxMjE5ODg3NywianRpIjoiMDc3Y2JiZmMtMjNiMS00YmFkLTg2YjMtOWNhNGZkOGRhNDFhIiwiaXNzIjoiaHR0cHM6Ly9zc28ubW9uZXl0cmFucy5ldS9yZWFsbXMvYjJiIiwic3ViIjoiN2MyYjkyZTEtM2U5My00Zjk3LTlhMTAtZjU3YWUyMmUyYjUzIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiZGlhc3BvLWFnZW50ZS0xIiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6WyIvKiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiZGlhc3BvIl19LCJzY29wZSI6InVwZGF0ZS1zbWlsZSByZWFkLXRyYW5zZmVyLWNhdGFsb2cgcmVhZC1maW5hbnRpYWwgdXBkYXRlLXRyYW5zZmVycyByZWFkLWNhdGFsb2cgdXBkYXRlLWN1c3RvbWVycyByZWFkLWFjcXVpcmluZyByZWFkLXNtaWxlLWNhdGFsb2ciLCJjbGllbnRIb3N0IjoiMTguMjAwLjE3Ni4xNTUiLCJjbGllbnRBZGRyZXNzIjoiMTguMjAwLjE3Ni4xNTUiLCJjbGllbnRfaWQiOiJkaWFzcG8tYWdlbnRlLTEifQ.RRdR1Rru8dBRP8BdR6R63vsQbqeT6IEQsUpm44JCbQ3uNz6u1EJP7fPnqbitJaMjXbhnBn6fuSAaUASIUYEBWM8QChcBahW_665_2V4NaD9vdMRDs8buX85_vP3ekfrV3_5ZXQKcC5iJvqwHVP3yyXzfqBdebQeCnnVtytW8tUTnaysBL_UlQgKdJjnjBBu-wHVdoCNaF7WVKZzGOjW3H4yjtLga-2dBzISPnrG_uZQujZbuKy0U8g4Re5QgpTBQxYLuZ7MvTseTANxDl1WD8zd3nqdiiMwqV8Gtg4iiGNthWA8L0DDIygIZDrobz6NWmdhWzXyaygLd0vITig5a8g</con:value>
     </con:property>
     <con:property>
       <con:name>bodyMule</con:name>
       <con:value>{"clientSecret":"tKl5TYi9lMVZbVvlyAIkSL0CQBvnmR3T","clientId":"diaspo-agente-1"}</con:value>
+    </con:property>
+    <con:property>
+      <con:name>method</con:name>
+      <con:value>POST</con:value>
+    </con:property>
+    <con:property>
+      <con:name>requestPath</con:name>
+      <con:value>/v2/authentications/token</con:value>
     </con:property>
   </con:properties>
   <con:reportParameters/>

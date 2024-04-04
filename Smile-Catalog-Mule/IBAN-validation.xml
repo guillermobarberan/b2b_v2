@@ -1,8 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:testCase xmlns:con="http://eviware.com/soapui/config" id="acc43870-12ba-4988-ac80-394e569c8e1f" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="IBAN validation" searchProperties="true" timeout="0">
+<con:testCase xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="acc43870-12ba-4988-ac80-394e569c8e1f" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="IBAN validation" searchProperties="true" timeout="0">
   <con:settings id="d188b764-4a95-4602-9850-d54774da215c">
     <con:setting id="acc43870-12ba-4988-ac80-394e569c8e1ffileName">IBAN-validation</con:setting>
   </con:settings>
-  <con:properties/>
+  <con:testStep type="restrequest" name="IBAN validation" id="f3ffc5f2-2051-40db-87c1-1f4d5d1ca958">
+    <con:settings/>
+    <con:config service="https://b2bapi-sandbox.moneytrans.eu" resourcePath="/v2/payment-accounts/catalogs/ibans/ES1121000079860201766765" methodName="IBAN validation" xsi:type="con:RestRequestStep">
+      <con:restRequest name="IBAN validation" id="88620eb1-5d5e-4c7e-a453-b3ff0398e856" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers"><![CDATA[<xml-fragment><con:entry key="Authorization" value="${#[Test Engine#Engine Runner#mule v2]#authMule}" xmlns:con="http://eviware.com/soapui/config"/><con:entry key="clientId" value="${#[Test Engine#Engine Runner#mule v2]#clientIdMule}" xmlns:con="http://eviware.com/soapui/config"/><con:entry key="ApiKey" value="${#[Test Engine#Engine Runner#mule v2]#ApiKey}" xmlns:con="http://eviware.com/soapui/config"/><con:entry key="ApiSignature" value="${#[Test Engine#Engine Runner#mule v2]#ApiSignature}" xmlns:con="http://eviware.com/soapui/config"/><con:entry key="Content-Type" value="application/json" xmlns:con="http://eviware.com/soapui/config"/></xml-fragment>]]></con:setting>
+        </con:settings>
+        <con:endpoint>https://b2bapi-sandbox.moneytrans.eu</con:endpoint>
+        <con:request/>
+        <con:originalUri>https://b2bapi-sandbox.moneytrans.eu/v2/payment-accounts/catalogs/</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="69d66150-bdf4-4b76-879e-6fe36ec91260" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="b3b17a69-17b3-4591-a7eb-b36eb1664ee5" name="Response SLA">
+          <con:configuration>
+            <SLA>1000</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+        <con:parameterOrder/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties>
+    <con:property>
+      <con:name>method</con:name>
+      <con:value>GET</con:value>
+    </con:property>
+    <con:property>
+      <con:name>requestPath</con:name>
+      <con:value>/v2/payment-accounts/catalogs/ibans/ES1121000079860201766765</con:value>
+    </con:property>
+  </con:properties>
   <con:reportParameters/>
 </con:testCase>
