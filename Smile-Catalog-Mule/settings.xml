@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:testSuite xmlns:con="http://eviware.com/soapui/config" id="8f43beca-a8cc-448a-a178-1c2017516059" name="Smile Catalog Mule">
-  <con:settings id="2c7263b5-77b4-457b-991c-2ee33d195a36">
-    <con:setting id="8f43beca-a8cc-448a-a178-1c2017516059fileName">Smile-Catalog-Mule</con:setting>
+<con:testSuite xmlns:con="http://eviware.com/soapui/config" id="a6036997-6811-4679-972b-c6eb4d91641c" name="Smile Catalog Mule">
+  <con:settings id="0a3be55d-4d54-4589-9f7c-d0bed738b18c">
+    <con:setting id="6d94c27d-5a9c-4ad5-991b-f997c0cd7ac3fileName">Smile-Catalog-Back</con:setting>
+    <con:setting id="0e3b96ed-0944-4ed7-8fa9-e29fad3b9b99fileName">Smile-Catalog</con:setting>
+    <con:setting id="a6036997-6811-4679-972b-c6eb4d91641cfileName">Smile-Catalog-Mule</con:setting>
   </con:settings>
   <con:runType>SEQUENTIAL</con:runType>
   <con:properties/>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase xmlns:con="http://eviware.com/soapui/config" id="d7b60b77-3fde-4e90-af20-ec6537947287" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="Delivery Authority" searchProperties="true" timeout="0" maxResults="6">
+  <con:settings id="55887fe4-3719-45aa-8f8c-0fde298deacc">
+    <con:setting id="d7b60b77-3fde-4e90-af20-ec6537947287fileName">Delivery-Authority</con:setting>
+  </con:settings>
+  <con:testStep type="restrequest" name="Delivery Authority" id="76489401-28cb-4498-8024-3b86dc1c12f2">
+    <con:settings/>
+    <con:config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" service="https://multiservices-be-cld-ts.moneytrans.eu" resourcePath="/api/b2b/catalog/customer/deliveryAuthorityCode" methodName="DeliveryAuthorityCode" xsi:type="con:RestRequestStep">
+      <con:restRequest name="Delivery Authority" id="7876f541-73d4-4de0-89b7-76e25864af56" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:endpoint>https://multiservices-be-cld-ts.moneytrans.eu</con:endpoint>
+        <con:request/>
+        <con:originalUri>https://multiservices-be-cld-ts.moneytrans.eu/api/b2b/catalog/customer/deliveryAuthorityCode</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="2cc90c96-4f77-4f84-9506-c6c8f0896c92" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="89479253-8a43-49c5-ba25-17f1763a3911" name="Response SLA">
+          <con:configuration>
+            <SLA>2000</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters>
+          <con:entry key="Authorization" value="${#[Test Engine#Engine Runner#mule v2]#authBack}"/>
+          <con:entry key="Accept" value="application/json"/>
+          <con:entry key="MT-DELEGATED-AUTH" value="1"/>
+        </con:parameters>
+        <con:parameterOrder>
+          <con:entry>Authorization</con:entry>
+          <con:entry>MT-DELEGATED-AUTH</con:entry>
+          <con:entry>Accept</con:entry>
+        </con:parameterOrder>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testCase>

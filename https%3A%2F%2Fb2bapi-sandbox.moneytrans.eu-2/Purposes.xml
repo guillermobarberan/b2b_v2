@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="Purposes" path="/v2/transfers/catalogs/purposes" id="9aad9dde-54c3-45d3-b2a4-aead64c00d7d">
+  <con:settings id="536099ea-65da-4c44-9f4b-893ba2de38c7">
+    <con:setting id="9aad9dde-54c3-45d3-b2a4-aead64c00d7dfileName">Purposes</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="Purposes" id="6beb9a93-73ed-4c81-88b9-f7642a1866f3" method="GET">
+    <con:settings/>
+    <con:parameters></con:parameters>
+    <con:representation type="FAULT">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>401</con:status>
+      <con:params/>
+      <con:element xmlns:pur="https://b2bapi-sandbox.moneytrans.eu/v2/transfers/catalogs/purposes">pur:Fault</con:element>
+    </con:representation>
+    <con:representation type="REQUEST">
+      <con:mediaType>application/json</con:mediaType>
+      <con:params/>
+    </con:representation>
+    <con:representation type="FAULT">
+      <con:mediaType>application/json; charset=UTF-8</con:mediaType>
+      <con:status>401</con:status>
+      <con:params/>
+      <con:element xmlns:pur="https://b2bapi-sandbox.moneytrans.eu/v2/transfers/catalogs/purposes">pur:Fault</con:element>
+    </con:representation>
+    <con:request name="Purposes" id="a4fe7e25-35ca-43f8-91ba-564c78f2411c" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>https://b2bapi-sandbox.moneytrans.eu</con:endpoint>
+      <con:request/>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+      <con:parameterOrder/>
+    </con:request>
+  </con:method>
+</con:resource>

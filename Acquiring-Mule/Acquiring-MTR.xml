@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="e0bd32c6-beef-494f-86a9-da2b42ca41f3" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="Acquiring MTR" searchProperties="true" timeout="0" maxResults="6">
+  <con:settings id="92501ac0-075a-48f3-ad55-582f676b0b9a">
+    <con:setting id="e0bd32c6-beef-494f-86a9-da2b42ca41f3fileName">Acquiring-MTR</con:setting>
+  </con:settings>
+  <con:testStep type="restrequest" name="Acquiring MTR" id="85ea6127-9a1c-40f9-bb86-571e66c4c5da">
+    <con:settings/>
+    <con:config service="https://b2bapi-sandbox.moneytrans.eu 2" resourcePath="/v2/acquirings/acquirings/transfers/74/9200892" methodName="9200892" xsi:type="con:RestRequestStep">
+      <con:restRequest name="Acquiring MTR" id="8cf360b8-4187-4971-b219-cdbef627f16a" mediaType="application/json">
+        <con:settings/>
+        <con:endpoint>https://b2bapi-sandbox.moneytrans.eu</con:endpoint>
+        <con:request/>
+        <con:assertion type="Valid HTTP Status Codes" id="630bcb45-5d68-41ea-8463-72aeb62479dc" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="30f4bf8c-4a8b-4722-af8d-8901e5bc67f4" name="Response SLA">
+          <con:configuration>
+            <SLA>2000</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:parameters>
+          <con:entry key="Authorization" value="${#Project#authMule}"/>
+          <con:entry key="clientId" value="${#Project#clientId}"/>
+          <con:entry key="Content-Type" value="application/json"/>
+        </con:parameters>
+        <con:parameterOrder>
+          <con:entry>Content-Type</con:entry>
+          <con:entry>clientId</con:entry>
+          <con:entry>Authorization</con:entry>
+        </con:parameterOrder>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testCase>

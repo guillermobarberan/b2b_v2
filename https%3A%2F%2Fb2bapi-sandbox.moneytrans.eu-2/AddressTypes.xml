@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="AddressTypes" path="/v2/catalogs/addressTypes" id="1535b13c-7ad7-46e8-a024-35d1682c878c">
+  <con:settings id="65a1cdbf-0ff0-48df-b3bd-26bfb8e61b8e">
+    <con:setting id="1535b13c-7ad7-46e8-a024-35d1682c878cfileName">AddressTypes</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="AddressTypes" id="59591a20-bb53-4dbf-baf2-8a23c035237a" method="GET">
+    <con:settings/>
+    <con:parameters/>
+    <con:representation type="REQUEST">
+      <con:mediaType>application/json</con:mediaType>
+      <con:params/>
+    </con:representation>
+    <con:representation type="FAULT">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>401 400</con:status>
+      <con:params/>
+      <con:element xmlns:add="https://b2bapi-sandbox.moneytrans.eu/v2/catalogs/addressTypes">add:Fault</con:element>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json; charset=UTF-8</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:element>Response</con:element>
+    </con:representation>
+    <con:request name="Address Types" id="be34dd09-e508-41cf-bea8-8eb5e397c879" mediaType="application/json">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers"><![CDATA[<xml-fragment><con:entry key="Authorization" value="" xmlns:con="http://eviware.com/soapui/config"/><con:entry key="clientId" value="" xmlns:con="http://eviware.com/soapui/config"/><con:entry key="ApiKey" value="" xmlns:con="http://eviware.com/soapui/config"/><con:entry key="ApiSignature" value="" xmlns:con="http://eviware.com/soapui/config"/><con:entry key="Content-Type" value="application/json" xmlns:con="http://eviware.com/soapui/config"/></xml-fragment>]]></con:setting>
+      </con:settings>
+      <con:endpoint>https://b2bapi-sandbox.moneytrans.eu</con:endpoint>
+      <con:request/>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+      <con:parameterOrder/>
+    </con:request>
+  </con:method>
+</con:resource>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="Calculations" path="/v2/transfers/catalogs/calculations" id="3c2521ea-f967-4aff-9fda-f3972f1cf7e1">
+  <con:settings id="42fac782-dfac-4041-9db2-f0b5670de5ce">
+    <con:setting id="3c2521ea-f967-4aff-9fda-f3972f1cf7e1fileName">Calculations</con:setting>
+  </con:settings>
+  <con:parameters/>
+</con:resource>

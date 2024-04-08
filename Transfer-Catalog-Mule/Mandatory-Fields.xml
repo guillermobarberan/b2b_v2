@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="407f0f90-17b9-405f-b92f-5d325fc210ca" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="Mandatory Fields" searchProperties="true" timeout="0" maxResults="6">
+  <con:settings id="2ded0254-b76f-4814-951b-8b3bd82ab5b6">
+    <con:setting id="407f0f90-17b9-405f-b92f-5d325fc210cafileName">Mandatory-Fields</con:setting>
+  </con:settings>
+  <con:testStep type="restrequest" name="Mandatory Fields" id="ed85bf8c-549d-416e-b4cb-bdaecb7488cc" disabled="true">
+    <con:settings/>
+    <con:config service="https://b2bapi-sandbox.moneytrans.eu 2" resourcePath="/v2/transfers/catalogs/mandatoryFields" methodName="MandatoryFields" xsi:type="con:RestRequestStep">
+      <con:restRequest name="Mandatory Fields" id="27c8bf77-1c5a-44e4-bf9d-b260c225ddf8" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers"><![CDATA[<xml-fragment><con:entry key="Authorization" value="${#[Test Engine#Engine Runner#mule v2]#authMule}" xmlns:con="http://eviware.com/soapui/config"/><con:entry key="clientId" value="${#[Test Engine#Engine Runner#mule v2]#clientIdMule}" xmlns:con="http://eviware.com/soapui/config"/><con:entry key="ApiKey" value="${#[Test Engine#Engine Runner#mule v2]#ApiKey}" xmlns:con="http://eviware.com/soapui/config"/><con:entry key="ApiSignature" value="${#[Test Engine#Engine Runner#mule v2]#ApiSignature}" xmlns:con="http://eviware.com/soapui/config"/><con:entry key="Content-Type" value="application/json" xmlns:con="http://eviware.com/soapui/config"/></xml-fragment>]]></con:setting>
+        </con:settings>
+        <con:endpoint>https://b2bapi-sandbox.moneytrans.eu</con:endpoint>
+        <con:request/>
+        <con:originalUri>https://b2bapi-sandbox.moneytrans.eu/v2/transfers/catalogs/mandatoryFields</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="544d5879-d0d2-4d89-9b7c-fe7828a1b92d" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="79c6fa11-ae95-4fb8-a2b3-b4b264cbd1b1" name="Response SLA">
+          <con:configuration>
+            <SLA>1000</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters>
+          <con:entry key="operation" value="ADD_BENEFICIARY"/>
+        </con:parameters>
+        <con:parameterOrder>
+          <con:entry>operation</con:entry>
+        </con:parameterOrder>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties>
+    <con:property>
+      <con:name>method</con:name>
+      <con:value>GET</con:value>
+    </con:property>
+    <con:property>
+      <con:name>requestPath</con:name>
+      <con:value>/v2/transfers/catalogs/mandatoryFields?operation=ADD_BENEFICIARY:17122856</con:value>
+    </con:property>
+  </con:properties>
+  <con:reportParameters/>
+</con:testCase>

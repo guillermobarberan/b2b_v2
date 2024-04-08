@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="bd5eda92-f89f-4658-adcd-20f5e0da63b7" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="Cities" searchProperties="true" timeout="0" maxResults="6">
+  <con:settings id="b7b8bba5-925e-4e3c-9d38-a6a89546dc6b">
+    <con:setting id="bd5eda92-f89f-4658-adcd-20f5e0da63b7fileName">Cities</con:setting>
+  </con:settings>
+  <con:testStep type="restrequest" name="Cities" id="d5c7277a-81ee-4881-8527-89142a87df04">
+    <con:settings/>
+    <con:config service="https://multiservices-be-cld-ts.moneytrans.eu 2" resourcePath="/api/b2b/catalog/transfers/cities/ESP/MAR/OF/MAD" methodName="MAD" xsi:type="con:RestRequestStep">
+      <con:restRequest name="Cities" id="d57037ae-0376-4384-b2c8-6eacf15f84b9" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Accept" value="application/json" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
+        </con:settings>
+        <con:endpoint>https://multiservices-be-cld-ts.moneytrans.eu</con:endpoint>
+        <con:request/>
+        <con:originalUri>https://multiservices-be-cld-ts.moneytrans.eu/api/b2b/catalog/transfers/cities/ESP/MAR/OF/MAD</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="96de4211-4081-4c8d-8791-41db106f029b" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="ad2fb762-05eb-4d2b-937a-f54a7cefcd6e" name="Response SLA">
+          <con:configuration>
+            <SLA>5000</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters>
+          <con:entry key="Authorization" value="${#[Test Engine#Engine Runner#mule v2]#authBack}"/>
+          <con:entry key="MT-DELEGATED-AUTH" value="1"/>
+        </con:parameters>
+        <con:parameterOrder>
+          <con:entry>Authorization</con:entry>
+          <con:entry>MT-DELEGATED-AUTH</con:entry>
+        </con:parameterOrder>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties>
+    <con:property>
+      <con:name>method</con:name>
+      <con:value>GET</con:value>
+    </con:property>
+    <con:property>
+      <con:name>requestPath</con:name>
+      <con:value>/api/b2b/catalog/transfers/cities/ESP/MAR/OF/MAD</con:value>
+    </con:property>
+  </con:properties>
+  <con:reportParameters/>
+</con:testCase>

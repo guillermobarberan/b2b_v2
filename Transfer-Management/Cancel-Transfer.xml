@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="a7bdc4ed-6c2f-41b2-96aa-faf5c315f6ac" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="Cancel Transfer" searchProperties="true" timeout="0" maxResults="6">
+  <con:settings id="5a8625dc-066d-4756-b3db-5afd6b6eedf2">
+    <con:setting id="a7bdc4ed-6c2f-41b2-96aa-faf5c315f6acfileName">Cancel-Transfer</con:setting>
+  </con:settings>
+  <con:testStep type="restrequest" name="Cancel Transfer" id="82afe56f-025d-4174-8a62-70da56e83b8b">
+    <con:settings/>
+    <con:config service="https://multiservices-be-cld-ts.moneytrans.eu 2" resourcePath="/api/b2b/transfers/104087752/Cancellation" methodName="Cancellation" xsi:type="con:RestRequestStep">
+      <con:restRequest name="Cancel Transfer" id="ed21bf76-e2c4-4719-9450-010b624bc1ea" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:endpoint>https://multiservices-be-cld-ts.moneytrans.eu</con:endpoint>
+        <con:request>{\r
+    "Reason": "Reason test",\r
+    "ReturnFees": false\r
+}</con:request>
+        <con:originalUri>https://multiservices-be-cld-ts.moneytrans.eu/api/b2b/transfers/104087752/Cancellation</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="4e3d890b-c5f8-4c60-862b-3c69df1c8d44" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="3218597c-0c71-45dc-b38c-31fed5c9349f" name="Response SLA">
+          <con:configuration>
+            <SLA>2000</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters>
+          <con:entry key="Authorization" value="${#[Test Engine#Engine Runner#mule v2]#authBack}"/>
+          <con:entry key="Accept" value="application/json"/>
+          <con:entry key="MT-DELEGATED-AUTH" value="1"/>
+          <con:entry key="Content-Type" value="application/json"/>
+        </con:parameters>
+        <con:parameterOrder>
+          <con:entry>Authorization</con:entry>
+          <con:entry>MT-DELEGATED-AUTH</con:entry>
+          <con:entry>Accept</con:entry>
+          <con:entry>Content-Type</con:entry>
+        </con:parameterOrder>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties>
+    <con:property>
+      <con:name>method</con:name>
+      <con:value>POST</con:value>
+    </con:property>
+    <con:property>
+      <con:name>requestPath</con:name>
+      <con:value>/api/b2b/transfers/104087752/Cancellation</con:value>
+    </con:property>
+    <con:property>
+      <con:name>Body</con:name>
+      <con:value>{"Reason": "Reason test","ReturnFees": false}</con:value>
+    </con:property>
+  </con:properties>
+  <con:reportParameters/>
+</con:testCase>

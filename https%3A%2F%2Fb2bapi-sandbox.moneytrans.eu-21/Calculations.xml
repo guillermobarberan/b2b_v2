@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config" name="Calculations" path="/v2/transfers/catalogs/calculations" id="3cac0ae5-a358-47a4-b863-71a98db48467">
+  <con:settings id="dfa6bdb2-7387-46fe-8f40-0ef021805dcb">
+    <con:setting id="574508b9-a60f-4922-8db0-f9755e8945befileName">Calculations</con:setting>
+    <con:setting id="3cac0ae5-a358-47a4-b863-71a98db48467fileName">Calculations</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="Calculations" id="9178080c-6e90-4f9b-b5b0-0d3d4ebe14c9" method="GET">
+    <con:settings/>
+    <con:parameters>
+      <con:parameter required="true">
+        <con:name>payerCode</con:name>
+        <con:value>1707</con:value>
+        <con:style>QUERY</con:style>
+        <con:default>1707</con:default>
+        <con:path xsi:nil="true"/>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>sourceAmount</con:name>
+        <con:value>20</con:value>
+        <con:style>QUERY</con:style>
+        <con:default>20</con:default>
+        <con:path xsi:nil="true"/>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>destinationCountryCode</con:name>
+        <con:value>MAR</con:value>
+        <con:style>QUERY</con:style>
+        <con:default>MAR</con:default>
+        <con:path xsi:nil="true"/>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>destinationCurrencyCode</con:name>
+        <con:value>MAD</con:value>
+        <con:style>QUERY</con:style>
+        <con:default>MAD</con:default>
+        <con:path xsi:nil="true"/>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>destinationPaymentModeCode</con:name>
+        <con:value>OF</con:value>
+        <con:style>QUERY</con:style>
+        <con:default>OF</con:default>
+        <con:path xsi:nil="true"/>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>customerCode</con:name>
+        <con:value>5463354</con:value>
+        <con:style>QUERY</con:style>
+        <con:default>5463354</con:default>
+        <con:path xsi:nil="true"/>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+    </con:parameters>
+    <con:representation type="FAULT">
+      <con:mediaType>application/json; charset=UTF-8</con:mediaType>
+      <con:status>401</con:status>
+      <con:params/>
+      <con:element xmlns:cal="https://b2bapi-sandbox.moneytrans.eu/v2/transfers/catalogs/calculations">cal:Fault</con:element>
+    </con:representation>
+    <con:representation type="REQUEST">
+      <con:mediaType>application/json</con:mediaType>
+      <con:params/>
+    </con:representation>
+    <con:representation type="FAULT">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>401</con:status>
+      <con:params/>
+      <con:element xmlns:cal="https://b2bapi-sandbox.moneytrans.eu/v2/transfers/catalogs/calculations">cal:Fault</con:element>
+    </con:representation>
+    <con:request name="Calculation mule" id="03e95e74-68ec-4a17-b462-269bb42550d0" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>https://b2bapi-sandbox.moneytrans.eu</con:endpoint>
+      <con:request/>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters>
+        <con:entry key="destinationCurrencyCode" value="MAD"/>
+        <con:entry key="destinationPaymentModeCode" value="OF"/>
+        <con:entry key="payerCode" value="1707"/>
+        <con:entry key="destinationCountryCode" value="MAR"/>
+        <con:entry key="customerCode" value="5463354"/>
+        <con:entry key="sourceAmount" value="20"/>
+      </con:parameters>
+      <con:parameterOrder>
+        <con:entry>payerCode</con:entry>
+        <con:entry>sourceAmount</con:entry>
+        <con:entry>destinationCountryCode</con:entry>
+        <con:entry>destinationCurrencyCode</con:entry>
+        <con:entry>destinationPaymentModeCode</con:entry>
+        <con:entry>customerCode</con:entry>
+      </con:parameterOrder>
+    </con:request>
+  </con:method>
+</con:resource>

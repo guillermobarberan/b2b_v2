@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testSuite xmlns:con="http://eviware.com/soapui/config" id="0a0353ae-1e94-4fb8-82cc-ca60c9377261" name="Persona Mule" disabled="true">
+  <con:settings id="0a3be55d-4d54-4589-9f7c-d0bed738b18c">
+    <con:setting id="6d94c27d-5a9c-4ad5-991b-f997c0cd7ac3fileName">Smile-Catalog-Back</con:setting>
+    <con:setting id="658ada9c-9645-4834-b83e-47014c499c33fileName">Smile-Management</con:setting>
+    <con:setting id="305bbc2c-4357-4a82-b5bf-67a93f98d9a1fileName">Persona</con:setting>
+    <con:setting id="0a0353ae-1e94-4fb8-82cc-ca60c9377261fileName">Persona-Mule</con:setting>
+  </con:settings>
+  <con:runType>SEQUENTIAL</con:runType>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testSuite>

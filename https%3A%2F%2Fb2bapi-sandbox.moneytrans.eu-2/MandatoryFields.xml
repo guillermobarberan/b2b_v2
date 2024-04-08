@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="MandatoryFields" path="/v2/transfers/catalogs/mandatoryFields" id="d240095f-dd24-4c33-8cac-684f440a3913">
+  <con:settings id="e3f3d45e-fa26-45be-9473-6d3c83e2e7a9">
+    <con:setting id="d240095f-dd24-4c33-8cac-684f440a3913fileName">MandatoryFields</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="MandatoryFields" id="36f86da8-1d7d-4881-a62f-bf22d612ed4b" method="GET">
+    <con:settings/>
+    <con:parameters>
+      <con:parameter required="true">
+        <con:name>operation</con:name>
+        <con:value>ADD_BENEFICIARY</con:value>
+        <con:style>QUERY</con:style>
+        <con:default>ADD_BENEFICIARY</con:default>
+        <con:path xsi:nil="true"/>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+    </con:parameters>
+    <con:representation type="FAULT">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>401</con:status>
+      <con:params/>
+      <con:element xmlns:man="https://b2bapi-sandbox.moneytrans.eu/v2/transfers/catalogs/mandatoryFields">man:Fault</con:element>
+    </con:representation>
+    <con:representation type="REQUEST">
+      <con:mediaType>application/json</con:mediaType>
+      <con:params/>
+    </con:representation>
+    <con:representation type="FAULT">
+      <con:mediaType>application/json; charset=UTF-8</con:mediaType>
+      <con:status>401</con:status>
+      <con:params/>
+      <con:element xmlns:man="https://b2bapi-sandbox.moneytrans.eu/v2/transfers/catalogs/mandatoryFields">man:Fault</con:element>
+    </con:representation>
+    <con:request name="Mandatory fields" id="27c8bf77-1c5a-44e4-bf9d-b260c225ddf8" mediaType="application/json">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+      </con:settings>
+      <con:endpoint>https://b2bapi-sandbox.moneytrans.eu</con:endpoint>
+      <con:request/>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters>
+        <con:entry key="operation" value="ADD_BENEFICIARY"/>
+      </con:parameters>
+      <con:parameterOrder>
+        <con:entry>operation</con:entry>
+      </con:parameterOrder>
+    </con:request>
+  </con:method>
+</con:resource>

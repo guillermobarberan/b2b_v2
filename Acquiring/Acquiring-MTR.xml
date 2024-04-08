@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="8cdf7bb6-50de-487e-a62c-500f3e15f1b1" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="Acquiring MTR" searchProperties="true" timeout="0" maxResults="6">
+  <con:settings id="9a6cc53a-b7ec-4d10-b99f-eb4f4514500e">
+    <con:setting id="8cdf7bb6-50de-487e-a62c-500f3e15f1b1fileName">Acquiring-MTR</con:setting>
+  </con:settings>
+  <con:testStep type="restrequest" name="Acquiring MTR" id="f6e4cbe1-f07a-423b-832a-4fd8b7928b0a">
+    <con:settings/>
+    <con:config service="https://multiservices-be-cld-ts.moneytrans.eu 2" resourcePath="/api/b2b/acquiring/MTR/9200892/74" methodName="74" xsi:type="con:RestRequestStep">
+      <con:restRequest name="Acquiring MTR" id="0c7b95a3-3f29-4b47-a10d-79a92121e499" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Accept" value="application/json" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
+        </con:settings>
+        <con:endpoint>https://multiservices-be-cld-ts.moneytrans.eu</con:endpoint>
+        <con:request/>
+        <con:originalUri>https://multiservices-be-cld-ts.moneytrans.eu/api/b2b/acquiring/MTR/9200892/74</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="287d04a7-fac3-4f05-8c91-c9cda664cadc" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="93285f08-0750-492d-b655-6ab1de6f8be7" name="Response SLA">
+          <con:configuration>
+            <SLA>2000</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters>
+          <con:entry key="Authorization" value="${#[Test Engine#Engine Runner#mule v2]#authBack}"/>
+          <con:entry key="Accept" value="application/json"/>
+          <con:entry key="MT-DELEGATED-AUTH" value="1"/>
+        </con:parameters>
+        <con:parameterOrder>
+          <con:entry>Authorization</con:entry>
+          <con:entry>MT-DELEGATED-AUTH</con:entry>
+          <con:entry>Accept</con:entry>
+        </con:parameterOrder>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties>
+    <con:property>
+      <con:name>method</con:name>
+      <con:value>GET</con:value>
+    </con:property>
+    <con:property>
+      <con:name>requestPath</con:name>
+      <con:value>/api/b2b/acquiring/MTR/9200892/74</con:value>
+    </con:property>
+  </con:properties>
+  <con:reportParameters/>
+</con:testCase>

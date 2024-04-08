@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="MTR" path="/v2/catalogs/paymentMethods/MTR" id="99097a28-326b-47aa-a144-68ea143cc4b7">
+  <con:settings id="72df722d-355e-4966-9bce-3bdacf553aa3">
+    <con:setting id="99097a28-326b-47aa-a144-68ea143cc4b7fileName">MTR</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="MTR" id="19a5ba33-1b8e-4916-a762-80df6160e3f5" method="GET">
+    <con:settings/>
+    <con:parameters></con:parameters>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json; charset=UTF-8</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:element>Response</con:element>
+    </con:representation>
+    <con:representation type="REQUEST">
+      <con:mediaType>application/json</con:mediaType>
+      <con:params/>
+    </con:representation>
+    <con:representation type="FAULT">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>401</con:status>
+      <con:params/>
+      <con:element xmlns:mtr="https://b2bapi-sandbox.moneytrans.eu/v2/catalogs/paymentMethods/MTR">mtr:Fault</con:element>
+    </con:representation>
+    <con:request name="Payment methods MTR" id="6ab1a3c1-23a3-40bf-8d05-2d41a15b72f4" mediaType="application/json">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+      </con:settings>
+      <con:endpoint>https://b2bapi-sandbox.moneytrans.eu</con:endpoint>
+      <con:request/>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+      <con:parameterOrder/>
+    </con:request>
+  </con:method>
+</con:resource>

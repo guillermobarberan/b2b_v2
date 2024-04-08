@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="SourcesOfFunds" path="/v2/transfers/catalogs/sourcesOfFunds" id="fd755a6a-e9f9-4188-a2bd-e49b930a823e">
+  <con:settings id="0a064d82-8ba9-41af-8b3a-1d6f767f446d">
+    <con:setting id="fd755a6a-e9f9-4188-a2bd-e49b930a823efileName">SourcesOfFunds</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="SourcesOfFunds" id="f2e3a897-a8af-4291-b75c-7eb6b55370d3" method="GET">
+    <con:settings/>
+    <con:parameters></con:parameters>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json; charset=UTF-8</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:element>Response</con:element>
+    </con:representation>
+    <con:representation type="REQUEST">
+      <con:mediaType>application/json</con:mediaType>
+      <con:params/>
+    </con:representation>
+    <con:representation type="FAULT">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>401</con:status>
+      <con:params/>
+      <con:element xmlns:sour="https://b2bapi-sandbox.moneytrans.eu/v2/transfers/catalogs/sourcesOfFunds">sour:Fault</con:element>
+    </con:representation>
+    <con:representation type="FAULT">
+      <con:mediaType>application/json; charset=UTF-8</con:mediaType>
+      <con:status>401</con:status>
+      <con:params/>
+      <con:element xmlns:sour="https://b2bapi-sandbox.moneytrans.eu/v2/transfers/catalogs/sourcesOfFunds">sour:Fault</con:element>
+    </con:representation>
+    <con:request name="Source of funds" id="c6e14d70-6b3b-4fdf-8a5f-178fe4b07c8e" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>https://b2bapi-sandbox.moneytrans.eu</con:endpoint>
+      <con:request/>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+      <con:parameterOrder/>
+    </con:request>
+  </con:method>
+</con:resource>

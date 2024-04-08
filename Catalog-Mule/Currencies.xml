@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="84731cf2-0ccc-4695-a6ef-91dadf1206ad" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="Currencies" searchProperties="true" timeout="0" maxResults="6">
+  <con:settings id="f29aad06-6700-4df4-8385-d2412c5eb027">
+    <con:setting id="84731cf2-0ccc-4695-a6ef-91dadf1206adfileName">Currencies</con:setting>
+  </con:settings>
+  <con:testStep type="restrequest" name="Currencies" id="5ed45520-f54a-4db0-b2f2-239bbf6fcf0c">
+    <con:settings/>
+    <con:config service="https://b2bapi-sandbox.moneytrans.eu 2" resourcePath="/v2/catalogs/currencies" methodName="Currencies" xsi:type="con:RestRequestStep">
+      <con:restRequest name="Currencies" id="613d87dc-7f81-424c-9294-afba34d6df84" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers"><![CDATA[<xml-fragment><con:entry key="Authorization" value="${#[Test Engine#Engine Runner#mule v2]#authMule}" xmlns:con="http://eviware.com/soapui/config"/><con:entry key="clientId" value="${#[Test Engine#Engine Runner#mule v2]#clientIdMule}" xmlns:con="http://eviware.com/soapui/config"/><con:entry key="ApiKey" value="${#[Test Engine#Engine Runner#mule v2]#ApiKey}" xmlns:con="http://eviware.com/soapui/config"/><con:entry key="Accept" value="application/json" xmlns:con="http://eviware.com/soapui/config"/><con:entry key="ApiSignature" value="${#[Test Engine#Engine Runner#mule v2]#ApiSignature}" xmlns:con="http://eviware.com/soapui/config"/><con:entry key="Content-Type" value="application/json" xmlns:con="http://eviware.com/soapui/config"/></xml-fragment>]]></con:setting>
+        </con:settings>
+        <con:endpoint>https://b2bapi-sandbox.moneytrans.eu</con:endpoint>
+        <con:request/>
+        <con:originalUri>https://b2bapi-sandbox.moneytrans.eu/v2/catalogs/currencies</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="05bc9e51-edd1-45ec-b0d0-b8926f7bc15a" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="9ce2d5eb-ce61-40d3-b685-612db3fc0096" name="Response SLA">
+          <con:configuration>
+            <SLA>2000</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters>
+          <con:entry key="ApiKey" value="MtH7QzFHJx93798344h5Uzi4RvtTOp092p"/>
+          <con:entry key="ApiSignature" value="KJ0FZzWafPBq6ecerZHOglTSUI/9pvb61pN7wfRJVt4="/>
+        </con:parameters>
+        <con:parameterOrder/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties>
+    <con:property>
+      <con:name>method</con:name>
+      <con:value>GET</con:value>
+    </con:property>
+    <con:property>
+      <con:name>requestPath</con:name>
+      <con:value>/v2/catalogs/currencies</con:value>
+    </con:property>
+  </con:properties>
+  <con:reportParameters/>
+</con:testCase>

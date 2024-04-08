@@ -23,8 +23,30 @@
         <con:path xsi:nil="true"/>
         <con:description xsi:nil="true"/>
       </con:parameter>
+      <con:parameter required="true">
+        <con:name>Accept</con:name>
+        <con:value/>
+        <con:style>HEADER</con:style>
+        <con:default/>
+      </con:parameter>
     </con:parameters>
-    <con:request name="initial deposit back" id="4b5949dd-b0be-4877-ba47-cda5b4434d9c" mediaType="application/json">
+    <con:representation type="REQUEST">
+      <con:mediaType>application/json</con:mediaType>
+      <con:params/>
+    </con:representation>
+    <con:representation type="FAULT">
+      <con:mediaType>text/html; charset=UTF-8</con:mediaType>
+      <con:status>401</con:status>
+      <con:params/>
+      <con:element>html</con:element>
+    </con:representation>
+    <con:representation type="FAULT">
+      <con:mediaType>application/json; charset=utf-8</con:mediaType>
+      <con:status>401</con:status>
+      <con:params/>
+      <con:element xmlns:ns="https://multiservices-be-cld-ts.moneytrans.eu/api/b2b/pac/enroll/initialDeposits/5463354">ns:Fault</con:element>
+    </con:representation>
+    <con:request name="initial deposit back" id="4b5949dd-b0be-4877-ba47-cda5b4434d9c" mediaType="application/json" postQueryString="false">
       <con:settings/>
       <con:endpoint>https://multiservices-be-cld-ts.moneytrans.eu</con:endpoint>
       <con:request/>
@@ -35,11 +57,13 @@
       <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
       <con:parameters>
         <con:entry key="Authorization" value="diaspo-agente-1@eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJORTBJSmw4eGpabkNXb3NSeEhZdXAtUVBfWGtNVVd6Q182TTFxbVdLWmxjIn0.eyJleHAiOjE3MDk2NTk1MDksImlhdCI6MTcwOTY1OTIwOSwianRpIjoiNzU4ZDJmYmUtNzA5Yi00MWM4LTk0ZTUtNWRiMDRkZjhmNDUyIiwiaXNzIjoiaHR0cHM6Ly9zc28ubW9uZXl0cmFucy5ldS9yZWFsbXMvYjJiIiwic3ViIjoiN2MyYjkyZTEtM2U5My00Zjk3LTlhMTAtZjU3YWUyMmUyYjUzIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiZGlhc3BvLWFnZW50ZS0xIiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6WyIvKiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiZGlhc3BvIl19LCJzY29wZSI6InVwZGF0ZS1zbWlsZSByZWFkLXRyYW5zZmVyLWNhdGFsb2cgcmVhZC1maW5hbnRpYWwgdXBkYXRlLXRyYW5zZmVycyByZWFkLWNhdGFsb2cgdXBkYXRlLWN1c3RvbWVycyByZWFkLWFjcXVpcmluZyByZWFkLXNtaWxlLWNhdGFsb2ciLCJjbGllbnRIb3N0IjoiOTAuNjkuMTQxLjE5MCIsImNsaWVudEFkZHJlc3MiOiI5MC42OS4xNDEuMTkwIiwiY2xpZW50X2lkIjoiZGlhc3BvLWFnZW50ZS0xIn0.GmD7sNC_bkFMqAcYu1lb-f3EwmPY5f9zihiTBHRBFgfAybxjDUnE_Bn_1n9n5BD5jPEboMuY9BXNX3NdWIF02qm30ume9VlRS2WeH6kUom74thSWudtkWhnpGXUGcJVfKMBlXb2t_bXbfBoEBi1DHJd3USMaSkOq5YCfzUKhz1AjLKQ6x7gpRQNfIQTDCT-NjOihARaHBHUaKS4T3y5jTBnkKbqf6h_TKbFjBVdywWcLxGEj_Z8_UTQeTuYAKmN1C_VUeYhTNX1o1xjVoQWrR4VrPl3TBXEQgUCq59TFlZvn6Nz1NXhzgruDAtBk2oHPcQGMYX57tT9RGyVk3vP0tQ"/>
+        <con:entry key="Accept" value="application/json"/>
         <con:entry key="MT-DELEGATED-AUTH" value="1"/>
       </con:parameters>
       <con:parameterOrder>
         <con:entry>Authorization</con:entry>
         <con:entry>MT-DELEGATED-AUTH</con:entry>
+        <con:entry>Accept</con:entry>
       </con:parameterOrder>
     </con:request>
   </con:method>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="0c6499ae-8d1b-4fe1-b302-44d90fe268ed" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="Annual Maintenance" searchProperties="true" timeout="0" maxResults="6">
+  <con:settings id="48e4c602-1b28-4877-a3c8-3ffd33a44592">
+    <con:setting id="0c6499ae-8d1b-4fe1-b302-44d90fe268edfileName">Annual-Maintenance</con:setting>
+  </con:settings>
+  <con:testStep type="restrequest" name="Annual Maintenance" id="3e4015bb-6d0b-46ae-bdbc-02839aec0e7c">
+    <con:settings/>
+    <con:config service="https://b2bapi-sandbox.moneytrans.eu 2" resourcePath="/v2/payment-accounts/catalogs/prices" methodName="Prices 2" xsi:type="con:RestRequestStep">
+      <con:restRequest name="Annual Maintenance" id="d7e62d3e-2869-42ff-9cf5-491c8583cbaf" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers"><![CDATA[<xml-fragment><con:entry key="Authorization" value="${#[Test Engine#Engine Runner#mule v2]#authMule}" xmlns:con="http://eviware.com/soapui/config"/><con:entry key="clientId" value="${#[Test Engine#Engine Runner#mule v2]#clientIdMule}" xmlns:con="http://eviware.com/soapui/config"/><con:entry key="ApiKey" value="${#[Test Engine#Engine Runner#mule v2]#ApiKey}" xmlns:con="http://eviware.com/soapui/config"/><con:entry key="ApiSignature" value="${#[Test Engine#Engine Runner#mule v2]#ApiSignature}" xmlns:con="http://eviware.com/soapui/config"/><con:entry key="Content-Type" value="application/json" xmlns:con="http://eviware.com/soapui/config"/></xml-fragment>]]></con:setting>
+        </con:settings>
+        <con:endpoint>https://b2bapi-sandbox.moneytrans.eu</con:endpoint>
+        <con:request/>
+        <con:originalUri>https://b2bapi-sandbox.moneytrans.eu/v2/payment-accounts/catalogs/prices</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="28cbebac-b316-4013-b9f6-0b3eae769b1f" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="14d91cbe-ffcf-4c13-8bb0-4e7cad840d69" name="Response SLA">
+          <con:configuration>
+            <SLA>6000</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters>
+          <con:entry key="customerCode" value="5463354"/>
+          <con:entry key="type" value="ANNUAL"/>
+        </con:parameters>
+        <con:parameterOrder>
+          <con:entry>type</con:entry>
+          <con:entry>customerCode</con:entry>
+        </con:parameterOrder>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties>
+    <con:property>
+      <con:name>method</con:name>
+      <con:value>GET</con:value>
+    </con:property>
+    <con:property>
+      <con:name>requestPath</con:name>
+      <con:value>/v2/payment-accounts/catalogs/prices?type=ANNUAL&amp;customerCode=5463354:17122846</con:value>
+    </con:property>
+  </con:properties>
+  <con:reportParameters/>
+</con:testCase>

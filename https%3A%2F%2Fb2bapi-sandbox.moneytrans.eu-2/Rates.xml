@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="Rates" path="/v2/transfers/catalogs/rates" id="2c49dcea-a4ac-420e-b5e9-3783c544d671">
+  <con:settings id="0e01ccb4-c050-402f-b18a-99e0fc4b9463">
+    <con:setting id="2c49dcea-a4ac-420e-b5e9-3783c544d671fileName">Rates</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="Rates" id="65b8d2dc-9219-494e-b71b-17d58e6f1b57" method="GET">
+    <con:settings/>
+    <con:parameters>
+      <con:parameter required="true">
+        <con:name>destinationCountryCode</con:name>
+        <con:value>AGO</con:value>
+        <con:style>QUERY</con:style>
+        <con:default>AGO</con:default>
+        <con:path xsi:nil="true"/>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>destinationCurrencyCode</con:name>
+        <con:value>AOA</con:value>
+        <con:style>QUERY</con:style>
+        <con:default>AOA</con:default>
+        <con:path xsi:nil="true"/>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>payerCode</con:name>
+        <con:value>2234</con:value>
+        <con:style>QUERY</con:style>
+        <con:default>2234</con:default>
+        <con:path xsi:nil="true"/>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+      <con:parameter>
+        <con:name>Content-Type</con:name>
+        <con:value>application/json</con:value>
+        <con:style>HEADER</con:style>
+        <con:default/>
+        <con:path xsi:nil="true"/>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+      <con:parameter>
+        <con:name>ApiKey</con:name>
+        <con:value>MtH7QzFHJx93798344h5Uzi4RvtTOp092p</con:value>
+        <con:style>HEADER</con:style>
+        <con:default/>
+        <con:path xsi:nil="true"/>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+      <con:parameter>
+        <con:name>ApiSignature</con:name>
+        <con:value>vVPGjOnz6BR0xfxCs0gYTUe/mNo/WhB8QC7ulKrtPR0=</con:value>
+        <con:style>HEADER</con:style>
+        <con:default/>
+        <con:path xsi:nil="true"/>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+      <con:parameter>
+        <con:name>clientId</con:name>
+        <con:value>${#Project#clientId}</con:value>
+        <con:style>HEADER</con:style>
+        <con:default/>
+        <con:path xsi:nil="true"/>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+      <con:parameter>
+        <con:name>Authorization</con:name>
+        <con:value>${#Project#authMule}</con:value>
+        <con:style>HEADER</con:style>
+        <con:default/>
+        <con:path xsi:nil="true"/>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+    </con:parameters>
+    <con:request name="Rates" id="8ce32dc8-a93a-4553-8d46-397d3b8e9189" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>https://b2bapi-sandbox.moneytrans.eu</con:endpoint>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:parameters>
+        <con:entry key="Authorization" value="${#Project#authMule}"/>
+        <con:entry key="ApiKey" value="MtH7QzFHJx93798344h5Uzi4RvtTOp092p"/>
+        <con:entry key="clientId" value="${#Project#clientId}"/>
+        <con:entry key="destinationCurrencyCode" value="AOA"/>
+        <con:entry key="payerCode" value="2234"/>
+        <con:entry key="ApiSignature" value="vVPGjOnz6BR0xfxCs0gYTUe/mNo/WhB8QC7ulKrtPR0="/>
+        <con:entry key="destinationCountryCode" value="AGO"/>
+        <con:entry key="Content-Type" value="application/json"/>
+      </con:parameters>
+      <con:parameterOrder>
+        <con:entry>destinationCountryCode</con:entry>
+        <con:entry>destinationCurrencyCode</con:entry>
+        <con:entry>payerCode</con:entry>
+        <con:entry>Content-Type</con:entry>
+        <con:entry>ApiKey</con:entry>
+        <con:entry>ApiSignature</con:entry>
+        <con:entry>clientId</con:entry>
+        <con:entry>Authorization</con:entry>
+      </con:parameterOrder>
+    </con:request>
+  </con:method>
+</con:resource>

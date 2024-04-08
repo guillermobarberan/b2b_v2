@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="2b9b7c71-db06-422c-9beb-6e59110e2127" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="Mandatory Fields" searchProperties="true" timeout="0" maxResults="6">
+  <con:settings id="0dab3d8f-ba63-4852-a2da-f1c120a6359d">
+    <con:setting id="2b9b7c71-db06-422c-9beb-6e59110e2127fileName">Mandatory-Fields</con:setting>
+  </con:settings>
+  <con:testStep type="restrequest" name="Mandatory Fields" id="4e66d5e3-c631-4895-b69b-d56b284e67d2">
+    <con:settings/>
+    <con:config service="https://multiservices-be-cld-ts.moneytrans.eu 2" resourcePath="/api/b2b/catalog/transfers/MandatoryField/ADD_BENEFICIARY" methodName="ADD_BENEFICIARY" xsi:type="con:RestRequestStep">
+      <con:restRequest name="Mandatory Fields" id="a063a430-394f-498b-8895-a9d320474510" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:endpoint>https://multiservices-be-cld-ts.moneytrans.eu</con:endpoint>
+        <con:request/>
+        <con:originalUri>https://multiservices-be-cld-ts.moneytrans.eu/api/b2b/catalog/transfers/MandatoryField/ADD_BENEFICIARY</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="a06e2a51-c4fe-4466-b3bd-211540e9b7f1" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="c4a2d582-5100-4535-aeed-8633b8c243dc" name="Response SLA">
+          <con:configuration>
+            <SLA>2000</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters>
+          <con:entry key="Authorization" value="${#[Test Engine#Engine Runner#mule v2]#authBack}"/>
+          <con:entry key="Accept" value="application/json"/>
+          <con:entry key="MT-DELEGATED-AUTH" value="1"/>
+        </con:parameters>
+        <con:parameterOrder>
+          <con:entry>Authorization</con:entry>
+          <con:entry>MT-DELEGATED-AUTH</con:entry>
+          <con:entry>Accept</con:entry>
+        </con:parameterOrder>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties>
+    <con:property>
+      <con:name>method</con:name>
+      <con:value>GET</con:value>
+    </con:property>
+    <con:property>
+      <con:name>requestPath</con:name>
+      <con:value>/api/b2b/catalog/transfers/MandatoryField/ADD_BENEFICIARY</con:value>
+    </con:property>
+  </con:properties>
+  <con:reportParameters/>
+</con:testCase>

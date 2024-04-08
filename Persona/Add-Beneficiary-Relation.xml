@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="8ab5f07e-a1b5-43c7-9a94-26ea2fb86603" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="Add Beneficiary Relation" searchProperties="true" timeout="0" maxResults="6">
+  <con:settings id="478153b8-58df-466a-9c89-6ab60c3bf91d">
+    <con:setting id="8ab5f07e-a1b5-43c7-9a94-26ea2fb86603fileName">Add-Beneficiary-Relation</con:setting>
+  </con:settings>
+  <con:testStep type="restrequest" name="Add Beneficiary Relation" id="d2f560f0-cc7e-4a5a-89cc-6193806120b8">
+    <con:settings/>
+    <con:config service="https://multiservices-be-cld-ts.moneytrans.eu 2" resourcePath="/api/b2b/customer/beneficiary/relations" methodName="Relations" xsi:type="con:RestRequestStep">
+      <con:restRequest name="Add Beneficiary Relation" id="c2c6aa2b-9aa0-490f-80f9-176451570af8" mediaType="application/json">
+        <con:settings/>
+        <con:endpoint>https://multiservices-be-cld-ts.moneytrans.eu</con:endpoint>
+        <con:request>{\r
+    "IdBeneficiary": "5335741",\r
+    "IdCustomer": "5462855",\r
+    "Relationship": "CUSTOMER_RELATIONSHIP_FRIEND"\r
+}</con:request>
+        <con:assertion type="Valid HTTP Status Codes" id="bcf96c88-cbb3-4cc1-9b5a-7430b1d0fec5" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="c82adb91-4f1c-422b-a90e-2ad6dbfd0e43" name="Response SLA">
+          <con:configuration>
+            <SLA>200</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:parameters>
+          <con:entry key="Authorization" value="${#Project#authBack}"/>
+          <con:entry key="MT-DELEGATED-AUTH" value="1"/>
+        </con:parameters>
+        <con:parameterOrder>
+          <con:entry>Authorization</con:entry>
+          <con:entry>MT-DELEGATED-AUTH</con:entry>
+        </con:parameterOrder>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testCase>

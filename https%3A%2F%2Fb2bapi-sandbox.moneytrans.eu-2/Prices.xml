@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="Prices" path="/v2/payment-accounts/catalogs/prices" id="5e5100c8-4aef-4af4-8eca-688e1522f075">
+  <con:settings id="a0d596b9-fb6d-4d0b-a729-5823ba4d0c29">
+    <con:setting id="5e5100c8-4aef-4af4-8eca-688e1522f075fileName">Prices</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="Prices" id="ab2bd0f1-974b-424e-8a93-786af7274390" method="GET">
+    <con:settings/>
+    <con:parameters>
+      <con:parameter required="true">
+        <con:name>type</con:name>
+        <con:value>INITIAL_DEPOSIT</con:value>
+        <con:style>QUERY</con:style>
+        <con:default>INITIAL_DEPOSIT</con:default>
+        <con:path xsi:nil="true"/>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>customerCode</con:name>
+        <con:value>5463354</con:value>
+        <con:style>QUERY</con:style>
+        <con:default>5463354</con:default>
+        <con:path xsi:nil="true"/>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+    </con:parameters>
+    <con:representation type="REQUEST">
+      <con:mediaType>application/json</con:mediaType>
+      <con:params/>
+    </con:representation>
+    <con:representation type="FAULT">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>401 400</con:status>
+      <con:params/>
+      <con:element xmlns:pric="https://b2bapi-sandbox.moneytrans.eu/v2/payment-accounts/catalogs/prices">pric:Fault</con:element>
+    </con:representation>
+    <con:representation type="FAULT">
+      <con:mediaType>application/json; charset=UTF-8</con:mediaType>
+      <con:status>401</con:status>
+      <con:params/>
+      <con:element xmlns:pric="https://b2bapi-sandbox.moneytrans.eu/v2/payment-accounts/catalogs/prices">pric:Fault</con:element>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json; charset=UTF-8</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:element>Response</con:element>
+    </con:representation>
+    <con:request name="Initial deposit" id="25765452-012d-4a19-b937-d047bdbb6bb5" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>https://b2bapi-sandbox.moneytrans.eu</con:endpoint>
+      <con:request/>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters>
+        <con:entry key="customerCode" value="5463354"/>
+        <con:entry key="type" value="INITIAL_DEPOSIT"/>
+      </con:parameters>
+      <con:parameterOrder>
+        <con:entry>type</con:entry>
+        <con:entry>customerCode</con:entry>
+      </con:parameterOrder>
+    </con:request>
+  </con:method>
+  <con:method name="Prices 2" id="c686ca00-14fb-4c3d-9373-c62181ed92b8" method="GET">
+    <con:settings/>
+    <con:parameters>
+      <con:parameter required="true">
+        <con:name>type</con:name>
+        <con:value>ANNUAL</con:value>
+        <con:style>QUERY</con:style>
+        <con:default>ANNUAL</con:default>
+        <con:path xsi:nil="true"/>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>customerCode</con:name>
+        <con:value>5463354</con:value>
+        <con:style>QUERY</con:style>
+        <con:default>5463354</con:default>
+        <con:path xsi:nil="true"/>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+    </con:parameters>
+    <con:representation type="REQUEST">
+      <con:mediaType>application/json</con:mediaType>
+      <con:params/>
+    </con:representation>
+    <con:representation type="FAULT">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>400 401</con:status>
+      <con:params/>
+      <con:element xmlns:pric="https://b2bapi-sandbox.moneytrans.eu/v2/payment-accounts/catalogs/prices">pric:Fault</con:element>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json; charset=UTF-8</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:element>Response</con:element>
+    </con:representation>
+    <con:request name="Annual_maintenance" id="d7e62d3e-2869-42ff-9cf5-491c8583cbaf" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>https://b2bapi-sandbox.moneytrans.eu</con:endpoint>
+      <con:request/>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters>
+        <con:entry key="customerCode" value="5463354"/>
+        <con:entry key="type" value="ANNUAL"/>
+      </con:parameters>
+      <con:parameterOrder>
+        <con:entry>type</con:entry>
+        <con:entry>customerCode</con:entry>
+      </con:parameterOrder>
+    </con:request>
+  </con:method>
+  <con:method name="Prices 3" id="e9bcf562-7853-4cf3-bc26-716c425f926d" method="GET">
+    <con:settings/>
+    <con:parameters>
+      <con:parameter required="true">
+        <con:name>type</con:name>
+        <con:value>MONTHLY</con:value>
+        <con:style>QUERY</con:style>
+        <con:default>MONTHLY</con:default>
+        <con:path xsi:nil="true"/>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>customerCode</con:name>
+        <con:value>5463354</con:value>
+        <con:style>QUERY</con:style>
+        <con:default>5463354</con:default>
+        <con:path xsi:nil="true"/>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+    </con:parameters>
+    <con:representation type="FAULT">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>400 401</con:status>
+      <con:params/>
+      <con:element xmlns:pric="https://b2bapi-sandbox.moneytrans.eu/v2/payment-accounts/catalogs/prices">pric:Fault</con:element>
+    </con:representation>
+    <con:representation type="REQUEST">
+      <con:mediaType>application/json</con:mediaType>
+      <con:params/>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json; charset=UTF-8</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:element>Response</con:element>
+    </con:representation>
+    <con:request name="monthly_maintenance" id="1268e4ed-8b97-4c4c-8f1e-62ae35ff24ea" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>https://b2bapi-sandbox.moneytrans.eu</con:endpoint>
+      <con:request/>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters>
+        <con:entry key="customerCode" value="5463354"/>
+        <con:entry key="type" value="MONTHLY"/>
+      </con:parameters>
+      <con:parameterOrder>
+        <con:entry>type</con:entry>
+        <con:entry>customerCode</con:entry>
+      </con:parameterOrder>
+    </con:request>
+  </con:method>
+</con:resource>

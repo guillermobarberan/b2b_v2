@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config" id="83fa74ad-c10b-49ab-8e0c-e49021de2979" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="Withdraw" searchProperties="true" timeout="0" maxResults="6">
+  <con:settings id="c881e6ba-3d59-4f7c-8be6-4acfd7d30739">
+    <con:setting id="36a3f8e5-3dd0-416b-9764-54847ed63607fileName">Withdraw</con:setting>
+    <con:setting id="83fa74ad-c10b-49ab-8e0c-e49021de2979fileName">Withdraw</con:setting>
+  </con:settings>
+  <con:testStep type="restrequest" name="Withdraw" id="7f733e3f-af5c-498e-8128-18ef8adc4c89">
+    <con:settings/>
+    <con:config service="https://multiservices-be-cld-ts.moneytrans.eu 2" resourcePath="/api/b2b/pac/withdraw" methodName="Withdraw" xsi:type="con:RestRequestStep">
+      <con:restRequest name="Withdraw" id="906b31b6-2183-490f-be5e-48e7ad0a1e4f" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:endpoint>https://multiservices-be-cld-ts.moneytrans.eu</con:endpoint>
+        <con:request>{\r
+    "Iban": "BE83500600007115",\r
+    "PaymentMode": "CASH",\r
+    "ScaCode": "704829",\r
+    "Amount": 20\r
+}</con:request>
+        <con:originalUri>https://multiservices-be-cld-ts.moneytrans.eu/api/b2b/pac/withdraw</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="cd5d9bcd-7f61-4f66-8a63-cf63f5297080" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="9cd6b937-db96-4ae3-9904-614a0ae71482" name="Response SLA">
+          <con:configuration>
+            <SLA>2000</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters>
+          <con:entry key="Authorization" value="${#[Test Engine#Engine Runner#mule v2]#authBack}"/>
+          <con:entry key="Accept" value="application/json"/>
+          <con:entry key="Content-Type" value="application/json"/>
+          <con:entry key="MT-DELEGATED-AUTH" value="1"/>
+        </con:parameters>
+        <con:parameterOrder>
+          <con:entry>Content-Type</con:entry>
+          <con:entry>Authorization</con:entry>
+          <con:entry>MT-DELEGATED-AUTH</con:entry>
+          <con:entry>Accept</con:entry>
+        </con:parameterOrder>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties>
+    <con:property>
+      <con:name>method</con:name>
+      <con:value>POST</con:value>
+    </con:property>
+    <con:property>
+      <con:name>requestPath</con:name>
+      <con:value>/api/b2b/pac/withdraw</con:value>
+    </con:property>
+    <con:property>
+      <con:name>Body</con:name>
+      <con:value>{"Iban": "BE83500600007115","PaymentMode": "CASH", "ScaCode": "704829", "Amount": 20}</con:value>
+    </con:property>
+  </con:properties>
+  <con:reportParameters/>
+</con:testCase>

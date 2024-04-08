@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="Transfer" path="/api/b2b/pac/transfer" id="912059d9-1a31-4055-bed9-2f55f59b457d">
+  <con:settings id="724b72cd-31a9-4d10-aa1a-8ff35278e2ae">
+    <con:setting id="912059d9-1a31-4055-bed9-2f55f59b457dfileName">Transfer</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="Transfer" id="37051fb7-0f5e-4532-ba15-e7847728b27c" method="POST">
+    <con:settings/>
+    <con:parameters>
+      <con:parameter>
+        <con:name>Content-Type</con:name>
+        <con:value>application/json</con:value>
+        <con:style>HEADER</con:style>
+        <con:default/>
+        <con:path xsi:nil="true"/>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+      <con:parameter>
+        <con:name>Authorization</con:name>
+        <con:value>${#Project#authBack}</con:value>
+        <con:style>HEADER</con:style>
+        <con:default/>
+        <con:path xsi:nil="true"/>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+      <con:parameter>
+        <con:name>MT-DELEGATED-AUTH</con:name>
+        <con:value>1</con:value>
+        <con:style>HEADER</con:style>
+        <con:default/>
+        <con:path xsi:nil="true"/>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+    </con:parameters>
+    <con:request name="Transfer" id="a069c6ce-945e-4a51-ac56-d88b263f7b0a" mediaType="application/json" postQueryString="false">
+      <con:settings/>
+      <con:endpoint>https://multiservices-be-cld-ts.moneytrans.eu</con:endpoint>
+      <con:request>{\r
+    "Iban": "BE83500600007115",\r
+    "ScaCode": "505544",\r
+    "Amount": {\r
+        "Value": 50,\r
+        "CurrencyISOCode": "EUR"\r
+    },\r
+    "BeneficiaryFirstName": "Francisco",\r
+    "BeneficiaryLastName": "Marin",\r
+    "BeneficiaryEmail": "fran39349@test.com",\r
+    "IsEUTransfer": true,\r
+    "BeneficiaryAccountNumber": "BE68539007547034",\r
+    "TransferConcept": "Envio de dinero para renta",\r
+    "RegisterAsUsualBeneficiary": false,\r
+    "SendACopyToBeneficiary": false,\r
+    "typeCommunication": "FC"\r
+}</con:request>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters>
+        <con:entry key="Authorization" value="${#Project#authBack}"/>
+        <con:entry key="Content-Type" value="application/json"/>
+        <con:entry key="MT-DELEGATED-AUTH" value="1"/>
+      </con:parameters>
+      <con:parameterOrder>
+        <con:entry>Content-Type</con:entry>
+        <con:entry>Authorization</con:entry>
+        <con:entry>MT-DELEGATED-AUTH</con:entry>
+      </con:parameterOrder>
+    </con:request>
+  </con:method>
+</con:resource>

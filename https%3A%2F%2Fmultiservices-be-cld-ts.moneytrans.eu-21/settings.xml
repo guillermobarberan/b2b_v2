@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:interface xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="con:RestService" id="1cd67818-c0fa-4206-b6d0-7a7d3a4e9031" wadlVersion="http://wadl.dev.java.net/2009/02" name="https://multiservices-be-cld-ts.moneytrans.eu 2" type="rest">
+  <con:settings id="a4e97fcc-132a-4728-b8f8-703c48f2819d">
+    <con:setting id="1cd67818-c0fa-4206-b6d0-7a7d3a4e9031fileName">https%3A%2F%2Fmultiservices-be-cld-ts.moneytrans.eu-21</con:setting>
+  </con:settings>
+  <con:definitionCache type="TEXT" rootPart=""/>
+  <con:endpoints>
+    <con:endpoint>https://multiservices-be-cld-ts.moneytrans.eu</con:endpoint>
+  </con:endpoints>
+</con:interface>

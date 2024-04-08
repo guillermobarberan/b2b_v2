@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="afea5b48-6694-435b-ba46-1de55b72d41e" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="Rates" searchProperties="true" timeout="0" maxResults="6">
+  <con:settings id="48efd71a-5925-4f4b-8cb2-359626cf8291">
+    <con:setting id="afea5b48-6694-435b-ba46-1de55b72d41efileName">Rates</con:setting>
+  </con:settings>
+  <con:testStep type="restrequest" name="Rates" id="ad246651-984f-4ec7-88a1-1db91d81818a">
+    <con:settings/>
+    <con:config service="https://multiservices-be-cld-ts.moneytrans.eu 2" resourcePath="/api/b2b/catalog/transfers/calculator/rates" methodName="Rates" xsi:type="con:RestRequestStep">
+      <con:restRequest name="Rates" id="08a08196-c8ec-4d0f-9ba6-a8ce863ff7fe" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:endpoint>https://multiservices-be-cld-ts.moneytrans.eu</con:endpoint>
+        <con:request/>
+        <con:originalUri>https://multiservices-be-cld-ts.moneytrans.eu/api/b2b/catalog/transfers/calculator/rates</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="8b0c0dc7-4b7d-4e31-9b80-227ae0279ffe" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="90d7dfb7-cd43-4f97-b4c8-bdd5d32de7e5" name="Response SLA">
+          <con:configuration>
+            <SLA>1500</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters>
+          <con:entry key="Authorization" value="${#[Test Engine#Engine Runner#mule v2]#authBack}"/>
+          <con:entry key="DestinationCountry" value="AGO"/>
+          <con:entry key="PayerCode" value="2234"/>
+          <con:entry key="Accept" value="application/json"/>
+          <con:entry key="DestinationCurrency" value="AOA"/>
+          <con:entry key="MT-DELEGATED-AUTH" value="1"/>
+        </con:parameters>
+        <con:parameterOrder>
+          <con:entry>DestinationCountry</con:entry>
+          <con:entry>DestinationCurrency</con:entry>
+          <con:entry>PayerCode</con:entry>
+          <con:entry>Authorization</con:entry>
+          <con:entry>MT-DELEGATED-AUTH</con:entry>
+          <con:entry>Accept</con:entry>
+        </con:parameterOrder>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties>
+    <con:property>
+      <con:name>method</con:name>
+      <con:value>GET</con:value>
+    </con:property>
+    <con:property>
+      <con:name>requestPath</con:name>
+      <con:value>/api/b2b/catalog/transfers/calculator/rates</con:value>
+    </con:property>
+  </con:properties>
+  <con:reportParameters/>
+</con:testCase>

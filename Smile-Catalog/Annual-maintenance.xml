@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="fea55914-0cc3-43fe-84f4-00ffb17d7997" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="Annual maintenance" searchProperties="true" timeout="0" maxResults="6">
+  <con:settings id="ba974d28-449b-4e40-85ee-87e6bbe51e48">
+    <con:setting id="fea55914-0cc3-43fe-84f4-00ffb17d7997fileName">Annual-maintenance</con:setting>
+  </con:settings>
+  <con:testStep type="restrequest" name="Annual maintenance" id="1117085f-af5d-42e2-aa94-1202c8b33b21">
+    <con:settings/>
+    <con:config service="https://multiservices-be-cld-ts.moneytrans.eu 2" resourcePath="/api/b2b/catalog/pac/enroll/price/ANNUAL/5463354" methodName="5463354" xsi:type="con:RestRequestStep">
+      <con:restRequest name="Annual maintenance" id="172098ea-aa03-45b6-a079-e4d240962211" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:endpoint>https://multiservices-be-cld-ts.moneytrans.eu</con:endpoint>
+        <con:request/>
+        <con:originalUri>https://multiservices-be-cld-ts.moneytrans.eu/api/b2b/catalog/pac/enroll/price/ANNUAL/5463354</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="2548e3e9-9aa7-4b44-9ba9-667d73e18b1d" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="fd388e98-5b79-449c-8617-5803f9ee2ca2" name="Response SLA">
+          <con:configuration>
+            <SLA>1000</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters>
+          <con:entry key="Authorization" value="${#[Test Engine#Engine Runner#mule v2]#authBack}"/>
+          <con:entry key="Accept" value="application/json"/>
+          <con:entry key="MT-DELEGATED-AUTH" value="1"/>
+        </con:parameters>
+        <con:parameterOrder>
+          <con:entry>Authorization</con:entry>
+          <con:entry>MT-DELEGATED-AUTH</con:entry>
+          <con:entry>Accept</con:entry>
+        </con:parameterOrder>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties>
+    <con:property>
+      <con:name>method</con:name>
+      <con:value>GET</con:value>
+    </con:property>
+    <con:property>
+      <con:name>requestPath</con:name>
+      <con:value>/api/b2b/catalog/pac/enroll/price/ANNUAL/5463354</con:value>
+    </con:property>
+  </con:properties>
+  <con:reportParameters/>
+</con:testCase>

@@ -48,6 +48,16 @@
         <con:description xsi:nil="true"/>
       </con:parameter>
     </con:parameters>
+    <con:representation type="REQUEST">
+      <con:mediaType>application/json</con:mediaType>
+      <con:params/>
+    </con:representation>
+    <con:representation type="FAULT">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>401</con:status>
+      <con:params/>
+      <con:element xmlns:cat="https://b2bapi-sandbox.moneytrans.eu/v2/payment-accounts/catalogs/">cat:Fault</con:element>
+    </con:representation>
     <con:request name="OCR  mule" id="07b9c474-5c22-4587-8935-d3285aeac4dd" mediaType="application/json">
       <con:settings/>
       <con:endpoint>https://b2bapi-sandbox.moneytrans.eu</con:endpoint>

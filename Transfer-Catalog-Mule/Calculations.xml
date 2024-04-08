@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="cabeb5ce-cc74-457b-98c8-814b2f16d781" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="Calculations" searchProperties="true" timeout="0" maxResults="6">
+  <con:settings id="8e1122eb-e55c-44b7-9294-6618a97632dc">
+    <con:setting id="cabeb5ce-cc74-457b-98c8-814b2f16d781fileName">Calculations</con:setting>
+  </con:settings>
+  <con:testStep type="restrequest" name="Calculations" id="440e27e6-e9cc-4342-9e00-167660911cf8" disabled="true">
+    <con:settings/>
+    <con:config service="https://b2bapi-sandbox.moneytrans.eu 2" resourcePath="/v2/transfers/catalogs/calculations" methodName="Calculations" xsi:type="con:RestRequestStep">
+      <con:restRequest name="Calculations" id="03e95e74-68ec-4a17-b462-269bb42550d0" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers"><![CDATA[<xml-fragment><con:entry key="Authorization" value="${#[Test Engine#Engine Runner#mule v2]#authMule}" xmlns:con="http://eviware.com/soapui/config"/><con:entry key="clientId" value="${#[Test Engine#Engine Runner#mule v2]#clientIdMule}" xmlns:con="http://eviware.com/soapui/config"/><con:entry key="ApiKey" value="${#[Test Engine#Engine Runner#mule v2]#ApiKey}" xmlns:con="http://eviware.com/soapui/config"/><con:entry key="ApiSignature" value="${#[Test Engine#Engine Runner#mule v2]#ApiSignature}" xmlns:con="http://eviware.com/soapui/config"/><con:entry key="Content-Type" value="application/json" xmlns:con="http://eviware.com/soapui/config"/></xml-fragment>]]></con:setting>
+        </con:settings>
+        <con:endpoint>https://b2bapi-sandbox.moneytrans.eu</con:endpoint>
+        <con:request/>
+        <con:originalUri>https://b2bapi-sandbox.moneytrans.eu/v2/transfers/catalogs/calculations</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="d794c88f-8c38-463b-b9fb-69341bf0f558" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="7b30d677-3957-461a-a4fd-e42b93d2788e" name="Response SLA">
+          <con:configuration>
+            <SLA>3200</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters>
+          <con:entry key="destinationCurrencyCode" value="MAD"/>
+          <con:entry key="destinationPaymentModeCode" value="OF"/>
+          <con:entry key="payerCode" value="1707"/>
+          <con:entry key="destinationCountryCode" value="MAR"/>
+          <con:entry key="customerCode" value="5463354"/>
+          <con:entry key="sourceAmount" value="20"/>
+        </con:parameters>
+        <con:parameterOrder>
+          <con:entry>payerCode</con:entry>
+          <con:entry>sourceAmount</con:entry>
+          <con:entry>destinationCountryCode</con:entry>
+          <con:entry>destinationCurrencyCode</con:entry>
+          <con:entry>destinationPaymentModeCode</con:entry>
+          <con:entry>customerCode</con:entry>
+        </con:parameterOrder>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties>
+    <con:property>
+      <con:name>method</con:name>
+      <con:value>GET</con:value>
+    </con:property>
+    <con:property>
+      <con:name>requestPath</con:name>
+      <con:value>/v2/transfers/catalogs/calculations?payerCode=1707&amp;sourceAmount=20&amp;destinationCountryCode=MAR&amp;destinationCurrencyCode=MAD&amp;destinationPaymentModeCode=OF&amp;customerCode=5463354:17122905</con:value>
+    </con:property>
+  </con:properties>
+  <con:reportParameters/>
+</con:testCase>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testSuite xmlns:con="http://eviware.com/soapui/config" id="11676893-9909-4682-a223-dcc6c5de2274" name="Transfer Catalog Mule">
+  <con:settings id="0a3be55d-4d54-4589-9f7c-d0bed738b18c">
+    <con:setting id="6d94c27d-5a9c-4ad5-991b-f997c0cd7ac3fileName">Smile-Catalog-Back</con:setting>
+    <con:setting id="f5c79e0b-74b0-443f-a9a9-8ec93d07e235fileName">Transfer-Catalog</con:setting>
+    <con:setting id="11676893-9909-4682-a223-dcc6c5de2274fileName">Transfer-Catalog-Mule</con:setting>
+  </con:settings>
+  <con:runType>SEQUENTIAL</con:runType>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testSuite>

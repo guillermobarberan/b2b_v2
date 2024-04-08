@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="8083b255-520e-4f6e-b3bb-60de3b961c7e" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="Cities" searchProperties="true" timeout="0" maxResults="6">
+  <con:settings id="d3f11432-685f-477b-8e35-f637fec15aa8">
+    <con:setting id="8083b255-520e-4f6e-b3bb-60de3b961c7efileName">Cities</con:setting>
+  </con:settings>
+  <con:testStep type="restrequest" name="Cities" id="75bdcdf2-5f0b-43b8-b883-1e29255da131" disabled="true">
+    <con:settings/>
+    <con:config service="https://b2bapi-sandbox.moneytrans.eu 2" resourcePath="/v2/transfers/catalogs/cities" methodName="Cities" xsi:type="con:RestRequestStep">
+      <con:restRequest name="Cities" id="1f96b95e-49f2-4e98-9e2e-a939975855c8" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers"><![CDATA[<xml-fragment><con:entry key="clientId" value="${#[Test Engine#Engine Runner#mule v2]#clientIdMule}" xmlns:con="http://eviware.com/soapui/config"/><con:entry key="ApiKey" value="${#[Test Engine#Engine Runner#mule v2]#ApiKey}" xmlns:con="http://eviware.com/soapui/config"/><con:entry key="Accept" value="${#[Test Engine#Engine Runner#mule v2]#authMule}" xmlns:con="http://eviware.com/soapui/config"/><con:entry key="ApiSignature" value="${#[Test Engine#Engine Runner#mule v2]#ApiSignature}" xmlns:con="http://eviware.com/soapui/config"/><con:entry key="Content-Type" value="application/json" xmlns:con="http://eviware.com/soapui/config"/></xml-fragment>]]></con:setting>
+        </con:settings>
+        <con:endpoint>https://b2bapi-sandbox.moneytrans.eu</con:endpoint>
+        <con:request/>
+        <con:originalUri>https://b2bapi-sandbox.moneytrans.eu/v2/transfers/catalogs/cities</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="d8f8a53d-0acd-4902-b2d5-2ddb0a108bfc" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="407afe12-d481-4954-8300-634027fbf131" name="Response SLA">
+          <con:configuration>
+            <SLA>3200</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters>
+          <con:entry key="paymentModeCode" value="OF"/>
+          <con:entry key="sourceCountryCode" value="FRA"/>
+          <con:entry key="destinationCurrencyCode" value="MAD"/>
+          <con:entry key="destinationCountryCode" value="MAR"/>
+        </con:parameters>
+        <con:parameterOrder>
+          <con:entry>destinationCountryCode</con:entry>
+          <con:entry>sourceCountryCode</con:entry>
+          <con:entry>paymentModeCode</con:entry>
+          <con:entry>destinationCurrencyCode</con:entry>
+        </con:parameterOrder>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties>
+    <con:property>
+      <con:name>method</con:name>
+      <con:value>GET</con:value>
+    </con:property>
+    <con:property>
+      <con:name>requestPath</con:name>
+      <con:value>?destinationCountryCode=MAR&amp;sourceCountryCode=FRA&amp;paymentModeCode=OF&amp;destinationCurrencyCode=MAD:17122878</con:value>
+    </con:property>
+  </con:properties>
+  <con:reportParameters/>
+</con:testCase>

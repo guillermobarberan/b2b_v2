@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="186d9378-8730-4cb0-9cc3-dae1594b614a" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="IBAN Validation" searchProperties="true" timeout="0" maxResults="6">
+  <con:settings id="fd1d1119-43ce-4d1b-a025-a8f5d1597a3e">
+    <con:setting id="186d9378-8730-4cb0-9cc3-dae1594b614afileName">IBAN-Validation</con:setting>
+  </con:settings>
+  <con:testStep type="restrequest" name="IBAN Validation" id="a2fc5c91-8555-4c5b-91cc-ccfb5d95a2c0">
+    <con:settings/>
+    <con:config service="https://multiservices-be-cld-ts.moneytrans.eu 2" resourcePath="/api/b2b/pac/accounts/valid" methodName="Valid" xsi:type="con:RestRequestStep">
+      <con:restRequest name="IBAN Validation" id="dfe45829-6126-4fed-9800-48d190677134" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:endpoint>https://multiservices-be-cld-ts.moneytrans.eu</con:endpoint>
+        <con:request/>
+        <con:originalUri>https://multiservices-be-cld-ts.moneytrans.eu/api/b2b/pac/accounts/valid</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="c247b3d9-8876-49bc-a331-fb6ae35e49c8" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="9984e2e4-7986-4c15-8bfc-b0c5acd4318c" name="Response SLA">
+          <con:configuration>
+            <SLA>3000</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters>
+          <con:entry key="Authorization" value="${#[Test Engine#Engine Runner#mule v2]#authBack}"/>
+          <con:entry key="Iban" value="ES1121000079860201766765"/>
+          <con:entry key="Accept" value="application/json"/>
+          <con:entry key="MT-DELEGATED-AUTH" value="1"/>
+        </con:parameters>
+        <con:parameterOrder>
+          <con:entry>Iban</con:entry>
+          <con:entry>Authorization</con:entry>
+          <con:entry>MT-DELEGATED-AUTH</con:entry>
+          <con:entry>Accept</con:entry>
+        </con:parameterOrder>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties>
+    <con:property>
+      <con:name>method</con:name>
+      <con:value>GET</con:value>
+    </con:property>
+    <con:property>
+      <con:name>requestPath</con:name>
+      <con:value>/api/b2b/pac/accounts/valid</con:value>
+    </con:property>
+  </con:properties>
+  <con:reportParameters/>
+</con:testCase>

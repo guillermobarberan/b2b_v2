@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="254c35a0-59ad-4558-a39b-272a44007b12" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="Purposes" searchProperties="true" timeout="0" maxResults="6">
+  <con:settings id="f73f2d79-a434-4d33-b3f3-31ce325c62f5">
+    <con:setting id="254c35a0-59ad-4558-a39b-272a44007b12fileName">Purposes</con:setting>
+  </con:settings>
+  <con:testStep type="restrequest" name="Purposes" id="7d891909-b9cd-488f-8f20-fbc5cdb612d3">
+    <con:settings/>
+    <con:config service="https://multiservices-be-cld-ts.moneytrans.eu 2" resourcePath="/api/b2b/catalog/transfers/transferPurposes" methodName="TransferPurposes" xsi:type="con:RestRequestStep">
+      <con:restRequest name="Purposes" id="1b819ca7-d3f2-4b06-94bd-7d6a8b1d3ebc" mediaType="application/json">
+        <con:settings/>
+        <con:endpoint>https://multiservices-be-cld-ts.moneytrans.eu</con:endpoint>
+        <con:request/>
+        <con:originalUri>https://multiservices-be-cld-ts.moneytrans.eu/api/b2b/catalog/transfers/transferPurposes</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="95324040-e2d0-4cf0-93c9-4ee08406f2a7" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="75195590-3f77-4063-b9ce-dab06c372342" name="Response SLA">
+          <con:configuration>
+            <SLA>2000</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters>
+          <con:entry key="Authorization" value="${#[Test Engine#Engine Runner#mule v2]#authBack}"/>
+          <con:entry key="Accept" value="application/json"/>
+          <con:entry key="MT-DELEGATED-AUTH" value="1"/>
+        </con:parameters>
+        <con:parameterOrder>
+          <con:entry>Authorization</con:entry>
+          <con:entry>MT-DELEGATED-AUTH</con:entry>
+          <con:entry>Accept</con:entry>
+        </con:parameterOrder>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties>
+    <con:property>
+      <con:name>method</con:name>
+      <con:value>GET</con:value>
+    </con:property>
+    <con:property>
+      <con:name>requestPath</con:name>
+      <con:value>/api/b2b/catalog/transfers/transferPurposes</con:value>
+    </con:property>
+  </con:properties>
+  <con:reportParameters/>
+</con:testCase>

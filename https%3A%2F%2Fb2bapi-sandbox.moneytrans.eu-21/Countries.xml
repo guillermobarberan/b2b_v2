@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config" name="Countries" path="/v2/transfers/catalogs/countries" id="0fbc6340-f99e-41f0-bd13-b3e462e288dd">
+  <con:settings id="5a4dac8d-7494-40ce-a24e-e73708a441a7">
+    <con:setting id="588e2d43-14fe-4781-b281-ce983572cb4ffileName">Countries</con:setting>
+    <con:setting id="0fbc6340-f99e-41f0-bd13-b3e462e288ddfileName">Countries</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="Countries" id="ae1f55eb-84d9-4328-aaee-7205a5e78748" method="GET">
+    <con:settings/>
+    <con:parameters/>
+    <con:request name="Transfers countries mule" id="13ae4f75-0d57-48e2-8905-7f6c0668d7fc" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>https://b2bapi-sandbox.moneytrans.eu</con:endpoint>
+      <con:request/>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+      <con:parameterOrder/>
+    </con:request>
+  </con:method>
+  <con:method name="Countries 2" id="3dc8e1a2-85a2-4518-bda6-82cf5dea91c1" method="GET">
+    <con:settings/>
+    <con:parameters></con:parameters>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json; charset=UTF-8</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:element>Response</con:element>
+    </con:representation>
+    <con:representation type="REQUEST">
+      <con:mediaType>application/json</con:mediaType>
+      <con:params/>
+    </con:representation>
+    <con:representation type="FAULT">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>401</con:status>
+      <con:params/>
+      <con:element xmlns:coun="https://b2bapi-sandbox.moneytrans.eu/v2/transfers/catalogs/countries">coun:Fault</con:element>
+    </con:representation>
+    <con:request name="Currencies mule" id="587969a0-a77e-4e2f-b0ff-c262f236e70e" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>https://b2bapi-sandbox.moneytrans.eu</con:endpoint>
+      <con:request/>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+      <con:parameterOrder/>
+    </con:request>
+  </con:method>
+</con:resource>

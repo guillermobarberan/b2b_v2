@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="PaymentModes" path="/v2/transfers/catalogs/paymentModes" id="9200df67-606d-4c6a-8f2b-6b26ab32dee1">
+  <con:settings id="195cc66d-bd3f-4fce-bbf7-bde845cc17ab">
+    <con:setting id="9200df67-606d-4c6a-8f2b-6b26ab32dee1fileName">PaymentModes</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="PaymentModes" id="121e52c9-d46b-4649-bc16-73e20b5b9c7c" method="GET">
+    <con:settings/>
+    <con:parameters>
+      <con:parameter required="true">
+        <con:name>countryCode</con:name>
+        <con:value>MAR</con:value>
+        <con:style>QUERY</con:style>
+        <con:default>MAR</con:default>
+        <con:path xsi:nil="true"/>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+    </con:parameters>
+    <con:representation type="REQUEST">
+      <con:mediaType>application/json</con:mediaType>
+      <con:params/>
+    </con:representation>
+    <con:representation type="FAULT">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>401</con:status>
+      <con:params/>
+      <con:element xmlns:pay="https://b2bapi-sandbox.moneytrans.eu/v2/transfers/catalogs/paymentModes">pay:Fault</con:element>
+    </con:representation>
+    <con:representation type="FAULT">
+      <con:mediaType>application/json; charset=UTF-8</con:mediaType>
+      <con:status>401</con:status>
+      <con:params/>
+      <con:element xmlns:pay="https://b2bapi-sandbox.moneytrans.eu/v2/transfers/catalogs/paymentModes">pay:Fault</con:element>
+    </con:representation>
+    <con:request name="Payment types" id="525e9d20-a485-457b-8b1b-758cd803d667" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>https://b2bapi-sandbox.moneytrans.eu</con:endpoint>
+      <con:request/>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters>
+        <con:entry key="countryCode" value="MAR"/>
+      </con:parameters>
+      <con:parameterOrder>
+        <con:entry>countryCode</con:entry>
+      </con:parameterOrder>
+    </con:request>
+  </con:method>
+</con:resource>

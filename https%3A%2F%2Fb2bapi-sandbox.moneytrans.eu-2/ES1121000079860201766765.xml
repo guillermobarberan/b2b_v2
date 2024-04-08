@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="ES1121000079860201766765" path="/v2/payment-accounts/catalogs/ibans/ES1121000079860201766765" id="0db74f2a-2ca6-4613-b97d-866e5b580870">
+  <con:settings id="0845981f-9766-4552-a669-0378e0bc190d">
+    <con:setting id="0db74f2a-2ca6-4613-b97d-866e5b580870fileName">ES1121000079860201766765</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="ES1121000079860201766765" id="a61a6b27-069a-4bf5-a1d1-4d87e112d092" method="GET">
+    <con:settings/>
+    <con:parameters/>
+    <con:representation type="FAULT">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>401</con:status>
+      <con:params/>
+      <con:element xmlns:es1="https://b2bapi-sandbox.moneytrans.eu/v2/payment-accounts/catalogs/ibans/ES1121000079860201766765">es1:Fault</con:element>
+    </con:representation>
+    <con:representation type="REQUEST">
+      <con:mediaType>application/json</con:mediaType>
+      <con:params/>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json; charset=UTF-8</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:element xmlns:es1="https://b2bapi-sandbox.moneytrans.eu/v2/payment-accounts/catalogs/ibans/ES1121000079860201766765">es1:Response</con:element>
+    </con:representation>
+    <con:request name="IBAN validation" id="63601263-51e4-433c-9e8a-d91ba27006ce" mediaType="application/json">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers"><![CDATA[<xml-fragment><con:entry key="Authorization" value="" xmlns:con="http://eviware.com/soapui/config"/><con:entry key="clientId" value="" xmlns:con="http://eviware.com/soapui/config"/><con:entry key="ApiKey" value="" xmlns:con="http://eviware.com/soapui/config"/><con:entry key="ApiSignature" value="" xmlns:con="http://eviware.com/soapui/config"/><con:entry key="Content-Type" value="application/json" xmlns:con="http://eviware.com/soapui/config"/></xml-fragment>]]></con:setting>
+      </con:settings>
+      <con:endpoint>https://b2bapi-sandbox.moneytrans.eu</con:endpoint>
+      <con:request/>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+      <con:parameterOrder/>
+    </con:request>
+  </con:method>
+</con:resource>

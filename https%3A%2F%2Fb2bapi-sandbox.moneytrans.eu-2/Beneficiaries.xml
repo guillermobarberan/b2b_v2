@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="Beneficiaries" path="/v2/persona/customers/5463529/beneficiaries" id="6267d052-de32-4a46-868b-7144be919ecb">
+  <con:settings id="1721515d-8c9a-4e91-8a19-245141dde8f0">
+    <con:setting id="6267d052-de32-4a46-868b-7144be919ecbfileName">Beneficiaries</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="Beneficiaries" id="40fcdc66-3829-48b5-9175-20da898b251f" method="POST">
+    <con:settings/>
+    <con:parameters>
+      <con:parameter>
+        <con:name>Content-Type</con:name>
+        <con:value>application/json</con:value>
+        <con:style>HEADER</con:style>
+        <con:default/>
+        <con:path xsi:nil="true"/>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+      <con:parameter>
+        <con:name>clientId</con:name>
+        <con:value>${#Project#clientId}</con:value>
+        <con:style>HEADER</con:style>
+        <con:default/>
+        <con:path xsi:nil="true"/>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+      <con:parameter>
+        <con:name>Authorization</con:name>
+        <con:value>${#Project#authMule}</con:value>
+        <con:style>HEADER</con:style>
+        <con:default/>
+        <con:path xsi:nil="true"/>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+    </con:parameters>
+    <con:request name="Save beneficiary" id="45990b6d-ebf2-4b00-973b-907bad4b76dd" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>https://b2bapi-sandbox.moneytrans.eu</con:endpoint>
+      <con:request>{\r
+	"email": "veronicatesting@testemail.com",\r
+	"address": {\r
+		"countryId": "BEL",\r
+		"cityId": "2803448",\r
+		"streetLetter": null,\r
+		"postalCode": "9300",\r
+		"street": "Mi calle",\r
+		"streetNumber": 3\r
+	},\r
+	"telephone": "+258963147",\r
+	"firstName": "Vero",\r
+	"identityDocument": {\r
+	},\r
+	"gender": "FEMALE",\r
+	"birthdate": "1995-11-30T20:10:50.175Z",\r
+	"customerRelationshipCode": "CUSTOMER_RELATIONSHIP_PARENTS",\r
+	"nationalityCountryCode": "BEL",\r
+	"identityDocumentContent": [],\r
+	"lastName": "test"\r
+}</con:request>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:parameters>
+        <con:entry key="Authorization" value="${#Project#authMule}"/>
+        <con:entry key="clientId" value="${#Project#clientId}"/>
+        <con:entry key="Content-Type" value="application/json"/>
+      </con:parameters>
+      <con:parameterOrder>
+        <con:entry>Content-Type</con:entry>
+        <con:entry>clientId</con:entry>
+        <con:entry>Authorization</con:entry>
+      </con:parameterOrder>
+    </con:request>
+  </con:method>
+  <con:method name="Beneficiaries 2" id="78550281-e4e5-4361-b3ab-364f78fd349b" method="PATCH">
+    <con:settings/>
+    <con:parameters>
+      <con:parameter>
+        <con:name>Content-Type</con:name>
+        <con:value>application/json</con:value>
+        <con:style>HEADER</con:style>
+        <con:default/>
+        <con:path xsi:nil="true"/>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+      <con:parameter>
+        <con:name>clientId</con:name>
+        <con:value>${#Project#clientId}</con:value>
+        <con:style>HEADER</con:style>
+        <con:default/>
+        <con:path xsi:nil="true"/>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+      <con:parameter>
+        <con:name>Authorization</con:name>
+        <con:value>${#Project#authMule}</con:value>
+        <con:style>HEADER</con:style>
+        <con:default/>
+        <con:path xsi:nil="true"/>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+    </con:parameters>
+    <con:request name="Update beneficiary" id="66e103c2-4b32-44b0-8b0d-83df0f7a05d5" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>https://b2bapi-sandbox.moneytrans.eu</con:endpoint>
+      <con:request>{\r
+	"email": "veronicatesting@testemail.com",\r
+	"address": {\r
+		"countryId": "BEL",\r
+		"cityId": "2803448",\r
+		"streetLetter": null,\r
+		"postalCode": "9300",\r
+		"street": "Mi calle",\r
+		"streetNumber": 3\r
+	},\r
+	"telephone": "+258963147",\r
+	"firstName": "Vero",\r
+	"SelectedDocument": {\r
+	},\r
+	"gender": "FEMALE",\r
+	"birthdate": "1995-11-30T20:10:50.175Z",\r
+	"customerRelationshipCode": "CUSTOMER_RELATIONSHIP_PARENTS",\r
+	"nationalityCountryCode": "BEL",\r
+	"Documents": [],\r
+	"lastName": "test"\r
+}</con:request>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:parameters>
+        <con:entry key="Authorization" value="${#Project#authMule}"/>
+        <con:entry key="clientId" value="${#Project#clientId}"/>
+        <con:entry key="Content-Type" value="application/json"/>
+      </con:parameters>
+      <con:parameterOrder>
+        <con:entry>Content-Type</con:entry>
+        <con:entry>clientId</con:entry>
+        <con:entry>Authorization</con:entry>
+      </con:parameterOrder>
+    </con:request>
+  </con:method>
+</con:resource>

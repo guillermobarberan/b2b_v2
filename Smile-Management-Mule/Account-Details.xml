@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="350d923e-82f5-41a0-9a4e-ea9b32afaae2" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="Account Details" searchProperties="true" timeout="0" maxResults="6">
+  <con:settings id="2961e3bd-138f-4a1e-82fc-936552a4ba6f">
+    <con:setting id="a66a555a-8e68-44b5-bd9e-1b944f987deffileName">Account-Details</con:setting>
+    <con:setting id="350d923e-82f5-41a0-9a4e-ea9b32afaae2fileName">Account-Details</con:setting>
+  </con:settings>
+  <con:testStep type="restrequest" name="Account Details" id="333e6449-dc98-4acc-9b37-ffdac4101022">
+    <con:settings/>
+    <con:config service="https://multiservices-be-cld-ts.moneytrans.eu 2" resourcePath="/api/b2b/pac/account/BE83500600007115" methodName="BE83500600007115" xsi:type="con:RestRequestStep">
+      <con:restRequest name="Account Details" id="da6334f8-a005-46b3-a68a-e9e6e8b48442" mediaType="application/json">
+        <con:settings/>
+        <con:endpoint>https://multiservices-be-cld-ts.moneytrans.eu</con:endpoint>
+        <con:request/>
+        <con:assertion type="Valid HTTP Status Codes" id="fa503429-03a3-4dcc-809e-73e4146c62fe" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="f8e38ecb-39ee-4ce3-9471-a977abb2769b" name="Response SLA">
+          <con:configuration>
+            <SLA>200</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:parameters>
+          <con:entry key="Authorization" value="${#Project#authBack}"/>
+          <con:entry key="Content-Type" value="application/json"/>
+          <con:entry key="MT-DELEGATED-AUTH" value="1"/>
+        </con:parameters>
+        <con:parameterOrder>
+          <con:entry>Content-Type</con:entry>
+          <con:entry>Authorization</con:entry>
+          <con:entry>MT-DELEGATED-AUTH</con:entry>
+        </con:parameterOrder>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testCase>

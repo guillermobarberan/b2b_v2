@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="62ac9694-050d-4df4-aa1f-a7bf8d4e792f" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="Get Beneficiaries by Customer Code" searchProperties="true" timeout="0" maxResults="6">
+  <con:settings id="3238edc0-f8c9-4312-ab96-3b95d4ca345b">
+    <con:setting id="62ac9694-050d-4df4-aa1f-a7bf8d4e792ffileName">Get-Beneficiaries-by-Customer-Code</con:setting>
+  </con:settings>
+  <con:testStep type="restrequest" name="Get Beneficiaries by Customer Code" id="a6bd05f4-778e-49e1-9ef1-d47e555f7e67">
+    <con:settings/>
+    <con:config service="https://multiservices-be-cld-ts.moneytrans.eu 2" resourcePath="/api/b2b/customer/beneficiaries/5462855" methodName="5462855" xsi:type="con:RestRequestStep">
+      <con:restRequest name="Get Beneficiaries by Customer Code" id="e7ea29a2-cfc5-4b55-ace0-c629be7873e5" mediaType="application/json">
+        <con:settings/>
+        <con:endpoint>https://multiservices-be-cld-ts.moneytrans.eu</con:endpoint>
+        <con:request/>
+        <con:assertion type="Valid HTTP Status Codes" id="fa83abed-523d-440b-8b54-6580183f6738" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="738d8e5c-af12-4816-9193-2c13274cfeaf" name="Response SLA">
+          <con:configuration>
+            <SLA>200</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:parameters>
+          <con:entry key="Authorization" value="${#Project#authBack}"/>
+          <con:entry key="MT-DELEGATED-AUTH" value="1"/>
+        </con:parameters>
+        <con:parameterOrder>
+          <con:entry>Authorization</con:entry>
+          <con:entry>MT-DELEGATED-AUTH</con:entry>
+        </con:parameterOrder>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testCase>

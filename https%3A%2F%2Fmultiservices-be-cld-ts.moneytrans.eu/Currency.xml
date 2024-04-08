@@ -23,7 +23,25 @@
         <con:path xsi:nil="true"/>
         <con:description xsi:nil="true"/>
       </con:parameter>
+      <con:parameter required="true">
+        <con:name>Accept</con:name>
+        <con:value/>
+        <con:style>HEADER</con:style>
+        <con:default/>
+      </con:parameter>
     </con:parameters>
+    <con:representation type="FAULT">
+      <con:mediaType>application/json; charset=utf-8</con:mediaType>
+      <con:status>401</con:status>
+      <con:params/>
+      <con:element xmlns:cur="https://multiservices-be-cld-ts.moneytrans.eu/api/b2b/catalog/currency">cur:Fault</con:element>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json; charset=utf-8</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:element xmlns:cur="https://multiservices-be-cld-ts.moneytrans.eu/api/b2b/catalog/currency">cur:Response</con:element>
+    </con:representation>
     <con:request name="Currencies back" id="444b589b-277d-4455-8808-0d139b157edd" mediaType="application/json">
       <con:settings/>
       <con:endpoint>https://multiservices-be-cld-ts.moneytrans.eu</con:endpoint>
@@ -35,11 +53,13 @@
       <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
       <con:parameters>
         <con:entry key="Authorization" value="diaspo-agente-1@eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJORTBJSmw4eGpabkNXb3NSeEhZdXAtUVBfWGtNVVd6Q182TTFxbVdLWmxjIn0.eyJleHAiOjE3MDk2NzA0ODEsImlhdCI6MTcwOTY3MDE4MSwianRpIjoiMmVlNzdkZDQtMzZhNS00NDgzLTkzOGMtMGViMWQ2OGVlMjUwIiwiaXNzIjoiaHR0cHM6Ly9zc28ubW9uZXl0cmFucy5ldS9yZWFsbXMvYjJiIiwic3ViIjoiN2MyYjkyZTEtM2U5My00Zjk3LTlhMTAtZjU3YWUyMmUyYjUzIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiZGlhc3BvLWFnZW50ZS0xIiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6WyIvKiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiZGlhc3BvIl19LCJzY29wZSI6InVwZGF0ZS1zbWlsZSByZWFkLXRyYW5zZmVyLWNhdGFsb2cgcmVhZC1maW5hbnRpYWwgdXBkYXRlLXRyYW5zZmVycyByZWFkLWNhdGFsb2cgdXBkYXRlLWN1c3RvbWVycyByZWFkLWFjcXVpcmluZyByZWFkLXNtaWxlLWNhdGFsb2ciLCJjbGllbnRIb3N0IjoiOTAuNjkuMTQxLjE5MCIsImNsaWVudEFkZHJlc3MiOiI5MC42OS4xNDEuMTkwIiwiY2xpZW50X2lkIjoiZGlhc3BvLWFnZW50ZS0xIn0.bK2IOOWenH3KtsByfAakkiRK5XkbxXkLoGFUuU5TNZFLd32oNJBukpLUW1ao2xE7_Pw_8dYtkkjJWt17Ql70EevpsH_fR_3CtJrOdBZsEDKfggh8dPYMHEiq7x-ycWp56A56x3kh3Ctd7BqnFIQMZwNDj7x0f3qDqPYYVbW1_YmqVD5hTYYwP43Z98dcHBjNu0eGyi1qFBlZoeP2z33N8JpAx0hr5g-gj50YuguWSn_xVe0thp0OwqQ5rW1Hcw3auUQMiOg7v7dIHOjlQ7HKWU5aZ8qi4u9R_hceh5XIQibkszDr7-dJrfGKcGFCh5vNlE6XYFodnjvWxa4s-fs3Xg"/>
+        <con:entry key="Accept" value="application/json"/>
         <con:entry key="MT-DELEGATED-AUTH" value="1"/>
       </con:parameters>
       <con:parameterOrder>
         <con:entry>Authorization</con:entry>
         <con:entry>MT-DELEGATED-AUTH</con:entry>
+        <con:entry>Accept</con:entry>
       </con:parameterOrder>
     </con:request>
   </con:method>

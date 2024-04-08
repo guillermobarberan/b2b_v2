@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="Countries" path="/v2/catalogs/countries" id="6ec743f7-b97c-4288-b2bd-62cbf798a846">
+  <con:settings id="d01e9c75-bfec-4717-a617-fa301c6a2c75">
+    <con:setting id="6ec743f7-b97c-4288-b2bd-62cbf798a846fileName">Countries</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="Countries" id="99de00ff-01c2-4a65-b5ad-f3da4955aa31" method="GET">
+    <con:settings/>
+    <con:parameters></con:parameters>
+    <con:representation type="FAULT">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>401</con:status>
+      <con:params/>
+      <con:element xmlns:coun="https://b2bapi-sandbox.moneytrans.eu/v2/catalogs/countries">coun:Fault</con:element>
+    </con:representation>
+    <con:representation type="REQUEST">
+      <con:mediaType>application/json</con:mediaType>
+      <con:params/>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json; charset=UTF-8</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:element>Response</con:element>
+    </con:representation>
+    <con:request name="Countries" id="8551e3ca-c9fc-471a-bdfa-c149f2868d97" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>https://b2bapi-sandbox.moneytrans.eu</con:endpoint>
+      <con:request/>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+      <con:parameterOrder/>
+    </con:request>
+  </con:method>
+</con:resource>

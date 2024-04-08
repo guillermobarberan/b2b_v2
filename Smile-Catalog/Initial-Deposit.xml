@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="38a046bc-690c-4e73-8494-41a043ad1095" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="Initial Deposit" searchProperties="true" timeout="0" maxResults="6">
+  <con:settings id="e121fc5d-f1f6-41ed-889f-131c6f1f8ff7">
+    <con:setting id="38a046bc-690c-4e73-8494-41a043ad1095fileName">Initial-Deposit</con:setting>
+  </con:settings>
+  <con:testStep type="restrequest" name="Initial Deposit" id="0e241ccd-c4b0-4b0d-9108-cce6ec4057d6">
+    <con:settings/>
+    <con:config service="https://multiservices-be-cld-ts.moneytrans.eu 2" resourcePath="/api/b2b/pac/enroll/initialDeposits/5463354" methodName="5463354" xsi:type="con:RestRequestStep">
+      <con:restRequest name="Initial Deposit" id="cc2fb206-4b4c-4fd2-86dc-013ce2556355" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:endpoint>https://multiservices-be-cld-ts.moneytrans.eu</con:endpoint>
+        <con:request/>
+        <con:originalUri>https://multiservices-be-cld-ts.moneytrans.eu/api/b2b/pac/enroll/initialDeposits/5463354</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="b4af9d68-82cf-4418-b94c-70a272f5858f" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="0ffd5cf3-9a56-4a95-ac3e-ad12ce07bf69" name="Response SLA">
+          <con:configuration>
+            <SLA>2000</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters>
+          <con:entry key="Authorization" value="${#[Test Engine#Engine Runner#mule v2]#authBack}"/>
+          <con:entry key="Accept" value="application/json"/>
+          <con:entry key="MT-DELEGATED-AUTH" value="1"/>
+        </con:parameters>
+        <con:parameterOrder>
+          <con:entry>Authorization</con:entry>
+          <con:entry>MT-DELEGATED-AUTH</con:entry>
+          <con:entry>Accept</con:entry>
+        </con:parameterOrder>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties>
+    <con:property>
+      <con:name>method</con:name>
+      <con:value>GET</con:value>
+    </con:property>
+    <con:property>
+      <con:name>requestPath</con:name>
+      <con:value>/api/b2b/pac/enroll/initialDeposits/5463354</con:value>
+    </con:property>
+  </con:properties>
+  <con:reportParameters/>
+</con:testCase>

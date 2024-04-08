@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="1cee264a-3e2c-41c8-970e-eb0afb55b904" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="Destinations" searchProperties="true" timeout="0" maxResults="6">
+  <con:settings id="90a6ff01-feeb-4728-8c79-bbf3c7ac77a8">
+    <con:setting id="1cee264a-3e2c-41c8-970e-eb0afb55b904fileName">Destinations</con:setting>
+  </con:settings>
+  <con:testStep type="restrequest" name="Destinations" id="ec3b5f1b-e0fb-49a3-b00a-eacaf5b3b5d5">
+    <con:settings/>
+    <con:config service="https://multiservices-be-cld-ts.moneytrans.eu 2" resourcePath="/api/b2b/catalog/transfers/destinations/FRA/MAR/OF/MAD" methodName="MAD" xsi:type="con:RestRequestStep">
+      <con:restRequest name="Destinations" id="e13cf395-05f2-4440-a795-94d598f93642" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:endpoint>https://multiservices-be-cld-ts.moneytrans.eu</con:endpoint>
+        <con:request/>
+        <con:originalUri>https://multiservices-be-cld-ts.moneytrans.eu/api/b2b/catalog/transfers/destinations/FRA/MAR/OF/MAD</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="7f03d643-33ef-4f42-9844-b608eea8c198" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="7d6c7fa6-f160-4824-9be2-8106166ae759" name="Response SLA">
+          <con:configuration>
+            <SLA>10000</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters>
+          <con:entry key="Authorization" value="${#[Test Engine#Engine Runner#mule v2]#authBack}"/>
+          <con:entry key="Accept" value="application/json"/>
+          <con:entry key="MT-DELEGATED-AUTH" value="1"/>
+        </con:parameters>
+        <con:parameterOrder>
+          <con:entry>Authorization</con:entry>
+          <con:entry>MT-DELEGATED-AUTH</con:entry>
+          <con:entry>Accept</con:entry>
+        </con:parameterOrder>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties>
+    <con:property>
+      <con:name>method</con:name>
+      <con:value>GET</con:value>
+    </con:property>
+    <con:property>
+      <con:name>requestPath</con:name>
+      <con:value>/api/b2b/catalog/transfers/destinations/FRA/MAR/OF/MAD</con:value>
+    </con:property>
+  </con:properties>
+  <con:reportParameters/>
+</con:testCase>

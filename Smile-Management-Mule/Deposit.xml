@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="e801ed0d-305b-4c81-a76b-3d84a1cd9e8c" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="Deposit" searchProperties="true" timeout="0" maxResults="6">
+  <con:settings id="b0dea458-d37d-4c5d-a69e-ffbbe4246ae9">
+    <con:setting id="9b1260ab-4100-448b-802b-34e4e41d8d88fileName">Deposit</con:setting>
+    <con:setting id="e801ed0d-305b-4c81-a76b-3d84a1cd9e8cfileName">Deposit</con:setting>
+  </con:settings>
+  <con:testStep type="restrequest" name="Deposit" id="61c0383a-840a-456f-9ca9-e2f5b01cb05d">
+    <con:settings/>
+    <con:config service="https://multiservices-be-cld-ts.moneytrans.eu 2" resourcePath="/api/b2b/pac/deposit" methodName="Deposit" xsi:type="con:RestRequestStep">
+      <con:restRequest name="Deposit" id="140e24fc-629b-4178-baa9-d9b01b2f2b21" mediaType="application/json">
+        <con:settings/>
+        <con:endpoint>https://multiservices-be-cld-ts.moneytrans.eu</con:endpoint>
+        <con:request>{\r
+    "Iban": "BE83500600007115",\r
+    "PaymentMode": "CASH",\r
+    "ScaCode": "834556",\r
+    "Amount": 10\r
+}</con:request>
+        <con:assertion type="Valid HTTP Status Codes" id="6a07eb42-a454-47e5-8a3d-bbb56c8adaad" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="5520e959-7496-4364-8e4c-1cd47fb2c2c6" name="Response SLA">
+          <con:configuration>
+            <SLA>200</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:parameters>
+          <con:entry key="Authorization" value="${#Project#authBack}"/>
+          <con:entry key="Content-Type" value="application/json"/>
+          <con:entry key="MT-DELEGATED-AUTH" value="1"/>
+        </con:parameters>
+        <con:parameterOrder>
+          <con:entry>Content-Type</con:entry>
+          <con:entry>Authorization</con:entry>
+          <con:entry>MT-DELEGATED-AUTH</con:entry>
+        </con:parameterOrder>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testCase>

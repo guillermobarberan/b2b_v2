@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testSuite xmlns:con="http://eviware.com/soapui/config" id="aada7f21-2136-4c94-b96c-7f687f4226c6" name="Acquiring Mule" disabled="true">
+  <con:settings id="0a3be55d-4d54-4589-9f7c-d0bed738b18c">
+    <con:setting id="6d94c27d-5a9c-4ad5-991b-f997c0cd7ac3fileName">Smile-Catalog-Back</con:setting>
+    <con:setting id="a509798a-4f13-4edb-ad7d-1be89ffb35adfileName">Acquiring</con:setting>
+    <con:setting id="aada7f21-2136-4c94-b96c-7f687f4226c6fileName">Acquiring-Mule</con:setting>
+  </con:settings>
+  <con:runType>SEQUENTIAL</con:runType>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testSuite>
