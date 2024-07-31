@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:testCase xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="0889fc44-6fa6-42b7-9c20-0357a930b4fc" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="Transfer by URN" searchProperties="true" timeout="0" maxResults="6">
-  <con:settings id="eedcdaac-92be-4637-928d-21b315ed402a">
-    <con:setting id="0889fc44-6fa6-42b7-9c20-0357a930b4fcfileName">Transfer-by-URN</con:setting>
+<con:testCase xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="e7132775-ae69-430d-aa0b-d3e26889139d" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="Transfer by URN" searchProperties="true" timeout="0" maxResults="6">
+  <con:settings id="8278867b-6afc-44d9-9096-ca0ad9c4ce13">
+    <con:setting id="e7132775-ae69-430d-aa0b-d3e26889139dfileName">Transfer-by-URN</con:setting>
   </con:settings>
-  <con:testStep type="restrequest" name="Transfer by URN" id="81ebac6a-883b-474d-a9ab-d41adc0d2cf7">
+  <con:testStep type="restrequest" name="Transfer by URN" id="cece43f3-fbec-401a-95bc-39526530d081">
     <con:settings/>
-    <con:config service="https://multiservices-be-cld-ts.moneytrans.eu 2" resourcePath="/api/b2b/transfers/104087752/SENDING" methodName="SENDING" xsi:type="con:RestRequestStep">
-      <con:restRequest name="Transfer by URN" id="f6f18106-ed0d-46ab-9efd-82257e8597c4" mediaType="application/json">
+    <con:config service="https://multiservices-be-cld-ts.moneytrans.eu 2" resourcePath="/api/b2b/transfers/104225789/SENDING" methodName="SENDING" xsi:type="con:RestRequestStep">
+      <con:restRequest name="Transfer by URN" id="7cc18a4f-c6fa-4a6b-b874-5eefbdc0a4aa" mediaType="application/json">
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
         </con:settings>
         <con:endpoint>https://multiservices-be-cld-ts.moneytrans.eu</con:endpoint>
         <con:request/>
-        <con:originalUri>https://multiservices-be-cld-ts.moneytrans.eu/api/b2b/transfers/104087752/SENDING</con:originalUri>
-        <con:assertion type="Valid HTTP Status Codes" id="0e6ed9c4-198e-42e1-bba1-2dcc882c2bb9" name="Valid HTTP Status Codes">
+        <con:originalUri>https://multiservices-be-cld-ts.moneytrans.eu/api/b2b/transfers/104225789/SENDING</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="5da8cb10-bc4e-4972-bd1d-978ee73b19ee" name="Valid HTTP Status Codes">
           <con:settings/>
           <con:configuration>
             <codes>200</codes>
           </con:configuration>
         </con:assertion>
-        <con:assertion type="Response SLA Assertion" id="f4c027c0-d2b5-4d5a-99d1-b92ceb56f6a8" name="Response SLA">
+        <con:assertion type="Response SLA Assertion" id="75150afc-4ddc-4999-9889-00fb5bcf4d90" name="Response SLA">
           <con:configuration>
-            <SLA>2000</SLA>
+            <SLA>16000</SLA>
           </con:configuration>
         </con:assertion>
         <con:credentials>
@@ -42,15 +42,6 @@
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:properties>
-    <con:property>
-      <con:name>method</con:name>
-      <con:value>GET</con:value>
-    </con:property>
-    <con:property>
-      <con:name>requestPath</con:name>
-      <con:value>/api/b2b/transfers/104087752/SENDING</con:value>
-    </con:property>
-  </con:properties>
+  <con:properties/>
   <con:reportParameters/>
 </con:testCase>

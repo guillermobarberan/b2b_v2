@@ -73,6 +73,12 @@
       <con:params/>
       <con:element xmlns:cal="https://b2bapi-sandbox.moneytrans.eu/v2/transfers/catalogs/calculations">cal:Fault</con:element>
     </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json; charset=UTF-8</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:element xmlns:cal="https://b2bapi-sandbox.moneytrans.eu/v2/transfers/catalogs/calculations">cal:Response</con:element>
+    </con:representation>
     <con:request name="Calculation mule" id="03e95e74-68ec-4a17-b462-269bb42550d0" mediaType="application/json">
       <con:settings/>
       <con:endpoint>https://b2bapi-sandbox.moneytrans.eu</con:endpoint>

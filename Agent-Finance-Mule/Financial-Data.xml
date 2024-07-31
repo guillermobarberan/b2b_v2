@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="73bb4942-d285-4e6d-bd77-aa30313d292f" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="Financial Data" searchProperties="true" timeout="0" maxResults="6">
+  <con:settings id="d871ef1d-1c0e-4130-ab66-ebadf9896733">
+    <con:setting id="73bb4942-d285-4e6d-bd77-aa30313d292ffileName">Financial-Data</con:setting>
+  </con:settings>
+  <con:testStep type="restrequest" name="Financial Data" id="75f124ae-3827-4553-a51e-a5de1479c07d">
+    <con:settings/>
+    <con:config service="https://b2bapi-sandbox.moneytrans.eu 2" resourcePath="/v2/finances/agents/finances" methodName="Finances" xsi:type="con:RestRequestStep">
+      <con:restRequest name="Financial Data" id="07588833-b492-4655-837b-ba6453556bc4" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers"><![CDATA[<xml-fragment><con:entry key="Authorization" value="${#[Test Engine#Engine Runner#mule v2]#authMule}" xmlns:con="http://eviware.com/soapui/config"/><con:entry key="clientId" value="${#[Test Engine#Engine Runner#mule v2]#clientIdMule}" xmlns:con="http://eviware.com/soapui/config"/><con:entry key="ApiKey" value="${#[Test Engine#Engine Runner#mule v2]#ApiKey}" xmlns:con="http://eviware.com/soapui/config"/><con:entry key="Accept" value="application/json" xmlns:con="http://eviware.com/soapui/config"/><con:entry key="ApiSignature" value="${#[Test Engine#Engine Runner#mule v2]#ApiSignature}" xmlns:con="http://eviware.com/soapui/config"/></xml-fragment>]]></con:setting>
+        </con:settings>
+        <con:endpoint>https://b2bapi-sandbox.moneytrans.eu</con:endpoint>
+        <con:request/>
+        <con:originalUri>https://b2bapi-sandbox.moneytrans.eu/v2/finances/agents/finances</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="f22fde13-656b-4730-9a81-5b277131ac46" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="0fbb562b-491d-4c00-821a-183e98f5f61e" name="Response SLA">
+          <con:configuration>
+            <SLA>2000</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters>
+          <con:entry key="productCode" value="MTR"/>
+          <con:entry key="dateFrom" value="2024-04-01"/>
+        </con:parameters>
+        <con:parameterOrder>
+          <con:entry>productCode</con:entry>
+          <con:entry>dateFrom</con:entry>
+        </con:parameterOrder>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties>
+    <con:property>
+      <con:name>method</con:name>
+      <con:value>GET</con:value>
+    </con:property>
+    <con:property>
+      <con:name>requestPath</con:name>
+      <con:value>Financial Data</con:value>
+    </con:property>
+  </con:properties>
+  <con:reportParameters/>
+</con:testCase>

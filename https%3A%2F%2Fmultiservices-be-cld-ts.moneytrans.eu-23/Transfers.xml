@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config" name="Transfers" path="/api/b2b/transfers" id="eebb67b7-7408-40d9-95b0-6d89946092a0">
+  <con:settings id="8d23f841-61fd-4c46-8665-a8605b4f340c">
+    <con:setting id="eebb67b7-7408-40d9-95b0-6d89946092a0fileName">Transfers</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="Transfers" id="31d48192-71e6-4a0c-b909-5f756a068f65" method="POST">
+    <con:settings/>
+    <con:parameters>
+      <con:parameter>
+        <con:name>Authorization</con:name>
+        <con:value>${#Project#authBack}</con:value>
+        <con:style>HEADER</con:style>
+        <con:default/>
+        <con:path xsi:nil="true"/>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+      <con:parameter>
+        <con:name>MT-DELEGATED-AUTH</con:name>
+        <con:value>1</con:value>
+        <con:style>HEADER</con:style>
+        <con:default/>
+        <con:path xsi:nil="true"/>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+      <con:parameter>
+        <con:name>Accept</con:name>
+        <con:value>application/json</con:value>
+        <con:style>HEADER</con:style>
+        <con:default/>
+        <con:path xsi:nil="true"/>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+    </con:parameters>
+    <con:request name="Save or Update Transfer" id="6afee794-81ab-413a-99ae-2b5a18b099e0" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>https://multiservices-be-cld-ts.moneytrans.eu</con:endpoint>
+      <con:request>{\r
+    "Channel": "MTS",\r
+    "IdSender": "5404713",\r
+    "IdBeneficiary": "5404714",\r
+    "IdDestination": "1021658$1707",\r
+    "SrcAmount":12,\r
+    "DestCurrency": "MAD",\r
+    "DestCountry": "MAR",\r
+    "PaymentId":"CCV",\r
+    "MessageForBeneficiary": "Testing",\r
+    "TransferPurposeId": "EDUCATION",\r
+    "SourceOfFundsId": "TRANSFER_SOURCE_OF_FUNDS_SALARY",\r
+    "SubChannel": "ITN",\r
+    "ExternalCode": "TEST1001"\r
+  }</con:request>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:parameters>
+        <con:entry key="Authorization" value="${#Project#authBack}"/>
+        <con:entry key="Accept" value="application/json"/>
+        <con:entry key="MT-DELEGATED-AUTH" value="1"/>
+      </con:parameters>
+      <con:parameterOrder>
+        <con:entry>Authorization</con:entry>
+        <con:entry>MT-DELEGATED-AUTH</con:entry>
+        <con:entry>Accept</con:entry>
+      </con:parameterOrder>
+    </con:request>
+  </con:method>
+</con:resource>

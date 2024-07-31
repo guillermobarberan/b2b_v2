@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config" name="MAR" path="/api/b2b/catalog/transfers/paymentTypes/MAR" id="4e5559ab-8306-48b9-ac57-78f9e5f21574">
+  <con:settings id="051930fd-3237-4161-9fda-468fa58cc216">
+    <con:setting id="4e5559ab-8306-48b9-ac57-78f9e5f21574fileName">MAR</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="MAR" id="9513c412-86a2-448e-9f39-1c6dbfaf35a8" method="GET">
+    <con:settings/>
+    <con:parameters>
+      <con:parameter>
+        <con:name>Authorization</con:name>
+        <con:value>${#Project#authBack}</con:value>
+        <con:style>HEADER</con:style>
+        <con:default/>
+        <con:path xsi:nil="true"/>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+      <con:parameter>
+        <con:name>MT-DELEGATED-AUTH</con:name>
+        <con:value>1</con:value>
+        <con:style>HEADER</con:style>
+        <con:default/>
+        <con:path xsi:nil="true"/>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+    </con:parameters>
+    <con:request name="Payment types" id="e28c47ea-9db5-4424-a31a-4474cb250f89" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>https://multiservices-be-cld-ts.moneytrans.eu</con:endpoint>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:parameters>
+        <con:entry key="Authorization" value="${#Project#authBack}"/>
+        <con:entry key="MT-DELEGATED-AUTH" value="1"/>
+      </con:parameters>
+      <con:parameterOrder>
+        <con:entry>Authorization</con:entry>
+        <con:entry>MT-DELEGATED-AUTH</con:entry>
+      </con:parameterOrder>
+    </con:request>
+  </con:method>
+</con:resource>

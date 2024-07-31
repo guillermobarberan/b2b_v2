@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="9b158abd-2024-4f42-9b53-d1f754126cb6" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="Transfer price" searchProperties="true" timeout="0" maxResults="6">
+  <con:settings id="4e5ef6b7-677b-4f4d-874d-c6514d55d91f">
+    <con:setting id="9b158abd-2024-4f42-9b53-d1f754126cb6fileName">Transfer-price</con:setting>
+  </con:settings>
+  <con:testStep type="restrequest" name="Transfer price" id="0a0adcaf-d3a3-436c-9b82-8608eda49094">
+    <con:settings/>
+    <con:config service="https://multiservices-be-cld-ts.moneytrans.eu 2" resourcePath="/api/b2b/catalog/pac/TRANSFER/calculate" methodName="Calculate" xsi:type="con:RestRequestStep">
+      <con:restRequest name="Transfer price" id="c3e672f2-5fdf-4b84-961a-c4b9d28c9023" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:endpoint>https://multiservices-be-cld-ts.moneytrans.eu</con:endpoint>
+        <con:request>{\r
+    "Iban": "BE50500600026818",\r
+    "ValueAmount":{\r
+        "CurrencyISOCode": "EUR",\r
+        "Value": 10\r
+    }\r
+}</con:request>
+        <con:originalUri>https://multiservices-be-cld-ts.moneytrans.eu/api/b2b/catalog/pac/TRANSFER/calculate</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="18f2ec1d-d638-4047-af86-cb93a8cc0048" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="bd99db5c-b345-45e1-8569-b3e65b7be96b" name="Response SLA">
+          <con:configuration>
+            <SLA>2000</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters>
+          <con:entry key="Authorization" value="${#[Test Engine#Engine Runner#mule v2]#authBack}"/>
+          <con:entry key="Accept" value="application/json"/>
+          <con:entry key="MT-DELEGATED-AUTH" value="1"/>
+        </con:parameters>
+        <con:parameterOrder>
+          <con:entry>Authorization</con:entry>
+          <con:entry>MT-DELEGATED-AUTH</con:entry>
+          <con:entry>Accept</con:entry>
+        </con:parameterOrder>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties>
+    <con:property>
+      <con:name>method</con:name>
+      <con:value>POST</con:value>
+    </con:property>
+    <con:property>
+      <con:name>requestPath</con:name>
+      <con:value>/api/b2b/catalog/pac/TRANSFER/calculate</con:value>
+    </con:property>
+  </con:properties>
+  <con:reportParameters/>
+</con:testCase>

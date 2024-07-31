@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testSuite xmlns:con="http://eviware.com/soapui/config" id="00d866df-2015-4923-a361-349d55ff2382" name="MTR Complete Flow" disabled="true">
+  <con:settings id="12ae90ea-9b09-4510-9e5f-aa549a220cc5">
+    <con:setting id="11742c2a-dad1-46cf-b06e-ebcac95d7c57fileName">Test-Engine</con:setting>
+    <con:setting id="00d866df-2015-4923-a361-349d55ff2382fileName">MTR-Complete-Flow</con:setting>
+  </con:settings>
+  <con:runType>SEQUENTIAL</con:runType>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testSuite>

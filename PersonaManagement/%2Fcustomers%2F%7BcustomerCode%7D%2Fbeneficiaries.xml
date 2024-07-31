@@ -1,0 +1,420 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="/customers/{customerCode}/beneficiaries" path="/customers/{customerCode}/beneficiaries" id="33a44a44-9186-4ef0-a1aa-3c7fa8377b8f">
+  <con:settings id="6df80c5e-8e3c-4758-a592-b39ba5befb24">
+    <con:setting id="33a44a44-9186-4ef0-a1aa-3c7fa8377b8ffileName">%2Fcustomers%2F%7BcustomerCode%7D%2Fbeneficiaries</con:setting>
+  </con:settings>
+  <con:parameters>
+    <con:parameter required="true">
+      <con:name>customerCode</con:name>
+      <con:style>TEMPLATE</con:style>
+      <con:description xsi:nil="true"/>
+    </con:parameter>
+  </con:parameters>
+  <con:method name="Get Beneficiaries By Customer Code" id="f4e6826e-2777-4c01-9bf0-1967ec87d8ab" method="GET">
+    <con:description>Get Beneficiaries details by Customer Code</con:description>
+    <con:settings/>
+    <con:parameters>
+      <con:parameter required="true">
+        <con:name>ApiKey</con:name>
+        <con:style>HEADER</con:style>
+        <con:description>Identifier of the payment gateway. It is a fixed value. Moneytrans will commmunicate this value to the consumer after during on-boarding.</con:description>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>ApiSignature</con:name>
+        <con:style>HEADER</con:style>
+        <con:description>This signature is generated with the SHA256 algorithm and sent in the header.</con:description>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>clientId</con:name>
+        <con:style>HEADER</con:style>
+        <con:description>clientId used to request the access token</con:description>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>Authorization</con:name>
+        <con:style>HEADER</con:style>
+        <con:description>Bearer access token</con:description>
+      </con:parameter>
+    </con:parameters>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:sampleContent>[ {
+  "code" : "651321",
+  "firstName" : "Name",
+  "lastName" : "Surname",
+  "telephone" : "+34622835864",
+  "email" : "mail@mailprovider.com",
+  "nationalityCountryCode" : "ESP",
+  "customerRelationshipCode" : "PARENTS",
+  "identityDocument" : {
+    "deliveryDate" : "2020-11-27T15:49:52.795Z",
+    "documentNumber" : "50770750K",
+    "expiryDate" : "2032-11-27T15:49:52.795Z",
+    "code" : "513",
+    "deliveryCountryCode" : "ESP",
+    "deliveryCityCode" : "MAD",
+    "documentTypeCode" : "NICD",
+    "isDefault" : true
+  }
+} ]</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>500</con:status>
+      <con:params/>
+      <con:sampleContent>{
+  "code" : 29500,
+  "message" : "Internal error",
+  "reason" : "Something went wrong in the system during the execution"
+}</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>401</con:status>
+      <con:params/>
+      <con:sampleContent>{
+  "code" : 29401,
+  "message" : "Unauthorized",
+  "reason" : "Security parameter is missing or requestor doesn't have permissions to call this resource"
+}</con:sampleContent>
+    </con:representation>
+    <con:representation type="REQUEST">
+      <con:mediaType>application/json</con:mediaType>
+      <con:params/>
+    </con:representation>
+    <con:request name="Request 1" id="976ac589-4ed8-4be0-9aae-de4d71e4fa0a" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>https://b2bapi-sandbox.moneytrans.eu</con:endpoint>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+  <con:method name="Save New Beneficiary" id="6c2d3580-e1bf-4335-b2e3-642c7fa5e654" method="POST">
+    <con:description>New Beneficiary for specific customer, due to the business environment, a complete update of a beneficiary is not allowed</con:description>
+    <con:settings/>
+    <con:parameters>
+      <con:parameter required="true">
+        <con:name>ApiKey</con:name>
+        <con:style>HEADER</con:style>
+        <con:description>Identifier of the payment gateway. It is a fixed value. Moneytrans will commmunicate this value to the consumer after during on-boarding.</con:description>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>ApiSignature</con:name>
+        <con:style>HEADER</con:style>
+        <con:description>This signature is generated with the SHA256 algorithm and sent in the header.</con:description>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>clientId</con:name>
+        <con:style>HEADER</con:style>
+        <con:description>clientId used to request the access token</con:description>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>Authorization</con:name>
+        <con:style>HEADER</con:style>
+        <con:description>Bearer access token</con:description>
+      </con:parameter>
+    </con:parameters>
+    <con:representation type="REQUEST">
+      <con:mediaType>application/json</con:mediaType>
+      <con:params/>
+      <con:sampleContent>{
+  "customerRelationshipCode" : "string",
+  "birthdate" : "string",
+  "identityDocument" : {
+    "documentTypeCode" : "string",
+    "deliveryCityCode" : "string",
+    "deliveryCountryCode" : "string",
+    "code" : "string",
+    "deliveryDate" : "2015-07-20T15:49:04-07:00",
+    "expiryDate" : "2015-07-20T15:49:04-07:00",
+    "isDefault" : true,
+    "deliveryAuthorityCode" : "string",
+    "documentNumber" : "string"
+  },
+  "sourceOfFundsCode" : "string",
+  "address" : {
+    "countryCode" : "string",
+    "streetLetter" : "string",
+    "streetNumber" : 0,
+    "cityCode" : "string",
+    "street" : "string",
+    "postalCode" : "string"
+  },
+  "identityDocumentContent" : [ {
+    "fileContent" : "udffgajñsdfasif",
+    "type" : "CONVERSION"
+  } ],
+  "lastName" : "string",
+  "telephone" : "string",
+  "firstName" : "string",
+  "nationalCitizenNumber" : "string",
+  "email" : "string",
+  "nationalityCountryCode" : "string",
+  "fiscalCode" : "string",
+  "gender" : "MALE",
+  "occupationCode" : "string"
+}</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:sampleContent>{
+  "amlResult" : "PASSED",
+  "foundBeneficiaryCode" : "5410",
+  "foundBeneficiaryIdentityDocumentCode" : "451",
+  "creationResult" : "SUCCESS",
+  "savedBeneficiaryCode" : "543510",
+  "similarBeneficiaryCode" : "874351",
+  "similarBeneficiaryIdentityDocumentCode" : "54351"
+}</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>500</con:status>
+      <con:params/>
+      <con:sampleContent>{
+  "code" : 29500,
+  "message" : "Internal error",
+  "reason" : "Something went wrong in the system during the execution"
+}</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>401</con:status>
+      <con:params/>
+      <con:sampleContent>{
+  "code" : 29401,
+  "message" : "Unauthorized",
+  "reason" : "Security parameter is missing or requestor doesn't have permissions to call this resource"
+}</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>400</con:status>
+      <con:params/>
+      <con:sampleContent>{
+  "code" : 29400,
+  "message" : "Bad Request",
+  "reason" : "invalid identity Document Content type"
+}</con:sampleContent>
+    </con:representation>
+    <con:representation type="REQUEST">
+      <con:mediaType>application/json</con:mediaType>
+      <con:params/>
+    </con:representation>
+    <con:request name="Request 1" id="129cb7fb-2d91-42d5-840c-919a18c59947" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>https://b2bapi-sandbox.moneytrans.eu</con:endpoint>
+      <con:request>{\r
+  "customerRelationshipCode" : "string",\r
+  "birthdate" : "string",\r
+  "identityDocument" : {\r
+    "documentTypeCode" : "string",\r
+    "deliveryCityCode" : "string",\r
+    "deliveryCountryCode" : "string",\r
+    "code" : "string",\r
+    "deliveryDate" : "2015-07-20T15:49:04-07:00",\r
+    "expiryDate" : "2015-07-20T15:49:04-07:00",\r
+    "isDefault" : true,\r
+    "deliveryAuthorityCode" : "string",\r
+    "documentNumber" : "string"\r
+  },\r
+  "sourceOfFundsCode" : "string",\r
+  "address" : {\r
+    "countryCode" : "string",\r
+    "streetLetter" : "string",\r
+    "streetNumber" : 0,\r
+    "cityCode" : "string",\r
+    "street" : "string",\r
+    "postalCode" : "string"\r
+  },\r
+  "identityDocumentContent" : [ {\r
+    "fileContent" : "udffgajñsdfasif",\r
+    "type" : "CONVERSION"\r
+  } ],\r
+  "lastName" : "string",\r
+  "telephone" : "string",\r
+  "firstName" : "string",\r
+  "nationalCitizenNumber" : "string",\r
+  "email" : "string",\r
+  "nationalityCountryCode" : "string",\r
+  "fiscalCode" : "string",\r
+  "gender" : "MALE",\r
+  "occupationCode" : "string"\r
+}</con:request>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+  <con:method name="Update Beneficiary" id="05f1083a-b00f-4d28-a535-32476ca6f2c5" method="PATCH">
+    <con:description>Update partially Beneficiary for specific customer</con:description>
+    <con:settings/>
+    <con:parameters>
+      <con:parameter required="true">
+        <con:name>ApiKey</con:name>
+        <con:style>HEADER</con:style>
+        <con:description>Identifier of the payment gateway. It is a fixed value. Moneytrans will commmunicate this value to the consumer after during on-boarding.</con:description>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>ApiSignature</con:name>
+        <con:style>HEADER</con:style>
+        <con:description>This signature is generated with the SHA256 algorithm and sent in the header.</con:description>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>clientId</con:name>
+        <con:style>HEADER</con:style>
+        <con:description>clientId used to request the access token</con:description>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>Authorization</con:name>
+        <con:style>HEADER</con:style>
+        <con:description>Bearer access token</con:description>
+      </con:parameter>
+    </con:parameters>
+    <con:representation type="REQUEST">
+      <con:mediaType>application/json</con:mediaType>
+      <con:params/>
+      <con:sampleContent>{
+  "customerRelationshipCode" : "string",
+  "birthdate" : "string",
+  "identityDocument" : {
+    "documentTypeCode" : "string",
+    "deliveryCityCode" : "string",
+    "deliveryCountryCode" : "string",
+    "code" : "string",
+    "deliveryDate" : "2015-07-20T15:49:04-07:00",
+    "expiryDate" : "2015-07-20T15:49:04-07:00",
+    "isDefault" : true,
+    "deliveryAuthorityCode" : "string",
+    "documentNumber" : "string"
+  },
+  "code" : "string",
+  "sourceOfFundsCode" : "string",
+  "address" : {
+    "countryCode" : "string",
+    "streetLetter" : "string",
+    "streetNumber" : 0,
+    "cityCode" : "string",
+    "street" : "string",
+    "postalCode" : "string"
+  },
+  "identityDocumentContent" : [ {
+    "fileContent" : "udffgajñsdfasif",
+    "type" : "CONVERSION"
+  } ],
+  "lastName" : "string",
+  "telephone" : "string",
+  "firstName" : "string",
+  "nationalCitizenNumber" : "string",
+  "email" : "string",
+  "nationalityCountryCode" : "string",
+  "fiscalCode" : "string",
+  "gender" : "MALE",
+  "occupationCode" : "string"
+}</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:sampleContent>{
+  "amlResult" : "PASSED",
+  "foundBeneficiaryCode" : "5410",
+  "foundBeneficiaryIdentityDocumentCode" : "451",
+  "creationResult" : "SUCCESS",
+  "updatedBeneficiaryCode" : "543510",
+  "similarBeneficiaryCode" : "874351",
+  "similarBeneficiaryIdentityDocumentCode" : "54351"
+}</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>500</con:status>
+      <con:params/>
+      <con:sampleContent>{
+  "code" : 29500,
+  "message" : "Internal error",
+  "reason" : "Something went wrong in the system during the execution"
+}</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>401</con:status>
+      <con:params/>
+      <con:sampleContent>{
+  "code" : 29401,
+  "message" : "Unauthorized",
+  "reason" : "Security parameter is missing or requestor doesn't have permissions to call this resource"
+}</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>400</con:status>
+      <con:params/>
+      <con:sampleContent>{
+  "code" : 29400,
+  "message" : "Bad Request",
+  "reason" : "Too many changes"
+}</con:sampleContent>
+    </con:representation>
+    <con:representation type="REQUEST">
+      <con:mediaType>application/json</con:mediaType>
+      <con:params/>
+    </con:representation>
+    <con:request name="Request 1" id="0911533d-09da-4606-aee1-2d07135b1831" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>https://b2bapi-sandbox.moneytrans.eu</con:endpoint>
+      <con:request>{\r
+  "customerRelationshipCode" : "string",\r
+  "birthdate" : "string",\r
+  "identityDocument" : {\r
+    "documentTypeCode" : "string",\r
+    "deliveryCityCode" : "string",\r
+    "deliveryCountryCode" : "string",\r
+    "code" : "string",\r
+    "deliveryDate" : "2015-07-20T15:49:04-07:00",\r
+    "expiryDate" : "2015-07-20T15:49:04-07:00",\r
+    "isDefault" : true,\r
+    "deliveryAuthorityCode" : "string",\r
+    "documentNumber" : "string"\r
+  },\r
+  "code" : "string",\r
+  "sourceOfFundsCode" : "string",\r
+  "address" : {\r
+    "countryCode" : "string",\r
+    "streetLetter" : "string",\r
+    "streetNumber" : 0,\r
+    "cityCode" : "string",\r
+    "street" : "string",\r
+    "postalCode" : "string"\r
+  },\r
+  "identityDocumentContent" : [ {\r
+    "fileContent" : "udffgajñsdfasif",\r
+    "type" : "CONVERSION"\r
+  } ],\r
+  "lastName" : "string",\r
+  "telephone" : "string",\r
+  "firstName" : "string",\r
+  "nationalCitizenNumber" : "string",\r
+  "email" : "string",\r
+  "nationalityCountryCode" : "string",\r
+  "fiscalCode" : "string",\r
+  "gender" : "MALE",\r
+  "occupationCode" : "string"\r
+}</con:request>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+</con:resource>

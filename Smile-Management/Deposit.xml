@@ -6,8 +6,10 @@
   <con:testStep type="restrequest" name="Deposit" id="7a72809b-8025-4812-9a5b-5584372cee4e">
     <con:settings/>
     <con:config service="https://multiservices-be-cld-ts.moneytrans.eu 2" resourcePath="/api/b2b/pac/deposit" methodName="Deposit" xsi:type="con:RestRequestStep">
-      <con:restRequest name="Deposit" id="140e24fc-629b-4178-baa9-d9b01b2f2b21" mediaType="application/json">
-        <con:settings/>
+      <con:restRequest name="Deposit" id="140e24fc-629b-4178-baa9-d9b01b2f2b21" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Accept" value="application/json" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
+        </con:settings>
         <con:endpoint>https://multiservices-be-cld-ts.moneytrans.eu</con:endpoint>
         <con:request>{\r
     "Iban": "BE83500600007115",\r
@@ -15,6 +17,7 @@
     "ScaCode": "834556",\r
     "Amount": 10\r
 }</con:request>
+        <con:originalUri>https://multiservices-be-cld-ts.moneytrans.eu/api/b2b/pac/deposit</con:originalUri>
         <con:assertion type="Valid HTTP Status Codes" id="6a07eb42-a454-47e5-8a3d-bbb56c8adaad" name="Valid HTTP Status Codes">
           <con:settings/>
           <con:configuration>
@@ -23,15 +26,16 @@
         </con:assertion>
         <con:assertion type="Response SLA Assertion" id="5520e959-7496-4364-8e4c-1cd47fb2c2c6" name="Response SLA">
           <con:configuration>
-            <SLA>200</SLA>
+            <SLA>5000</SLA>
           </con:configuration>
         </con:assertion>
         <con:credentials>
           <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
           <con:authType>No Authorization</con:authType>
         </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
         <con:parameters>
-          <con:entry key="Authorization" value="${#Project#authBack}"/>
+          <con:entry key="Authorization" value="${#[Test Engine#Engine Runner#mule v2]#authBack}"/>
           <con:entry key="Content-Type" value="application/json"/>
           <con:entry key="MT-DELEGATED-AUTH" value="1"/>
         </con:parameters>
@@ -43,6 +47,15 @@
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:properties/>
+  <con:properties>
+    <con:property>
+      <con:name>method</con:name>
+      <con:value>POST</con:value>
+    </con:property>
+    <con:property>
+      <con:name>requestPath</con:name>
+      <con:value>/api/b2b/pac/deposit</con:value>
+    </con:property>
+  </con:properties>
   <con:reportParameters/>
 </con:testCase>

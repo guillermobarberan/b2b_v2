@@ -2,3 +2,8 @@ IBAN-Validation.xml
 Initial-Deposit.xml
 Annual-Maintenance.xml
 Monthly-Maintenance.xml
+Enrolment-price.xml
+Deposit-price.xml
+Withdraw-price.xml
+Transfer-price.xml
+View-Balance-price.xml

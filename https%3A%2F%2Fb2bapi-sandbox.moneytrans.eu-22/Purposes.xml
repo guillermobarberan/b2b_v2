@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config" name="Purposes" path="/v2/transfers/catalogs/purposes" id="51ea4837-42a5-41bb-baad-9e1696c006d5">
+  <con:settings id="e3647a7b-8ac9-44aa-8a2c-2323e4d1d0ba">
+    <con:setting id="51ea4837-42a5-41bb-baad-9e1696c006d5fileName">Purposes</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="Purposes" id="eaefdb5e-59e8-4695-8f8b-f3a8ac03e993" method="GET">
+    <con:settings/>
+    <con:parameters>
+      <con:parameter>
+        <con:name>Content-Type</con:name>
+        <con:value>application/json</con:value>
+        <con:style>HEADER</con:style>
+        <con:default/>
+        <con:path xsi:nil="true"/>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+      <con:parameter>
+        <con:name>clientId</con:name>
+        <con:value>${#Project#clientId}</con:value>
+        <con:style>HEADER</con:style>
+        <con:default/>
+        <con:path xsi:nil="true"/>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+      <con:parameter>
+        <con:name>Authorization</con:name>
+        <con:value>${#Project#authMule}</con:value>
+        <con:style>HEADER</con:style>
+        <con:default/>
+        <con:path xsi:nil="true"/>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+    </con:parameters>
+    <con:request name="Purposes" id="90408011-2832-4016-b84c-aa3c00a5cb9d" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>https://b2bapi-sandbox.moneytrans.eu</con:endpoint>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:parameters>
+        <con:entry key="Authorization" value="${#Project#authMule}"/>
+        <con:entry key="clientId" value="${#Project#clientId}"/>
+        <con:entry key="Content-Type" value="application/json"/>
+      </con:parameters>
+      <con:parameterOrder>
+        <con:entry>Content-Type</con:entry>
+        <con:entry>clientId</con:entry>
+        <con:entry>Authorization</con:entry>
+      </con:parameterOrder>
+    </con:request>
+  </con:method>
+</con:resource>

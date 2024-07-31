@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config" name="Countries" path="/v2/catalogs/countries" id="a6a6f7fd-9c70-45a8-bc69-7934dec11c55">
+  <con:settings id="11310339-ace8-4aa9-bf89-b23f37950aba">
+    <con:setting id="a6a6f7fd-9c70-45a8-bc69-7934dec11c55fileName">Countries</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="Countries" id="d33ec957-486a-4caa-8f04-756fb5b1fffe" method="GET">
+    <con:settings/>
+    <con:parameters>
+      <con:parameter>
+        <con:name>clientId</con:name>
+        <con:value>${#Project#clientId}</con:value>
+        <con:style>HEADER</con:style>
+        <con:default/>
+        <con:path xsi:nil="true"/>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+      <con:parameter>
+        <con:name>Authorization</con:name>
+        <con:value>${#Project#authMule}</con:value>
+        <con:style>HEADER</con:style>
+        <con:default/>
+        <con:path xsi:nil="true"/>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+    </con:parameters>
+    <con:request name="Countries" id="095181c6-91e2-4507-926c-40c87a64da88" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>https://b2bapi-sandbox.moneytrans.eu</con:endpoint>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:parameters>
+        <con:entry key="Authorization" value="${#Project#authMule}"/>
+        <con:entry key="clientId" value="${#Project#clientId}"/>
+      </con:parameters>
+      <con:parameterOrder>
+        <con:entry>clientId</con:entry>
+        <con:entry>Authorization</con:entry>
+      </con:parameterOrder>
+    </con:request>
+  </con:method>
+</con:resource>

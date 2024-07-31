@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="b3214a84-7945-43d3-9a2f-fd662bac9e96" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="Enrolment price" searchProperties="true" timeout="0" maxResults="6">
+  <con:settings id="9aa5ce86-5266-45bf-9681-ff069b5a0ce0">
+    <con:setting id="b3214a84-7945-43d3-9a2f-fd662bac9e96fileName">Enrolment-price</con:setting>
+  </con:settings>
+  <con:testStep type="restrequest" name="Enrolment price" id="222d4e37-9d82-4b7a-bae7-a647a768f5ec">
+    <con:settings/>
+    <con:config service="https://b2bapi-sandbox.moneytrans.eu 2" resourcePath="/v2/payment-accounts/catalogs/prices/operationFees" methodName="OperationFees" xsi:type="con:RestRequestStep">
+      <con:restRequest name="Enrolment price" id="c28822a6-25d1-4ef0-af2c-16ec88e25668" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers"><![CDATA[<xml-fragment><con:entry key="Authorization" value="${#[Test Engine#Engine Runner#mule v2]#authMule}" xmlns:con="http://eviware.com/soapui/config"/><con:entry key="clientId" value="${#[Test Engine#Engine Runner#mule v2]#clientIdMule}" xmlns:con="http://eviware.com/soapui/config"/><con:entry key="ApiKey" value="${#[Test Engine#Engine Runner#mule v2]#ApiKey}" xmlns:con="http://eviware.com/soapui/config"/><con:entry key="ApiSignature" value="${#[Test Engine#Engine Runner#mule v2]#ApiSignature}" xmlns:con="http://eviware.com/soapui/config"/><con:entry key="Content-Type" value="application/json" xmlns:con="http://eviware.com/soapui/config"/></xml-fragment>]]></con:setting>
+        </con:settings>
+        <con:endpoint>https://b2bapi-sandbox.moneytrans.eu</con:endpoint>
+        <con:request/>
+        <con:originalUri>https://b2bapi-sandbox.moneytrans.eu/v2/payment-accounts/catalogs/prices/operationFees</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="8cb0db8f-560f-423a-9669-eb9b7751a26c" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="c7b9c2fc-d356-435e-b2e6-a07765065140" name="Response SLA">
+          <con:configuration>
+            <SLA>500</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters>
+          <con:entry key="amount" value="10"/>
+          <con:entry key="iban" value="BE50500600026818"/>
+          <con:entry key="maintenanceType" value="MONTHLY"/>
+          <con:entry key="operation" value="ENROLMENT"/>
+          <con:entry key="currencyCode" value="EUR"/>
+        </con:parameters>
+        <con:parameterOrder>
+          <con:entry>iban</con:entry>
+          <con:entry>operation</con:entry>
+          <con:entry>amount</con:entry>
+          <con:entry>currencyCode</con:entry>
+          <con:entry>maintenanceType</con:entry>
+        </con:parameterOrder>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties>
+    <con:property>
+      <con:name>method</con:name>
+      <con:value>GET</con:value>
+    </con:property>
+    <con:property>
+      <con:name>requestPath</con:name>
+      <con:value>/v2/payment-accounts/catalogs/prices/operationFees?iban=BE50500600026818&amp;operation=ENROLMENT&amp;amount=10&amp;currencyCode=EUR&amp;maintenanceType=MONTHLY:17159546</con:value>
+    </con:property>
+  </con:properties>
+  <con:reportParameters/>
+</con:testCase>

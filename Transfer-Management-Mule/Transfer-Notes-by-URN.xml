@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="26e94615-53d3-421d-95bf-9ed96f4238dc" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="Transfer Notes by URN" searchProperties="true" timeout="0" maxResults="6">
+  <con:settings id="968c0b94-a24b-45ea-80c6-70cb3012d686">
+    <con:setting id="26e94615-53d3-421d-95bf-9ed96f4238dcfileName">Transfer-Notes-by-URN</con:setting>
+  </con:settings>
+  <con:testStep type="restrequest" name="Transfer Notes by URN" id="9f186cc5-abd4-42ac-b15e-377765d1847b">
+    <con:settings/>
+    <con:config service="https://b2bapi-sandbox.moneytrans.eu 2" resourcePath="/v2/transfers/transfers/104087225/notes" methodName="Notes" xsi:type="con:RestRequestStep">
+      <con:restRequest name="Transfer Notes by URN" id="586e6c2c-c556-48a4-a11e-08f652ea7a75" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers"><![CDATA[<xml-fragment><con:entry key="Authorization" value="${#[Test Engine#Engine Runner#mule v2]#authMule}" xmlns:con="http://eviware.com/soapui/config"/><con:entry key="clientId" value="${#[Test Engine#Engine Runner#mule v2]#clientIdMule}" xmlns:con="http://eviware.com/soapui/config"/><con:entry key="ApiKey" value="${#[Test Engine#Engine Runner#mule v2]#ApiKey}" xmlns:con="http://eviware.com/soapui/config"/><con:entry key="ApiSignature" value="${#[Test Engine#Engine Runner#mule v2]#ApiSignature}" xmlns:con="http://eviware.com/soapui/config"/><con:entry key="Content-Type" value="application/json" xmlns:con="http://eviware.com/soapui/config"/></xml-fragment>]]></con:setting>
+        </con:settings>
+        <con:endpoint>https://b2bapi-sandbox.moneytrans.eu</con:endpoint>
+        <con:request/>
+        <con:originalUri>https://b2bapi-sandbox.moneytrans.eu/v2/transfers/transfers/104087225/notes</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="fa337484-6b77-4515-b31d-9dea50c31c30" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="e62a1b66-c4a9-4612-b80d-dcfc557ba307" name="Response SLA">
+          <con:configuration>
+            <SLA>2000</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+        <con:parameterOrder/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties>
+    <con:property>
+      <con:name>method</con:name>
+      <con:value>GET</con:value>
+    </con:property>
+    <con:property>
+      <con:name>requestPath</con:name>
+      <con:value>/v2/transfers/transfers/104087225/notes</con:value>
+    </con:property>
+  </con:properties>
+  <con:reportParameters/>
+</con:testCase>

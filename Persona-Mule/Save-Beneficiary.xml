@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="ad39435a-d173-44b2-887a-c376d5fa04e9" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="Save Beneficiary" searchProperties="true" timeout="0" maxResults="6">
+  <con:settings id="4a8b5f5f-6920-4d6e-8325-1ff20465c6ba">
+    <con:setting id="ad39435a-d173-44b2-887a-c376d5fa04e9fileName">Save-Beneficiary</con:setting>
+  </con:settings>
+  <con:testStep type="restrequest" name="Save Beneficiary" id="71d2a3aa-9499-4b37-a027-b9fc3741c26a">
+    <con:settings/>
+    <con:config service="https://b2bapi-sandbox.moneytrans.eu 2" resourcePath="/v2/persona/customers/5463529/beneficiaries" methodName="Beneficiaries" xsi:type="con:RestRequestStep">
+      <con:restRequest name="Save Beneficiary" id="3ff33cd8-7b39-4cd7-b74e-9f5bdf71c4cd" mediaType="application/json" postQueryString="false">
+        <con:settings/>
+        <con:endpoint>https://b2bapi-sandbox.moneytrans.eu</con:endpoint>
+        <con:request>{\r
+	"email": "veronicatesting@testemail.com",\r
+	"address": {\r
+		"countryCode": "BEL",\r
+		"cityCode": "2803448",\r
+		"postalCode": "9300",\r
+		"street": "Mi calle",\r
+		"streetNumber": 3\r
+	},\r
+	"telephone": "+258963147",\r
+	"firstName": "Vero",\r
+	"gender": "FEMALE",\r
+	"birthdate": "1995-11-30T20:10:50.175Z",\r
+	"customerRelationshipCode": "CUSTOMER_RELATIONSHIP_PARENTS",\r
+	"nationalityCountryCode": "BEL",\r
+	"lastName": "test"\r
+}</con:request>
+        <con:originalUri>https://b2bapi-sandbox.moneytrans.eu/v2/persona/customers/5463529/beneficiaries</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="d7965df3-5764-4763-a888-196bdbfc79c4" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="c55f255e-22f2-47ad-8c75-fba9086239be" name="Response SLA">
+          <con:configuration>
+            <SLA>200</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters>
+          <con:entry key="Authorization" value="${#Project#authMule}"/>
+          <con:entry key="clientId" value="${#Project#clientId}"/>
+          <con:entry key="Content-Type" value="application/json"/>
+        </con:parameters>
+        <con:parameterOrder>
+          <con:entry>Content-Type</con:entry>
+          <con:entry>clientId</con:entry>
+          <con:entry>Authorization</con:entry>
+        </con:parameterOrder>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testCase>

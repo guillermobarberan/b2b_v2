@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config" name="104087752" path="/v2/transfers/transfers/104087752" id="e97d5e2d-2024-4583-b070-fe35dff6b5dc">
+  <con:settings id="9cb315c6-2fee-4bb6-89c2-3f461eb3ec38">
+    <con:setting id="e97d5e2d-2024-4583-b070-fe35dff6b5dcfileName">104087752</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="104087752" id="b54f7467-0a0a-498b-8068-f46eb826f2ca" method="PUT">
+    <con:settings/>
+    <con:parameters>
+      <con:parameter>
+        <con:name>Content-Type</con:name>
+        <con:value>application/json</con:value>
+        <con:style>HEADER</con:style>
+        <con:default/>
+        <con:path xsi:nil="true"/>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+      <con:parameter>
+        <con:name>clientId</con:name>
+        <con:value>${#Project#clientId}</con:value>
+        <con:style>HEADER</con:style>
+        <con:default/>
+        <con:path xsi:nil="true"/>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+      <con:parameter>
+        <con:name>Authorization</con:name>
+        <con:value>${#Project#authMule}</con:value>
+        <con:style>HEADER</con:style>
+        <con:default/>
+        <con:path xsi:nil="true"/>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+    </con:parameters>
+    <con:request name="Cancel Transfer" id="ee6285b7-d209-4d61-9f01-8b95475dc8ed" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>https://b2bapi-sandbox.moneytrans.eu</con:endpoint>
+      <con:request>{\r
+    "reason": "Reason test",\r
+    "returnFees": false\r
+}</con:request>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:parameters>
+        <con:entry key="Authorization" value="${#Project#authMule}"/>
+        <con:entry key="clientId" value="${#Project#clientId}"/>
+        <con:entry key="Content-Type" value="application/json"/>
+      </con:parameters>
+      <con:parameterOrder>
+        <con:entry>Content-Type</con:entry>
+        <con:entry>clientId</con:entry>
+        <con:entry>Authorization</con:entry>
+      </con:parameterOrder>
+    </con:request>
+  </con:method>
+</con:resource>

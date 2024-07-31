@@ -1,0 +1,392 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config" name="OperationFees" path="/v2/payment-accounts/catalogs/prices/operationFees" id="b7b35296-6ebc-4ed0-a961-3eff25da6798">
+  <con:settings id="4f27f6ad-c122-4375-a951-bdb0dfc9fc47">
+    <con:setting id="b7b35296-6ebc-4ed0-a961-3eff25da6798fileName">OperationFees</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="OperationFees" id="bf8e32e7-a7e5-4453-895c-6ce5d154affc" method="GET">
+    <con:settings/>
+    <con:parameters>
+      <con:parameter required="true">
+        <con:name>iban</con:name>
+        <con:value>BE50500600026818</con:value>
+        <con:style>QUERY</con:style>
+        <con:default>BE50500600026818</con:default>
+        <con:path xsi:nil="true"/>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>operation</con:name>
+        <con:value>ENROLMENT</con:value>
+        <con:style>QUERY</con:style>
+        <con:default>ENROLMENT</con:default>
+        <con:path xsi:nil="true"/>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>amount</con:name>
+        <con:value>10</con:value>
+        <con:style>QUERY</con:style>
+        <con:default>10</con:default>
+        <con:path xsi:nil="true"/>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>currencyCode</con:name>
+        <con:value>EUR</con:value>
+        <con:style>QUERY</con:style>
+        <con:default>EUR</con:default>
+        <con:path xsi:nil="true"/>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>maintenanceType</con:name>
+        <con:value>MONTHLY</con:value>
+        <con:style>QUERY</con:style>
+        <con:default>MONTHLY</con:default>
+        <con:path xsi:nil="true"/>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+    </con:parameters>
+    <con:representation type="FAULT">
+      <con:mediaType>application/json; charset=UTF-8</con:mediaType>
+      <con:status>401</con:status>
+      <con:params/>
+      <con:element xmlns:oper="https://b2bapi-sandbox.moneytrans.eu/v2/payment-accounts/catalogs/prices/operationFees">oper:Fault</con:element>
+    </con:representation>
+    <con:representation type="REQUEST">
+      <con:mediaType>application/json</con:mediaType>
+      <con:params/>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json; charset=UTF-8</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:element>Response</con:element>
+    </con:representation>
+    <con:representation type="FAULT">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>401</con:status>
+      <con:params/>
+      <con:element xmlns:oper="https://b2bapi-sandbox.moneytrans.eu/v2/payment-accounts/catalogs/prices/operationFees">oper:Fault</con:element>
+    </con:representation>
+    <con:request name="Enrolment price" id="c28822a6-25d1-4ef0-af2c-16ec88e25668" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>https://b2bapi-sandbox.moneytrans.eu</con:endpoint>
+      <con:request/>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters>
+        <con:entry key="amount" value="10"/>
+        <con:entry key="iban" value="BE50500600026818"/>
+        <con:entry key="maintenanceType" value="MONTHLY"/>
+        <con:entry key="operation" value="ENROLMENT"/>
+        <con:entry key="currencyCode" value="EUR"/>
+      </con:parameters>
+      <con:parameterOrder>
+        <con:entry>iban</con:entry>
+        <con:entry>operation</con:entry>
+        <con:entry>amount</con:entry>
+        <con:entry>currencyCode</con:entry>
+        <con:entry>maintenanceType</con:entry>
+      </con:parameterOrder>
+    </con:request>
+  </con:method>
+  <con:method name="OperationFees 2" id="4eb800ff-b0a8-4836-b80a-54449d783da3" method="GET">
+    <con:settings/>
+    <con:parameters>
+      <con:parameter required="true">
+        <con:name>iban</con:name>
+        <con:value>BE50500600026818</con:value>
+        <con:style>QUERY</con:style>
+        <con:default>BE50500600026818</con:default>
+        <con:path xsi:nil="true"/>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>operation</con:name>
+        <con:value>DEPOSIT</con:value>
+        <con:style>QUERY</con:style>
+        <con:default>DEPOSIT</con:default>
+        <con:path xsi:nil="true"/>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>amount</con:name>
+        <con:value>10</con:value>
+        <con:style>QUERY</con:style>
+        <con:default>10</con:default>
+        <con:path xsi:nil="true"/>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>currencyCode</con:name>
+        <con:value>EUR</con:value>
+        <con:style>QUERY</con:style>
+        <con:default>EUR</con:default>
+        <con:path xsi:nil="true"/>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+    </con:parameters>
+    <con:representation type="REQUEST">
+      <con:mediaType>application/json</con:mediaType>
+      <con:params/>
+    </con:representation>
+    <con:representation type="FAULT">
+      <con:mediaType>application/json; charset=UTF-8</con:mediaType>
+      <con:status>401</con:status>
+      <con:params/>
+      <con:element xmlns:oper="https://b2bapi-sandbox.moneytrans.eu/v2/payment-accounts/catalogs/prices/operationFees">oper:Fault</con:element>
+    </con:representation>
+    <con:request name="Deposit price" id="19f35110-e204-42ba-9a49-5f1f31c87db5" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>https://b2bapi-sandbox.moneytrans.eu</con:endpoint>
+      <con:request/>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters>
+        <con:entry key="amount" value="10"/>
+        <con:entry key="iban" value="BE50500600026818"/>
+        <con:entry key="operation" value="DEPOSIT"/>
+        <con:entry key="currencyCode" value="EUR"/>
+      </con:parameters>
+      <con:parameterOrder>
+        <con:entry>iban</con:entry>
+        <con:entry>operation</con:entry>
+        <con:entry>amount</con:entry>
+        <con:entry>currencyCode</con:entry>
+      </con:parameterOrder>
+    </con:request>
+  </con:method>
+  <con:method name="OperationFees 3" id="7bb5f188-8a5a-474e-ad6c-213615d5e392" method="GET">
+    <con:settings/>
+    <con:parameters>
+      <con:parameter required="true">
+        <con:name>iban</con:name>
+        <con:value>BE50500600026818</con:value>
+        <con:style>QUERY</con:style>
+        <con:default>BE50500600026818</con:default>
+        <con:path xsi:nil="true"/>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>operation</con:name>
+        <con:value>WITHDRAW</con:value>
+        <con:style>QUERY</con:style>
+        <con:default>WITHDRAW</con:default>
+        <con:path xsi:nil="true"/>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>amount</con:name>
+        <con:value>10</con:value>
+        <con:style>QUERY</con:style>
+        <con:default>10</con:default>
+        <con:path xsi:nil="true"/>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>currencyCode</con:name>
+        <con:value>EUR</con:value>
+        <con:style>QUERY</con:style>
+        <con:default>EUR</con:default>
+        <con:path xsi:nil="true"/>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+    </con:parameters>
+    <con:representation type="REQUEST">
+      <con:mediaType>application/json</con:mediaType>
+      <con:params/>
+    </con:representation>
+    <con:representation type="FAULT">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>401</con:status>
+      <con:params/>
+      <con:element xmlns:oper="https://b2bapi-sandbox.moneytrans.eu/v2/payment-accounts/catalogs/prices/operationFees">oper:Fault</con:element>
+    </con:representation>
+    <con:representation type="FAULT">
+      <con:mediaType>application/json; charset=UTF-8</con:mediaType>
+      <con:status>401</con:status>
+      <con:params/>
+      <con:element xmlns:oper="https://b2bapi-sandbox.moneytrans.eu/v2/payment-accounts/catalogs/prices/operationFees">oper:Fault</con:element>
+    </con:representation>
+    <con:request name="Withdraw price" id="99ca7ac4-f2ad-4d68-9ebb-97243dfc47f9" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>https://b2bapi-sandbox.moneytrans.eu</con:endpoint>
+      <con:request/>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters>
+        <con:entry key="amount" value="10"/>
+        <con:entry key="iban" value="BE50500600026818"/>
+        <con:entry key="operation" value="WITHDRAW"/>
+        <con:entry key="currencyCode" value="EUR"/>
+      </con:parameters>
+      <con:parameterOrder>
+        <con:entry>iban</con:entry>
+        <con:entry>operation</con:entry>
+        <con:entry>amount</con:entry>
+        <con:entry>currencyCode</con:entry>
+      </con:parameterOrder>
+    </con:request>
+  </con:method>
+  <con:method name="OperationFees 4" id="039fb9d9-d5f5-4cb5-a62f-51f6f6394d70" method="GET">
+    <con:settings/>
+    <con:parameters>
+      <con:parameter required="true">
+        <con:name>iban</con:name>
+        <con:value>BE50500600026818</con:value>
+        <con:style>QUERY</con:style>
+        <con:default>BE50500600026818</con:default>
+        <con:path xsi:nil="true"/>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>operation</con:name>
+        <con:value>TRANSFER</con:value>
+        <con:style>QUERY</con:style>
+        <con:default>TRANSFER</con:default>
+        <con:path xsi:nil="true"/>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>amount</con:name>
+        <con:value>10</con:value>
+        <con:style>QUERY</con:style>
+        <con:default>10</con:default>
+        <con:path xsi:nil="true"/>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>currencyCode</con:name>
+        <con:value>EUR</con:value>
+        <con:style>QUERY</con:style>
+        <con:default>EUR</con:default>
+        <con:path xsi:nil="true"/>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+    </con:parameters>
+    <con:representation type="FAULT">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>401</con:status>
+      <con:params/>
+      <con:element xmlns:oper="https://b2bapi-sandbox.moneytrans.eu/v2/payment-accounts/catalogs/prices/operationFees">oper:Fault</con:element>
+    </con:representation>
+    <con:representation type="REQUEST">
+      <con:mediaType>application/json</con:mediaType>
+      <con:params/>
+    </con:representation>
+    <con:representation type="FAULT">
+      <con:mediaType>application/json; charset=UTF-8</con:mediaType>
+      <con:status>401</con:status>
+      <con:params/>
+      <con:element xmlns:oper="https://b2bapi-sandbox.moneytrans.eu/v2/payment-accounts/catalogs/prices/operationFees">oper:Fault</con:element>
+    </con:representation>
+    <con:request name="Transfer price" id="d252d94a-77ce-4cca-90fa-2f7f9493e73c" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>https://b2bapi-sandbox.moneytrans.eu</con:endpoint>
+      <con:request/>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters>
+        <con:entry key="amount" value="10"/>
+        <con:entry key="iban" value="BE50500600026818"/>
+        <con:entry key="operation" value="TRANSFER"/>
+        <con:entry key="currencyCode" value="EUR"/>
+      </con:parameters>
+      <con:parameterOrder>
+        <con:entry>iban</con:entry>
+        <con:entry>operation</con:entry>
+        <con:entry>amount</con:entry>
+        <con:entry>currencyCode</con:entry>
+      </con:parameterOrder>
+    </con:request>
+  </con:method>
+  <con:method name="OperationFees 5" id="0096c265-b355-46cc-bdd3-a9e1e1819156" method="GET">
+    <con:settings/>
+    <con:parameters>
+      <con:parameter required="true">
+        <con:name>iban</con:name>
+        <con:value>BE50500600026818</con:value>
+        <con:style>QUERY</con:style>
+        <con:default>BE50500600026818</con:default>
+        <con:path xsi:nil="true"/>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>operation</con:name>
+        <con:value>VIEW_BALANCE</con:value>
+        <con:style>QUERY</con:style>
+        <con:default>VIEW_BALANCE</con:default>
+        <con:path xsi:nil="true"/>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>amount</con:name>
+        <con:value>10</con:value>
+        <con:style>QUERY</con:style>
+        <con:default>10</con:default>
+        <con:path xsi:nil="true"/>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>currencyCode</con:name>
+        <con:value>EUR</con:value>
+        <con:style>QUERY</con:style>
+        <con:default>EUR</con:default>
+        <con:path xsi:nil="true"/>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+    </con:parameters>
+    <con:representation type="FAULT">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>401</con:status>
+      <con:params/>
+      <con:element xmlns:oper="https://b2bapi-sandbox.moneytrans.eu/v2/payment-accounts/catalogs/prices/operationFees">oper:Fault</con:element>
+    </con:representation>
+    <con:representation type="REQUEST">
+      <con:mediaType>application/json</con:mediaType>
+      <con:params/>
+    </con:representation>
+    <con:representation type="FAULT">
+      <con:mediaType>application/json; charset=UTF-8</con:mediaType>
+      <con:status>401</con:status>
+      <con:params/>
+      <con:element xmlns:oper="https://b2bapi-sandbox.moneytrans.eu/v2/payment-accounts/catalogs/prices/operationFees">oper:Fault</con:element>
+    </con:representation>
+    <con:request name="View_balance price" id="a44adb88-1efc-481e-829f-1cc654192189" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>https://b2bapi-sandbox.moneytrans.eu</con:endpoint>
+      <con:request/>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters>
+        <con:entry key="amount" value="10"/>
+        <con:entry key="iban" value="BE50500600026818"/>
+        <con:entry key="operation" value="VIEW_BALANCE"/>
+        <con:entry key="currencyCode" value="EUR"/>
+      </con:parameters>
+      <con:parameterOrder>
+        <con:entry>iban</con:entry>
+        <con:entry>operation</con:entry>
+        <con:entry>amount</con:entry>
+        <con:entry>currencyCode</con:entry>
+      </con:parameterOrder>
+    </con:request>
+  </con:method>
+</con:resource>

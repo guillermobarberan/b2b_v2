@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="7c7746d3-0e94-48bf-9a5b-25584bf961c8" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="Customers by Document Number" searchProperties="true" timeout="0" maxResults="6">
+  <con:settings id="d48e0672-bc96-41e2-920f-93cf53e33d99">
+    <con:setting id="7c7746d3-0e94-48bf-9a5b-25584bf961c8fileName">Customers-by-Document-Number</con:setting>
+  </con:settings>
+  <con:testStep type="restrequest" name="Customers by Document Number" id="45dbd6d0-8e0c-411b-86c3-542f005f3fc2">
+    <con:settings/>
+    <con:config service="https://multiservices-be-cld-ts.moneytrans.eu 2" resourcePath="/api/b2b/customer/local" methodName="Local 3" xsi:type="con:RestRequestStep">
+      <con:restRequest name="Customers by Document Number" id="5c5437f8-8b01-4d75-82b8-ecba3c190e88" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Accept" value="application/json" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
+        </con:settings>
+        <con:endpoint>https://multiservices-be-cld-ts.moneytrans.eu</con:endpoint>
+        <con:request/>
+        <con:originalUri>https://multiservices-be-cld-ts.moneytrans.eu/api/b2b/customer/local</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="646173b3-890d-4abd-a005-6e13a699a9ae" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="0e9727cf-5eec-4fe0-9619-6bdb7b9ae190" name="Response SLA">
+          <con:configuration>
+            <SLA>700</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters>
+          <con:entry key="Authorization" value="${#[Test Engine#Engine Runner#mule v2]#authBack}"/>
+          <con:entry key="IdDocNumber" value="973645630LO"/>
+          <con:entry key="MT-DELEGATED-AUTH" value="1"/>
+        </con:parameters>
+        <con:parameterOrder>
+          <con:entry>IdDocNumber</con:entry>
+          <con:entry>Authorization</con:entry>
+          <con:entry>MT-DELEGATED-AUTH</con:entry>
+        </con:parameterOrder>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties>
+    <con:property>
+      <con:name>method</con:name>
+      <con:value>GET</con:value>
+    </con:property>
+    <con:property>
+      <con:name>requestPath</con:name>
+      <con:value>/api/b2b/customer/local</con:value>
+    </con:property>
+  </con:properties>
+  <con:reportParameters/>
+</con:testCase>

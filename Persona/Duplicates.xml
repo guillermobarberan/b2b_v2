@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:testCase xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="cdcc5246-24ab-4ecc-8bd6-2ffe97bf9911" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="Duplicates" searchProperties="true" timeout="0" maxResults="6">
-  <con:settings id="df158692-58f5-4f8f-ab87-0ad681809d35">
-    <con:setting id="cdcc5246-24ab-4ecc-8bd6-2ffe97bf9911fileName">Duplicates</con:setting>
+<con:testCase xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="0b3ed1b1-cddb-431d-9861-bcb246290fe7" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="Duplicates" searchProperties="true" timeout="0" maxResults="6">
+  <con:settings id="026cb5d9-3111-4d68-8927-742a1b7ee1b3">
+    <con:setting id="0b3ed1b1-cddb-431d-9861-bcb246290fe7fileName">Duplicates</con:setting>
   </con:settings>
-  <con:testStep type="restrequest" name="Duplicates" id="e0a95d17-3373-4f76-b348-37e2c0e6ebc1">
+  <con:testStep type="restrequest" name="Duplicates" id="38141fbf-c284-4c6c-bec2-64e4874710e2">
     <con:settings/>
     <con:config service="https://multiservices-be-cld-ts.moneytrans.eu 2" resourcePath="/api/b2b/customer/Duplicates" methodName="Duplicates" xsi:type="con:RestRequestStep">
-      <con:restRequest name="Duplicates" id="b2d1160b-857a-48ec-a1d4-6b9f724f9e8d" mediaType="application/json" postQueryString="false">
+      <con:restRequest name="Duplicates" id="d0522658-af0b-46a3-8b3d-758d50f48862" mediaType="application/json" postQueryString="false">
         <con:settings>
-          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Accept" value="application/json" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
         </con:settings>
         <con:endpoint>https://multiservices-be-cld-ts.moneytrans.eu</con:endpoint>
         <con:request>{\r
@@ -20,15 +20,15 @@
   "ValidCode": "2554292"\r
 }</con:request>
         <con:originalUri>https://multiservices-be-cld-ts.moneytrans.eu/api/b2b/customer/Duplicates</con:originalUri>
-        <con:assertion type="Valid HTTP Status Codes" id="445238e7-d2d4-402e-91f8-a4796480fc13" name="Valid HTTP Status Codes">
+        <con:assertion type="Valid HTTP Status Codes" id="e07c3892-540b-498b-aa87-d61c808f856d" name="Valid HTTP Status Codes">
           <con:settings/>
           <con:configuration>
             <codes>200</codes>
           </con:configuration>
         </con:assertion>
-        <con:assertion type="Response SLA Assertion" id="8dda5299-410e-4c76-94a5-8ae495b7d7ab" name="Response SLA">
+        <con:assertion type="Response SLA Assertion" id="2fe6bbf5-ab5c-4c33-9942-4f7edbd1411d" name="Response SLA">
           <con:configuration>
-            <SLA>1000</SLA>
+            <SLA>2500</SLA>
           </con:configuration>
         </con:assertion>
         <con:credentials>
@@ -38,7 +38,6 @@
         <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
         <con:parameters>
           <con:entry key="Authorization" value="${#[Test Engine#Engine Runner#mule v2]#authBack}"/>
-          <con:entry key="Accept" value="application/json"/>
           <con:entry key="Content-Type" value="application/json"/>
           <con:entry key="MT-DELEGATED-AUTH" value="1"/>
         </con:parameters>
@@ -46,7 +45,6 @@
           <con:entry>Content-Type</con:entry>
           <con:entry>Authorization</con:entry>
           <con:entry>MT-DELEGATED-AUTH</con:entry>
-          <con:entry>Accept</con:entry>
         </con:parameterOrder>
       </con:restRequest>
     </con:config>

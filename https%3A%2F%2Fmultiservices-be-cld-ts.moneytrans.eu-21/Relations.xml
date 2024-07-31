@@ -24,26 +24,5 @@
         <con:description xsi:nil="true"/>
       </con:parameter>
     </con:parameters>
-    <con:request name="Add beneficiary relation" id="c2c6aa2b-9aa0-490f-80f9-176451570af8" mediaType="application/json">
-      <con:settings/>
-      <con:endpoint>https://multiservices-be-cld-ts.moneytrans.eu</con:endpoint>
-      <con:request>{\r
-    "IdBeneficiary": "5335741",\r
-    "IdCustomer": "5462855",\r
-    "Relationship": "CUSTOMER_RELATIONSHIP_FRIEND"\r
-}</con:request>
-      <con:credentials>
-        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
-        <con:authType>No Authorization</con:authType>
-      </con:credentials>
-      <con:parameters>
-        <con:entry key="Authorization" value="${#Project#authBack}"/>
-        <con:entry key="MT-DELEGATED-AUTH" value="1"/>
-      </con:parameters>
-      <con:parameterOrder>
-        <con:entry>Authorization</con:entry>
-        <con:entry>MT-DELEGATED-AUTH</con:entry>
-      </con:parameterOrder>
-    </con:request>
   </con:method>
 </con:resource>

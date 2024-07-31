@@ -1,0 +1,4317 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:interface xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="con:RestService" id="f348fd8f-21ed-4eec-8b22-61445d9edd4a" name="PersonaManagement" type="rest_ex" wadlVersion="https://swagger.io/swagger2/specification" definitionUrl="C:\Users\mkgue\OneDrive\Desktop\Destok -4\Elias\B2B\Apis\api.json">
+  <con:description id="7c6bf753-1293-4a05-8536-1f6e9678bb47">Operations over persona</con:description>
+  <con:settings id="5b978882-3042-47c4-b173-c675b3241a3b">
+    <con:setting id="f348fd8f-21ed-4eec-8b22-61445d9edd4afileName">PersonaManagement</con:setting>
+  </con:settings>
+  <con:definitionCache type="TEXT" rootPart="file:/C:/Users/mkgue/OneDrive/Desktop/Destok%20-4/Elias/B2B/Apis/api.json">
+    <con:part>
+      <con:url>file:/C:/Users/mkgue/OneDrive/Desktop/Destok%20-4/Elias/B2B/Apis/api.json</con:url>
+      <con:content>{
+  "swagger": "2.0",
+  "info": {
+    "title": "PersonaManagement",
+    "description": "Operations over persona",
+    "version": "1.0.0"
+  },
+  "host": "b2bapi-sandbox.moneytrans.eu",
+  "schemes": [
+    "https"
+  ],
+  "paths": {
+    "/customers": {
+      "post": {
+        "operationId": "Save New Customer",
+        "description": "New customer, due to the business environment, a complete update of a customer is not allowed",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "ApiKey",
+            "description": "Identifier of the payment gateway. It is a fixed value. Moneytrans will commmunicate this value to the consumer after during on-boarding.",
+            "required": true,
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "name": "ApiSignature",
+            "description": "This signature is generated with the SHA256 algorithm and sent in the header.",
+            "required": true,
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "name": "clientId",
+            "description": "clientId used to request the access token",
+            "required": true,
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "name": "Authorization",
+            "description": "Bearer access token",
+            "required": true,
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "x-amf-mediaType": "application/json",
+            "in": "body",
+            "name": "generated",
+            "schema": {
+              "description": "Customer",
+              "example": {
+                "firstName": "Name",
+                "lastName": "Surname",
+                "telephone": "+34622835864",
+                "email": "mail@mailprovider.com",
+                "birthDate": "2009-11-27T20:10:50.175Z",
+                "gender": "MALE",
+                "occupationCode": "OCCU_BEAUTY_HAIR",
+                "sourceOfFundsCode": "TRANSFER_SOURCE_OF_FUNDS_SALARY",
+                "nationalCitizenNumber": "541321",
+                "fiscalCode": "541321",
+                "nationalityCountryCode": "ESP",
+                "address": {
+                  "cityCode": "MA",
+                  "countryCode": "ESP",
+                  "postalCode": "28043",
+                  "street": "Roman",
+                  "streetLetter": "B",
+                  "streetNumber": 1
+                },
+                "identityDocument": {
+                  "deliveryDate": "2020-11-27T15:49:52.795Z",
+                  "documentNumber": "50770750K",
+                  "expiryDate": "2032-11-27T15:49:52.795Z",
+                  "code": "513",
+                  "deliveryCountryCode": "ESP",
+                  "deliveryCityCode": "MAD",
+                  "documentTypeCode": "NICD",
+                  "isDefault": true
+                },
+                "identityDocumentContent": [
+                  {
+                    "fileContent": "qwerqwerqwer",
+                    "type": "IDENTITY_DOCUMENT_FRONT"
+                  },
+                  {
+                    "fileContent": "2347guwbjf",
+                    "type": "IDENTITY_DOCUMENT_BACK"
+                  }
+                ]
+              },
+              "type": "object",
+              "properties": {
+                "birthdate": {
+                  "description": "customer birthday",
+                  "type": "string"
+                },
+                "identityDocument": {
+                  "description": "Customer identity document information",
+                  "type": "object",
+                  "required": [
+                    "deliveryCityCode"
+                  ],
+                  "properties": {
+                    "documentTypeCode": {
+                      "description": "Code of document type",
+                      "type": "string"
+                    },
+                    "deliveryCityCode": {
+                      "description": "Code of delivery city",
+                      "type": "string"
+                    },
+                    "deliveryCountryCode": {
+                      "description": "Iso 3 Code of delivery country",
+                      "type": "string"
+                    },
+                    "code": {
+                      "description": "Identity document code",
+                      "type": "string"
+                    },
+                    "deliveryDate": {
+                      "description": "Document delivery date",
+                      "type": "string",
+                      "format": "date-time"
+                    },
+                    "expiryDate": {
+                      "description": "Document expiry date",
+                      "type": "string",
+                      "format": "date-time"
+                    },
+                    "isDefault": {
+                      "description": "Indicates if the document is the default one",
+                      "type": "boolean"
+                    },
+                    "deliveryAuthorityCode": {
+                      "description": "Authority document code",
+                      "type": "string"
+                    },
+                    "documentNumber": {
+                      "description": "Document number",
+                      "type": "string"
+                    }
+                  }
+                },
+                "sourceOfFundsCode": {
+                  "description": "code of the customer source of funds",
+                  "type": "string"
+                },
+                "address": {
+                  "description": "customer address information",
+                  "type": "object",
+                  "properties": {
+                    "countryCode": {
+                      "description": "address's country iso3 code",
+                      "type": "string"
+                    },
+                    "streetLetter": {
+                      "description": "address's street letter",
+                      "type": "string"
+                    },
+                    "streetNumber": {
+                      "description": "address's street number",
+                      "type": "integer",
+                      "format": "int32"
+                    },
+                    "cityCode": {
+                      "description": "address's city code",
+                      "type": "string"
+                    },
+                    "street": {
+                      "description": "address's street",
+                      "type": "string"
+                    },
+                    "postalCode": {
+                      "description": "address's postalcode",
+                      "type": "string"
+                    }
+                  }
+                },
+                "identityDocumentContent": {
+                  "description": "Customer identity document images",
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/items"
+                  }
+                },
+                "lastName": {
+                  "description": "customer last name",
+                  "type": "string"
+                },
+                "telephone": {
+                  "description": "customer phone number including area code",
+                  "type": "string"
+                },
+                "firstName": {
+                  "description": "customer first name",
+                  "type": "string"
+                },
+                "nationalCitizenNumber": {
+                  "description": "National citizen number of the customer",
+                  "type": "string"
+                },
+                "email": {
+                  "description": "customer email address",
+                  "type": "string"
+                },
+                "nationalityCountryCode": {
+                  "description": "customer country iso3 code of nationality",
+                  "type": "string"
+                },
+                "fiscalCode": {
+                  "description": "Customer fiscal code",
+                  "type": "string"
+                },
+                "gender": {
+                  "description": "customer gender",
+                  "enum": [
+                    "MALE",
+                    "FEMALE"
+                  ],
+                  "type": "string"
+                },
+                "occupationCode": {
+                  "description": "code of the customer occupation",
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "x-amf-mediaType": "application/json",
+            "schema": {
+              "description": "Saved Customer",
+              "example": {
+                "amlResult": "PASSED",
+                "foundCustomerCode": "5410",
+                "foundCustomerIdentityDocumentCode": "451",
+                "creationResult": "SUCCESS",
+                "savedCustomerCode": "543510",
+                "similarCustomerCode": "874351",
+                "similarCustomerIdentityDocumentCode": "54351"
+              },
+              "type": "object",
+              "properties": {
+                "creationResult": {
+                  "enum": [
+                    "NOT_SET",
+                    "SUCCESS",
+                    "SUCCESS_BUT_FOUND_CUSTOMER",
+                    "REJECTED_FOUND_DUPLICATES_OR_SIMILAR_CUSTOMERS",
+                    "REJECTED_BAD_REQUEST",
+                    "REJECTED_BY_AML",
+                    "UNEXPECTED_ERROR"
+                  ],
+                  "type": "string"
+                },
+                "foundCustomerCode": {
+                  "description": "code of customer if found",
+                  "type": "string"
+                },
+                "foundCustomerIdentityDocumentCode": {
+                  "description": "code of identity document of the customer if found",
+                  "type": "string"
+                },
+                "similarCustomerIdentityDocumentCode": {
+                  "description": "code of identity document of the customer if exists",
+                  "type": "string"
+                },
+                "savedCustomerCode": {
+                  "description": "Created code of the new customer",
+                  "type": "string"
+                },
+                "similarCustomerCode": {
+                  "description": "code of similar customer if exists",
+                  "type": "string"
+                },
+                "amlResult": {
+                  "enum": [
+                    "NOT_SET",
+                    "PASSED",
+                    "NOT_PASSED",
+                    "PASSED_WITH_FLAGS"
+                  ],
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "x-amf-mediaType": "application/json",
+            "schema": {
+              "description": "Error",
+              "example": {
+                "code": 29500,
+                "message": "Internal error",
+                "reason": "Something went wrong in the system during the execution"
+              },
+              "type": "object",
+              "properties": {
+                "reason": {
+                  "description": "Error Reason",
+                  "type": "string"
+                },
+                "code": {
+                  "description": "Error code",
+                  "type": "integer",
+                  "format": "int32"
+                },
+                "message": {
+                  "description": "Error Message",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "x-amf-mediaType": "application/json",
+            "schema": {
+              "description": "Error",
+              "example": {
+                "code": 29401,
+                "message": "Unauthorized",
+                "reason": "Security parameter is missing or requestor doesn't have permissions to call this resource"
+              },
+              "type": "object",
+              "properties": {
+                "reason": {
+                  "description": "Error Reason",
+                  "type": "string"
+                },
+                "code": {
+                  "description": "Error code",
+                  "type": "integer",
+                  "format": "int32"
+                },
+                "message": {
+                  "description": "Error Message",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "x-amf-mediaType": "application/json",
+            "schema": {
+              "description": "Error",
+              "example": {
+                "code": 29400,
+                "message": "Bad Request",
+                "reason": "invalid identity Document Content type"
+              },
+              "type": "object",
+              "properties": {
+                "reason": {
+                  "description": "Error Reason",
+                  "type": "string"
+                },
+                "code": {
+                  "description": "Error code",
+                  "type": "integer",
+                  "format": "int32"
+                },
+                "message": {
+                  "description": "Error Message",
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      },
+      "patch": {
+        "operationId": "Update Customer",
+        "description": "Update partially an existing customer",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "ApiKey",
+            "description": "Identifier of the payment gateway. It is a fixed value. Moneytrans will commmunicate this value to the consumer after during on-boarding.",
+            "required": true,
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "name": "ApiSignature",
+            "description": "This signature is generated with the SHA256 algorithm and sent in the header.",
+            "required": true,
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "name": "clientId",
+            "description": "clientId used to request the access token",
+            "required": true,
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "name": "Authorization",
+            "description": "Bearer access token",
+            "required": true,
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "x-amf-mediaType": "application/json",
+            "in": "body",
+            "name": "generated",
+            "schema": {
+              "description": "Customer",
+              "example": {
+                "code": "651321",
+                "firstName": "Name",
+                "lastName": "Surname",
+                "telephone": "+34622835864",
+                "email": "mail@mailprovider.com",
+                "birthDate": "2009-11-27T20:10:50.175Z",
+                "gender": "MALE",
+                "occupationCode": "OCCU_BEAUTY_HAIR",
+                "sourceOfFundsCode": "TRANSFER_SOURCE_OF_FUNDS_SALARY",
+                "nationalCitizenNumber": "541321",
+                "fiscalCode": "541321",
+                "nationalityCountryCode": "ESP",
+                "address": {
+                  "cityCode": "MA",
+                  "countryCode": "ESP",
+                  "postalCode": "28043",
+                  "street": "Roman",
+                  "streetLetter": "B",
+                  "streetNumber": 1
+                },
+                "identityDocument": {
+                  "deliveryDate": "2020-11-27T15:49:52.795Z",
+                  "documentNumber": "50770750K",
+                  "expiryDate": "2032-11-27T15:49:52.795Z",
+                  "code": "513",
+                  "deliveryCountryCode": "ESP",
+                  "deliveryCityCode": "MAD",
+                  "documentTypeCode": "NICD",
+                  "isDefault": true
+                },
+                "identityDocumentContent": [
+                  {
+                    "fileContent": "qwerqwerqwer",
+                    "type": "IDENTITY_DOCUMENT_FRONT"
+                  },
+                  {
+                    "fileContent": "2347guwbjf",
+                    "type": "IDENTITY_DOCUMENT_BACK"
+                  }
+                ]
+              },
+              "type": "object",
+              "properties": {
+                "birthdate": {
+                  "description": "customer birthday",
+                  "type": "string"
+                },
+                "identityDocument": {
+                  "description": "Customer identity document information",
+                  "type": "object",
+                  "required": [
+                    "deliveryCityCode"
+                  ],
+                  "properties": {
+                    "documentTypeCode": {
+                      "description": "Code of document type",
+                      "type": "string"
+                    },
+                    "deliveryCityCode": {
+                      "description": "Code of delivery city",
+                      "type": "string"
+                    },
+                    "deliveryCountryCode": {
+                      "description": "Iso 3 Code of delivery country",
+                      "type": "string"
+                    },
+                    "code": {
+                      "description": "Identity document code",
+                      "type": "string"
+                    },
+                    "deliveryDate": {
+                      "description": "Document delivery date",
+                      "type": "string",
+                      "format": "date-time"
+                    },
+                    "expiryDate": {
+                      "description": "Document expiry date",
+                      "type": "string",
+                      "format": "date-time"
+                    },
+                    "isDefault": {
+                      "description": "Indicates if the document is the default one",
+                      "type": "boolean"
+                    },
+                    "deliveryAuthorityCode": {
+                      "description": "Authority document code",
+                      "type": "string"
+                    },
+                    "documentNumber": {
+                      "description": "Document number",
+                      "type": "string"
+                    }
+                  }
+                },
+                "code": {
+                  "description": "customer code",
+                  "type": "string"
+                },
+                "sourceOfFundsCode": {
+                  "description": "code of the customer source of funds",
+                  "type": "string"
+                },
+                "address": {
+                  "description": "customer address information",
+                  "type": "object",
+                  "properties": {
+                    "countryCode": {
+                      "description": "address's country iso3 code",
+                      "type": "string"
+                    },
+                    "streetLetter": {
+                      "description": "address's street letter",
+                      "type": "string"
+                    },
+                    "streetNumber": {
+                      "description": "address's street number",
+                      "type": "integer",
+                      "format": "int32"
+                    },
+                    "cityCode": {
+                      "description": "address's city code",
+                      "type": "string"
+                    },
+                    "street": {
+                      "description": "address's street",
+                      "type": "string"
+                    },
+                    "postalCode": {
+                      "description": "address's postalcode",
+                      "type": "string"
+                    }
+                  }
+                },
+                "identityDocumentContent": {
+                  "description": "Customer identity document images",
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/items_1"
+                  }
+                },
+                "lastName": {
+                  "description": "customer last name",
+                  "type": "string"
+                },
+                "telephone": {
+                  "description": "customer phone number including area code",
+                  "type": "string"
+                },
+                "firstName": {
+                  "description": "customer first name",
+                  "type": "string"
+                },
+                "nationalCitizenNumber": {
+                  "description": "National citizen number of the customer",
+                  "type": "string"
+                },
+                "email": {
+                  "description": "customer email address",
+                  "type": "string"
+                },
+                "nationalityCountryCode": {
+                  "description": "customer country iso3 code of nationality",
+                  "type": "string"
+                },
+                "fiscalCode": {
+                  "description": "Customer fiscal code",
+                  "type": "string"
+                },
+                "gender": {
+                  "description": "customer gender",
+                  "enum": [
+                    "MALE",
+                    "FEMALE"
+                  ],
+                  "type": "string"
+                },
+                "occupationCode": {
+                  "description": "code of the customer occupation",
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "x-amf-mediaType": "application/json",
+            "schema": {
+              "description": "Saved Customer",
+              "example": {
+                "amlResult": "PASSED",
+                "foundCustomerCode": "5410",
+                "foundCustomerIdentityDocumentCode": "451",
+                "modificationResult": "SUCCESS",
+                "updatedCustomerCode": "543510",
+                "similarCustomerCode": "874351",
+                "similarCustomerIdentityDocumentCode": "54351"
+              },
+              "type": "object",
+              "properties": {
+                "foundCustomerCode": {
+                  "description": "code of customer if found",
+                  "type": "string"
+                },
+                "updatedCustomerCode": {
+                  "description": "Created code of the new customer",
+                  "type": "string"
+                },
+                "modificationResult": {
+                  "enum": [
+                    "NOT_SET",
+                    "SUCCESS",
+                    "SUCCESS_BUT_FOUND_CUSTOMER",
+                    "REJECTED_FOUND_DUPLICATES_OR_SIMILAR_CUSTOMERS",
+                    "REJECTED_BAD_REQUEST",
+                    "REJECTED_BY_AML",
+                    "UNEXPECTED_ERROR"
+                  ],
+                  "type": "string"
+                },
+                "foundCustomerIdentityDocumentCode": {
+                  "description": "code of identity document of the customer if found",
+                  "type": "string"
+                },
+                "similarCustomerIdentityDocumentCode": {
+                  "description": "code of identity document of the customer if exists",
+                  "type": "string"
+                },
+                "similarCustomerCode": {
+                  "description": "code of similar customer if exists",
+                  "type": "string"
+                },
+                "amlResult": {
+                  "enum": [
+                    "NOT_SET",
+                    "PASSED",
+                    "NOT_PASSED",
+                    "PASSED_WITH_FLAGS"
+                  ],
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "x-amf-mediaType": "application/json",
+            "schema": {
+              "description": "Error",
+              "example": {
+                "code": 29500,
+                "message": "Internal error",
+                "reason": "Something went wrong in the system during the execution"
+              },
+              "type": "object",
+              "properties": {
+                "reason": {
+                  "description": "Error Reason",
+                  "type": "string"
+                },
+                "code": {
+                  "description": "Error code",
+                  "type": "integer",
+                  "format": "int32"
+                },
+                "message": {
+                  "description": "Error Message",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "x-amf-mediaType": "application/json",
+            "schema": {
+              "description": "Error",
+              "example": {
+                "code": 29401,
+                "message": "Unauthorized",
+                "reason": "Security parameter is missing or requestor doesn't have permissions to call this resource"
+              },
+              "type": "object",
+              "properties": {
+                "reason": {
+                  "description": "Error Reason",
+                  "type": "string"
+                },
+                "code": {
+                  "description": "Error code",
+                  "type": "integer",
+                  "format": "int32"
+                },
+                "message": {
+                  "description": "Error Message",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "x-amf-mediaType": "application/json",
+            "schema": {
+              "description": "Error",
+              "example": {
+                "code": 29400,
+                "message": "Bad Request",
+                "reason": "Too many percentage of changes"
+              },
+              "type": "object",
+              "properties": {
+                "reason": {
+                  "description": "Error Reason",
+                  "type": "string"
+                },
+                "code": {
+                  "description": "Error code",
+                  "type": "integer",
+                  "format": "int32"
+                },
+                "message": {
+                  "description": "Error Message",
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "operationId": "Get Customers By Criteria",
+        "description": "Get Customers details by specific criteria",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "criteria",
+            "description": "Value for the search",
+            "required": false,
+            "in": "query",
+            "type": "string"
+          },
+          {
+            "name": "searchField",
+            "description": "Field for the search",
+            "required": false,
+            "in": "query",
+            "enum": [
+              "CODE",
+              "NAME",
+              "DOCUMENTNUMBER",
+              "PHONE"
+            ],
+            "type": "string"
+          },
+          {
+            "name": "ApiKey",
+            "description": "Identifier of the payment gateway. It is a fixed value. Moneytrans will commmunicate this value to the consumer after during on-boarding.",
+            "required": true,
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "name": "ApiSignature",
+            "description": "This signature is generated with the SHA256 algorithm and sent in the header.",
+            "required": true,
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "name": "clientId",
+            "description": "clientId used to request the access token",
+            "required": true,
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "name": "Authorization",
+            "description": "Bearer access token",
+            "required": true,
+            "in": "header",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "x-amf-mediaType": "application/json",
+            "schema": {
+              "description": "List of Customers",
+              "example": [
+                {
+                  "code": "651321",
+                  "firstName": "Name",
+                  "lastName": "Surname",
+                  "telephone": "+34622835864",
+                  "email": "mail@mailprovider.com",
+                  "nationalityCountryCode": "ESP",
+                  "identityDocument": {
+                    "deliveryDate": "2020-11-27T15:49:52.795Z",
+                    "documentNumber": "50770750K",
+                    "expiryDate": "2032-11-27T15:49:52.795Z",
+                    "code": "513",
+                    "deliveryCountryCode": "ESP",
+                    "deliveryCityCode": "MAD",
+                    "documentTypeCode": "NICD",
+                    "isDefault": true
+                  }
+                }
+              ],
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/items_2"
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "x-amf-mediaType": "application/json",
+            "schema": {
+              "description": "Error",
+              "example": {
+                "code": 29500,
+                "message": "Internal error",
+                "reason": "Something went wrong in the system during the execution"
+              },
+              "type": "object",
+              "properties": {
+                "reason": {
+                  "description": "Error Reason",
+                  "type": "string"
+                },
+                "code": {
+                  "description": "Error code",
+                  "type": "integer",
+                  "format": "int32"
+                },
+                "message": {
+                  "description": "Error Message",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "x-amf-mediaType": "application/json",
+            "schema": {
+              "description": "Error",
+              "example": {
+                "code": 29401,
+                "message": "Unauthorized",
+                "reason": "Security parameter is missing or requestor doesn't have permissions to call this resource"
+              },
+              "type": "object",
+              "properties": {
+                "reason": {
+                  "description": "Error Reason",
+                  "type": "string"
+                },
+                "code": {
+                  "description": "Error code",
+                  "type": "integer",
+                  "format": "int32"
+                },
+                "message": {
+                  "description": "Error Message",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "x-amf-mediaType": "application/json",
+            "schema": {
+              "description": "Error",
+              "example": {
+                "code": 29400,
+                "message": "Bad Request",
+                "reason": "Invalid searchField"
+              },
+              "type": "object",
+              "properties": {
+                "reason": {
+                  "description": "Error Reason",
+                  "type": "string"
+                },
+                "code": {
+                  "description": "Error code",
+                  "type": "integer",
+                  "format": "int32"
+                },
+                "message": {
+                  "description": "Error Message",
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/customers/{code}": {
+      "get": {
+        "operationId": "Get Customer By Code",
+        "description": "Get Customer details by Code",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "showIdentityDocumentContent",
+            "description": "Indicates if you want to receive identity document content. By default it is false",
+            "required": false,
+            "in": "query",
+            "type": "boolean"
+          },
+          {
+            "name": "code",
+            "required": true,
+            "in": "path",
+            "type": "string"
+          },
+          {
+            "name": "ApiKey",
+            "description": "Identifier of the payment gateway. It is a fixed value. Moneytrans will commmunicate this value to the consumer after during on-boarding.",
+            "required": true,
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "name": "ApiSignature",
+            "description": "This signature is generated with the SHA256 algorithm and sent in the header.",
+            "required": true,
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "name": "clientId",
+            "description": "clientId used to request the access token",
+            "required": true,
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "name": "Authorization",
+            "description": "Bearer access token",
+            "required": true,
+            "in": "header",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "x-amf-mediaType": "application/json",
+            "schema": {
+              "description": "Customer",
+              "example": {
+                "code": "651321",
+                "firstName": "Name",
+                "lastName": "Surname",
+                "telephone": "+34622835864",
+                "email": "mail@mailprovider.com",
+                "birthDate": "2009-11-27T20:10:50.175Z",
+                "gender": "MALE",
+                "occupationCode": "OCCU_BEAUTY_HAIR",
+                "sourceOfFundsCode": "TRANSFER_SOURCE_OF_FUNDS_SALARY",
+                "nationalCitizenNumber": "541321",
+                "fiscalCode": "541321",
+                "nationalityCountryCode": "ESP",
+                "address": {
+                  "cityCode": "MA",
+                  "countryCode": "ESP",
+                  "postalCode": "28043",
+                  "street": "Roman",
+                  "streetLetter": "B",
+                  "streetNumber": 1
+                },
+                "identityDocument": {
+                  "deliveryDate": "2020-11-27T15:49:52.795Z",
+                  "documentNumber": "50770750K",
+                  "expiryDate": "2032-11-27T15:49:52.795Z",
+                  "code": "513",
+                  "deliveryCountryCode": "ESP",
+                  "deliveryCityCode": "MAD",
+                  "documentTypeCode": "NICD",
+                  "isDefault": true
+                },
+                "identityDocumentContent": [
+                  {
+                    "fileContent": "qwerqwerqwer",
+                    "type": "IDENTITY_DOCUMENT_FRONT"
+                  },
+                  {
+                    "fileContent": "2347guwbjf",
+                    "type": "IDENTITY_DOCUMENT_BACK"
+                  }
+                ]
+              },
+              "type": "object",
+              "properties": {
+                "birthdate": {
+                  "description": "customer birthday",
+                  "type": "string"
+                },
+                "identityDocument": {
+                  "description": "Customer identity document information",
+                  "type": "object",
+                  "required": [
+                    "deliveryCityCode"
+                  ],
+                  "properties": {
+                    "documentTypeCode": {
+                      "description": "Code of document type",
+                      "type": "string"
+                    },
+                    "deliveryCityCode": {
+                      "description": "Code of delivery city",
+                      "type": "string"
+                    },
+                    "deliveryCountryCode": {
+                      "description": "Iso 3 Code of delivery country",
+                      "type": "string"
+                    },
+                    "code": {
+                      "description": "Identity document code",
+                      "type": "string"
+                    },
+                    "deliveryDate": {
+                      "description": "Document delivery date",
+                      "type": "string",
+                      "format": "date-time"
+                    },
+                    "expiryDate": {
+                      "description": "Document expiry date",
+                      "type": "string",
+                      "format": "date-time"
+                    },
+                    "isDefault": {
+                      "description": "Indicates if the document is the default one",
+                      "type": "boolean"
+                    },
+                    "deliveryAuthorityCode": {
+                      "description": "Authority document code",
+                      "type": "string"
+                    },
+                    "documentNumber": {
+                      "description": "Document number",
+                      "type": "string"
+                    }
+                  }
+                },
+                "code": {
+                  "description": "customer code",
+                  "type": "string"
+                },
+                "sourceOfFundsCode": {
+                  "description": "code of the customer source of funds",
+                  "type": "string"
+                },
+                "address": {
+                  "description": "customer address information",
+                  "type": "object",
+                  "properties": {
+                    "countryCode": {
+                      "description": "address's country iso3 code",
+                      "type": "string"
+                    },
+                    "streetLetter": {
+                      "description": "address's street letter",
+                      "type": "string"
+                    },
+                    "streetNumber": {
+                      "description": "address's street number",
+                      "type": "integer",
+                      "format": "int32"
+                    },
+                    "cityCode": {
+                      "description": "address's city code",
+                      "type": "string"
+                    },
+                    "street": {
+                      "description": "address's street",
+                      "type": "string"
+                    },
+                    "postalCode": {
+                      "description": "address's postalcode",
+                      "type": "string"
+                    }
+                  }
+                },
+                "identityDocumentContent": {
+                  "description": "Customer identity document images",
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/items_1"
+                  }
+                },
+                "lastName": {
+                  "description": "customer last name",
+                  "type": "string"
+                },
+                "telephone": {
+                  "description": "customer phone number including area code",
+                  "type": "string"
+                },
+                "firstName": {
+                  "description": "customer first name",
+                  "type": "string"
+                },
+                "nationalCitizenNumber": {
+                  "description": "National citizen number of the customer",
+                  "type": "string"
+                },
+                "email": {
+                  "description": "customer email address",
+                  "type": "string"
+                },
+                "nationalityCountryCode": {
+                  "description": "customer country iso3 code of nationality",
+                  "type": "string"
+                },
+                "fiscalCode": {
+                  "description": "Customer fiscal code",
+                  "type": "string"
+                },
+                "gender": {
+                  "description": "customer gender",
+                  "enum": [
+                    "MALE",
+                    "FEMALE"
+                  ],
+                  "type": "string"
+                },
+                "occupationCode": {
+                  "description": "code of the customer occupation",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "x-amf-mediaType": "application/json",
+            "schema": {
+              "description": "Error",
+              "example": {
+                "code": 29500,
+                "message": "Internal error",
+                "reason": "Something went wrong in the system during the execution"
+              },
+              "type": "object",
+              "properties": {
+                "reason": {
+                  "description": "Error Reason",
+                  "type": "string"
+                },
+                "code": {
+                  "description": "Error code",
+                  "type": "integer",
+                  "format": "int32"
+                },
+                "message": {
+                  "description": "Error Message",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "x-amf-mediaType": "application/json",
+            "schema": {
+              "description": "Error",
+              "example": {
+                "code": 29401,
+                "message": "Unauthorized",
+                "reason": "Security parameter is missing or requestor doesn't have permissions to call this resource"
+              },
+              "type": "object",
+              "properties": {
+                "reason": {
+                  "description": "Error Reason",
+                  "type": "string"
+                },
+                "code": {
+                  "description": "Error code",
+                  "type": "integer",
+                  "format": "int32"
+                },
+                "message": {
+                  "description": "Error Message",
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/customers/{customerCode}/beneficiaries": {
+      "get": {
+        "operationId": "Get Beneficiaries By Customer Code",
+        "description": "Get Beneficiaries details by Customer Code",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "customerCode",
+            "required": true,
+            "in": "path",
+            "type": "string"
+          },
+          {
+            "name": "ApiKey",
+            "description": "Identifier of the payment gateway. It is a fixed value. Moneytrans will commmunicate this value to the consumer after during on-boarding.",
+            "required": true,
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "name": "ApiSignature",
+            "description": "This signature is generated with the SHA256 algorithm and sent in the header.",
+            "required": true,
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "name": "clientId",
+            "description": "clientId used to request the access token",
+            "required": true,
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "name": "Authorization",
+            "description": "Bearer access token",
+            "required": true,
+            "in": "header",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "x-amf-mediaType": "application/json",
+            "schema": {
+              "description": "List of Beneficiaries",
+              "example": [
+                {
+                  "code": "651321",
+                  "firstName": "Name",
+                  "lastName": "Surname",
+                  "telephone": "+34622835864",
+                  "email": "mail@mailprovider.com",
+                  "nationalityCountryCode": "ESP",
+                  "customerRelationshipCode": "PARENTS",
+                  "identityDocument": {
+                    "deliveryDate": "2020-11-27T15:49:52.795Z",
+                    "documentNumber": "50770750K",
+                    "expiryDate": "2032-11-27T15:49:52.795Z",
+                    "code": "513",
+                    "deliveryCountryCode": "ESP",
+                    "deliveryCityCode": "MAD",
+                    "documentTypeCode": "NICD",
+                    "isDefault": true
+                  }
+                }
+              ],
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/items_3"
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "x-amf-mediaType": "application/json",
+            "schema": {
+              "description": "Error",
+              "example": {
+                "code": 29500,
+                "message": "Internal error",
+                "reason": "Something went wrong in the system during the execution"
+              },
+              "type": "object",
+              "properties": {
+                "reason": {
+                  "description": "Error Reason",
+                  "type": "string"
+                },
+                "code": {
+                  "description": "Error code",
+                  "type": "integer",
+                  "format": "int32"
+                },
+                "message": {
+                  "description": "Error Message",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "x-amf-mediaType": "application/json",
+            "schema": {
+              "description": "Error",
+              "example": {
+                "code": 29401,
+                "message": "Unauthorized",
+                "reason": "Security parameter is missing or requestor doesn't have permissions to call this resource"
+              },
+              "type": "object",
+              "properties": {
+                "reason": {
+                  "description": "Error Reason",
+                  "type": "string"
+                },
+                "code": {
+                  "description": "Error code",
+                  "type": "integer",
+                  "format": "int32"
+                },
+                "message": {
+                  "description": "Error Message",
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "operationId": "Save New Beneficiary",
+        "description": "New Beneficiary for specific customer, due to the business environment, a complete update of a beneficiary is not allowed",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "customerCode",
+            "required": true,
+            "in": "path",
+            "type": "string"
+          },
+          {
+            "name": "ApiKey",
+            "description": "Identifier of the payment gateway. It is a fixed value. Moneytrans will commmunicate this value to the consumer after during on-boarding.",
+            "required": true,
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "name": "ApiSignature",
+            "description": "This signature is generated with the SHA256 algorithm and sent in the header.",
+            "required": true,
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "name": "clientId",
+            "description": "clientId used to request the access token",
+            "required": true,
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "name": "Authorization",
+            "description": "Bearer access token",
+            "required": true,
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "x-amf-mediaType": "application/json",
+            "in": "body",
+            "name": "generated",
+            "schema": {
+              "description": "Beneficiary",
+              "example": {
+                "firstName": "Name",
+                "lastName": "Surname",
+                "telephone": "+34622835864",
+                "email": "mail@mailprovider.com",
+                "birthDate": "2009-11-27T20:10:50.175Z",
+                "gender": "MALE",
+                "occupationCode": "OCCU_BEAUTY_HAIR",
+                "sourceOfFundsCode": "TRANSFER_SOURCE_OF_FUNDS_SALARY",
+                "nationalCitizenNumber": "541321",
+                "fiscalCode": "541321",
+                "nationalityCountryCode": "ESP",
+                "address": {
+                  "cityCode": "MA",
+                  "countryCode": "ESP",
+                  "postalCode": "28043",
+                  "street": "Roman",
+                  "streetLetter": "B",
+                  "streetNumber": 1
+                },
+                "customerRelationshipCode": "PARENTS",
+                "identityDocument": {
+                  "deliveryDate": "2020-11-27T15:49:52.795Z",
+                  "documentNumber": "50770750K",
+                  "expiryDate": "2032-11-27T15:49:52.795Z",
+                  "code": "513",
+                  "deliveryCountryCode": "ESP",
+                  "deliveryCityCode": "MAD",
+                  "documentTypeCode": "NICD",
+                  "isDefault": true
+                },
+                "identityDocumentContent": [
+                  {
+                    "fileContentBytes": "qwerqwerqwer",
+                    "type": "IDENTITY_DOCUMENT_FRONT"
+                  },
+                  {
+                    "fileContentBytes": "2347guwbjf",
+                    "type": "IDENTITY_DOCUMENT_BACK"
+                  }
+                ]
+              },
+              "type": "object",
+              "properties": {
+                "customerRelationshipCode": {
+                  "description": "relationship between customer and beneficiary",
+                  "type": "string"
+                },
+                "birthdate": {
+                  "description": "customer birthday",
+                  "type": "string"
+                },
+                "identityDocument": {
+                  "description": "Customer identity document information",
+                  "type": "object",
+                  "required": [
+                    "deliveryCityCode"
+                  ],
+                  "properties": {
+                    "documentTypeCode": {
+                      "description": "Code of document type",
+                      "type": "string"
+                    },
+                    "deliveryCityCode": {
+                      "description": "Code of delivery city",
+                      "type": "string"
+                    },
+                    "deliveryCountryCode": {
+                      "description": "Iso 3 Code of delivery country",
+                      "type": "string"
+                    },
+                    "code": {
+                      "description": "Identity document code",
+                      "type": "string"
+                    },
+                    "deliveryDate": {
+                      "description": "Document delivery date",
+                      "type": "string",
+                      "format": "date-time"
+                    },
+                    "expiryDate": {
+                      "description": "Document expiry date",
+                      "type": "string",
+                      "format": "date-time"
+                    },
+                    "isDefault": {
+                      "description": "Indicates if the document is the default one",
+                      "type": "boolean"
+                    },
+                    "deliveryAuthorityCode": {
+                      "description": "Authority document code",
+                      "type": "string"
+                    },
+                    "documentNumber": {
+                      "description": "Document number",
+                      "type": "string"
+                    }
+                  }
+                },
+                "sourceOfFundsCode": {
+                  "description": "code of the customer source of funds",
+                  "type": "string"
+                },
+                "address": {
+                  "description": "customer address information",
+                  "type": "object",
+                  "properties": {
+                    "countryCode": {
+                      "description": "address's country iso3 code",
+                      "type": "string"
+                    },
+                    "streetLetter": {
+                      "description": "address's street letter",
+                      "type": "string"
+                    },
+                    "streetNumber": {
+                      "description": "address's street number",
+                      "type": "integer",
+                      "format": "int32"
+                    },
+                    "cityCode": {
+                      "description": "address's city code",
+                      "type": "string"
+                    },
+                    "street": {
+                      "description": "address's street",
+                      "type": "string"
+                    },
+                    "postalCode": {
+                      "description": "address's postalcode",
+                      "type": "string"
+                    }
+                  }
+                },
+                "identityDocumentContent": {
+                  "description": "Customer identity document images",
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/items_4"
+                  }
+                },
+                "lastName": {
+                  "description": "customer last name",
+                  "type": "string"
+                },
+                "telephone": {
+                  "description": "customer phone number including area code",
+                  "type": "string"
+                },
+                "firstName": {
+                  "description": "customer first name",
+                  "type": "string"
+                },
+                "nationalCitizenNumber": {
+                  "description": "National citizen number of the customer",
+                  "type": "string"
+                },
+                "email": {
+                  "description": "customer email address",
+                  "type": "string"
+                },
+                "nationalityCountryCode": {
+                  "description": "customer country iso3 code of nationality",
+                  "type": "string"
+                },
+                "fiscalCode": {
+                  "description": "Customer fiscal code",
+                  "type": "string"
+                },
+                "gender": {
+                  "description": "customer gender",
+                  "enum": [
+                    "MALE",
+                    "FEMALE"
+                  ],
+                  "type": "string"
+                },
+                "occupationCode": {
+                  "description": "code of the customer occupation",
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "x-amf-mediaType": "application/json",
+            "schema": {
+              "description": "Saved Beneficiary",
+              "example": {
+                "amlResult": "PASSED",
+                "foundBeneficiaryCode": "5410",
+                "foundBeneficiaryIdentityDocumentCode": "451",
+                "creationResult": "SUCCESS",
+                "savedBeneficiaryCode": "543510",
+                "similarBeneficiaryCode": "874351",
+                "similarBeneficiaryIdentityDocumentCode": "54351"
+              },
+              "type": "object",
+              "properties": {
+                "creationResult": {
+                  "enum": [
+                    "NOT_SET",
+                    "SUCCESS",
+                    "SUCCESS_BUT_FOUND_CUSTOMER",
+                    "REJECTED_FOUND_DUPLICATES_OR_SIMILAR_CUSTOMERS",
+                    "REJECTED_BAD_REQUEST",
+                    "REJECTED_BY_AML",
+                    "UNEXPECTED_ERROR"
+                  ],
+                  "type": "string"
+                },
+                "similarBeneficiaryCode": {
+                  "description": "code of similar customer if exists",
+                  "type": "string"
+                },
+                "foundBeneficiaryCode": {
+                  "description": "code of customer if found",
+                  "type": "string"
+                },
+                "similarBeneficiaryIdentityDocumentCode": {
+                  "description": "code of identity document of the customer if exists",
+                  "type": "string"
+                },
+                "foundBeneficiaryIdentityDocumentCode": {
+                  "description": "code of identity document of the customer if found",
+                  "type": "string"
+                },
+                "amlResult": {
+                  "enum": [
+                    "NOT_SET",
+                    "PASSED",
+                    "NOT_PASSED",
+                    "PASSED_WITH_FLAGS"
+                  ],
+                  "type": "string"
+                },
+                "savedBeneficiaryCode": {
+                  "description": "Created code of the new customer",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "x-amf-mediaType": "application/json",
+            "schema": {
+              "description": "Error",
+              "example": {
+                "code": 29500,
+                "message": "Internal error",
+                "reason": "Something went wrong in the system during the execution"
+              },
+              "type": "object",
+              "properties": {
+                "reason": {
+                  "description": "Error Reason",
+                  "type": "string"
+                },
+                "code": {
+                  "description": "Error code",
+                  "type": "integer",
+                  "format": "int32"
+                },
+                "message": {
+                  "description": "Error Message",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "x-amf-mediaType": "application/json",
+            "schema": {
+              "description": "Error",
+              "example": {
+                "code": 29401,
+                "message": "Unauthorized",
+                "reason": "Security parameter is missing or requestor doesn't have permissions to call this resource"
+              },
+              "type": "object",
+              "properties": {
+                "reason": {
+                  "description": "Error Reason",
+                  "type": "string"
+                },
+                "code": {
+                  "description": "Error code",
+                  "type": "integer",
+                  "format": "int32"
+                },
+                "message": {
+                  "description": "Error Message",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "x-amf-mediaType": "application/json",
+            "schema": {
+              "description": "Error",
+              "example": {
+                "code": 29400,
+                "message": "Bad Request",
+                "reason": "invalid identity Document Content type"
+              },
+              "type": "object",
+              "properties": {
+                "reason": {
+                  "description": "Error Reason",
+                  "type": "string"
+                },
+                "code": {
+                  "description": "Error code",
+                  "type": "integer",
+                  "format": "int32"
+                },
+                "message": {
+                  "description": "Error Message",
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      },
+      "patch": {
+        "operationId": "Update Beneficiary",
+        "description": "Update partially Beneficiary for specific customer",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "customerCode",
+            "required": true,
+            "in": "path",
+            "type": "string"
+          },
+          {
+            "name": "ApiKey",
+            "description": "Identifier of the payment gateway. It is a fixed value. Moneytrans will commmunicate this value to the consumer after during on-boarding.",
+            "required": true,
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "name": "ApiSignature",
+            "description": "This signature is generated with the SHA256 algorithm and sent in the header.",
+            "required": true,
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "name": "clientId",
+            "description": "clientId used to request the access token",
+            "required": true,
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "name": "Authorization",
+            "description": "Bearer access token",
+            "required": true,
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "x-amf-mediaType": "application/json",
+            "in": "body",
+            "name": "generated",
+            "schema": {
+              "description": "Beneficiary",
+              "example": {
+                "code": "651321",
+                "firstName": "Name",
+                "lastName": "Surname",
+                "telephone": "+34622835864",
+                "email": "mail@mailprovider.com",
+                "birthDate": "2009-11-27T20:10:50.175Z",
+                "gender": "MALE",
+                "occupationCode": "OCCU_BEAUTY_HAIR",
+                "sourceOfFundsCode": "TRANSFER_SOURCE_OF_FUNDS_SALARY",
+                "nationalCitizenNumber": "541321",
+                "fiscalCode": "541321",
+                "nationalityCountryCode": "ESP",
+                "address": {
+                  "cityCode": "MA",
+                  "countryCode": "ESP",
+                  "postalCode": "28043",
+                  "street": "Roman",
+                  "streetLetter": "B",
+                  "streetNumber": 1
+                },
+                "customerRelationshipCode": "PARENTS",
+                "identityDocument": {
+                  "deliveryDate": "2020-11-27T15:49:52.795Z",
+                  "documentNumber": "50770750K",
+                  "expiryDate": "2032-11-27T15:49:52.795Z",
+                  "code": "513",
+                  "deliveryCountryCode": "ESP",
+                  "deliveryCityCode": "MAD",
+                  "documentTypeCode": "NICD",
+                  "isDefault": true
+                },
+                "identityDocumentContent": [
+                  {
+                    "fileContentBytes": "qwerqwerqwer",
+                    "type": "IDENTITY_DOCUMENT_FRONT"
+                  },
+                  {
+                    "fileContentBytes": "2347guwbjf",
+                    "type": "IDENTITY_DOCUMENT_BACK"
+                  }
+                ]
+              },
+              "type": "object",
+              "properties": {
+                "customerRelationshipCode": {
+                  "description": "relationship between customer and beneficiary",
+                  "type": "string"
+                },
+                "birthdate": {
+                  "description": "customer birthday",
+                  "type": "string"
+                },
+                "identityDocument": {
+                  "description": "Customer identity document information",
+                  "type": "object",
+                  "required": [
+                    "deliveryCityCode"
+                  ],
+                  "properties": {
+                    "documentTypeCode": {
+                      "description": "Code of document type",
+                      "type": "string"
+                    },
+                    "deliveryCityCode": {
+                      "description": "Code of delivery city",
+                      "type": "string"
+                    },
+                    "deliveryCountryCode": {
+                      "description": "Iso 3 Code of delivery country",
+                      "type": "string"
+                    },
+                    "code": {
+                      "description": "Identity document code",
+                      "type": "string"
+                    },
+                    "deliveryDate": {
+                      "description": "Document delivery date",
+                      "type": "string",
+                      "format": "date-time"
+                    },
+                    "expiryDate": {
+                      "description": "Document expiry date",
+                      "type": "string",
+                      "format": "date-time"
+                    },
+                    "isDefault": {
+                      "description": "Indicates if the document is the default one",
+                      "type": "boolean"
+                    },
+                    "deliveryAuthorityCode": {
+                      "description": "Authority document code",
+                      "type": "string"
+                    },
+                    "documentNumber": {
+                      "description": "Document number",
+                      "type": "string"
+                    }
+                  }
+                },
+                "code": {
+                  "description": "beneficiary code",
+                  "type": "string"
+                },
+                "sourceOfFundsCode": {
+                  "description": "code of the customer source of funds",
+                  "type": "string"
+                },
+                "address": {
+                  "description": "customer address information",
+                  "type": "object",
+                  "properties": {
+                    "countryCode": {
+                      "description": "address's country iso3 code",
+                      "type": "string"
+                    },
+                    "streetLetter": {
+                      "description": "address's street letter",
+                      "type": "string"
+                    },
+                    "streetNumber": {
+                      "description": "address's street number",
+                      "type": "integer",
+                      "format": "int32"
+                    },
+                    "cityCode": {
+                      "description": "address's city code",
+                      "type": "string"
+                    },
+                    "street": {
+                      "description": "address's street",
+                      "type": "string"
+                    },
+                    "postalCode": {
+                      "description": "address's postalcode",
+                      "type": "string"
+                    }
+                  }
+                },
+                "identityDocumentContent": {
+                  "description": "Customer identity document images",
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/items_5"
+                  }
+                },
+                "lastName": {
+                  "description": "customer last name",
+                  "type": "string"
+                },
+                "telephone": {
+                  "description": "customer phone number including area code",
+                  "type": "string"
+                },
+                "firstName": {
+                  "description": "customer first name",
+                  "type": "string"
+                },
+                "nationalCitizenNumber": {
+                  "description": "National citizen number of the customer",
+                  "type": "string"
+                },
+                "email": {
+                  "description": "customer email address",
+                  "type": "string"
+                },
+                "nationalityCountryCode": {
+                  "description": "customer country iso3 code of nationality",
+                  "type": "string"
+                },
+                "fiscalCode": {
+                  "description": "Customer fiscal code",
+                  "type": "string"
+                },
+                "gender": {
+                  "description": "customer gender",
+                  "enum": [
+                    "MALE",
+                    "FEMALE"
+                  ],
+                  "type": "string"
+                },
+                "occupationCode": {
+                  "description": "code of the customer occupation",
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "x-amf-mediaType": "application/json",
+            "schema": {
+              "description": "Saved Beneficiary",
+              "example": {
+                "amlResult": "PASSED",
+                "foundBeneficiaryCode": "5410",
+                "foundBeneficiaryIdentityDocumentCode": "451",
+                "creationResult": "SUCCESS",
+                "updatedBeneficiaryCode": "543510",
+                "similarBeneficiaryCode": "874351",
+                "similarBeneficiaryIdentityDocumentCode": "54351"
+              },
+              "type": "object",
+              "properties": {
+                "updatedBeneficiaryCode": {
+                  "description": "Created code of the new customer",
+                  "type": "string"
+                },
+                "similarBeneficiaryCode": {
+                  "description": "code of similar customer if exists",
+                  "type": "string"
+                },
+                "foundBeneficiaryCode": {
+                  "description": "code of customer if found",
+                  "type": "string"
+                },
+                "modificationResult": {
+                  "enum": [
+                    "NOT_SET",
+                    "SUCCESS",
+                    "SUCCESS_BUT_FOUND_CUSTOMER",
+                    "REJECTED_FOUND_DUPLICATES_OR_SIMILAR_CUSTOMERS",
+                    "REJECTED_BAD_REQUEST",
+                    "REJECTED_BY_AML",
+                    "UNEXPECTED_ERROR"
+                  ],
+                  "type": "string"
+                },
+                "similarBeneficiaryIdentityDocumentCode": {
+                  "description": "code of identity document of the customer if exists",
+                  "type": "string"
+                },
+                "foundBeneficiaryIdentityDocumentCode": {
+                  "description": "code of identity document of the customer if found",
+                  "type": "string"
+                },
+                "amlResult": {
+                  "enum": [
+                    "NOT_SET",
+                    "PASSED",
+                    "NOT_PASSED",
+                    "PASSED_WITH_FLAGS"
+                  ],
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "x-amf-mediaType": "application/json",
+            "schema": {
+              "description": "Error",
+              "example": {
+                "code": 29500,
+                "message": "Internal error",
+                "reason": "Something went wrong in the system during the execution"
+              },
+              "type": "object",
+              "properties": {
+                "reason": {
+                  "description": "Error Reason",
+                  "type": "string"
+                },
+                "code": {
+                  "description": "Error code",
+                  "type": "integer",
+                  "format": "int32"
+                },
+                "message": {
+                  "description": "Error Message",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "x-amf-mediaType": "application/json",
+            "schema": {
+              "description": "Error",
+              "example": {
+                "code": 29401,
+                "message": "Unauthorized",
+                "reason": "Security parameter is missing or requestor doesn't have permissions to call this resource"
+              },
+              "type": "object",
+              "properties": {
+                "reason": {
+                  "description": "Error Reason",
+                  "type": "string"
+                },
+                "code": {
+                  "description": "Error code",
+                  "type": "integer",
+                  "format": "int32"
+                },
+                "message": {
+                  "description": "Error Message",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "x-amf-mediaType": "application/json",
+            "schema": {
+              "description": "Error",
+              "example": {
+                "code": 29400,
+                "message": "Bad Request",
+                "reason": "Too many changes"
+              },
+              "type": "object",
+              "properties": {
+                "reason": {
+                  "description": "Error Reason",
+                  "type": "string"
+                },
+                "code": {
+                  "description": "Error code",
+                  "type": "integer",
+                  "format": "int32"
+                },
+                "message": {
+                  "description": "Error Message",
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/beneficiaries/{code}": {
+      "get": {
+        "operationId": "Get Beneficiary By Beneficiary Code",
+        "description": "Get Beneficiary details by Beneficiary Code",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "showIdentityDocumentContent",
+            "description": "Indicates if you want to receive identity document content. By default it is false",
+            "required": false,
+            "in": "query",
+            "type": "boolean"
+          },
+          {
+            "name": "code",
+            "required": true,
+            "in": "path",
+            "type": "string"
+          },
+          {
+            "name": "ApiKey",
+            "description": "Identifier of the payment gateway. It is a fixed value. Moneytrans will commmunicate this value to the consumer after during on-boarding.",
+            "required": true,
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "name": "ApiSignature",
+            "description": "This signature is generated with the SHA256 algorithm and sent in the header.",
+            "required": true,
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "name": "clientId",
+            "description": "clientId used to request the access token",
+            "required": true,
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "name": "Authorization",
+            "description": "Bearer access token",
+            "required": true,
+            "in": "header",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "x-amf-mediaType": "application/json",
+            "schema": {
+              "description": "Beneficiary",
+              "example": {
+                "code": "651321",
+                "firstName": "Name",
+                "lastName": "Surname",
+                "telephone": "+34622835864",
+                "email": "mail@mailprovider.com",
+                "birthDate": "2009-11-27T20:10:50.175Z",
+                "gender": "MALE",
+                "occupationCode": "OCCU_BEAUTY_HAIR",
+                "sourceOfFundsCode": "TRANSFER_SOURCE_OF_FUNDS_SALARY",
+                "nationalCitizenNumber": "541321",
+                "fiscalCode": "541321",
+                "nationalityCountryCode": "ESP",
+                "address": {
+                  "cityCode": "MA",
+                  "countryCode": "ESP",
+                  "postalCode": "28043",
+                  "street": "Roman",
+                  "streetLetter": "B",
+                  "streetNumber": 1
+                },
+                "identityDocument": {
+                  "deliveryDate": "2020-11-27T15:49:52.795Z",
+                  "documentNumber": "50770750K",
+                  "expiryDate": "2032-11-27T15:49:52.795Z",
+                  "code": "513",
+                  "deliveryCountryCode": "ESP",
+                  "deliveryCityCode": "MAD",
+                  "documentTypeCode": "NICD",
+                  "isDefault": true
+                },
+                "identityDocumentContent": [
+                  {
+                    "fileContent": "qwerqwerqwer",
+                    "type": "IDENTITY_DOCUMENT_FRONT"
+                  },
+                  {
+                    "fileContent": "2347guwbjf",
+                    "type": "IDENTITY_DOCUMENT_BACK"
+                  }
+                ]
+              },
+              "type": "object",
+              "properties": {
+                "birthdate": {
+                  "description": "customer birthday",
+                  "type": "string"
+                },
+                "identityDocument": {
+                  "description": "Customer identity document information",
+                  "type": "object",
+                  "required": [
+                    "deliveryCityCode"
+                  ],
+                  "properties": {
+                    "documentTypeCode": {
+                      "description": "Code of document type",
+                      "type": "string"
+                    },
+                    "deliveryCityCode": {
+                      "description": "Code of delivery city",
+                      "type": "string"
+                    },
+                    "deliveryCountryCode": {
+                      "description": "Iso 3 Code of delivery country",
+                      "type": "string"
+                    },
+                    "code": {
+                      "description": "Identity document code",
+                      "type": "string"
+                    },
+                    "deliveryDate": {
+                      "description": "Document delivery date",
+                      "type": "string",
+                      "format": "date-time"
+                    },
+                    "expiryDate": {
+                      "description": "Document expiry date",
+                      "type": "string",
+                      "format": "date-time"
+                    },
+                    "isDefault": {
+                      "description": "Indicates if the document is the default one",
+                      "type": "boolean"
+                    },
+                    "deliveryAuthorityCode": {
+                      "description": "Authority document code",
+                      "type": "string"
+                    },
+                    "documentNumber": {
+                      "description": "Document number",
+                      "type": "string"
+                    }
+                  }
+                },
+                "code": {
+                  "description": "beneficiary code",
+                  "type": "string"
+                },
+                "sourceOfFundsCode": {
+                  "description": "code of the customer source of funds",
+                  "type": "string"
+                },
+                "address": {
+                  "description": "customer address information",
+                  "type": "object",
+                  "properties": {
+                    "countryCode": {
+                      "description": "address's country iso3 code",
+                      "type": "string"
+                    },
+                    "streetLetter": {
+                      "description": "address's street letter",
+                      "type": "string"
+                    },
+                    "streetNumber": {
+                      "description": "address's street number",
+                      "type": "integer",
+                      "format": "int32"
+                    },
+                    "cityCode": {
+                      "description": "address's city code",
+                      "type": "string"
+                    },
+                    "street": {
+                      "description": "address's street",
+                      "type": "string"
+                    },
+                    "postalCode": {
+                      "description": "address's postalcode",
+                      "type": "string"
+                    }
+                  }
+                },
+                "identityDocumentContent": {
+                  "description": "Customer identity document images",
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/items_6"
+                  }
+                },
+                "lastName": {
+                  "description": "customer last name",
+                  "type": "string"
+                },
+                "telephone": {
+                  "description": "customer phone number including area code",
+                  "type": "string"
+                },
+                "firstName": {
+                  "description": "customer first name",
+                  "type": "string"
+                },
+                "nationalCitizenNumber": {
+                  "description": "National citizen number of the customer",
+                  "type": "string"
+                },
+                "email": {
+                  "description": "customer email address",
+                  "type": "string"
+                },
+                "nationalityCountryCode": {
+                  "description": "customer country iso3 code of nationality",
+                  "type": "string"
+                },
+                "fiscalCode": {
+                  "description": "Customer fiscal code",
+                  "type": "string"
+                },
+                "gender": {
+                  "description": "customer gender",
+                  "enum": [
+                    "MALE",
+                    "FEMALE"
+                  ],
+                  "type": "string"
+                },
+                "occupationCode": {
+                  "description": "code of the customer occupation",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "x-amf-mediaType": "application/json",
+            "schema": {
+              "description": "Error",
+              "example": {
+                "code": 29500,
+                "message": "Internal error",
+                "reason": "Something went wrong in the system during the execution"
+              },
+              "type": "object",
+              "properties": {
+                "reason": {
+                  "description": "Error Reason",
+                  "type": "string"
+                },
+                "code": {
+                  "description": "Error code",
+                  "type": "integer",
+                  "format": "int32"
+                },
+                "message": {
+                  "description": "Error Message",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "x-amf-mediaType": "application/json",
+            "schema": {
+              "description": "Error",
+              "example": {
+                "code": 29401,
+                "message": "Unauthorized",
+                "reason": "Security parameter is missing or requestor doesn't have permissions to call this resource"
+              },
+              "type": "object",
+              "properties": {
+                "reason": {
+                  "description": "Error Reason",
+                  "type": "string"
+                },
+                "code": {
+                  "description": "Error code",
+                  "type": "integer",
+                  "format": "int32"
+                },
+                "message": {
+                  "description": "Error Message",
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/beneficiaries": {
+      "get": {
+        "operationId": "Get Beneficiaries By Criteria",
+        "description": "Get Beneficiaries details by specific criteria",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "criteria",
+            "description": "Value for the search",
+            "required": false,
+            "in": "query",
+            "type": "string"
+          },
+          {
+            "name": "searchField",
+            "description": "Field for the search",
+            "required": false,
+            "in": "query",
+            "enum": [
+              "CODE",
+              "NAME",
+              "DOCUMENTNUMBER",
+              "PHONE"
+            ],
+            "type": "string"
+          },
+          {
+            "name": "ApiKey",
+            "description": "Identifier of the payment gateway. It is a fixed value. Moneytrans will commmunicate this value to the consumer after during on-boarding.",
+            "required": true,
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "name": "ApiSignature",
+            "description": "This signature is generated with the SHA256 algorithm and sent in the header.",
+            "required": true,
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "name": "clientId",
+            "description": "clientId used to request the access token",
+            "required": true,
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "name": "Authorization",
+            "description": "Bearer access token",
+            "required": true,
+            "in": "header",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "x-amf-mediaType": "application/json",
+            "schema": {
+              "description": "List of Beneficiaries",
+              "example": [
+                {
+                  "code": "651321",
+                  "firstName": "Name",
+                  "lastName": "Surname",
+                  "telephone": "+34622835864",
+                  "email": "mail@mailprovider.com",
+                  "nationalityCountryCode": "ESP",
+                  "customerRelationshipCode": "PARENTS",
+                  "identityDocument": {
+                    "deliveryDate": "2020-11-27T15:49:52.795Z",
+                    "documentNumber": "50770750K",
+                    "expiryDate": "2032-11-27T15:49:52.795Z",
+                    "code": "513",
+                    "deliveryCountryCode": "ESP",
+                    "deliveryCityCode": "MAD",
+                    "documentTypeCode": "NICD",
+                    "isDefault": true
+                  }
+                }
+              ],
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/items_3"
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "x-amf-mediaType": "application/json",
+            "schema": {
+              "description": "Error",
+              "example": {
+                "code": 29500,
+                "message": "Internal error",
+                "reason": "Something went wrong in the system during the execution"
+              },
+              "type": "object",
+              "properties": {
+                "reason": {
+                  "description": "Error Reason",
+                  "type": "string"
+                },
+                "code": {
+                  "description": "Error code",
+                  "type": "integer",
+                  "format": "int32"
+                },
+                "message": {
+                  "description": "Error Message",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "x-amf-mediaType": "application/json",
+            "schema": {
+              "description": "Error",
+              "example": {
+                "code": 29401,
+                "message": "Unauthorized",
+                "reason": "Security parameter is missing or requestor doesn't have permissions to call this resource"
+              },
+              "type": "object",
+              "properties": {
+                "reason": {
+                  "description": "Error Reason",
+                  "type": "string"
+                },
+                "code": {
+                  "description": "Error code",
+                  "type": "integer",
+                  "format": "int32"
+                },
+                "message": {
+                  "description": "Error Message",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "x-amf-mediaType": "application/json",
+            "schema": {
+              "description": "Error",
+              "example": {
+                "code": 29400,
+                "message": "Bad Request",
+                "reason": "Invalid searchField"
+              },
+              "type": "object",
+              "properties": {
+                "reason": {
+                  "description": "Error Reason",
+                  "type": "string"
+                },
+                "code": {
+                  "description": "Error code",
+                  "type": "integer",
+                  "format": "int32"
+                },
+                "message": {
+                  "description": "Error Message",
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/persona/duplicates": {
+      "post": {
+        "operationId": "Inform Duplicated Persona in the system",
+        "description": "Notify persona that contain more than one record in the system to avoid duplicities",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "ApiKey",
+            "description": "Identifier of the payment gateway. It is a fixed value. Moneytrans will commmunicate this value to the consumer after during on-boarding.",
+            "required": true,
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "name": "ApiSignature",
+            "description": "This signature is generated with the SHA256 algorithm and sent in the header.",
+            "required": true,
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "name": "clientId",
+            "description": "clientId used to request the access token",
+            "required": true,
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "name": "Authorization",
+            "description": "Bearer access token",
+            "required": true,
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "x-amf-mediaType": "application/json",
+            "in": "body",
+            "name": "generated",
+            "schema": {
+              "description": "Duplicated",
+              "example": {
+                "type": "SCU",
+                "duplicated": [
+                  "8458",
+                  "374629"
+                ],
+                "validCode": "8458"
+              },
+              "type": "object",
+              "properties": {
+                "validCode": {
+                  "description": "Principal Code",
+                  "type": "string"
+                },
+                "type": {
+                  "description": "Type of client - SCU for customers, SCB for beneficiaries",
+                  "enum": [
+                    "SCU",
+                    "SCB"
+                  ],
+                  "type": "string"
+                },
+                "duplicated": {
+                  "description": "List of duplicated codes",
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No content"
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "x-amf-mediaType": "application/json",
+            "schema": {
+              "description": "Error",
+              "example": {
+                "code": 29500,
+                "message": "Internal error",
+                "reason": "Something went wrong in the system during the execution"
+              },
+              "type": "object",
+              "properties": {
+                "reason": {
+                  "description": "Error Reason",
+                  "type": "string"
+                },
+                "code": {
+                  "description": "Error code",
+                  "type": "integer",
+                  "format": "int32"
+                },
+                "message": {
+                  "description": "Error Message",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "x-amf-mediaType": "application/json",
+            "schema": {
+              "description": "Error",
+              "example": {
+                "code": 29401,
+                "message": "Unauthorized",
+                "reason": "Security parameter is missing or requestor doesn't have permissions to call this resource"
+              },
+              "type": "object",
+              "properties": {
+                "reason": {
+                  "description": "Error Reason",
+                  "type": "string"
+                },
+                "code": {
+                  "description": "Error code",
+                  "type": "integer",
+                  "format": "int32"
+                },
+                "message": {
+                  "description": "Error Message",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "x-amf-mediaType": "application/json",
+            "schema": {
+              "description": "Error",
+              "example": {
+                "code": 29400,
+                "message": "Bad Request",
+                "reason": "validCode must be one of the duplicated codes"
+              },
+              "type": "object",
+              "properties": {
+                "reason": {
+                  "description": "Error Reason",
+                  "type": "string"
+                },
+                "code": {
+                  "description": "Error code",
+                  "type": "integer",
+                  "format": "int32"
+                },
+                "message": {
+                  "description": "Error Message",
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/persona/breaches": {
+      "get": {
+        "operationId": "Notify Customer Breaches",
+        "description": "Gets file to notify Customer Breaches",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "ApiKey",
+            "description": "Identifier of the payment gateway. It is a fixed value. Moneytrans will commmunicate this value to the consumer after during on-boarding.",
+            "required": true,
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "name": "ApiSignature",
+            "description": "This signature is generated with the SHA256 algorithm and sent in the header.",
+            "required": true,
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "name": "clientId",
+            "description": "clientId used to request the access token",
+            "required": true,
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "name": "Authorization",
+            "description": "Bearer access token",
+            "required": true,
+            "in": "header",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "x-amf-mediaType": "application/json",
+            "schema": {
+              "description": "report Url",
+              "example": {
+                "urlToReport": "https://url.com"
+              },
+              "type": "object",
+              "properties": {
+                "urlToReport": {
+                  "description": "URL to report a breach",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "x-amf-mediaType": "application/json",
+            "schema": {
+              "description": "Error",
+              "example": {
+                "code": 29500,
+                "message": "Internal error",
+                "reason": "Something went wrong in the system during the execution"
+              },
+              "type": "object",
+              "properties": {
+                "reason": {
+                  "description": "Error Reason",
+                  "type": "string"
+                },
+                "code": {
+                  "description": "Error code",
+                  "type": "integer",
+                  "format": "int32"
+                },
+                "message": {
+                  "description": "Error Message",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "x-amf-mediaType": "application/json",
+            "schema": {
+              "description": "Error",
+              "example": {
+                "code": 29401,
+                "message": "Unauthorized",
+                "reason": "Security parameter is missing or requestor doesn't have permissions to call this resource"
+              },
+              "type": "object",
+              "properties": {
+                "reason": {
+                  "description": "Error Reason",
+                  "type": "string"
+                },
+                "code": {
+                  "description": "Error code",
+                  "type": "integer",
+                  "format": "int32"
+                },
+                "message": {
+                  "description": "Error Message",
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/persona/{code}/accumulatedAmounts/{typeOfAccumulated}": {
+      "get": {
+        "operationId": "Get Persona Accumulated Amounts",
+        "description": "Obtain the accumulated amounts of persona based on the type (SENDING_TRANSFER, RECEIVING_TRANSFER, IN_SMILE_ACCOUNT, OUT_SMILE_ACCOUNT)",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "code",
+            "required": true,
+            "in": "path",
+            "type": "string"
+          },
+          {
+            "name": "typeOfAccumulated",
+            "required": true,
+            "in": "path",
+            "type": "string"
+          },
+          {
+            "name": "ApiKey",
+            "description": "Identifier of the payment gateway. It is a fixed value. Moneytrans will commmunicate this value to the consumer after during on-boarding.",
+            "required": true,
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "name": "ApiSignature",
+            "description": "This signature is generated with the SHA256 algorithm and sent in the header.",
+            "required": true,
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "name": "clientId",
+            "description": "clientId used to request the access token",
+            "required": true,
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "name": "Authorization",
+            "description": "Bearer access token",
+            "required": true,
+            "in": "header",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "x-amf-mediaType": "application/json",
+            "schema": {
+              "description": "AccumulatedAmounts",
+              "example": {
+                "accumulated": [
+                  {
+                    "amount": 50,
+                    "currency": "EUR",
+                    "period": "7 days"
+                  }
+                ]
+              },
+              "type": "object",
+              "properties": {
+                "accumulated": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/items_7"
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "x-amf-mediaType": "application/json",
+            "schema": {
+              "description": "Error",
+              "example": {
+                "code": 29500,
+                "message": "Internal error",
+                "reason": "Something went wrong in the system during the execution"
+              },
+              "type": "object",
+              "properties": {
+                "reason": {
+                  "description": "Error Reason",
+                  "type": "string"
+                },
+                "code": {
+                  "description": "Error code",
+                  "type": "integer",
+                  "format": "int32"
+                },
+                "message": {
+                  "description": "Error Message",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "x-amf-mediaType": "application/json",
+            "schema": {
+              "description": "Error",
+              "example": {
+                "code": 29401,
+                "message": "Unauthorized",
+                "reason": "Security parameter is missing or requestor doesn't have permissions to call this resource"
+              },
+              "type": "object",
+              "properties": {
+                "reason": {
+                  "description": "Error Reason",
+                  "type": "string"
+                },
+                "code": {
+                  "description": "Error code",
+                  "type": "integer",
+                  "format": "int32"
+                },
+                "message": {
+                  "description": "Error Message",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "x-amf-mediaType": "application/json",
+            "schema": {
+              "description": "Error",
+              "example": {
+                "code": 29400,
+                "message": "Bad Request",
+                "reason": "The user doesn't have amount for that type"
+              },
+              "type": "object",
+              "properties": {
+                "reason": {
+                  "description": "Error Reason",
+                  "type": "string"
+                },
+                "code": {
+                  "description": "Error code",
+                  "type": "integer",
+                  "format": "int32"
+                },
+                "message": {
+                  "description": "Error Message",
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/persona/{code}/documents": {
+      "post": {
+        "operationId": "Upload Document",
+        "description": "Upload non identity document needed for a client",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "code",
+            "required": true,
+            "in": "path",
+            "type": "string"
+          },
+          {
+            "name": "ApiKey",
+            "description": "Identifier of the payment gateway. It is a fixed value. Moneytrans will commmunicate this value to the consumer after during on-boarding.",
+            "required": true,
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "name": "ApiSignature",
+            "description": "This signature is generated with the SHA256 algorithm and sent in the header.",
+            "required": true,
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "name": "clientId",
+            "description": "clientId used to request the access token",
+            "required": true,
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "name": "Authorization",
+            "description": "Bearer access token",
+            "required": true,
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "x-amf-mediaType": "application/json",
+            "in": "body",
+            "name": "generated",
+            "schema": {
+              "description": "Document",
+              "example": {
+                "fileContentBytes": "udffgajñsdfasif",
+                "type": "CONVERSION"
+              },
+              "type": "object",
+              "properties": {
+                "fileContentBytes": {
+                  "description": "File content in byte array, transformed from the filecontent",
+                  "type": "string"
+                },
+                "type": {
+                  "enum": [
+                    "CONVERSION",
+                    "COMPLIANCE",
+                    "OLD_IDENTITY_DOCUMENT",
+                    "JUSTIFICATION_DOC_IMAGE",
+                    "DESTINATION_FORMS",
+                    "OTHER_DOCUMENTS",
+                    "PROOF_OF_ADDRESS",
+                    "IDENTITY_DOCUMENT_FRONT",
+                    "FORM_HOME_TRANSFER",
+                    "OTHER_DOCS_HOME_TRANSFER",
+                    "SPECIAL_FORM",
+                    "SOURCE_OF_FOUNDS",
+                    "INCOME_JUSTIFICATION_DOC",
+                    "INVOICE",
+                    "BELGIAN_COMPLIANCE_FORM",
+                    "BANK_ACCOUNT_CONTRACT_SIGNED",
+                    "PAYMENT_ACCOUNTS_FRAUD",
+                    "PAYMENT_ACCOUNTS_DISPUTE",
+                    "EASYCARD_TO_SMILE_ACCOUNT_SIGNED",
+                    "SELFIE",
+                    "TESSA_SANITARIA",
+                    "EIDREADER_ARIADNEXT",
+                    "IDENTITY_DOCUMENT_BACK"
+                  ],
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "x-amf-mediaType": "application/json",
+            "schema": {
+              "description": "uploaded document",
+              "example": {
+                "uploadedDate": "2020-11-27T15:49:52.795Z",
+                "code": "513"
+              },
+              "type": "object",
+              "properties": {
+                "code": {
+                  "description": "Identity document code",
+                  "type": "string"
+                },
+                "uploadedDate": {
+                  "description": "Document uploaded date",
+                  "type": "string",
+                  "format": "date-time"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "x-amf-mediaType": "application/json",
+            "schema": {
+              "description": "Error",
+              "example": {
+                "code": 29500,
+                "message": "Internal error",
+                "reason": "Something went wrong in the system during the execution"
+              },
+              "type": "object",
+              "properties": {
+                "reason": {
+                  "description": "Error Reason",
+                  "type": "string"
+                },
+                "code": {
+                  "description": "Error code",
+                  "type": "integer",
+                  "format": "int32"
+                },
+                "message": {
+                  "description": "Error Message",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "x-amf-mediaType": "application/json",
+            "schema": {
+              "description": "Error",
+              "example": {
+                "code": 29401,
+                "message": "Unauthorized",
+                "reason": "Security parameter is missing or requestor doesn't have permissions to call this resource"
+              },
+              "type": "object",
+              "properties": {
+                "reason": {
+                  "description": "Error Reason",
+                  "type": "string"
+                },
+                "code": {
+                  "description": "Error code",
+                  "type": "integer",
+                  "format": "int32"
+                },
+                "message": {
+                  "description": "Error Message",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "x-amf-mediaType": "application/json",
+            "schema": {
+              "description": "Error",
+              "example": {
+                "value": {
+                  "code": 29400,
+                  "message": "Bad Request",
+                  "reason": "Type value is not valid"
+                }
+              },
+              "type": "object",
+              "properties": {
+                "reason": {
+                  "description": "Error Reason",
+                  "type": "string"
+                },
+                "code": {
+                  "description": "Error code",
+                  "type": "integer",
+                  "format": "int32"
+                },
+                "message": {
+                  "description": "Error Message",
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/persona/{code}/documents/{documentCode}": {
+      "get": {
+        "operationId": "Get Document By Code",
+        "description": "obtain document details by code",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "code",
+            "required": true,
+            "in": "path",
+            "type": "string"
+          },
+          {
+            "name": "documentCode",
+            "required": true,
+            "in": "path",
+            "type": "string"
+          },
+          {
+            "name": "ApiKey",
+            "description": "Identifier of the payment gateway. It is a fixed value. Moneytrans will commmunicate this value to the consumer after during on-boarding.",
+            "required": true,
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "name": "ApiSignature",
+            "description": "This signature is generated with the SHA256 algorithm and sent in the header.",
+            "required": true,
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "name": "clientId",
+            "description": "clientId used to request the access token",
+            "required": true,
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "name": "Authorization",
+            "description": "Bearer access token",
+            "required": true,
+            "in": "header",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "x-amf-mediaType": "application/json",
+            "schema": {
+              "description": "Document details",
+              "example": {
+                "uploadedDate": "2020-11-27T15:49:52.795Z",
+                "type": "CONVERSION",
+                "contentBytes": "ouwerypuqwer"
+              },
+              "type": "object",
+              "properties": {
+                "uploadedDate": {
+                  "description": "Date when it was uploaded",
+                  "type": "string",
+                  "format": "date-time"
+                },
+                "type": {
+                  "enum": [
+                    "CONVERSION",
+                    "COMPLIANCE",
+                    "OLD_IDENTITY_DOCUMENT",
+                    "JUSTIFICATION_DOC_IMAGE",
+                    "DESTINATION_FORMS",
+                    "OTHER_DOCUMENTS",
+                    "PROOF_OF_ADDRESS",
+                    "IDENTITY_DOCUMENT_FRONT",
+                    "FORM_HOME_TRANSFER",
+                    "OTHER_DOCS_HOME_TRANSFER",
+                    "SPECIAL_FORM",
+                    "SOURCE_OF_FOUNDS",
+                    "INCOME_JUSTIFICATION_DOC",
+                    "INVOICE",
+                    "BELGIAN_COMPLIANCE_FORM",
+                    "BANK_ACCOUNT_CONTRACT_SIGNED",
+                    "PAYMENT_ACCOUNTS_FRAUD",
+                    "PAYMENT_ACCOUNTS_DISPUTE",
+                    "EASYCARD_TO_SMILE_ACCOUNT_SIGNED",
+                    "SELFIE",
+                    "TESSA_SANITARIA",
+                    "EIDREADER_ARIADNEXT",
+                    "IDENTITY_DOCUMENT_BACK"
+                  ],
+                  "type": "string"
+                },
+                "contentBytes": {
+                  "description": "File content in byte array, transformed from the filecontent",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "x-amf-mediaType": "application/json",
+            "schema": {
+              "description": "Error",
+              "example": {
+                "code": 29500,
+                "message": "Internal error",
+                "reason": "Something went wrong in the system during the execution"
+              },
+              "type": "object",
+              "properties": {
+                "reason": {
+                  "description": "Error Reason",
+                  "type": "string"
+                },
+                "code": {
+                  "description": "Error code",
+                  "type": "integer",
+                  "format": "int32"
+                },
+                "message": {
+                  "description": "Error Message",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "x-amf-mediaType": "application/json",
+            "schema": {
+              "description": "Error",
+              "example": {
+                "code": 29401,
+                "message": "Unauthorized",
+                "reason": "Security parameter is missing or requestor doesn't have permissions to call this resource"
+              },
+              "type": "object",
+              "properties": {
+                "reason": {
+                  "description": "Error Reason",
+                  "type": "string"
+                },
+                "code": {
+                  "description": "Error code",
+                  "type": "integer",
+                  "format": "int32"
+                },
+                "message": {
+                  "description": "Error Message",
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/identityDocuments/validations": {
+      "post": {
+        "operationId": "Validate an Identity Document",
+        "description": "validate over MT KYC an identity document. It is not uploaded to anywhere, just validation and OCR proccess",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "ApiKey",
+            "description": "Identifier of the payment gateway. It is a fixed value. Moneytrans will commmunicate this value to the consumer after during on-boarding.",
+            "required": true,
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "name": "ApiSignature",
+            "description": "This signature is generated with the SHA256 algorithm and sent in the header.",
+            "required": true,
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "name": "clientId",
+            "description": "clientId used to request the access token",
+            "required": true,
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "name": "Authorization",
+            "description": "Bearer access token",
+            "required": true,
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "x-amf-mediaType": "application/json",
+            "in": "body",
+            "name": "generated",
+            "schema": {
+              "description": "Document to validate",
+              "example": [
+                {
+                  "fileContentBytes": "udffgajñsdfasif",
+                  "type": "CONVERSION"
+                }
+              ],
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/items_8"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "x-amf-mediaType": "application/json",
+            "schema": {
+              "description": "OCR Document",
+              "example": {
+                "value": {
+                  "additionalData": {
+                    "additionalProp1key": "additionalProp1value",
+                    "additionalProp2key": "additionalProp2value",
+                    "additionalProp3key": "additionalProp3keyvalue"
+                  },
+                  "analysisMessage": "Analysis Message",
+                  "birthDate": "2090-11-27T00:00:00.000Z",
+                  "deliveryDate": "2023-11-27T15:12:49.258Z",
+                  "documentNumber": "50770750K",
+                  "firstName": "name",
+                  "gender": "MALE",
+                  "nationalityCountryCode": "ESP",
+                  "lastName": "surname",
+                  "documentTypeCode": "NICD",
+                  "validityDate": "2027-11-27T15:12:49.258Z"
+                }
+              },
+              "type": "object",
+              "properties": {
+                "documentTypeCode": {
+                  "description": "Code of document type",
+                  "type": "string"
+                },
+                "deliveryDate": {
+                  "description": "Document delivery date obtained from the scan",
+                  "type": "string",
+                  "format": "date-time"
+                },
+                "lastName": {
+                  "description": "Last name obtained from the scan",
+                  "type": "string"
+                },
+                "birthDate": {
+                  "description": "Birthdate obtained from the scan",
+                  "type": "string",
+                  "format": "date-time"
+                },
+                "firstName": {
+                  "description": "First name obtained from the scan",
+                  "type": "string"
+                },
+                "analysisMessage": {
+                  "description": "AdditionalAnalysisMessage",
+                  "type": "string"
+                },
+                "nationalityCountryCode": {
+                  "description": "Iso3 code of delivery country",
+                  "type": "string"
+                },
+                "gender": {
+                  "description": "gender",
+                  "enum": [
+                    "MALE",
+                    "FEMALE"
+                  ],
+                  "type": "string"
+                },
+                "documentNumber": {
+                  "description": "Document number obtained from the scan",
+                  "type": "string"
+                },
+                "validityDate": {
+                  "description": "Document expiration date",
+                  "type": "string",
+                  "format": "date-time"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "x-amf-mediaType": "application/json",
+            "schema": {
+              "description": "Error",
+              "example": {
+                "code": 29500,
+                "message": "Internal error",
+                "reason": "Something went wrong in the system during the execution"
+              },
+              "type": "object",
+              "properties": {
+                "reason": {
+                  "description": "Error Reason",
+                  "type": "string"
+                },
+                "code": {
+                  "description": "Error code",
+                  "type": "integer",
+                  "format": "int32"
+                },
+                "message": {
+                  "description": "Error Message",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "x-amf-mediaType": "application/json",
+            "schema": {
+              "description": "Error",
+              "example": {
+                "code": 29401,
+                "message": "Unauthorized",
+                "reason": "Security parameter is missing or requestor doesn't have permissions to call this resource"
+              },
+              "type": "object",
+              "properties": {
+                "reason": {
+                  "description": "Error Reason",
+                  "type": "string"
+                },
+                "code": {
+                  "description": "Error code",
+                  "type": "integer",
+                  "format": "int32"
+                },
+                "message": {
+                  "description": "Error Message",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "x-amf-mediaType": "application/json",
+            "schema": {
+              "description": "Error",
+              "example": {
+                "value": {
+                  "code": 29400,
+                  "message": "Bad Request",
+                  "reason": "Type value is not valid"
+                }
+              },
+              "type": "object",
+              "properties": {
+                "reason": {
+                  "description": "Error Reason",
+                  "type": "string"
+                },
+                "code": {
+                  "description": "Error code",
+                  "type": "integer",
+                  "format": "int32"
+                },
+                "message": {
+                  "description": "Error Message",
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/customers/beneficiaries/relations": {
+      "post": {
+        "operationId": "Save Customer Beneficiary Relation",
+        "description": "Save a new relation between a customer and a beneficiary",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "ApiKey",
+            "description": "Identifier of the payment gateway. It is a fixed value. Moneytrans will commmunicate this value to the consumer after during on-boarding.",
+            "required": true,
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "name": "ApiSignature",
+            "description": "This signature is generated with the SHA256 algorithm and sent in the header.",
+            "required": true,
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "name": "clientId",
+            "description": "clientId used to request the access token",
+            "required": true,
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "name": "Authorization",
+            "description": "Bearer access token",
+            "required": true,
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "x-amf-mediaType": "application/json",
+            "in": "body",
+            "name": "generated",
+            "schema": {
+              "description": "Relation to establish",
+              "example": {
+                "beneficiaryCode": "234234",
+                "customerCode": "161613",
+                "relationship": "PARENTS"
+              },
+              "type": "object",
+              "properties": {
+                "customerCode": {
+                  "description": "Customer code",
+                  "type": "string"
+                },
+                "beneficiaryCode": {
+                  "description": "Beneficiary code",
+                  "type": "string"
+                },
+                "relationship": {
+                  "description": "relationship",
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No content"
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "x-amf-mediaType": "application/json",
+            "schema": {
+              "description": "Error",
+              "example": {
+                "code": 29500,
+                "message": "Internal error",
+                "reason": "Something went wrong in the system during the execution"
+              },
+              "type": "object",
+              "properties": {
+                "reason": {
+                  "description": "Error Reason",
+                  "type": "string"
+                },
+                "code": {
+                  "description": "Error code",
+                  "type": "integer",
+                  "format": "int32"
+                },
+                "message": {
+                  "description": "Error Message",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "x-amf-mediaType": "application/json",
+            "schema": {
+              "description": "Error",
+              "example": {
+                "code": 29401,
+                "message": "Unauthorized",
+                "reason": "Security parameter is missing or requestor doesn't have permissions to call this resource"
+              },
+              "type": "object",
+              "properties": {
+                "reason": {
+                  "description": "Error Reason",
+                  "type": "string"
+                },
+                "code": {
+                  "description": "Error code",
+                  "type": "integer",
+                  "format": "int32"
+                },
+                "message": {
+                  "description": "Error Message",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "x-amf-mediaType": "application/json",
+            "schema": {
+              "description": "Error",
+              "example": {
+                "value": {
+                  "code": 29400,
+                  "message": "Bad Request",
+                  "reason": "Relationship value is not valid"
+                }
+              },
+              "type": "object",
+              "properties": {
+                "reason": {
+                  "description": "Error Reason",
+                  "type": "string"
+                },
+                "code": {
+                  "description": "Error code",
+                  "type": "integer",
+                  "format": "int32"
+                },
+                "message": {
+                  "description": "Error Message",
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "items": {
+      "example": {
+        "fileContent": "udffgajñsdfasif",
+        "type": "CONVERSION"
+      },
+      "type": "object",
+      "properties": {
+        "fileContentBytes": {
+          "description": "File content in byte array, transformed from the filecontent",
+          "type": "string"
+        },
+        "type": {
+          "enum": [
+            "CONVERSION",
+            "COMPLIANCE",
+            "OLD_IDENTITY_DOCUMENT",
+            "JUSTIFICATION_DOC_IMAGE",
+            "DESTINATION_FORMS",
+            "OTHER_DOCUMENTS",
+            "PROOF_OF_ADDRESS",
+            "IDENTITY_DOCUMENT_FRONT",
+            "FORM_HOME_TRANSFER",
+            "OTHER_DOCS_HOME_TRANSFER",
+            "SPECIAL_FORM",
+            "SOURCE_OF_FOUNDS",
+            "INCOME_JUSTIFICATION_DOC",
+            "INVOICE",
+            "BELGIAN_COMPLIANCE_FORM",
+            "BANK_ACCOUNT_CONTRACT_SIGNED",
+            "PAYMENT_ACCOUNTS_FRAUD",
+            "PAYMENT_ACCOUNTS_DISPUTE",
+            "EASYCARD_TO_SMILE_ACCOUNT_SIGNED",
+            "SELFIE",
+            "TESSA_SANITARIA",
+            "EIDREADER_ARIADNEXT",
+            "IDENTITY_DOCUMENT_BACK"
+          ],
+          "type": "string"
+        }
+      }
+    },
+    "items_1": {
+      "example": {
+        "fileContent": "udffgajñsdfasif",
+        "type": "CONVERSION"
+      },
+      "type": "object",
+      "properties": {
+        "fileContentBytes": {
+          "description": "File content in byte array, transformed from the filecontent",
+          "type": "string"
+        },
+        "type": {
+          "enum": [
+            "CONVERSION",
+            "COMPLIANCE",
+            "OLD_IDENTITY_DOCUMENT",
+            "JUSTIFICATION_DOC_IMAGE",
+            "DESTINATION_FORMS",
+            "OTHER_DOCUMENTS",
+            "PROOF_OF_ADDRESS",
+            "IDENTITY_DOCUMENT_FRONT",
+            "FORM_HOME_TRANSFER",
+            "OTHER_DOCS_HOME_TRANSFER",
+            "SPECIAL_FORM",
+            "SOURCE_OF_FOUNDS",
+            "INCOME_JUSTIFICATION_DOC",
+            "INVOICE",
+            "BELGIAN_COMPLIANCE_FORM",
+            "BANK_ACCOUNT_CONTRACT_SIGNED",
+            "PAYMENT_ACCOUNTS_FRAUD",
+            "PAYMENT_ACCOUNTS_DISPUTE",
+            "EASYCARD_TO_SMILE_ACCOUNT_SIGNED",
+            "SELFIE",
+            "TESSA_SANITARIA",
+            "EIDREADER_ARIADNEXT",
+            "IDENTITY_DOCUMENT_BACK"
+          ],
+          "type": "string"
+        }
+      }
+    },
+    "items_2": {
+      "example": {
+        "code": "651321",
+        "firstName": "Name",
+        "lastName": "Surname",
+        "telephone": "+34622835864",
+        "email": "mail@mailprovider.com",
+        "nationalityCountryCode": "ESP",
+        "identityDocument": {
+          "deliveryDate": "2020-11-27T15:49:52.795Z",
+          "documentNumber": "50770750K",
+          "expiryDate": "2032-11-27T15:49:52.795Z",
+          "code": "513",
+          "deliveryCountryCode": "ESP",
+          "deliveryCityCode": "MAD",
+          "documentTypeCode": "NICD",
+          "isDefault": true
+        }
+      },
+      "type": "object",
+      "properties": {
+        "code": {
+          "description": "customer code",
+          "type": "string"
+        },
+        "firstName": {
+          "description": "customer first name",
+          "type": "string"
+        },
+        "lastName": {
+          "description": "customer last name",
+          "type": "string"
+        },
+        "telephone": {
+          "description": "customer phone number including area code",
+          "type": "string"
+        },
+        "email": {
+          "description": "customer email address",
+          "type": "string"
+        },
+        "nationalityCountryCode": {
+          "description": "customer country iso3 code of nationality",
+          "type": "string"
+        },
+        "identityDocument": {
+          "description": "Customer identity document information",
+          "type": "object",
+          "required": [
+            "deliveryCityCode"
+          ],
+          "properties": {
+            "documentTypeCode": {
+              "description": "Code of document type",
+              "type": "string"
+            },
+            "deliveryCityCode": {
+              "description": "Code of delivery city",
+              "type": "string"
+            },
+            "deliveryCountryCode": {
+              "description": "Iso 3 Code of delivery country",
+              "type": "string"
+            },
+            "code": {
+              "description": "Identity document code",
+              "type": "string"
+            },
+            "deliveryDate": {
+              "description": "Document delivery date",
+              "type": "string",
+              "format": "date-time"
+            },
+            "expiryDate": {
+              "description": "Document expiry date",
+              "type": "string",
+              "format": "date-time"
+            },
+            "isDefault": {
+              "description": "Indicates if the document is the default one",
+              "type": "boolean"
+            },
+            "deliveryAuthorityCode": {
+              "description": "Authority document code",
+              "type": "string"
+            },
+            "documentNumber": {
+              "description": "Document number",
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "items_3": {
+      "example": {
+        "code": "651321",
+        "firstName": "Name",
+        "lastName": "Surname",
+        "telephone": "+34622835864",
+        "email": "mail@mailprovider.com",
+        "nationalityCountryCode": "ESP",
+        "customerRelationshipCode": "PARENTS",
+        "identityDocument": {
+          "deliveryDate": "2020-11-27T15:49:52.795Z",
+          "documentNumber": "50770750K",
+          "expiryDate": "2032-11-27T15:49:52.795Z",
+          "code": "513",
+          "deliveryCountryCode": "ESP",
+          "deliveryCityCode": "MAD",
+          "documentTypeCode": "NICD",
+          "isDefault": true
+        }
+      },
+      "type": "object",
+      "properties": {
+        "code": {
+          "description": "beneficiary code",
+          "type": "string"
+        },
+        "firstName": {
+          "description": "customer first name",
+          "type": "string"
+        },
+        "lastName": {
+          "description": "customer last name",
+          "type": "string"
+        },
+        "telephone": {
+          "description": "customer phone number including area code",
+          "type": "string"
+        },
+        "email": {
+          "description": "customer email address",
+          "type": "string"
+        },
+        "nationalityCountryCode": {
+          "description": "customer country iso3 code of nationality",
+          "type": "string"
+        },
+        "customerRelationshipCode": {
+          "description": "relationship between customer and beneficiary",
+          "type": "string"
+        },
+        "identityDocument": {
+          "description": "Customer identity document information",
+          "type": "object",
+          "required": [
+            "deliveryCityCode"
+          ],
+          "properties": {
+            "documentTypeCode": {
+              "description": "Code of document type",
+              "type": "string"
+            },
+            "deliveryCityCode": {
+              "description": "Code of delivery city",
+              "type": "string"
+            },
+            "deliveryCountryCode": {
+              "description": "Iso 3 Code of delivery country",
+              "type": "string"
+            },
+            "code": {
+              "description": "Identity document code",
+              "type": "string"
+            },
+            "deliveryDate": {
+              "description": "Document delivery date",
+              "type": "string",
+              "format": "date-time"
+            },
+            "expiryDate": {
+              "description": "Document expiry date",
+              "type": "string",
+              "format": "date-time"
+            },
+            "isDefault": {
+              "description": "Indicates if the document is the default one",
+              "type": "boolean"
+            },
+            "deliveryAuthorityCode": {
+              "description": "Authority document code",
+              "type": "string"
+            },
+            "documentNumber": {
+              "description": "Document number",
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "items_4": {
+      "example": {
+        "fileContent": "udffgajñsdfasif",
+        "type": "CONVERSION"
+      },
+      "type": "object",
+      "properties": {
+        "fileContentBytes": {
+          "description": "File content in byte array, transformed from the filecontent",
+          "type": "string"
+        },
+        "type": {
+          "enum": [
+            "CONVERSION",
+            "COMPLIANCE",
+            "OLD_IDENTITY_DOCUMENT",
+            "JUSTIFICATION_DOC_IMAGE",
+            "DESTINATION_FORMS",
+            "OTHER_DOCUMENTS",
+            "PROOF_OF_ADDRESS",
+            "IDENTITY_DOCUMENT_FRONT",
+            "FORM_HOME_TRANSFER",
+            "OTHER_DOCS_HOME_TRANSFER",
+            "SPECIAL_FORM",
+            "SOURCE_OF_FOUNDS",
+            "INCOME_JUSTIFICATION_DOC",
+            "INVOICE",
+            "BELGIAN_COMPLIANCE_FORM",
+            "BANK_ACCOUNT_CONTRACT_SIGNED",
+            "PAYMENT_ACCOUNTS_FRAUD",
+            "PAYMENT_ACCOUNTS_DISPUTE",
+            "EASYCARD_TO_SMILE_ACCOUNT_SIGNED",
+            "SELFIE",
+            "TESSA_SANITARIA",
+            "EIDREADER_ARIADNEXT",
+            "IDENTITY_DOCUMENT_BACK"
+          ],
+          "type": "string"
+        }
+      }
+    },
+    "items_5": {
+      "example": {
+        "fileContent": "udffgajñsdfasif",
+        "type": "CONVERSION"
+      },
+      "type": "object",
+      "properties": {
+        "fileContentBytes": {
+          "description": "File content in byte array, transformed from the filecontent",
+          "type": "string"
+        },
+        "type": {
+          "enum": [
+            "CONVERSION",
+            "COMPLIANCE",
+            "OLD_IDENTITY_DOCUMENT",
+            "JUSTIFICATION_DOC_IMAGE",
+            "DESTINATION_FORMS",
+            "OTHER_DOCUMENTS",
+            "PROOF_OF_ADDRESS",
+            "IDENTITY_DOCUMENT_FRONT",
+            "FORM_HOME_TRANSFER",
+            "OTHER_DOCS_HOME_TRANSFER",
+            "SPECIAL_FORM",
+            "SOURCE_OF_FOUNDS",
+            "INCOME_JUSTIFICATION_DOC",
+            "INVOICE",
+            "BELGIAN_COMPLIANCE_FORM",
+            "BANK_ACCOUNT_CONTRACT_SIGNED",
+            "PAYMENT_ACCOUNTS_FRAUD",
+            "PAYMENT_ACCOUNTS_DISPUTE",
+            "EASYCARD_TO_SMILE_ACCOUNT_SIGNED",
+            "SELFIE",
+            "TESSA_SANITARIA",
+            "EIDREADER_ARIADNEXT",
+            "IDENTITY_DOCUMENT_BACK"
+          ],
+          "type": "string"
+        }
+      }
+    },
+    "items_6": {
+      "example": {
+        "fileContent": "udffgajñsdfasif",
+        "type": "CONVERSION"
+      },
+      "type": "object",
+      "properties": {
+        "fileContentBytes": {
+          "description": "File content in byte array, transformed from the filecontent",
+          "type": "string"
+        },
+        "type": {
+          "enum": [
+            "CONVERSION",
+            "COMPLIANCE",
+            "OLD_IDENTITY_DOCUMENT",
+            "JUSTIFICATION_DOC_IMAGE",
+            "DESTINATION_FORMS",
+            "OTHER_DOCUMENTS",
+            "PROOF_OF_ADDRESS",
+            "IDENTITY_DOCUMENT_FRONT",
+            "FORM_HOME_TRANSFER",
+            "OTHER_DOCS_HOME_TRANSFER",
+            "SPECIAL_FORM",
+            "SOURCE_OF_FOUNDS",
+            "INCOME_JUSTIFICATION_DOC",
+            "INVOICE",
+            "BELGIAN_COMPLIANCE_FORM",
+            "BANK_ACCOUNT_CONTRACT_SIGNED",
+            "PAYMENT_ACCOUNTS_FRAUD",
+            "PAYMENT_ACCOUNTS_DISPUTE",
+            "EASYCARD_TO_SMILE_ACCOUNT_SIGNED",
+            "SELFIE",
+            "TESSA_SANITARIA",
+            "EIDREADER_ARIADNEXT",
+            "IDENTITY_DOCUMENT_BACK"
+          ],
+          "type": "string"
+        }
+      }
+    },
+    "items_7": {
+      "example": {
+        "amount": 50,
+        "currency": "EUR",
+        "period": "7 days"
+      },
+      "type": "object",
+      "properties": {
+        "amount": {
+          "description": "Customer accumulated amount",
+          "type": "number",
+          "format": "double"
+        },
+        "currency": {
+          "description": "Customer accumulated amount currency",
+          "type": "string"
+        },
+        "period": {
+          "description": "Customer accumulated amount period",
+          "type": "string"
+        }
+      }
+    },
+    "items_8": {
+      "example": {
+        "fileContent": "udffgajñsdfasif",
+        "type": "CONVERSION"
+      },
+      "type": "object",
+      "properties": {
+        "fileContentBytes": {
+          "description": "File content in byte array, transformed from the filecontent",
+          "type": "string"
+        },
+        "type": {
+          "enum": [
+            "CONVERSION",
+            "COMPLIANCE",
+            "OLD_IDENTITY_DOCUMENT",
+            "JUSTIFICATION_DOC_IMAGE",
+            "DESTINATION_FORMS",
+            "OTHER_DOCUMENTS",
+            "PROOF_OF_ADDRESS",
+            "IDENTITY_DOCUMENT_FRONT",
+            "FORM_HOME_TRANSFER",
+            "OTHER_DOCS_HOME_TRANSFER",
+            "SPECIAL_FORM",
+            "SOURCE_OF_FOUNDS",
+            "INCOME_JUSTIFICATION_DOC",
+            "INVOICE",
+            "BELGIAN_COMPLIANCE_FORM",
+            "BANK_ACCOUNT_CONTRACT_SIGNED",
+            "PAYMENT_ACCOUNTS_FRAUD",
+            "PAYMENT_ACCOUNTS_DISPUTE",
+            "EASYCARD_TO_SMILE_ACCOUNT_SIGNED",
+            "SELFIE",
+            "TESSA_SANITARIA",
+            "EIDREADER_ARIADNEXT",
+            "IDENTITY_DOCUMENT_BACK"
+          ],
+          "type": "string"
+        }
+      }
+    }
+  }
+}</con:content>
+      <con:type>https://swagger.io/swagger2/specification</con:type>
+    </con:part>
+  </con:definitionCache>
+  <con:endpoints>
+    <con:endpoint>https://b2bapi-sandbox.moneytrans.eu</con:endpoint>
+  </con:endpoints>
+</con:interface>

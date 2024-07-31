@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="1b267625-ddfe-41e5-a293-50b9e9df1bb6" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="Customers by Phone" searchProperties="true" timeout="0" maxResults="6">
+  <con:settings id="acd8aa66-84d8-412d-9ef8-bb2276fdb731">
+    <con:setting id="1b267625-ddfe-41e5-a293-50b9e9df1bb6fileName">Customers-by-Phone</con:setting>
+  </con:settings>
+  <con:testStep type="restrequest" name="Customers by Phone" id="f0e62abd-6d63-4097-b9a3-dca8e5ec9cc5">
+    <con:settings/>
+    <con:config service="https://b2bapi-sandbox.moneytrans.eu 2" resourcePath="/v2/persona/customers" methodName="Customers 6" xsi:type="con:RestRequestStep">
+      <con:restRequest name="Customers by Phone" id="522b2ea7-9fc3-4c3e-9a93-fa180ea3396f" mediaType="application/json">
+        <con:settings/>
+        <con:endpoint>https://b2bapi-sandbox.moneytrans.eu</con:endpoint>
+        <con:request/>
+        <con:originalUri>https://b2bapi-sandbox.moneytrans.eu/v2/persona/customers</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="68b76ac2-d53e-4c3c-9258-0dd8fc44f6db" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="a2f0479b-45da-4ba9-a375-f291b91ca495" name="Response SLA">
+          <con:configuration>
+            <SLA>200</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters>
+          <con:entry key="Authorization" value="${#Project#authMule}"/>
+          <con:entry key="clientId" value="${#Project#clientId}"/>
+          <con:entry key="searchField" value="PHONE"/>
+          <con:entry key="criteria" value=" 34622835864"/>
+          <con:entry key="Content-Type" value="application/json"/>
+        </con:parameters>
+        <con:parameterOrder>
+          <con:entry>searchField</con:entry>
+          <con:entry>criteria</con:entry>
+          <con:entry>Content-Type</con:entry>
+          <con:entry>clientId</con:entry>
+          <con:entry>Authorization</con:entry>
+        </con:parameterOrder>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testCase>

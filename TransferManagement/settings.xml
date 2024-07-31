@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:interface xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="con:RestService" id="7fbce08a-f3c5-492d-a392-903284afb0d1" name="TransferManagement" type="rest_ex" wadlVersion="https://swagger.io/swagger2/specification" definitionUrl="C:\Users\mkgue\OneDrive\Desktop\Destok -4\Elias\B2B\Apis\api.json">
+  <con:description id="67423e41-4f1a-4257-9f42-cec7a14453c9">Money transfer management</con:description>
+  <con:settings id="b36b9cf6-2cce-423e-b792-4cbdc3dab3dc">
+    <con:setting id="7fbce08a-f3c5-492d-a392-903284afb0d1fileName">TransferManagement</con:setting>
+  </con:settings>
+  <con:definitionCache/>
+  <con:endpoints>
+    <con:endpoint>https://b2bapi-sandbox.moneytrans.eu</con:endpoint>
+  </con:endpoints>
+</con:interface>

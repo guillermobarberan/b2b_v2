@@ -24,21 +24,11 @@
         <con:description xsi:nil="true"/>
       </con:parameter>
     </con:parameters>
-    <con:request name="Accumulated amounts" id="6f9c71e1-93f5-42e0-bc2d-75a7981e29a5" mediaType="application/json">
-      <con:settings/>
-      <con:endpoint>https://multiservices-be-cld-ts.moneytrans.eu</con:endpoint>
-      <con:credentials>
-        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
-        <con:authType>No Authorization</con:authType>
-      </con:credentials>
-      <con:parameters>
-        <con:entry key="Authorization" value="${#Project#authBack}"/>
-        <con:entry key="MT-DELEGATED-AUTH" value="1"/>
-      </con:parameters>
-      <con:parameterOrder>
-        <con:entry>Authorization</con:entry>
-        <con:entry>MT-DELEGATED-AUTH</con:entry>
-      </con:parameterOrder>
-    </con:request>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json; charset=utf-8</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:element xmlns:sen="https://multiservices-be-cld-ts.moneytrans.eu/api/b2b/customer/5463414/AccumulatedAmount/SENDING_TRANSFER">sen:Response</con:element>
+    </con:representation>
   </con:method>
 </con:resource>

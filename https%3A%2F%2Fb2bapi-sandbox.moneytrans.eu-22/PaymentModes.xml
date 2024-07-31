@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config" name="PaymentModes" path="/v2/transfers/catalogs/paymentModes" id="ebecf59b-4d3b-4e35-a611-434789365afe">
+  <con:settings id="747edf37-6bb6-452c-b4c7-9bc34267e460">
+    <con:setting id="ebecf59b-4d3b-4e35-a611-434789365afefileName">PaymentModes</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="PaymentModes" id="95f59833-2bb2-430a-a62c-0016b8b70de4" method="GET">
+    <con:settings/>
+    <con:parameters>
+      <con:parameter required="true">
+        <con:name>countryCode</con:name>
+        <con:value>MAR</con:value>
+        <con:style>QUERY</con:style>
+        <con:default>MAR</con:default>
+        <con:path xsi:nil="true"/>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+      <con:parameter>
+        <con:name>Content-Type</con:name>
+        <con:value>application/json</con:value>
+        <con:style>HEADER</con:style>
+        <con:default/>
+        <con:path xsi:nil="true"/>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+      <con:parameter>
+        <con:name>clientId</con:name>
+        <con:value>${#Project#clientId}</con:value>
+        <con:style>HEADER</con:style>
+        <con:default/>
+        <con:path xsi:nil="true"/>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+      <con:parameter>
+        <con:name>Authorization</con:name>
+        <con:value>${#Project#authMule}</con:value>
+        <con:style>HEADER</con:style>
+        <con:default/>
+        <con:path xsi:nil="true"/>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+    </con:parameters>
+    <con:request name="Payment types" id="96256c28-3125-414b-a2ae-d203708c41cc" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>https://b2bapi-sandbox.moneytrans.eu</con:endpoint>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:parameters>
+        <con:entry key="Authorization" value="${#Project#authMule}"/>
+        <con:entry key="clientId" value="${#Project#clientId}"/>
+        <con:entry key="countryCode" value="MAR"/>
+        <con:entry key="Content-Type" value="application/json"/>
+      </con:parameters>
+      <con:parameterOrder>
+        <con:entry>countryCode</con:entry>
+        <con:entry>Content-Type</con:entry>
+        <con:entry>clientId</con:entry>
+        <con:entry>Authorization</con:entry>
+      </con:parameterOrder>
+    </con:request>
+  </con:method>
+</con:resource>

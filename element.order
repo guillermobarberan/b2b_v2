@@ -9,6 +9,10 @@ https%3A%2F%2Fsso.moneytrans.eu-2
 https%3A%2F%2Fmultiservices-be-cld-ts.moneytrans.eu-22
 https%3A%2F%2Fb2bapi-sandbox.moneytrans.eu-21
 https%3A%2F%2Fsso.moneytrans.eu-2-2
+https%3A%2F%2Fmultiservices-be-cld-ts.moneytrans.eu-23
+https%3A%2F%2Fb2bapi-sandbox.moneytrans.eu-22
+PersonaManagement
+TransferManagement
 TokenManagement
 Acquiring
 Acquiring-Mule
@@ -20,10 +24,13 @@ Smile-Catalog
 Smile-Catalog-Mule
 Transfer-Management
 Transfer-Management-Mule
+Agent-Finance
+Agent-Finance-Mule
 Smile-Management
 Smile-Management-Mule
 Persona
 Persona-Mule
 V1
 V1-Mule
+MTR-Complete-Flow
 Test-Engine

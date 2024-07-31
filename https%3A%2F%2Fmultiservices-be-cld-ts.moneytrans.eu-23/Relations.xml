@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config" name="Relations" path="/api/b2b/customer/beneficiary/relations" id="d35567bc-f3d2-44ea-9c36-d595a45383e3">
+  <con:settings id="3c319bd2-dce3-4ceb-9574-dd9277ca9e34">
+    <con:setting id="d35567bc-f3d2-44ea-9c36-d595a45383e3fileName">Relations</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="Relations" id="5830367c-55aa-440d-81f2-fdae3990851b" method="POST">
+    <con:settings/>
+    <con:parameters>
+      <con:parameter>
+        <con:name>Authorization</con:name>
+        <con:value>${#Project#authBack}</con:value>
+        <con:style>HEADER</con:style>
+        <con:default/>
+        <con:path xsi:nil="true"/>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+      <con:parameter>
+        <con:name>MT-DELEGATED-AUTH</con:name>
+        <con:value>1</con:value>
+        <con:style>HEADER</con:style>
+        <con:default/>
+        <con:path xsi:nil="true"/>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+    </con:parameters>
+    <con:request name="Add beneficiary relation" id="829e7f22-70fe-4aca-b982-e72de1f7ffb7" mediaType="application/json" postQueryString="false">
+      <con:settings/>
+      <con:endpoint>https://multiservices-be-cld-ts.moneytrans.eu</con:endpoint>
+      <con:request>{\r
+    "IdBeneficiary": "5335741",\r
+    "IdCustomer": "5462855",\r
+    "Relationship": "CUSTOMER_RELATIONSHIP_FRIEND"\r
+}</con:request>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters>
+        <con:entry key="Authorization" value="${#Project#authBack}"/>
+        <con:entry key="MT-DELEGATED-AUTH" value="1"/>
+      </con:parameters>
+      <con:parameterOrder>
+        <con:entry>Authorization</con:entry>
+        <con:entry>MT-DELEGATED-AUTH</con:entry>
+      </con:parameterOrder>
+    </con:request>
+  </con:method>
+</con:resource>

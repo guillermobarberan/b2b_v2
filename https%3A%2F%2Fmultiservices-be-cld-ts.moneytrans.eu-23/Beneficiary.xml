@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config" name="Beneficiary" path="/api/b2b/customer/compliance/beneficiary" id="979cf743-9126-428a-9d58-caa8e44c8c7c">
+  <con:settings id="c943e9b2-06bf-4484-9c88-e45a5dd6518f">
+    <con:setting id="979cf743-9126-428a-9d58-caa8e44c8c7cfileName">Beneficiary</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="Beneficiary" id="63d41bde-5d4a-407c-aa4b-3451a820b4be" method="POST">
+    <con:settings/>
+    <con:parameters>
+      <con:parameter>
+        <con:name>Authorization</con:name>
+        <con:value>${#Project#authBack}</con:value>
+        <con:style>HEADER</con:style>
+        <con:default/>
+        <con:path xsi:nil="true"/>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+      <con:parameter>
+        <con:name>MT-DELEGATED-AUTH</con:name>
+        <con:value>1</con:value>
+        <con:style>HEADER</con:style>
+        <con:default/>
+        <con:path xsi:nil="true"/>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+    </con:parameters>
+    <con:request name="Save or Update beneficiary" id="d9c93afb-2315-4e93-938d-e51e7827519c" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>https://multiservices-be-cld-ts.moneytrans.eu</con:endpoint>
+      <con:request>{\r
+  "Action": "SCB",\r
+  "Email": "veronicatesting222@testemail.com",\r
+  "Address": {\r
+    "CountryId": "BEL",\r
+    "CityId": "2803448",\r
+    "StreetLetter": null,\r
+    "PostalCode": "9300",\r
+    "Street": "Mi calle",\r
+    "StreetNumber": 3\r
+  },\r
+  "Telephone": "+258963147",\r
+  "FiscalCode": null,\r
+  "FirstName": "Vero",\r
+  "Channel": "PARTNER_MULTISERVICES",\r
+  "IdSourceOfFunds": null,\r
+  "Gender": "FEMALE",\r
+  "Birthdate": "1995-11-30T20:10:50.175Z",\r
+  "Code": "5463651",\r
+  "CustomerRelationshipCode": "CUSTOMER_RELATIONSHIP_CUSTOMER_RELATIONSHIP_PARENTS",\r
+  "IdNationality": "BEL",\r
+  "Documents": null,\r
+  "NationalCitizenNumber": null,\r
+  "LastName": "test",\r
+  "OccupationType": null,\r
+  "SourceCustomer": "5463529"\r
+}</con:request>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:parameters>
+        <con:entry key="Authorization" value="${#Project#authBack}"/>
+        <con:entry key="MT-DELEGATED-AUTH" value="1"/>
+      </con:parameters>
+      <con:parameterOrder>
+        <con:entry>Authorization</con:entry>
+        <con:entry>MT-DELEGATED-AUTH</con:entry>
+      </con:parameterOrder>
+    </con:request>
+  </con:method>
+</con:resource>

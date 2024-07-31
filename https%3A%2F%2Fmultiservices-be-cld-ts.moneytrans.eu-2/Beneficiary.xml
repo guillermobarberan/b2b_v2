@@ -24,6 +24,16 @@
         <con:description xsi:nil="true"/>
       </con:parameter>
     </con:parameters>
+    <con:representation type="REQUEST">
+      <con:mediaType>application/json</con:mediaType>
+      <con:params/>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json; charset=utf-8</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:element xmlns:ben="https://multiservices-be-cld-ts.moneytrans.eu/api/b2b/customer/compliance/beneficiary">ben:Response</con:element>
+    </con:representation>
     <con:request name="Save or Update beneficiary" id="69b811ed-7f6f-4ddf-a394-296aa348cb49" mediaType="application/json">
       <con:settings/>
       <con:endpoint>https://multiservices-be-cld-ts.moneytrans.eu</con:endpoint>

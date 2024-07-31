@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config" name="5462855" path="/api/b2b/customer/beneficiaries/5462855" id="feb27a10-a782-4d81-9799-be27e7ce28e3">
+  <con:settings id="169cdf5d-319f-43bc-9b6e-54b0315a2232">
+    <con:setting id="feb27a10-a782-4d81-9799-be27e7ce28e3fileName">5462855</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="5462855" id="1df48b7d-9359-40e5-ad83-8258e5924fbf" method="GET">
+    <con:settings/>
+    <con:parameters>
+      <con:parameter>
+        <con:name>Authorization</con:name>
+        <con:value>${#Project#authBack}</con:value>
+        <con:style>HEADER</con:style>
+        <con:default/>
+        <con:path xsi:nil="true"/>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+      <con:parameter>
+        <con:name>MT-DELEGATED-AUTH</con:name>
+        <con:value>1</con:value>
+        <con:style>HEADER</con:style>
+        <con:default/>
+        <con:path xsi:nil="true"/>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+    </con:parameters>
+    <con:request name="Get beneficiaries by Customer Code" id="b51cf0bf-869c-4457-afca-dff6cc591232" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>https://multiservices-be-cld-ts.moneytrans.eu</con:endpoint>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:parameters>
+        <con:entry key="Authorization" value="${#Project#authBack}"/>
+        <con:entry key="MT-DELEGATED-AUTH" value="1"/>
+      </con:parameters>
+      <con:parameterOrder>
+        <con:entry>Authorization</con:entry>
+        <con:entry>MT-DELEGATED-AUTH</con:entry>
+      </con:parameterOrder>
+    </con:request>
+  </con:method>
+</con:resource>

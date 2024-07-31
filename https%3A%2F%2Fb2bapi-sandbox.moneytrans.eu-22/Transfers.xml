@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config" name="Transfers" path="/v2/transfers/transfers" id="92343acb-4c5f-4130-a1fe-a8a16cb45548">
+  <con:settings id="575d95e8-87af-4abe-95d7-5fcbc221c1b7">
+    <con:setting id="92343acb-4c5f-4130-a1fe-a8a16cb45548fileName">Transfers</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="Transfers" id="fe33f9cc-c06b-43e8-a377-75ef6e40a347" method="POST">
+    <con:settings/>
+    <con:parameters></con:parameters>
+    <con:representation type="REQUEST">
+      <con:mediaType>application/json</con:mediaType>
+      <con:params/>
+    </con:representation>
+    <con:representation type="FAULT">
+      <con:mediaType>application/json; charset=UTF-8</con:mediaType>
+      <con:status>401 400</con:status>
+      <con:params/>
+      <con:element xmlns:tran="https://b2bapi-sandbox.moneytrans.eu/v2/transfers/transfers">tran:Fault</con:element>
+    </con:representation>
+    <con:representation type="FAULT">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>401</con:status>
+      <con:params/>
+      <con:element xmlns:tran="https://b2bapi-sandbox.moneytrans.eu/v2/transfers/transfers">tran:Fault</con:element>
+    </con:representation>
+    <con:request name="Transfer" id="0b45179e-9f96-4c0c-bc45-c4c2d6015853" mediaType="application/json" postQueryString="false">
+      <con:settings/>
+      <con:endpoint>https://b2bapi-sandbox.moneytrans.eu</con:endpoint>
+      <con:request>{\r
+    "customerCode": "5404713",\r
+    "beneficiaryCode": "5404714",\r
+    "destinationCode": "1021658$1707",\r
+    "destinationAmount":210,\r
+    "destinationCurrencyCode": "MAD",\r
+    "destinationCountryCode": "MAR",\r
+    "messageForBeneficiary": "Testing",\r
+    "purposeCode": "EDUCATION",\r
+    "sourceOfFundsCode": "TRANSFER_SOURCE_OF_FUNDS_SALARY",\r
+    "externalCode": "TEST1005"\r
+  }</con:request>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+      <con:parameterOrder/>
+    </con:request>
+  </con:method>
+</con:resource>

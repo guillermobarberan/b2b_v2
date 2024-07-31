@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config" name="Finances" path="/v2/finances/agents/finances" id="325291c9-7b7e-4c79-96ca-56f622d800cf">
+  <con:settings id="29da30c4-15c2-4ba0-afc7-c1f217935948">
+    <con:setting id="325291c9-7b7e-4c79-96ca-56f622d800cffileName">Finances</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="Finances" id="b3def2bb-f37f-4c07-8f55-da8b66cc4a15" method="GET">
+    <con:settings/>
+    <con:parameters>
+      <con:parameter required="true">
+        <con:name>productCode</con:name>
+        <con:value>MTR</con:value>
+        <con:style>QUERY</con:style>
+        <con:default>MTR</con:default>
+        <con:path xsi:nil="true"/>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>dateFrom</con:name>
+        <con:value>2024-04-01</con:value>
+        <con:style>QUERY</con:style>
+        <con:default>2024-04-01</con:default>
+        <con:path xsi:nil="true"/>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+    </con:parameters>
+    <con:representation type="FAULT">
+      <con:mediaType>application/json; charset=UTF-8</con:mediaType>
+      <con:status>401</con:status>
+      <con:params/>
+      <con:element xmlns:fin="https://b2bapi-sandbox.moneytrans.eu/v2/finances/agents/finances">fin:Fault</con:element>
+    </con:representation>
+    <con:request name="Financial Data mule" id="07588833-b492-4655-837b-ba6453556bc4" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>https://b2bapi-sandbox.moneytrans.eu</con:endpoint>
+      <con:request/>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters>
+        <con:entry key="productCode" value="MTR"/>
+        <con:entry key="dateFrom" value="2024-04-01"/>
+      </con:parameters>
+      <con:parameterOrder>
+        <con:entry>productCode</con:entry>
+        <con:entry>dateFrom</con:entry>
+      </con:parameterOrder>
+    </con:request>
+  </con:method>
+</con:resource>

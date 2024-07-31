@@ -6,49 +6,46 @@
   <con:parameters/>
   <con:method name="Beneficiaries" id="15d7e16e-e7f9-47a1-b5fc-f3442782ef48" method="GET">
     <con:settings/>
-    <con:parameters>
-      <con:parameter>
-        <con:name>Content-Type</con:name>
-        <con:value>application/json</con:value>
-        <con:style>HEADER</con:style>
-        <con:default/>
-        <con:path xsi:nil="true"/>
-        <con:description xsi:nil="true"/>
-      </con:parameter>
-      <con:parameter>
-        <con:name>clientId</con:name>
-        <con:value>${#Project#clientId}</con:value>
-        <con:style>HEADER</con:style>
-        <con:default/>
-        <con:path xsi:nil="true"/>
-        <con:description xsi:nil="true"/>
-      </con:parameter>
-      <con:parameter>
-        <con:name>Authorization</con:name>
-        <con:value>${#Project#authMule}</con:value>
-        <con:style>HEADER</con:style>
-        <con:default/>
-        <con:path xsi:nil="true"/>
-        <con:description xsi:nil="true"/>
-      </con:parameter>
-    </con:parameters>
+    <con:parameters></con:parameters>
+    <con:representation type="REQUEST">
+      <con:mediaType>application/json</con:mediaType>
+      <con:params/>
+    </con:representation>
+    <con:representation type="FAULT">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>401</con:status>
+      <con:params/>
+      <con:element xmlns:ben="https://b2bapi-sandbox.moneytrans.eu/v2/persona/customers/5462855/beneficiaries">ben:Fault</con:element>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json; charset=UTF-8</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:element>Response</con:element>
+    </con:representation>
+    <con:representation type="FAULT">
+      <con:mediaType>application/json; charset=UTF-8</con:mediaType>
+      <con:status>401 500</con:status>
+      <con:params/>
+      <con:element xmlns:ben="https://b2bapi-sandbox.moneytrans.eu/v2/persona/customers/5462855/beneficiaries">ben:Fault</con:element>
+    </con:representation>
+    <con:representation type="FAULT">
+      <con:mediaType>text/plain; charset=UTF-8</con:mediaType>
+      <con:status>504</con:status>
+      <con:params/>
+      <con:element>data</con:element>
+    </con:representation>
     <con:request name="Get beneficiaries by Customer Code" id="1ba9f646-2df1-41d2-a8b4-0320febbcb99" mediaType="application/json">
       <con:settings/>
       <con:endpoint>https://b2bapi-sandbox.moneytrans.eu</con:endpoint>
+      <con:request/>
       <con:credentials>
         <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
         <con:authType>No Authorization</con:authType>
       </con:credentials>
-      <con:parameters>
-        <con:entry key="Authorization" value="${#Project#authMule}"/>
-        <con:entry key="clientId" value="${#Project#clientId}"/>
-        <con:entry key="Content-Type" value="application/json"/>
-      </con:parameters>
-      <con:parameterOrder>
-        <con:entry>Content-Type</con:entry>
-        <con:entry>clientId</con:entry>
-        <con:entry>Authorization</con:entry>
-      </con:parameterOrder>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+      <con:parameterOrder/>
     </con:request>
   </con:method>
 </con:resource>

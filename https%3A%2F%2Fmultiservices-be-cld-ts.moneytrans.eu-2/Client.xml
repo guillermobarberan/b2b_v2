@@ -24,6 +24,16 @@
         <con:description xsi:nil="true"/>
       </con:parameter>
     </con:parameters>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json; charset=utf-8</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:element xmlns:cli="https://multiservices-be-cld-ts.moneytrans.eu/api/b2b/customer/compliance/client">cli:Response</con:element>
+    </con:representation>
+    <con:representation type="REQUEST">
+      <con:mediaType>application/json</con:mediaType>
+      <con:params/>
+    </con:representation>
     <con:request name="Save or Update customer" id="3d0574b0-54f0-457c-b096-3e649f09e4af" mediaType="application/json">
       <con:settings/>
       <con:endpoint>https://multiservices-be-cld-ts.moneytrans.eu</con:endpoint>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="8fb0404d-3668-4468-a48d-f60c01d7b8af" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="Amend Transfer by Code" searchProperties="true" timeout="0">
+  <con:settings id="0c2d4338-9084-45b4-9d47-08549442f89b">
+    <con:setting id="8fb0404d-3668-4468-a48d-f60c01d7b8affileName">Amend-Transfer-by-Code</con:setting>
+  </con:settings>
+  <con:testStep type="restrequest" name="Amend Transfer by Code" id="7e82f63a-796a-4226-87a4-bef60e96b6ab">
+    <con:settings/>
+    <con:config service="TransferManagement" resourcePath="/transfers/{code}" methodName="Amend Transfer By Code" xsi:type="con:RestRequestStep">
+      <con:restRequest name="Amend Transfer by Code" id="33dc870a-c4d2-4e9f-8c2a-498258b91abf" mediaType="application/json" postQueryString="false">
+        <con:settings/>
+        <con:endpoint>https://b2bapi-sandbox.moneytrans.eu</con:endpoint>
+        <con:request>{\r
+  "beneficiary" : {\r
+    "identityDocument" : {\r
+      "deliveryCityCode" : "string",\r
+      "deliveryCountryCode" : "string",\r
+      "code" : "string",\r
+      "deliveryDate" : "2015-07-20T15:49:04-07:00",\r
+      "expiryDate" : "2015-07-20T15:49:04-07:00",\r
+      "isDefault" : true,\r
+      "deliveryAuthorityCode" : "string",\r
+      "typeCode" : "string",\r
+      "documentNumber" : "string"\r
+    },\r
+    "code" : "string",\r
+    "countryCode" : "string",\r
+    "name" : "string",\r
+    "streetLetter" : "string",\r
+    "telephone" : "string",\r
+    "lastName" : "string",\r
+    "birthDate" : "2015-07-20T15:49:04-07:00",\r
+    "streetNumber" : 0,\r
+    "telephone2" : "string",\r
+    "email" : "string",\r
+    "cityCode" : "string",\r
+    "gender" : "MALE",\r
+    "postalCode" : "string",\r
+    "street" : "string",\r
+    "occupationCode" : "string"\r
+  },\r
+  "customersRelationshipCode" : "string"\r
+}</con:request>
+        <con:assertion type="Valid HTTP Status Codes" id="c8e6d70c-5a82-4956-ae18-dbd8bd526382" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="06e85e96-f07d-44ac-8e22-06c0979e9e50" name="Response SLA">
+          <con:configuration>
+            <SLA>200</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testCase>

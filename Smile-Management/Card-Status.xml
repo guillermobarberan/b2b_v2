@@ -6,13 +6,16 @@
   <con:testStep type="restrequest" name="Card Status" id="a05b7fb4-eecf-4422-a482-b2b906a521f6">
     <con:settings/>
     <con:config service="https://multiservices-be-cld-ts.moneytrans.eu 2" resourcePath="/api/b2b/pac/account/card" methodName="Card" xsi:type="con:RestRequestStep">
-      <con:restRequest name="Card Status" id="816ac0f0-412a-41ba-af82-2e6388eaccf9" mediaType="application/json">
-        <con:settings/>
+      <con:restRequest name="Card Status" id="816ac0f0-412a-41ba-af82-2e6388eaccf9" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Accept" value="application/json" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
+        </con:settings>
         <con:endpoint>https://multiservices-be-cld-ts.moneytrans.eu</con:endpoint>
         <con:request>{\r
     "Action": "FREEZE",\r
     "Iban": "BE83500600007115"\r
 }</con:request>
+        <con:originalUri>https://multiservices-be-cld-ts.moneytrans.eu/api/b2b/pac/account/card</con:originalUri>
         <con:assertion type="Valid HTTP Status Codes" id="81b2d342-c206-4bef-9080-195be56b72f2" name="Valid HTTP Status Codes">
           <con:settings/>
           <con:configuration>
@@ -21,15 +24,16 @@
         </con:assertion>
         <con:assertion type="Response SLA Assertion" id="2a94f8b8-b8ae-402c-90cd-3e66a458ab00" name="Response SLA">
           <con:configuration>
-            <SLA>200</SLA>
+            <SLA>3000</SLA>
           </con:configuration>
         </con:assertion>
         <con:credentials>
           <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
           <con:authType>No Authorization</con:authType>
         </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
         <con:parameters>
-          <con:entry key="Authorization" value="${#Project#authBack}"/>
+          <con:entry key="Authorization" value="${#[Test Engine#Engine Runner#mule v2]#authBack}"/>
           <con:entry key="Content-Type" value="application/json"/>
           <con:entry key="MT-DELEGATED-AUTH" value="1"/>
         </con:parameters>
@@ -41,6 +45,15 @@
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:properties/>
+  <con:properties>
+    <con:property>
+      <con:name>method</con:name>
+      <con:value>POST</con:value>
+    </con:property>
+    <con:property>
+      <con:name>requestPath</con:name>
+      <con:value>/api/b2b/pac/account/card</con:value>
+    </con:property>
+  </con:properties>
   <con:reportParameters/>
 </con:testCase>

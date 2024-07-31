@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:testCase xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="40046b75-1c5b-4265-9669-947ea2b15961" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="Add Beneficiary Relation" searchProperties="true" timeout="0" maxResults="6">
-  <con:settings id="478153b8-58df-466a-9c89-6ab60c3bf91d">
-    <con:setting id="8ab5f07e-a1b5-43c7-9a94-26ea2fb86603fileName">Add-Beneficiary-Relation</con:setting>
-    <con:setting id="40046b75-1c5b-4265-9669-947ea2b15961fileName">Add-Beneficiary-Relation</con:setting>
+<con:testCase xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="217beb0c-ecca-4d93-b3df-9f73894ea160" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="Add Beneficiary Relation" searchProperties="true" timeout="0" maxResults="6">
+  <con:settings id="20056b45-4ef4-4b8e-b23a-651a94bbfdff">
+    <con:setting id="217beb0c-ecca-4d93-b3df-9f73894ea160fileName">Add-Beneficiary-Relation</con:setting>
   </con:settings>
-  <con:testStep type="restrequest" name="Add Beneficiary Relation" id="2ba4f916-043a-4071-8f5d-bcacb9bd6982">
+  <con:testStep type="restrequest" name="Add Beneficiary Relation" id="0d8b156b-884d-48a2-aa6a-2b2705d76a3c">
     <con:settings/>
-    <con:config service="https://multiservices-be-cld-ts.moneytrans.eu 2" resourcePath="/api/b2b/customer/beneficiary/relations" methodName="Relations" xsi:type="con:RestRequestStep">
-      <con:restRequest name="Add Beneficiary Relation" id="c2c6aa2b-9aa0-490f-80f9-176451570af8" mediaType="application/json">
+    <con:config service="https://b2bapi-sandbox.moneytrans.eu 2" resourcePath="/v2/persona/customers/beneficiaries/relations" methodName="Relations" xsi:type="con:RestRequestStep">
+      <con:restRequest name="Add Beneficiary Relation" id="841f83e8-6e73-4c2f-8ed3-53cb977c0d8f" mediaType="application/json" postQueryString="false">
         <con:settings/>
-        <con:endpoint>https://multiservices-be-cld-ts.moneytrans.eu</con:endpoint>
+        <con:endpoint>https://b2bapi-sandbox.moneytrans.eu</con:endpoint>
         <con:request>{\r
-    "IdBeneficiary": "5335741",\r
-    "IdCustomer": "5462855",\r
-    "Relationship": "CUSTOMER_RELATIONSHIP_FRIEND"\r
+    "beneficiaryCode": "5335741",\r
+    "customerCode": "5462855",\r
+    "relationship": "CUSTOMER_RELATIONSHIP_FRIEND"\r
 }</con:request>
-        <con:assertion type="Valid HTTP Status Codes" id="bcf96c88-cbb3-4cc1-9b5a-7430b1d0fec5" name="Valid HTTP Status Codes">
+        <con:originalUri>https://b2bapi-sandbox.moneytrans.eu/v2/persona/customers/beneficiaries/relations</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="ea22a0e6-86e7-460a-ad3b-7a453ad2f917" name="Valid HTTP Status Codes">
           <con:settings/>
           <con:configuration>
             <codes>200</codes>
           </con:configuration>
         </con:assertion>
-        <con:assertion type="Response SLA Assertion" id="c82adb91-4f1c-422b-a90e-2ad6dbfd0e43" name="Response SLA">
+        <con:assertion type="Response SLA Assertion" id="44bb6782-6b58-405b-88fc-9c4b3a2d4208" name="Response SLA">
           <con:configuration>
             <SLA>200</SLA>
           </con:configuration>
@@ -30,13 +30,16 @@
           <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
           <con:authType>No Authorization</con:authType>
         </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
         <con:parameters>
-          <con:entry key="Authorization" value="${#Project#authBack}"/>
-          <con:entry key="MT-DELEGATED-AUTH" value="1"/>
+          <con:entry key="Authorization" value="${#Project#authMule}"/>
+          <con:entry key="clientId" value="${#Project#clientId}"/>
+          <con:entry key="Content-Type" value="application/json"/>
         </con:parameters>
         <con:parameterOrder>
+          <con:entry>Content-Type</con:entry>
+          <con:entry>clientId</con:entry>
           <con:entry>Authorization</con:entry>
-          <con:entry>MT-DELEGATED-AUTH</con:entry>
         </con:parameterOrder>
       </con:restRequest>
     </con:config>

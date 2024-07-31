@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config" name="Notes" path="/v2/transfers/transfers/104087225/notes" id="75fc4fd2-8b58-4120-8805-7e9400ddcc02">
+  <con:settings id="df610e8c-d00b-4c5f-8a58-ba13afc4c840">
+    <con:setting id="75fc4fd2-8b58-4120-8805-7e9400ddcc02fileName">Notes</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="Notes" id="9bbab447-0ce4-4608-bcf1-93e430a9883c" method="GET">
+    <con:settings/>
+    <con:parameters></con:parameters>
+    <con:representation type="REQUEST">
+      <con:mediaType>application/json</con:mediaType>
+      <con:params/>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json; charset=UTF-8</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:element>Response</con:element>
+    </con:representation>
+    <con:representation type="FAULT">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>401</con:status>
+      <con:params/>
+      <con:element xmlns:not="https://b2bapi-sandbox.moneytrans.eu/v2/transfers/transfers/104087225/notes">not:Fault</con:element>
+    </con:representation>
+    <con:request name="Transfer Notes by URN" id="586e6c2c-c556-48a4-a11e-08f652ea7a75" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>https://b2bapi-sandbox.moneytrans.eu</con:endpoint>
+      <con:request/>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+      <con:parameterOrder/>
+    </con:request>
+  </con:method>
+</con:resource>

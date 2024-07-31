@@ -24,6 +24,12 @@
         <con:description xsi:nil="true"/>
       </con:parameter>
     </con:parameters>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json; charset=utf-8</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:element xmlns:ns="https://multiservices-be-cld-ts.moneytrans.eu/api/b2b/customer/beneficiaries/5462855">ns:Response</con:element>
+    </con:representation>
     <con:request name="Get beneficiaries by Customer Code" id="e7ea29a2-cfc5-4b55-ace0-c629be7873e5" mediaType="application/json">
       <con:settings/>
       <con:endpoint>https://multiservices-be-cld-ts.moneytrans.eu</con:endpoint>

@@ -3,7 +3,7 @@
   <con:settings id="8e1122eb-e55c-44b7-9294-6618a97632dc">
     <con:setting id="cabeb5ce-cc74-457b-98c8-814b2f16d781fileName">Calculations</con:setting>
   </con:settings>
-  <con:testStep type="restrequest" name="Calculations" id="440e27e6-e9cc-4342-9e00-167660911cf8" disabled="true">
+  <con:testStep type="restrequest" name="Calculations" id="440e27e6-e9cc-4342-9e00-167660911cf8">
     <con:settings/>
     <con:config service="https://b2bapi-sandbox.moneytrans.eu 2" resourcePath="/v2/transfers/catalogs/calculations" methodName="Calculations" xsi:type="con:RestRequestStep">
       <con:restRequest name="Calculations" id="03e95e74-68ec-4a17-b462-269bb42550d0" mediaType="application/json">

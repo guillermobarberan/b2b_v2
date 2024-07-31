@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="e984fecc-595b-44a0-99e7-b1fd087bceda" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="Beneficiaries by Code" searchProperties="true" timeout="0" maxResults="6">
+  <con:settings id="0cf13a94-e99c-41ef-afad-8c34a6ff1eb2">
+    <con:setting id="e984fecc-595b-44a0-99e7-b1fd087bcedafileName">Beneficiaries-by-Code</con:setting>
+  </con:settings>
+  <con:testStep type="restrequest" name="Beneficiaries by Code" id="14fe92b4-f552-4f5d-abb4-81fe105dc354">
+    <con:settings/>
+    <con:config service="https://b2bapi-sandbox.moneytrans.eu 2" resourcePath="/v2/persona/beneficiaries" methodName="Beneficiaries" xsi:type="con:RestRequestStep">
+      <con:restRequest name="Beneficiaries by Code" id="56790151-0c8e-410e-bc9e-729381bc198a" mediaType="application/json">
+        <con:settings/>
+        <con:endpoint>https://b2bapi-sandbox.moneytrans.eu</con:endpoint>
+        <con:request/>
+        <con:originalUri>https://b2bapi-sandbox.moneytrans.eu/v2/persona/beneficiaries</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="5587e2a3-58c2-4d2b-b711-77c253dcf560" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="6d50bd8c-39c4-40e9-8a20-35f0b7191914" name="Response SLA">
+          <con:configuration>
+            <SLA>200</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters>
+          <con:entry key="Authorization" value="${#Project#authMule}"/>
+          <con:entry key="clientId" value="${#Project#clientId}"/>
+          <con:entry key="searchField" value="CODE"/>
+          <con:entry key="criteria" value="5335711"/>
+          <con:entry key="Content-Type" value="application/json"/>
+        </con:parameters>
+        <con:parameterOrder>
+          <con:entry>searchField</con:entry>
+          <con:entry>criteria</con:entry>
+          <con:entry>Content-Type</con:entry>
+          <con:entry>clientId</con:entry>
+          <con:entry>Authorization</con:entry>
+        </con:parameterOrder>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testCase>

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config" name="/beneficiaries" path="/beneficiaries" id="fd624d6d-cd3d-4774-ad1c-62d7a3c8331d">
+  <con:settings id="8470fd00-2b19-4283-96b8-e497d27a3bc1">
+    <con:setting id="fd624d6d-cd3d-4774-ad1c-62d7a3c8331dfileName">%2Fbeneficiaries</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="Get Beneficiaries By Criteria" id="96129c58-cb9a-4042-bc3b-d2be3f8d1108" method="GET">
+    <con:description>Get Beneficiaries details by specific criteria</con:description>
+    <con:settings/>
+    <con:parameters>
+      <con:parameter>
+        <con:name>criteria</con:name>
+        <con:style>QUERY</con:style>
+        <con:description>Value for the search</con:description>
+      </con:parameter>
+      <con:parameter>
+        <con:name>searchField</con:name>
+        <con:style>QUERY</con:style>
+        <con:description>Field for the search</con:description>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>ApiKey</con:name>
+        <con:style>HEADER</con:style>
+        <con:description>Identifier of the payment gateway. It is a fixed value. Moneytrans will commmunicate this value to the consumer after during on-boarding.</con:description>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>ApiSignature</con:name>
+        <con:style>HEADER</con:style>
+        <con:description>This signature is generated with the SHA256 algorithm and sent in the header.</con:description>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>clientId</con:name>
+        <con:style>HEADER</con:style>
+        <con:description>clientId used to request the access token</con:description>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>Authorization</con:name>
+        <con:style>HEADER</con:style>
+        <con:description>Bearer access token</con:description>
+      </con:parameter>
+    </con:parameters>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:sampleContent>[ {
+  "code" : "651321",
+  "firstName" : "Name",
+  "lastName" : "Surname",
+  "telephone" : "+34622835864",
+  "email" : "mail@mailprovider.com",
+  "nationalityCountryCode" : "ESP",
+  "customerRelationshipCode" : "PARENTS",
+  "identityDocument" : {
+    "deliveryDate" : "2020-11-27T15:49:52.795Z",
+    "documentNumber" : "50770750K",
+    "expiryDate" : "2032-11-27T15:49:52.795Z",
+    "code" : "513",
+    "deliveryCountryCode" : "ESP",
+    "deliveryCityCode" : "MAD",
+    "documentTypeCode" : "NICD",
+    "isDefault" : true
+  }
+} ]</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>500</con:status>
+      <con:params/>
+      <con:sampleContent>{
+  "code" : 29500,
+  "message" : "Internal error",
+  "reason" : "Something went wrong in the system during the execution"
+}</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>401</con:status>
+      <con:params/>
+      <con:sampleContent>{
+  "code" : 29401,
+  "message" : "Unauthorized",
+  "reason" : "Security parameter is missing or requestor doesn't have permissions to call this resource"
+}</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>400</con:status>
+      <con:params/>
+      <con:sampleContent>{
+  "code" : 29400,
+  "message" : "Bad Request",
+  "reason" : "Invalid searchField"
+}</con:sampleContent>
+    </con:representation>
+    <con:representation type="REQUEST">
+      <con:mediaType>application/json</con:mediaType>
+      <con:params/>
+    </con:representation>
+    <con:request name="Request 1" id="19ad4a09-4e58-4d07-8ca6-cfefe0c412b9" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>https://b2bapi-sandbox.moneytrans.eu</con:endpoint>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+</con:resource>

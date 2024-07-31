@@ -32,6 +32,22 @@
         <con:description xsi:nil="true"/>
       </con:parameter>
     </con:parameters>
+    <con:representation type="FAULT">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>400 401</con:status>
+      <con:params/>
+      <con:element xmlns:cus="https://b2bapi-sandbox.moneytrans.eu/v2/persona/customers">cus:Fault</con:element>
+    </con:representation>
+    <con:representation type="REQUEST">
+      <con:mediaType>application/json</con:mediaType>
+      <con:params/>
+    </con:representation>
+    <con:representation type="FAULT">
+      <con:mediaType>application/json; charset=UTF-8</con:mediaType>
+      <con:status>401</con:status>
+      <con:params/>
+      <con:element xmlns:cus="https://b2bapi-sandbox.moneytrans.eu/v2/persona/customers">cus:Fault</con:element>
+    </con:representation>
     <con:request name="Save Customer" id="02a33403-4159-434e-9d6c-39c5a350d204" mediaType="application/json">
       <con:settings/>
       <con:endpoint>https://b2bapi-sandbox.moneytrans.eu</con:endpoint>
@@ -116,7 +132,17 @@
         <con:description xsi:nil="true"/>
       </con:parameter>
     </con:parameters>
-    <con:request name="Update Customer" id="cf73e3d5-dc0a-488a-aca8-f03676b327ca" mediaType="application/json">
+    <con:representation type="FAULT">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>400</con:status>
+      <con:params/>
+      <con:element xmlns:cus="https://b2bapi-sandbox.moneytrans.eu/v2/persona/customers">cus:Fault</con:element>
+    </con:representation>
+    <con:representation type="REQUEST">
+      <con:mediaType>application/json</con:mediaType>
+      <con:params/>
+    </con:representation>
+    <con:request name="Update Customer" id="cf73e3d5-dc0a-488a-aca8-f03676b327ca" mediaType="application/json" postQueryString="false">
       <con:settings/>
       <con:endpoint>https://b2bapi-sandbox.moneytrans.eu</con:endpoint>
       <con:request>{\r
@@ -162,6 +188,7 @@
         <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
         <con:authType>No Authorization</con:authType>
       </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
       <con:parameters>
         <con:entry key="Authorization" value="${#Project#authMule}"/>
         <con:entry key="clientId" value="${#Project#clientId}"/>

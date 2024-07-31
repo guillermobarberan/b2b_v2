@@ -5,5 +5,14 @@ Customer-NO-IDDoc-by-Code.xml
 OCR.xml
 Not-IDDOC-Document.xml
 Save-or-Update-Beneficiary.xml
-Get-Beneficiaries-by-Customer-Code.xml
 Save-or-Update-Customer.xml
+Customer-breaches.xml
+Beneficiaries-by-Code.xml
+Get-Beneficiaries-by-Customer-Code.xml
+Customers-by-Code.xml
+Beneficiaries-by-Name.xml
+Customers-by-Name.xml
+Beneficiaries-by-Document-Number.xml
+Customers-by-Document-Number.xml
+Beneficiaries-by-Phone.xml
+Customers-by-Phone.xml

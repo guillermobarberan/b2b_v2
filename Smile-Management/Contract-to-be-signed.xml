@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="e08de452-fc8f-420f-8816-6dce8f75fcf9" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="Contract to be signed" searchProperties="true" timeout="0" maxResults="6">
+  <con:settings id="e6ea058e-92da-4491-896c-ed2407516cbc">
+    <con:setting id="e08de452-fc8f-420f-8816-6dce8f75fcf9fileName">Contract-to-be-signed</con:setting>
+  </con:settings>
+  <con:testStep type="restrequest" name="Contract to be signed" id="29a3b102-2764-4801-8469-d66484fcb1ed">
+    <con:settings/>
+    <con:config service="https://multiservices-be-cld-ts.moneytrans.eu 2" resourcePath="/api/b2b/pac/enroll/contract/5462855/download/ES/0/ANNUAL" methodName="ANNUAL" xsi:type="con:RestRequestStep">
+      <con:restRequest name="Contract to be signed" id="5c0b2147-8b2a-46b8-bd70-72ceba8c4ba2" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Accept" value="application/json" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
+        </con:settings>
+        <con:endpoint>https://multiservices-be-cld-ts.moneytrans.eu</con:endpoint>
+        <con:request/>
+        <con:originalUri>https://multiservices-be-cld-ts.moneytrans.eu/api/b2b/pac/enroll/contract/5462855/download/ES/0/ANNUAL</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="f97fd89c-6722-4a41-8f21-dfb52653e5b3" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="5811a326-0166-4fbe-bd94-cf8464f0aad8" name="Response SLA">
+          <con:configuration>
+            <SLA>5000</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters>
+          <con:entry key="Authorization" value="${#[Test Engine#Engine Runner#mule v2]#authBack}"/>
+          <con:entry key="Content-Type" value="application/json"/>
+          <con:entry key="MT-DELEGATED-AUTH" value="1"/>
+        </con:parameters>
+        <con:parameterOrder>
+          <con:entry>Content-Type</con:entry>
+          <con:entry>Authorization</con:entry>
+          <con:entry>MT-DELEGATED-AUTH</con:entry>
+        </con:parameterOrder>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties>
+    <con:property>
+      <con:name>method</con:name>
+      <con:value>GET</con:value>
+    </con:property>
+    <con:property>
+      <con:name>requestPath</con:name>
+      <con:value>/api/b2b/pac/enroll/contract/5462855/download/ES/0/ANNUAL</con:value>
+    </con:property>
+  </con:properties>
+  <con:reportParameters/>
+</con:testCase>

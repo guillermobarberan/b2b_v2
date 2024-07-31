@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config" name="/transfers" path="/transfers" id="f21dbd10-e43d-4f09-9c1f-a5691a24bf05">
+  <con:settings id="5eb4cfa3-eb55-4a19-9121-e8c1d2b411bb">
+    <con:setting id="f21dbd10-e43d-4f09-9c1f-a5691a24bf05fileName">%2Ftransfers</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="Search Transfers" id="15a608e8-a433-42fc-b5a4-97fcaec98873" method="GET">
+    <con:description>Obtain the list of transfers that match with some specific parameters</con:description>
+    <con:settings/>
+    <con:parameters>
+      <con:parameter>
+        <con:name>dateFrom</con:name>
+        <con:style>QUERY</con:style>
+        <con:description>Starting date</con:description>
+      </con:parameter>
+      <con:parameter>
+        <con:name>dateTo</con:name>
+        <con:style>QUERY</con:style>
+        <con:description>Ending date</con:description>
+      </con:parameter>
+      <con:parameter>
+        <con:name>senderFullName</con:name>
+        <con:style>QUERY</con:style>
+        <con:description>Sender full name</con:description>
+      </con:parameter>
+      <con:parameter>
+        <con:name>externalCode</con:name>
+        <con:style>QUERY</con:style>
+        <con:description>External code used to add especial identifier of the partner</con:description>
+      </con:parameter>
+      <con:parameter>
+        <con:name>destinationCountryCode</con:name>
+        <con:style>QUERY</con:style>
+        <con:description>Destination country Iso3 Code</con:description>
+      </con:parameter>
+      <con:parameter>
+        <con:name>amountFrom</con:name>
+        <con:style>QUERY</con:style>
+        <con:dataType>number</con:dataType>
+        <con:description>Initial amount. If used, amountType is mandatory</con:description>
+      </con:parameter>
+      <con:parameter>
+        <con:name>amountTo</con:name>
+        <con:style>QUERY</con:style>
+        <con:dataType>number</con:dataType>
+        <con:description>Maximum amount. If used, amountType is mandatory</con:description>
+      </con:parameter>
+      <con:parameter>
+        <con:name>amountType</con:name>
+        <con:style>QUERY</con:style>
+        <con:description>Type of amount range to be filtered</con:description>
+      </con:parameter>
+      <con:parameter>
+        <con:name>customerCode</con:name>
+        <con:style>QUERY</con:style>
+        <con:description>sender code</con:description>
+      </con:parameter>
+      <con:parameter>
+        <con:name>beneficiaryCode</con:name>
+        <con:style>QUERY</con:style>
+        <con:description>beneficiary code</con:description>
+      </con:parameter>
+      <con:parameter>
+        <con:name>destinationCode</con:name>
+        <con:style>QUERY</con:style>
+        <con:description>destination code</con:description>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>ApiKey</con:name>
+        <con:style>HEADER</con:style>
+        <con:description>Identifier of the payment gateway. It is a fixed value. Moneytrans will commmunicate this value to the consumer after during on-boarding.</con:description>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>ApiSignature</con:name>
+        <con:style>HEADER</con:style>
+        <con:description>This signature is generated with the SHA256 algorithm and sent in the header.</con:description>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>clientId</con:name>
+        <con:style>HEADER</con:style>
+        <con:description>clientId used to request the access token</con:description>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>Authorization</con:name>
+        <con:style>HEADER</con:style>
+        <con:description>Bearer access token</con:description>
+      </con:parameter>
+    </con:parameters>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:sampleContent>[ {
+  "destination" : {
+    "code" : "CP29",
+    "name" : "Cash Plus - LA MARINE",
+    "address" : "4 Rue Tznit Derb Tazi ",
+    "cityCode" : "CAs",
+    "countryCode" : "504",
+    "payer" : {
+      "name" : "CSP - Cash Plus",
+      "code" : "321"
+    }
+  },
+  "customerCode" : "5462815",
+  "beneficiaryCode" : "5462816",
+  "operationDate" : "2023-12-04T16:53:49.238Z",
+  "status" : "AVAILABLE_DESTINATION",
+  "code" : "9200158",
+  "isBlocked" : false,
+  "transactionCode" : "104223780",
+  "externalCode" : "TFX651321",
+  "paymentMethodCode" : "dsf",
+  "fees" : 23,
+  "sourceAmount" : 0,
+  "destinationAmount" : 35852,
+  "sourceCurrencyCode" : "EUR",
+  "destinationCurrencyCode" : "MAD"
+} ]</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>500</con:status>
+      <con:params/>
+      <con:sampleContent>{
+  "code" : 29500,
+  "message" : "Internal error",
+  "reason" : "Something went wrong in the system during the execution"
+}</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>401</con:status>
+      <con:params/>
+      <con:sampleContent>{
+  "code" : 29401,
+  "message" : "Unauthorized",
+  "reason" : "Security parameter is missing or requestor doesn't have permissions to call this resource"
+}</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>400</con:status>
+      <con:params/>
+      <con:sampleContent>{
+  "code" : 29400,
+  "message" : "Request not valid",
+  "reason" : "countryCodeFormat is mandatory when you send destinationCountryCode filter"
+}</con:sampleContent>
+    </con:representation>
+    <con:representation type="REQUEST">
+      <con:mediaType>application/json</con:mediaType>
+      <con:params/>
+    </con:representation>
+    <con:request name="Request 1" id="8ce3ec44-4d5c-47ed-bccd-95ad721d5c70" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>https://b2bapi-sandbox.moneytrans.eu</con:endpoint>
+      <con:request/>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+  <con:method name="Save a Transfer" id="abb0fb1c-d11f-4d75-8749-9ad9d89f5a3c" method="POST">
+    <con:description>Create or Update a transfer</con:description>
+    <con:settings/>
+    <con:parameters>
+      <con:parameter required="true">
+        <con:name>ApiKey</con:name>
+        <con:style>HEADER</con:style>
+        <con:description>Identifier of the payment gateway. It is a fixed value. Moneytrans will commmunicate this value to the consumer after during on-boarding.</con:description>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>ApiSignature</con:name>
+        <con:style>HEADER</con:style>
+        <con:description>This signature is generated with the SHA256 algorithm and sent in the header.</con:description>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>clientId</con:name>
+        <con:style>HEADER</con:style>
+        <con:description>clientId used to request the access token</con:description>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>Authorization</con:name>
+        <con:style>HEADER</con:style>
+        <con:description>Bearer access token</con:description>
+      </con:parameter>
+    </con:parameters>
+    <con:representation type="REQUEST">
+      <con:mediaType>application/json</con:mediaType>
+      <con:params/>
+      <con:sampleContent>{
+  "promotionCode" : "string",
+  "destinationCode" : "string",
+  "customerCode" : "string",
+  "beneficiaryAccountNumber" : "string",
+  "sourceOfFundsCode" : "string",
+  "sourceAmount" : 1.100000023841858,
+  "beneficiaryCode" : "string",
+  "messageForBeneficiary" : "string",
+  "paymentMethodCode" : "string",
+  "purposeCode" : "string",
+  "externalCode" : "string",
+  "destinationCountryCode" : "string",
+  "destinationAmount" : 1.100000023841858,
+  "beneficiaryBankAgencyName" : "string",
+  "destinationCurrencyCode" : "string"
+}</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:sampleContent>{
+  "code" : "9200158",
+  "isBlocked" : false,
+  "transactionCode" : "104223780",
+  "externalCode" : "234234"
+}</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>500</con:status>
+      <con:params/>
+      <con:sampleContent>{
+  "code" : 29500,
+  "message" : "Internal error",
+  "reason" : "Something went wrong in the system during the execution"
+}</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>401</con:status>
+      <con:params/>
+      <con:sampleContent>{
+  "code" : 29401,
+  "message" : "Unauthorized",
+  "reason" : "Security parameter is missing or requestor doesn't have permissions to call this resource"
+}</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>400</con:status>
+      <con:params/>
+      <con:sampleContent>{
+  "code" : 29400,
+  "message" : "Request not valid",
+  "reason" : "customerCode is mandatory"
+}</con:sampleContent>
+    </con:representation>
+    <con:representation type="REQUEST">
+      <con:mediaType>application/json</con:mediaType>
+      <con:params/>
+    </con:representation>
+    <con:request name="Request 1" id="0d0b9c3e-e84f-41ab-bb7f-ebbebd59fd99" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>https://b2bapi-sandbox.moneytrans.eu</con:endpoint>
+      <con:request>{\r
+  "promotionCode" : "string",\r
+  "destinationCode" : "string",\r
+  "customerCode" : "string",\r
+  "beneficiaryAccountNumber" : "string",\r
+  "sourceOfFundsCode" : "string",\r
+  "sourceAmount" : 1.100000023841858,\r
+  "beneficiaryCode" : "string",\r
+  "messageForBeneficiary" : "string",\r
+  "paymentMethodCode" : "string",\r
+  "purposeCode" : "string",\r
+  "externalCode" : "string",\r
+  "destinationCountryCode" : "string",\r
+  "destinationAmount" : 1.100000023841858,\r
+  "beneficiaryBankAgencyName" : "string",\r
+  "destinationCurrencyCode" : "string"\r
+}</con:request>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+</con:resource>

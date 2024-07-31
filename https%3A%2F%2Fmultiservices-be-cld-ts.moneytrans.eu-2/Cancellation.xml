@@ -31,12 +31,6 @@
         <con:path xsi:nil="true"/>
         <con:description xsi:nil="true"/>
       </con:parameter>
-      <con:parameter required="true">
-        <con:name>Content-Type</con:name>
-        <con:value/>
-        <con:style>HEADER</con:style>
-        <con:default/>
-      </con:parameter>
     </con:parameters>
     <con:representation type="FAULT">
       <con:mediaType>text/html; charset=UTF-8</con:mediaType>
@@ -73,13 +67,11 @@
         <con:entry key="Authorization" value="${#Project#authBack}"/>
         <con:entry key="Accept" value="application/json"/>
         <con:entry key="MT-DELEGATED-AUTH" value="1"/>
-        <con:entry key="Content-Type" value="application/json"/>
       </con:parameters>
       <con:parameterOrder>
         <con:entry>Authorization</con:entry>
         <con:entry>MT-DELEGATED-AUTH</con:entry>
         <con:entry>Accept</con:entry>
-        <con:entry>Content-Type</con:entry>
       </con:parameterOrder>
     </con:request>
   </con:method>

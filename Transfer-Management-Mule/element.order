@@ -1,2 +1,8 @@
 Transfer-by-URN.xml
+Transfer-Notes-by-URN.xml
 Cancel-Transfer.xml
+Transfer.xml
+Search-Transfers.xml
+Get-Transfer-by-Code.xml
+Amend-Transfer-by-Code.xml
+Cancel-Transfer-by-Code.xml

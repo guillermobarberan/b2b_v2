@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="0a01c879-b277-4f88-9449-75b182ad2109" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="Transfer" searchProperties="true" timeout="0" maxResults="6">
+  <con:settings id="999329b1-d98d-4a48-b3eb-63247a208d0f">
+    <con:setting id="0a01c879-b277-4f88-9449-75b182ad2109fileName">Transfer</con:setting>
+  </con:settings>
+  <con:testStep type="restrequest" name="Transfer" id="0255aa29-2d67-44b4-9e63-04e497f93b68">
+    <con:settings/>
+    <con:config service="https://b2bapi-sandbox.moneytrans.eu 2" resourcePath="/v2/transfers/transfers" methodName="Transfers" xsi:type="con:RestRequestStep">
+      <con:restRequest name="Transfer" id="0b45179e-9f96-4c0c-bc45-c4c2d6015853" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers"><![CDATA[<xml-fragment><con:entry key="Authorization" value="${#[Test Engine#Engine Runner#mule v2]#authMule}" xmlns:con="http://eviware.com/soapui/config"/><con:entry key="clientId" value="${#[Test Engine#Engine Runner#mule v2]#clientIdMule}" xmlns:con="http://eviware.com/soapui/config"/><con:entry key="ApiKey" value="${#[Test Engine#Engine Runner#mule v2]#ApiKey}" xmlns:con="http://eviware.com/soapui/config"/><con:entry key="ApiSignature" value="${#[Test Engine#Engine Runner#mule v2]#ApiSignature}" xmlns:con="http://eviware.com/soapui/config"/></xml-fragment>]]></con:setting>
+        </con:settings>
+        <con:endpoint>https://b2bapi-sandbox.moneytrans.eu</con:endpoint>
+        <con:request>{\r
+    "customerCode": "5404713",\r
+    "beneficiaryCode": "5404714",\r
+    "destinationCode": "1021658$1707",\r
+    "destinationAmount":210,\r
+    "destinationCurrencyCode": "MAD",\r
+    "destinationCountryCode": "MAR",\r
+    "messageForBeneficiary": "Testing",\r
+    "purposeCode": "EDUCATION",\r
+    "sourceOfFundsCode": "TRANSFER_SOURCE_OF_FUNDS_SALARY",\r
+    "externalCode": "TEST1005"\r
+  }</con:request>
+        <con:originalUri>https://b2bapi-sandbox.moneytrans.eu/v2/transfers/transfers</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="3bd822ed-530a-4175-924e-dffe1ff61c99" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="111448dc-eeb0-4961-95da-7a1bd76fa43b" name="Response SLA">
+          <con:configuration>
+            <SLA>2000</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+        <con:parameterOrder/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties>
+    <con:property>
+      <con:name>method</con:name>
+      <con:value>POST</con:value>
+    </con:property>
+    <con:property>
+      <con:name>requestPath</con:name>
+      <con:value>/v2/transfers/transfers</con:value>
+    </con:property>
+  </con:properties>
+  <con:reportParameters/>
+</con:testCase>

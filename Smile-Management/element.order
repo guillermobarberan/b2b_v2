@@ -1,3 +1,4 @@
+Enrolment.xml
 Withdraw.xml
 Deposit.xml
 Balance.xml
@@ -6,3 +7,5 @@ Transfer.xml
 Account-Details.xml
 Card-Details.xml
 Signed-Contract.xml
+Contract-to-be-signed.xml
+Upload-Contract.xml

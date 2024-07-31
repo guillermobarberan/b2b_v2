@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="42b4e79e-8209-47f7-b2ba-011ce78fb0c6" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="Customer breaches" searchProperties="true" timeout="0" maxResults="6">
+  <con:settings id="2b791a1d-c730-4e11-bfa4-16017b3cded2">
+    <con:setting id="42b4e79e-8209-47f7-b2ba-011ce78fb0c6fileName">Customer-breaches</con:setting>
+  </con:settings>
+  <con:testStep type="restrequest" name="Customer breaches" id="3fd8b091-c2b2-487c-8052-b89a74c3a2a4">
+    <con:settings/>
+    <con:config service="https://multiservices-be-cld-ts.moneytrans.eu 2" resourcePath="/api/b2b/customer/Breaches" methodName="Breaches" xsi:type="con:RestRequestStep">
+      <con:restRequest name="Customer breaches" id="48de06ad-b56f-41a1-b4fc-a5d6aec0d33f" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Accept" value="application/json" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
+        </con:settings>
+        <con:endpoint>https://multiservices-be-cld-ts.moneytrans.eu</con:endpoint>
+        <con:request/>
+        <con:originalUri>https://multiservices-be-cld-ts.moneytrans.eu/api/b2b/customer/Breaches</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="e5374287-b8d1-4a15-9aec-3778c84d4215" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="21eaa5d0-d7bc-4f56-80d6-d25374540ac8" name="Response SLA">
+          <con:configuration>
+            <SLA>600</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters>
+          <con:entry key="Authorization" value="${#[Test Engine#Engine Runner#mule v2]#authBack}"/>
+          <con:entry key="MT-DELEGATED-AUTH" value="1"/>
+        </con:parameters>
+        <con:parameterOrder>
+          <con:entry>Authorization</con:entry>
+          <con:entry>MT-DELEGATED-AUTH</con:entry>
+        </con:parameterOrder>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties>
+    <con:property>
+      <con:name>method</con:name>
+      <con:value>GET</con:value>
+    </con:property>
+    <con:property>
+      <con:name>requestPath</con:name>
+      <con:value>/api/b2b/customer/Breaches</con:value>
+    </con:property>
+  </con:properties>
+  <con:reportParameters/>
+</con:testCase>

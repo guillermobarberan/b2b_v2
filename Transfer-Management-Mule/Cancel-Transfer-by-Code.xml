@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="6e70f14b-e5cb-4837-99e6-fc6501123c9b" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="Cancel Transfer by Code" searchProperties="true" timeout="0">
+  <con:settings id="554d33d7-be9c-42b1-ab3c-3bb7bcc29990">
+    <con:setting id="6e70f14b-e5cb-4837-99e6-fc6501123c9bfileName">Cancel-Transfer-by-Code</con:setting>
+  </con:settings>
+  <con:testStep type="restrequest" name="Cancel Transfer by Code" id="1d923b77-a1a1-42df-82e1-46a225d3c748">
+    <con:settings/>
+    <con:config service="TransferManagement" resourcePath="/transfers/{code}" methodName="cancel Transfer By Code" xsi:type="con:RestRequestStep">
+      <con:restRequest name="Cancel Transfer by Code" id="5a2b5974-7ab8-4aec-a5e0-14d44ae73ff7" mediaType="application/json">
+        <con:settings/>
+        <con:endpoint>https://b2bapi-sandbox.moneytrans.eu</con:endpoint>
+        <con:request>{\r
+  "returnFees" : true,\r
+  "reason" : "string"\r
+}</con:request>
+        <con:assertion type="Valid HTTP Status Codes" id="80fc9db2-d26c-4665-a1b9-6ad32d7f229c" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="7395fcd0-2c77-4295-802d-0750b9b01844" name="Response SLA">
+          <con:configuration>
+            <SLA>200</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testCase>

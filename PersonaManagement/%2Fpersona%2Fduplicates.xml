@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config" name="/persona/duplicates" path="/persona/duplicates" id="3ce04194-6ece-43a9-b591-3a293eba9595">
+  <con:settings id="a5d2d50c-be87-4d98-9e63-2c7ddac80476">
+    <con:setting id="3ce04194-6ece-43a9-b591-3a293eba9595fileName">%2Fpersona%2Fduplicates</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="Inform Duplicated Persona in the system" id="3e42cdac-2a91-4a55-bbff-0bf4c8b5402f" method="POST">
+    <con:description>Notify persona that contain more than one record in the system to avoid duplicities</con:description>
+    <con:settings/>
+    <con:parameters>
+      <con:parameter required="true">
+        <con:name>ApiKey</con:name>
+        <con:style>HEADER</con:style>
+        <con:description>Identifier of the payment gateway. It is a fixed value. Moneytrans will commmunicate this value to the consumer after during on-boarding.</con:description>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>ApiSignature</con:name>
+        <con:style>HEADER</con:style>
+        <con:description>This signature is generated with the SHA256 algorithm and sent in the header.</con:description>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>clientId</con:name>
+        <con:style>HEADER</con:style>
+        <con:description>clientId used to request the access token</con:description>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>Authorization</con:name>
+        <con:style>HEADER</con:style>
+        <con:description>Bearer access token</con:description>
+      </con:parameter>
+    </con:parameters>
+    <con:representation type="REQUEST">
+      <con:mediaType>application/json</con:mediaType>
+      <con:params/>
+      <con:sampleContent>{
+  "validCode" : "string",
+  "type" : "SCU",
+  "duplicated" : [ "string" ]
+}</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>204</con:status>
+      <con:params/>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>500</con:status>
+      <con:params/>
+      <con:sampleContent>{
+  "code" : 29500,
+  "message" : "Internal error",
+  "reason" : "Something went wrong in the system during the execution"
+}</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>401</con:status>
+      <con:params/>
+      <con:sampleContent>{
+  "code" : 29401,
+  "message" : "Unauthorized",
+  "reason" : "Security parameter is missing or requestor doesn't have permissions to call this resource"
+}</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>400</con:status>
+      <con:params/>
+      <con:sampleContent>{
+  "code" : 29400,
+  "message" : "Bad Request",
+  "reason" : "validCode must be one of the duplicated codes"
+}</con:sampleContent>
+    </con:representation>
+    <con:representation type="REQUEST">
+      <con:mediaType>application/json</con:mediaType>
+      <con:params/>
+    </con:representation>
+    <con:request name="Request 1" id="de9b98a5-5458-40d9-b10f-395034afc947" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>https://b2bapi-sandbox.moneytrans.eu</con:endpoint>
+      <con:request>{\r
+  "validCode" : "string",\r
+  "type" : "SCU",\r
+  "duplicated" : [ "string" ]\r
+}</con:request>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+</con:resource>

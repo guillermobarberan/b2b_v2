@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:interface xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config" xsi:type="con:RestService" id="3b093d45-f5aa-453c-bbf3-ae40d293db09" wadlVersion="http://wadl.dev.java.net/2009/02" name="https://b2bapi-sandbox.moneytrans.eu 2" type="rest">
+  <con:settings id="5da65364-534b-474d-a280-666e99e9cb5e">
+    <con:setting id="3b093d45-f5aa-453c-bbf3-ae40d293db09fileName">https%3A%2F%2Fb2bapi-sandbox.moneytrans.eu-22</con:setting>
+  </con:settings>
+  <con:definitionCache type="TEXT" rootPart=""/>
+  <con:endpoints>
+    <con:endpoint>https://b2bapi-sandbox.moneytrans.eu</con:endpoint>
+  </con:endpoints>
+</con:interface>

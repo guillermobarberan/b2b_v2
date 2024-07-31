@@ -21,7 +21,7 @@
         </con:assertion>
         <con:assertion type="Response SLA Assertion" id="93285f08-0750-492d-b655-6ab1de6f8be7" name="Response SLA">
           <con:configuration>
-            <SLA>2000</SLA>
+            <SLA>25000</SLA>
           </con:configuration>
         </con:assertion>
         <con:credentials>

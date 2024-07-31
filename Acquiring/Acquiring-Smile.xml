@@ -8,7 +8,7 @@
     <con:config service="https://multiservices-be-cld-ts.moneytrans.eu 2" resourcePath="/api/b2b/acquiring/PAC/149330/74" methodName="74" xsi:type="con:RestRequestStep">
       <con:restRequest name="Acquiring Smile" id="25b07ffb-fc05-444a-9049-9ffc063af690" mediaType="application/json">
         <con:settings>
-          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Accept" value="application/json" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
         </con:settings>
         <con:endpoint>https://multiservices-be-cld-ts.moneytrans.eu</con:endpoint>
         <con:request/>
@@ -49,7 +49,7 @@
     </con:property>
     <con:property>
       <con:name>requestPath</con:name>
-      <con:value>/api/b2b/acquiring/MTR/9200892/74</con:value>
+      <con:value>/api/b2b/acquiring/PAC/149330/74</con:value>
     </con:property>
   </con:properties>
   <con:reportParameters/>

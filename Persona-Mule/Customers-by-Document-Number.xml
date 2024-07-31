@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="440bd33f-3fe6-428c-9575-9f550a6dcb26" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="Customers by Document Number" searchProperties="true" timeout="0" maxResults="6">
+  <con:settings id="9bea4d0b-b3b6-4e5d-9537-fb229e4648e0">
+    <con:setting id="440bd33f-3fe6-428c-9575-9f550a6dcb26fileName">Customers-by-Document-Number</con:setting>
+  </con:settings>
+  <con:testStep type="restrequest" name="Customers by Document Number" id="552f7fce-82ed-4135-931e-09ae55c4e683">
+    <con:settings/>
+    <con:config service="https://b2bapi-sandbox.moneytrans.eu 2" resourcePath="/v2/persona/customers" methodName="Customers 5" xsi:type="con:RestRequestStep">
+      <con:restRequest name="Customers by Document Number" id="fac748d3-716a-4800-929b-ccc5004a2e4e" mediaType="application/json">
+        <con:settings/>
+        <con:endpoint>https://b2bapi-sandbox.moneytrans.eu</con:endpoint>
+        <con:request/>
+        <con:originalUri>https://b2bapi-sandbox.moneytrans.eu/v2/persona/customers</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="52dd2b58-fad7-4426-9aa2-1023935818b3" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="f59cf862-6073-479b-a029-1aacc125cb31" name="Response SLA">
+          <con:configuration>
+            <SLA>200</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters>
+          <con:entry key="Authorization" value="${#Project#authMule}"/>
+          <con:entry key="clientId" value="${#Project#clientId}"/>
+          <con:entry key="searchField" value="DOCUMENTNUMBER"/>
+          <con:entry key="criteria" value="973645630LO"/>
+          <con:entry key="Content-Type" value="application/json"/>
+        </con:parameters>
+        <con:parameterOrder>
+          <con:entry>searchField</con:entry>
+          <con:entry>criteria</con:entry>
+          <con:entry>Content-Type</con:entry>
+          <con:entry>clientId</con:entry>
+          <con:entry>Authorization</con:entry>
+        </con:parameterOrder>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testCase>

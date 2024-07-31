@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config" name="Calculator" path="/api/b2b/transfers/calculator" id="f35085d2-c2f8-4296-89a3-8b201462d530">
+  <con:settings id="ad8e5b91-1a43-49b1-a59e-b80a37d18a77">
+    <con:setting id="f35085d2-c2f8-4296-89a3-8b201462d530fileName">Calculator</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="Calculator" id="4ef394b5-56ab-424b-98c0-ed8ad8be1e95" method="GET">
+    <con:settings/>
+    <con:parameters>
+      <con:parameter required="true">
+        <con:name>SourceValue</con:name>
+        <con:value>20</con:value>
+        <con:style>QUERY</con:style>
+        <con:default>20</con:default>
+        <con:path xsi:nil="true"/>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>SourceValueWithFees</con:name>
+        <con:value>0</con:value>
+        <con:style>QUERY</con:style>
+        <con:default>0</con:default>
+        <con:path xsi:nil="true"/>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>ISODestCountry</con:name>
+        <con:value>MAR</con:value>
+        <con:style>QUERY</con:style>
+        <con:default>MAR</con:default>
+        <con:path xsi:nil="true"/>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>DestValue</con:name>
+        <con:value>0</con:value>
+        <con:style>QUERY</con:style>
+        <con:default>0</con:default>
+        <con:path xsi:nil="true"/>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>ISODestCurrency</con:name>
+        <con:value>MAD</con:value>
+        <con:style>QUERY</con:style>
+        <con:default>MAD</con:default>
+        <con:path xsi:nil="true"/>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>CustomerCode</con:name>
+        <con:value>5463354</con:value>
+        <con:style>QUERY</con:style>
+        <con:default>5463354</con:default>
+        <con:path xsi:nil="true"/>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>PayerCode</con:name>
+        <con:value>1707</con:value>
+        <con:style>QUERY</con:style>
+        <con:default>1707</con:default>
+        <con:path xsi:nil="true"/>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>DestPaymentTypeCode</con:name>
+        <con:value>OF</con:value>
+        <con:style>QUERY</con:style>
+        <con:default>OF</con:default>
+        <con:path xsi:nil="true"/>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+      <con:parameter>
+        <con:name>Authorization</con:name>
+        <con:value>${#Project#authBack}</con:value>
+        <con:style>HEADER</con:style>
+        <con:default/>
+        <con:path xsi:nil="true"/>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+      <con:parameter>
+        <con:name>MT-DELEGATED-AUTH</con:name>
+        <con:value>1</con:value>
+        <con:style>HEADER</con:style>
+        <con:default/>
+        <con:path xsi:nil="true"/>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+    </con:parameters>
+    <con:request name="Calculations" id="d574c1bd-e558-401c-95a8-4d5da02d0f1b" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>https://multiservices-be-cld-ts.moneytrans.eu</con:endpoint>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:parameters>
+        <con:entry key="SourceValue" value="20"/>
+        <con:entry key="Authorization" value="${#Project#authBack}"/>
+        <con:entry key="ISODestCurrency" value="MAD"/>
+        <con:entry key="DestValue" value="0"/>
+        <con:entry key="PayerCode" value="1707"/>
+        <con:entry key="ISODestCountry" value="MAR"/>
+        <con:entry key="CustomerCode" value="5463354"/>
+        <con:entry key="SourceValueWithFees" value="0"/>
+        <con:entry key="DestPaymentTypeCode" value="OF"/>
+        <con:entry key="MT-DELEGATED-AUTH" value="1"/>
+      </con:parameters>
+      <con:parameterOrder>
+        <con:entry>SourceValue</con:entry>
+        <con:entry>SourceValueWithFees</con:entry>
+        <con:entry>ISODestCountry</con:entry>
+        <con:entry>DestValue</con:entry>
+        <con:entry>ISODestCurrency</con:entry>
+        <con:entry>CustomerCode</con:entry>
+        <con:entry>PayerCode</con:entry>
+        <con:entry>DestPaymentTypeCode</con:entry>
+        <con:entry>Authorization</con:entry>
+        <con:entry>MT-DELEGATED-AUTH</con:entry>
+      </con:parameterOrder>
+    </con:request>
+  </con:method>
+</con:resource>

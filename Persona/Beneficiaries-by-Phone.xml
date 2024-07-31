@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="60364711-1541-40f7-947a-4cbdca38dc04" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="Beneficiaries by Phone" searchProperties="true" timeout="0" maxResults="6">
+  <con:settings id="c0c90605-63b9-40b4-8a0b-b9bae144dfa5">
+    <con:setting id="60364711-1541-40f7-947a-4cbdca38dc04fileName">Beneficiaries-by-Phone</con:setting>
+  </con:settings>
+  <con:testStep type="restrequest" name="Beneficiaries by Phone" id="7c1da959-9e05-45d6-80c5-c184f3306375">
+    <con:settings/>
+    <con:config service="https://multiservices-be-cld-ts.moneytrans.eu 2" resourcePath="/api/b2b/customer/remote" methodName="Remote 4" xsi:type="con:RestRequestStep">
+      <con:restRequest name="Beneficiaries by Phone" id="e9228db8-13d7-4a88-8bf3-5aadc366eaaf" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Accept" value="application/json" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
+        </con:settings>
+        <con:endpoint>https://multiservices-be-cld-ts.moneytrans.eu</con:endpoint>
+        <con:request/>
+        <con:originalUri>https://multiservices-be-cld-ts.moneytrans.eu/api/b2b/customer/remote</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="2ae03e64-a0d8-46c7-8375-d961b84384fa" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="88ec2aba-985c-465c-99d5-cedb0873b507" name="Response SLA">
+          <con:configuration>
+            <SLA>2000</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters>
+          <con:entry key="Authorization" value="${#[Test Engine#Engine Runner#mule v2]#authBack}"/>
+          <con:entry key="Phone" value="+328900900090"/>
+          <con:entry key="MT-DELEGATED-AUTH" value="1"/>
+        </con:parameters>
+        <con:parameterOrder>
+          <con:entry>Phone</con:entry>
+          <con:entry>Authorization</con:entry>
+          <con:entry>MT-DELEGATED-AUTH</con:entry>
+        </con:parameterOrder>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties>
+    <con:property>
+      <con:name>method</con:name>
+      <con:value>GET</con:value>
+    </con:property>
+    <con:property>
+      <con:name>requestPath</con:name>
+      <con:value>b2bapi-sandbox.moneytrans.eu/api/b2b/customer/remote?Phone=+328900900090:17204546</con:value>
+    </con:property>
+  </con:properties>
+  <con:reportParameters/>
+</con:testCase>

@@ -32,6 +32,16 @@
         <con:description xsi:nil="true"/>
       </con:parameter>
     </con:parameters>
+    <con:representation type="REQUEST">
+      <con:mediaType>application/json</con:mediaType>
+      <con:params/>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json; charset=utf-8</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:element>Response</con:element>
+    </con:representation>
     <con:request name="Duplicates" id="b2d1160b-857a-48ec-a1d4-6b9f724f9e8d" mediaType="application/json">
       <con:settings/>
       <con:endpoint>https://multiservices-be-cld-ts.moneytrans.eu</con:endpoint>

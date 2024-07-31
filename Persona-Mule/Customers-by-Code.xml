@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="70e092ea-94b1-4b4d-840d-59f7c10a425d" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="Customers by Code" searchProperties="true" timeout="0" maxResults="6">
+  <con:settings id="f2594ed8-be0d-4f65-b96c-50e28357da26">
+    <con:setting id="70e092ea-94b1-4b4d-840d-59f7c10a425dfileName">Customers-by-Code</con:setting>
+  </con:settings>
+  <con:testStep type="restrequest" name="Customers by Code" id="833e3a66-f5c2-414e-b0a0-6f329a978ed4">
+    <con:settings/>
+    <con:config service="https://b2bapi-sandbox.moneytrans.eu 2" resourcePath="/v2/persona/customers" methodName="Customers 3" xsi:type="con:RestRequestStep">
+      <con:restRequest name="Customers by Code" id="05e322ac-9569-4ad6-a33a-12c3e9f7e8d7" mediaType="application/json">
+        <con:settings/>
+        <con:endpoint>https://b2bapi-sandbox.moneytrans.eu</con:endpoint>
+        <con:request/>
+        <con:assertion type="Valid HTTP Status Codes" id="5be3a892-15ea-43fc-b533-2b2043e4178a" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="237da71e-b7b7-4905-a355-181ec8ff9c38" name="Response SLA">
+          <con:configuration>
+            <SLA>200</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:parameters>
+          <con:entry key="Authorization" value="${#Project#authMule}"/>
+          <con:entry key="clientId" value="${#Project#clientId}"/>
+          <con:entry key="searchField" value="CODE"/>
+          <con:entry key="criteria" value="5462855"/>
+          <con:entry key="Content-Type" value="application/json"/>
+        </con:parameters>
+        <con:parameterOrder>
+          <con:entry>searchField</con:entry>
+          <con:entry>criteria</con:entry>
+          <con:entry>Content-Type</con:entry>
+          <con:entry>clientId</con:entry>
+          <con:entry>Authorization</con:entry>
+        </con:parameterOrder>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testCase>

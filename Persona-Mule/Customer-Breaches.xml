@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="d85e59c8-f7f0-4c74-9eef-50ce2d3c4dbf" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="Customer Breaches" searchProperties="true" timeout="0" maxResults="6">
+  <con:settings id="1e40c214-c849-40ab-8bb8-8d90830ba83d">
+    <con:setting id="d85e59c8-f7f0-4c74-9eef-50ce2d3c4dbffileName">Customer-Breaches</con:setting>
+  </con:settings>
+  <con:testStep type="restrequest" name="Customer Breaches" id="4edbd99f-54e2-4b09-b52a-da6aba73a73b">
+    <con:settings/>
+    <con:config service="https://b2bapi-sandbox.moneytrans.eu 2" resourcePath="/v2/persona/persona/breaches" methodName="Breaches" xsi:type="con:RestRequestStep">
+      <con:restRequest name="Customer Breaches" id="1e2dff4b-643e-4acc-9de8-d6f89819f2c1" mediaType="application/json">
+        <con:settings/>
+        <con:endpoint>https://b2bapi-sandbox.moneytrans.eu</con:endpoint>
+        <con:request/>
+        <con:originalUri>https://b2bapi-sandbox.moneytrans.eu/v2/persona/persona/breaches</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="cc6f287c-5801-42cf-9c14-aad22b6106ee" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="cb245fbb-1161-41a7-bea1-b6ab4de1d504" name="Response SLA">
+          <con:configuration>
+            <SLA>200</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters>
+          <con:entry key="Authorization" value="${#Project#authMule}"/>
+          <con:entry key="clientId" value="${#Project#clientId}"/>
+          <con:entry key="Content-Type" value="application/json"/>
+        </con:parameters>
+        <con:parameterOrder>
+          <con:entry>Content-Type</con:entry>
+          <con:entry>clientId</con:entry>
+          <con:entry>Authorization</con:entry>
+        </con:parameterOrder>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testCase>

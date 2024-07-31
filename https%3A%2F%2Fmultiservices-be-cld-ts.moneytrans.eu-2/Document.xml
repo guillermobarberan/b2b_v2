@@ -24,6 +24,16 @@
         <con:description xsi:nil="true"/>
       </con:parameter>
     </con:parameters>
+    <con:representation type="REQUEST">
+      <con:mediaType>application/json</con:mediaType>
+      <con:params/>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json; charset=utf-8</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:element xmlns:doc="https://multiservices-be-cld-ts.moneytrans.eu/api/b2b/customer/5463414/document">doc:Response</con:element>
+    </con:representation>
     <con:request name="Not IDDOC Document" id="8c596f3b-2b29-4dcd-8829-cebca7f60930" mediaType="application/json">
       <con:settings/>
       <con:endpoint>https://multiservices-be-cld-ts.moneytrans.eu</con:endpoint>

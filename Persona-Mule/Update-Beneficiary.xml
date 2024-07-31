@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="cfb8fb71-ef70-40ed-af87-c8704d3743df" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="Update Beneficiary" searchProperties="true" timeout="0" maxResults="6">
+  <con:settings id="d04476c3-e531-4e13-ad84-2d6b77b5c2a3">
+    <con:setting id="cfb8fb71-ef70-40ed-af87-c8704d3743dffileName">Update-Beneficiary</con:setting>
+  </con:settings>
+  <con:testStep type="restrequest" name="Update Beneficiary" id="30eb9007-aa90-4e9d-af13-f195091fc847">
+    <con:settings/>
+    <con:config service="https://b2bapi-sandbox.moneytrans.eu 2" resourcePath="/v2/persona/customers/5463529/beneficiaries" methodName="Beneficiaries 2" xsi:type="con:RestRequestStep">
+      <con:restRequest name="Update Beneficiary" id="1f045e8d-4d9f-4429-bbcb-67cd36bfe2b9" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers"><![CDATA[<xml-fragment><con:entry key="Authorization" value="${#[Test Engine#Engine Runner#mule v2]#authMule}" xmlns:con="http://eviware.com/soapui/config"/><con:entry key="clientId" value="${#[Test Engine#Engine Runner#mule v2]#clientIdMule}" xmlns:con="http://eviware.com/soapui/config"/><con:entry key="ApiKey" value="${#[Test Engine#Engine Runner#mule v2]#ApiKey}" xmlns:con="http://eviware.com/soapui/config"/><con:entry key="ApiSignature" value="${#[Test Engine#Engine Runner#mule v2]#ApiSignature}" xmlns:con="http://eviware.com/soapui/config"/><con:entry key="Content-Type" value="application/json" xmlns:con="http://eviware.com/soapui/config"/></xml-fragment>]]></con:setting>
+        </con:settings>
+        <con:endpoint>https://b2bapi-sandbox.moneytrans.eu</con:endpoint>
+        <con:request>{\r
+    "code": "5463651",\r
+	"email": "veronicatesting12@testemail.com",\r
+	"address": {\r
+		"countryCode": "BEL",\r
+		"cityCode": "2803448",\r
+		"postalCode": "9300",\r
+		"street": "Mi calle",\r
+		"streetNumber": 3\r
+	},\r
+	"telephone": "+258963147",\r
+	"firstName": "Vero",\r
+	"gender": "FEMALE",\r
+	"birthdate": "1995-11-30T20:10:50.175Z",\r
+	"customerRelationshipCode": "CUSTOMER_RELATIONSHIP_PARENTS",\r
+	"nationalityCountryCode": "BEL",\r
+	"lastName": "test"\r
+}</con:request>
+        <con:originalUri>https://b2bapi-sandbox.moneytrans.eu/v2/persona/customers/5463529/beneficiaries</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="8f1b9ea3-6e1e-478d-8274-f71477fcd7cc" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="82e402e6-cee5-4a1c-abee-49b0918ccc9a" name="Response SLA">
+          <con:configuration>
+            <SLA>2000</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+        <con:parameterOrder/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties>
+    <con:property>
+      <con:name>method</con:name>
+      <con:value>PATCH</con:value>
+    </con:property>
+    <con:property>
+      <con:name>requestPath</con:name>
+      <con:value>/v2/persona/customers/5463529/beneficiaries</con:value>
+    </con:property>
+  </con:properties>
+  <con:reportParameters/>
+</con:testCase>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="59003ec8-164f-4aa8-a3f0-e5d1e7ed2283" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="Financial Data" searchProperties="true" timeout="0" maxResults="6">
+  <con:settings id="5890dfa8-3055-4a15-ab60-c0e57f3c12cb">
+    <con:setting id="59003ec8-164f-4aa8-a3f0-e5d1e7ed2283fileName">Financial-Data</con:setting>
+  </con:settings>
+  <con:testStep type="restrequest" name="Financial Data" id="acbf1e16-e23c-4d59-a50f-6312ee7a7455">
+    <con:settings/>
+    <con:config service="https://multiservices-be-cld-ts.moneytrans.eu 2" resourcePath="/api/b2b/agents/FinancialData" methodName="FinancialData" xsi:type="con:RestRequestStep">
+      <con:restRequest name="Financial Data" id="9a50beb4-2c3e-4c8a-a8f2-55c574db5278" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:endpoint>https://multiservices-be-cld-ts.moneytrans.eu</con:endpoint>
+        <con:request/>
+        <con:originalUri>https://multiservices-be-cld-ts.moneytrans.eu/api/b2b/agents/FinancialData</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="48264c27-bb21-4290-bd57-64a64f28a350" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="7c3b32cb-58cf-49e0-9cf1-9bc674ca96e7" name="Response SLA">
+          <con:configuration>
+            <SLA>1000</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters>
+          <con:entry key="Authorization" value="${#[Test Engine#Engine Runner#mule v2]#authBack}"/>
+          <con:entry key="Accept" value="application/json"/>
+          <con:entry key="ProductCode" value="MTR"/>
+          <con:entry key="DateFrom" value="2024-05-13"/>
+          <con:entry key="MT-DELEGATED-AUTH" value="1"/>
+        </con:parameters>
+        <con:parameterOrder>
+          <con:entry>ProductCode</con:entry>
+          <con:entry>DateFrom</con:entry>
+          <con:entry>Authorization</con:entry>
+          <con:entry>MT-DELEGATED-AUTH</con:entry>
+          <con:entry>Accept</con:entry>
+        </con:parameterOrder>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties>
+    <con:property>
+      <con:name>method</con:name>
+      <con:value>GET</con:value>
+    </con:property>
+    <con:property>
+      <con:name>requestPath</con:name>
+      <con:value>/api/b2b/agents/FinancialData</con:value>
+    </con:property>
+  </con:properties>
+  <con:reportParameters/>
+</con:testCase>

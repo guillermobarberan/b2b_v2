@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:testCase xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="36a3f8e5-3dd0-416b-9764-54847ed63607" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="Withdraw" searchProperties="true" timeout="0" maxResults="6">
-  <con:settings id="c881e6ba-3d59-4f7c-8be6-4acfd7d30739">
-    <con:setting id="36a3f8e5-3dd0-416b-9764-54847ed63607fileName">Withdraw</con:setting>
+<con:testCase xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="fb51283c-5c25-494d-b63c-0c687e06138d" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="Withdraw" searchProperties="true" timeout="0" maxResults="6">
+  <con:settings id="c51cf3b5-fb5c-4ba4-a27e-60fdae125bf4">
+    <con:setting id="fb51283c-5c25-494d-b63c-0c687e06138dfileName">Withdraw</con:setting>
   </con:settings>
-  <con:testStep type="restrequest" name="Withdraw" id="f416809b-3860-4a3e-abc7-bcfcfeeb3dfb">
+  <con:testStep type="restrequest" name="Withdraw" id="6571e708-e6d7-4a82-a508-32b15bd714fd">
     <con:settings/>
     <con:config service="https://multiservices-be-cld-ts.moneytrans.eu 2" resourcePath="/api/b2b/pac/withdraw" methodName="Withdraw" xsi:type="con:RestRequestStep">
-      <con:restRequest name="Withdraw" id="906b31b6-2183-490f-be5e-48e7ad0a1e4f" mediaType="application/json" postQueryString="false">
+      <con:restRequest name="Withdraw" id="8a8e74bd-3f27-48ab-8b76-1b1a2770070f" mediaType="application/json" postQueryString="false">
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
         </con:settings>
@@ -18,15 +18,15 @@
     "Amount": 20\r
 }</con:request>
         <con:originalUri>https://multiservices-be-cld-ts.moneytrans.eu/api/b2b/pac/withdraw</con:originalUri>
-        <con:assertion type="Valid HTTP Status Codes" id="cd5d9bcd-7f61-4f66-8a63-cf63f5297080" name="Valid HTTP Status Codes">
+        <con:assertion type="Valid HTTP Status Codes" id="bae72559-3681-41bf-afe0-abb3c162b24e" name="Valid HTTP Status Codes">
           <con:settings/>
           <con:configuration>
             <codes>200</codes>
           </con:configuration>
         </con:assertion>
-        <con:assertion type="Response SLA Assertion" id="9cd6b937-db96-4ae3-9904-614a0ae71482" name="Response SLA">
+        <con:assertion type="Response SLA Assertion" id="7bb66221-684c-4414-928e-503f50f1591a" name="Response SLA">
           <con:configuration>
-            <SLA>2000</SLA>
+            <SLA>7000</SLA>
           </con:configuration>
         </con:assertion>
         <con:credentials>
@@ -44,7 +44,6 @@
           <con:entry>Content-Type</con:entry>
           <con:entry>Authorization</con:entry>
           <con:entry>MT-DELEGATED-AUTH</con:entry>
-          <con:entry>Accept</con:entry>
         </con:parameterOrder>
       </con:restRequest>
     </con:config>
@@ -56,11 +55,7 @@
     </con:property>
     <con:property>
       <con:name>requestPath</con:name>
-      <con:value>/api/b2b/pac/withdraw</con:value>
-    </con:property>
-    <con:property>
-      <con:name>Body</con:name>
-      <con:value>{"Iban": "BE83500600007115","PaymentMode": "CASH", "ScaCode": "704829", "Amount": 20}</con:value>
+      <con:value>/v2/payment-accounts/catalogs/prices/operationFees?iban=BE50500600026818&amp;operation=ENROLMENT&amp;amount=10&amp;currencyCode=EUR&amp;maintenanceType=MONTHLY:17156198</con:value>
     </con:property>
   </con:properties>
   <con:reportParameters/>

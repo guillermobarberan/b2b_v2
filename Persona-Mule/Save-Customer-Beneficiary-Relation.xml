@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="13d90fba-d23b-42ba-bde1-35d4242f95d3" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="Save Customer Beneficiary Relation" searchProperties="true" timeout="0">
+  <con:settings id="0d51ba5a-4b8a-423f-a8ef-2e85eb6d52f3">
+    <con:setting id="13d90fba-d23b-42ba-bde1-35d4242f95d3fileName">Save-Customer-Beneficiary-Relation</con:setting>
+  </con:settings>
+  <con:testStep type="restrequest" name="Save Customer Beneficiary Relation" id="d94dfe01-23d9-4427-86ae-4509d3487607">
+    <con:settings/>
+    <con:config service="PersonaManagement" resourcePath="/customers/beneficiaries/relations" methodName="Save Customer Beneficiary Relation" xsi:type="con:RestRequestStep">
+      <con:restRequest name="Save Customer Beneficiary Relation" id="c772528c-0aeb-42b2-a4d9-682ebac52472" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:endpoint>https://b2bapi-sandbox.moneytrans.eu</con:endpoint>
+        <con:request>{\r
+  "customerCode" : "string",\r
+  "beneficiaryCode" : "string",\r
+  "relationship" : "string"\r
+}</con:request>
+        <con:originalUri>https://b2bapi-sandbox.moneytrans.eu/customers/beneficiaries/relations</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="32402720-1cf9-48fd-906e-9abe62e9967a" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="29b7130e-ba86-4131-9fa3-43bf8ed3d720" name="Response SLA">
+          <con:configuration>
+            <SLA>200</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testCase>

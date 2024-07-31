@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:resource xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="5463354" path="/api/b2b/catalog/pac/enroll/price/ANNUAL/5463354" id="ef696f00-5eee-4c6d-8481-fd4e06736429">
+<con:resource xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="5463354" path="/api/b2b/catalog/pac/maintenance/price/ANNUAL/5463354" id="ef696f00-5eee-4c6d-8481-fd4e06736429">
   <con:settings id="5d1c02a0-5e76-450d-a185-5aef9767aed8">
     <con:setting id="ef696f00-5eee-4c6d-8481-fd4e06736429fileName">54633541</con:setting>
   </con:settings>
@@ -35,6 +35,12 @@
       <con:status>200</con:status>
       <con:params/>
       <con:element xmlns:ns="https://multiservices-be-cld-ts.moneytrans.eu/api/b2b/catalog/pac/enroll/price/ANNUAL/5463354">ns:Response</con:element>
+    </con:representation>
+    <con:representation type="FAULT">
+      <con:mediaType>application/json; charset=utf-8</con:mediaType>
+      <con:status>404</con:status>
+      <con:params/>
+      <con:element xmlns:ns="https://multiservices-be-cld-ts.moneytrans.eu/api/b2b/catalog/pac/enroll/price/ANNUAL/5463354">ns:Fault</con:element>
     </con:representation>
     <con:request name="annual maintenance" id="172098ea-aa03-45b6-a079-e4d240962211" mediaType="application/json">
       <con:settings/>

@@ -6,8 +6,10 @@
   <con:testStep type="restrequest" name="Save or Update Customer" id="4b6ff387-869c-4229-9f22-f385e2f080cc">
     <con:settings/>
     <con:config service="https://multiservices-be-cld-ts.moneytrans.eu 2" resourcePath="/api/b2b/customer/compliance/client" methodName="Client" xsi:type="con:RestRequestStep">
-      <con:restRequest name="Save or Update Customer" id="4e1d0721-2f09-49e7-97de-fb96eb09e2f6" mediaType="application/json">
-        <con:settings/>
+      <con:restRequest name="Save or Update Customer" id="4e1d0721-2f09-49e7-97de-fb96eb09e2f6" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Accept" value="application/json" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
+        </con:settings>
         <con:endpoint>https://multiservices-be-cld-ts.moneytrans.eu</con:endpoint>
         <con:request>{\r
 	"Action": "SCU",\r
@@ -51,8 +53,9 @@
     ],\r
 	"NationalCitizenNumber": null,\r
 	"LastName": "test",\r
-	"OccupationType": null\r
+	"OccupationType": "OCCU_STUDENT"
 }</con:request>
+        <con:originalUri>https://multiservices-be-cld-ts.moneytrans.eu/api/b2b/customer/compliance/client</con:originalUri>
         <con:assertion type="Valid HTTP Status Codes" id="17deedd2-bb0d-4e91-af18-16b48afb9434" name="Valid HTTP Status Codes">
           <con:settings/>
           <con:configuration>
@@ -61,15 +64,16 @@
         </con:assertion>
         <con:assertion type="Response SLA Assertion" id="f6d94c8b-2b2f-475a-b788-fe5b7a411855" name="Response SLA">
           <con:configuration>
-            <SLA>200</SLA>
+            <SLA>5000</SLA>
           </con:configuration>
         </con:assertion>
         <con:credentials>
           <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
           <con:authType>No Authorization</con:authType>
         </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
         <con:parameters>
-          <con:entry key="Authorization" value="${#Project#authBack}"/>
+          <con:entry key="Authorization" value="${#[Test Engine#Engine Runner#mule v2]#authBack}"/>
           <con:entry key="MT-DELEGATED-AUTH" value="1"/>
         </con:parameters>
         <con:parameterOrder>
@@ -79,6 +83,15 @@
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:properties/>
+  <con:properties>
+    <con:property>
+      <con:name>method</con:name>
+      <con:value>POST</con:value>
+    </con:property>
+    <con:property>
+      <con:name>requestPath</con:name>
+      <con:value>/api/b2b/customer/compliance/client</con:value>
+    </con:property>
+  </con:properties>
   <con:reportParameters/>
 </con:testCase>

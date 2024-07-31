@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="3fe8073d-5fa2-4cb5-9178-cdb39a183d3d" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="Beneficiaries by Document Number" searchProperties="true" timeout="0" maxResults="6">
+  <con:settings id="ecea61b1-879e-4030-b041-b1a75acd0e39">
+    <con:setting id="3fe8073d-5fa2-4cb5-9178-cdb39a183d3dfileName">Beneficiaries-by-Document-Number</con:setting>
+  </con:settings>
+  <con:testStep type="restrequest" name="Beneficiaries by Document Number" id="e0c5152c-5ffa-4943-bfe5-11336a740485">
+    <con:settings/>
+    <con:config service="https://b2bapi-sandbox.moneytrans.eu 2" resourcePath="/v2/persona/beneficiaries" methodName="Beneficiaries 3" xsi:type="con:RestRequestStep">
+      <con:restRequest name="Beneficiaries by Document Number" id="c72398cd-023a-4115-bb44-d6063fe162c3" mediaType="application/json">
+        <con:settings/>
+        <con:endpoint>https://b2bapi-sandbox.moneytrans.eu</con:endpoint>
+        <con:request/>
+        <con:originalUri>https://b2bapi-sandbox.moneytrans.eu/v2/persona/beneficiaries</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="473b5ddd-adc6-4d47-9b71-cbf2c8a082a8" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="7daa5619-7ce3-4013-9251-0bc199b4d59b" name="Response SLA">
+          <con:configuration>
+            <SLA>200</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:parameters>
+          <con:entry key="Authorization" value="${#Project#authMule}"/>
+          <con:entry key="clientId" value="${#Project#clientId}"/>
+          <con:entry key="searchField" value="DOCUMENTNUMBER"/>
+          <con:entry key="criteria" value="123469"/>
+          <con:entry key="Content-Type" value="application/json"/>
+        </con:parameters>
+        <con:parameterOrder>
+          <con:entry>searchField</con:entry>
+          <con:entry>criteria</con:entry>
+          <con:entry>Content-Type</con:entry>
+          <con:entry>clientId</con:entry>
+          <con:entry>Authorization</con:entry>
+        </con:parameterOrder>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testCase>

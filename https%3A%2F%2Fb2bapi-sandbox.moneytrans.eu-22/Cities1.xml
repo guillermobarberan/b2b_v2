@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config" name="Cities" path="/v2/transfers/catalogs/cities" id="429f2c1d-2095-48dc-8183-09f813fdb3db">
+  <con:settings id="e6b63641-aa62-44eb-b2c2-aa47f0686258">
+    <con:setting id="429f2c1d-2095-48dc-8183-09f813fdb3dbfileName">Cities1</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="Cities" id="917e4c81-ee08-4582-8344-c723be39ecc1" method="GET">
+    <con:settings/>
+    <con:parameters>
+      <con:parameter required="true">
+        <con:name>destinationCountryCode</con:name>
+        <con:value>MAR</con:value>
+        <con:style>QUERY</con:style>
+        <con:default>MAR</con:default>
+        <con:path xsi:nil="true"/>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>sourceCountryCode</con:name>
+        <con:value>FRA</con:value>
+        <con:style>QUERY</con:style>
+        <con:default>FRA</con:default>
+        <con:path xsi:nil="true"/>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>paymentModeCode</con:name>
+        <con:value>OF</con:value>
+        <con:style>QUERY</con:style>
+        <con:default>OF</con:default>
+        <con:path xsi:nil="true"/>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>destinationCurrencyCode</con:name>
+        <con:value>MAD</con:value>
+        <con:style>QUERY</con:style>
+        <con:default>MAD</con:default>
+        <con:path xsi:nil="true"/>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+      <con:parameter>
+        <con:name>Content-Type</con:name>
+        <con:value>application/json</con:value>
+        <con:style>HEADER</con:style>
+        <con:default/>
+        <con:path xsi:nil="true"/>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+      <con:parameter>
+        <con:name>clientId</con:name>
+        <con:value>${#Project#clientId}</con:value>
+        <con:style>HEADER</con:style>
+        <con:default/>
+        <con:path xsi:nil="true"/>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+      <con:parameter>
+        <con:name>Authorization</con:name>
+        <con:value>${#Project#authMule}</con:value>
+        <con:style>HEADER</con:style>
+        <con:default/>
+        <con:path xsi:nil="true"/>
+        <con:description xsi:nil="true"/>
+      </con:parameter>
+    </con:parameters>
+    <con:request name="Cities" id="03fd96aa-f827-4998-bcf5-fee5ca4a4985" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>https://b2bapi-sandbox.moneytrans.eu</con:endpoint>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:parameters>
+        <con:entry key="Authorization" value="${#Project#authMule}"/>
+        <con:entry key="paymentModeCode" value="OF"/>
+        <con:entry key="sourceCountryCode" value="FRA"/>
+        <con:entry key="clientId" value="${#Project#clientId}"/>
+        <con:entry key="destinationCurrencyCode" value="MAD"/>
+        <con:entry key="destinationCountryCode" value="MAR"/>
+        <con:entry key="Content-Type" value="application/json"/>
+      </con:parameters>
+      <con:parameterOrder>
+        <con:entry>destinationCountryCode</con:entry>
+        <con:entry>sourceCountryCode</con:entry>
+        <con:entry>paymentModeCode</con:entry>
+        <con:entry>destinationCurrencyCode</con:entry>
+        <con:entry>Content-Type</con:entry>
+        <con:entry>clientId</con:entry>
+        <con:entry>Authorization</con:entry>
+      </con:parameterOrder>
+    </con:request>
+  </con:method>
+</con:resource>

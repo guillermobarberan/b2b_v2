@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:testCase xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="9e0c103c-b59e-42ce-b683-1092f829aad1" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="Accumulated amounts" searchProperties="true" timeout="0" maxResults="6">
-  <con:settings id="6626e28c-9330-42d3-b43e-3ef1f8d90d40">
-    <con:setting id="0fe30c8c-0e92-4ee6-9bba-d31ddf3880d6fileName">Accumulated-amounts</con:setting>
-    <con:setting id="9e0c103c-b59e-42ce-b683-1092f829aad1fileName">Accumulated-amounts</con:setting>
+<con:testCase xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="be537a2d-2293-48ff-a15c-8832caa5aabc" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="Accumulated amounts" searchProperties="true" timeout="0" maxResults="6">
+  <con:settings id="9497946c-9b5d-43e5-a2f3-ca14ee0785cf">
+    <con:setting id="be537a2d-2293-48ff-a15c-8832caa5aabcfileName">Accumulated-amounts</con:setting>
   </con:settings>
-  <con:testStep type="restrequest" name="Accumulated amounts" id="0b2b9c22-2f7d-4ac3-8ba4-c6b9e227397a">
+  <con:testStep type="restrequest" name="Accumulated amounts" id="c6a2a5cf-5841-4ee0-ab4b-18ebd0cd2225">
     <con:settings/>
-    <con:config service="https://multiservices-be-cld-ts.moneytrans.eu 2" resourcePath="/api/b2b/customer/5463414/AccumulatedAmount/SENDING_TRANSFER" methodName="SENDING_TRANSFER" xsi:type="con:RestRequestStep">
-      <con:restRequest name="Accumulated amounts" id="21ce41ad-7a8b-49a8-bd21-9c4e8fde6a79" mediaType="application/json">
+    <con:config service="https://b2bapi-sandbox.moneytrans.eu 2" resourcePath="/v2/persona/persona/5463414/accumulatedAmounts/SENDING_TRANSFER" methodName="SENDING_TRANSFER" xsi:type="con:RestRequestStep">
+      <con:restRequest name="Accumulated amounts" id="0204d2e1-42be-4cf5-ba23-dcd3b2e4ceef" mediaType="application/json">
         <con:settings/>
-        <con:endpoint>https://multiservices-be-cld-ts.moneytrans.eu</con:endpoint>
+        <con:endpoint>https://b2bapi-sandbox.moneytrans.eu</con:endpoint>
         <con:request/>
-        <con:assertion type="Valid HTTP Status Codes" id="22230716-e99b-4099-b1ed-2192824df87c" name="Valid HTTP Status Codes">
+        <con:originalUri>https://b2bapi-sandbox.moneytrans.eu/v2/persona/persona/5463414/accumulatedAmounts/SENDING_TRANSFER</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="2900eb1d-4850-4d47-8065-7ae5090fa53a" name="Valid HTTP Status Codes">
           <con:settings/>
           <con:configuration>
             <codes>200</codes>
           </con:configuration>
         </con:assertion>
-        <con:assertion type="Response SLA Assertion" id="132cc8fd-d3a3-49f6-bc1a-34256d6cabe2" name="Response SLA">
+        <con:assertion type="Response SLA Assertion" id="c49747e0-4c93-4247-a4a9-4a7c54e10cb1" name="Response SLA">
           <con:configuration>
             <SLA>200</SLA>
           </con:configuration>
@@ -26,13 +26,16 @@
           <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
           <con:authType>No Authorization</con:authType>
         </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
         <con:parameters>
-          <con:entry key="Authorization" value="${#Project#authBack}"/>
-          <con:entry key="MT-DELEGATED-AUTH" value="1"/>
+          <con:entry key="Authorization" value="${#Project#authMule}"/>
+          <con:entry key="clientId" value="${#Project#clientId}"/>
+          <con:entry key="Content-Type" value="application/json"/>
         </con:parameters>
         <con:parameterOrder>
+          <con:entry>Content-Type</con:entry>
+          <con:entry>clientId</con:entry>
           <con:entry>Authorization</con:entry>
-          <con:entry>MT-DELEGATED-AUTH</con:entry>
         </con:parameterOrder>
       </con:restRequest>
     </con:config>

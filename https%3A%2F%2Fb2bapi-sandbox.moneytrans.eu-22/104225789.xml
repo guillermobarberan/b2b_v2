@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config" name="104225789" path="/v2/transfers/transfers/104225789" id="93d45f3a-7f1b-4e3a-82ba-720bae68ae6a">
+  <con:settings id="c20985d3-f411-44cb-9952-13975e4f1b64">
+    <con:setting id="93d45f3a-7f1b-4e3a-82ba-720bae68ae6afileName">104225789</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="104225789" id="7efb8044-0541-4ed4-9203-b934ace22881" method="GET">
+    <con:settings/>
+    <con:parameters></con:parameters>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json; charset=UTF-8</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:element xmlns:ns="https://b2bapi-sandbox.moneytrans.eu/v2/transfers/transfers/104225789">ns:Response</con:element>
+    </con:representation>
+    <con:representation type="REQUEST">
+      <con:mediaType>application/json</con:mediaType>
+      <con:params/>
+    </con:representation>
+    <con:request name="Transfer by URN" id="2db94cfb-c571-4f42-ae27-ccf15e0a6562" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>https://b2bapi-sandbox.moneytrans.eu</con:endpoint>
+      <con:request/>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+      <con:parameterOrder/>
+    </con:request>
+  </con:method>
+</con:resource>

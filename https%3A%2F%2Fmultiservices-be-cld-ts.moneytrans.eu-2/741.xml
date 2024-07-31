@@ -36,6 +36,12 @@
       <con:params/>
       <con:element>html</con:element>
     </con:representation>
+    <con:representation type="FAULT">
+      <con:mediaType>application/json; charset=utf-8</con:mediaType>
+      <con:status>401</con:status>
+      <con:params/>
+      <con:element xmlns:ns="https://multiservices-be-cld-ts.moneytrans.eu/api/b2b/acquiring/PAC/149330/74">ns:Fault</con:element>
+    </con:representation>
     <con:request name="Acquiring Smile back" id="250709e1-7907-4ea3-8dd0-fcdd812494d2" mediaType="application/json">
       <con:settings/>
       <con:endpoint>https://multiservices-be-cld-ts.moneytrans.eu</con:endpoint>

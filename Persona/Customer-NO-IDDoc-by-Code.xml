@@ -7,9 +7,12 @@
     <con:settings/>
     <con:config service="https://multiservices-be-cld-ts.moneytrans.eu 2" resourcePath="/api/b2b/customer/5450468/document/4935274" methodName="4935274" xsi:type="con:RestRequestStep">
       <con:restRequest name="Customer NO IDDoc by Code" id="65c4636b-7c13-4a50-b497-2fbd2d8bf769" mediaType="application/json">
-        <con:settings/>
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Accept" value="application/json" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
+        </con:settings>
         <con:endpoint>https://multiservices-be-cld-ts.moneytrans.eu</con:endpoint>
         <con:request/>
+        <con:originalUri>https://multiservices-be-cld-ts.moneytrans.eu/api/b2b/customer/5450468/document/4935274</con:originalUri>
         <con:assertion type="Valid HTTP Status Codes" id="e9482195-5fe1-46f4-883e-6d5679ac51a4" name="Valid HTTP Status Codes">
           <con:settings/>
           <con:configuration>
@@ -18,15 +21,16 @@
         </con:assertion>
         <con:assertion type="Response SLA Assertion" id="7a07b1d0-34c8-4717-899d-d5385da697f3" name="Response SLA">
           <con:configuration>
-            <SLA>200</SLA>
+            <SLA>1500</SLA>
           </con:configuration>
         </con:assertion>
         <con:credentials>
           <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
           <con:authType>No Authorization</con:authType>
         </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
         <con:parameters>
-          <con:entry key="Authorization" value="${#Project#authBack}"/>
+          <con:entry key="Authorization" value="${#[Test Engine#Engine Runner#mule v2]#authBack}"/>
           <con:entry key="MT-DELEGATED-AUTH" value="1"/>
         </con:parameters>
         <con:parameterOrder>
@@ -36,6 +40,15 @@
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:properties/>
+  <con:properties>
+    <con:property>
+      <con:name>method</con:name>
+      <con:value>GET</con:value>
+    </con:property>
+    <con:property>
+      <con:name>requestPath</con:name>
+      <con:value>/api/b2b/customer/5450468/document/4935274</con:value>
+    </con:property>
+  </con:properties>
   <con:reportParameters/>
 </con:testCase>

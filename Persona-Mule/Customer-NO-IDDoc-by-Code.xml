@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:testCase xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="2cb2ca9b-a99b-4f81-9061-00cb72c9acb4" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="Customer NO IDDoc by Code" searchProperties="true" timeout="0" maxResults="6">
-  <con:settings id="aa3e7b8a-284a-451f-86aa-b3dbb9e8f453">
-    <con:setting id="cb03f8f0-7292-418a-91c5-a17120beb824fileName">Customer-NO-IDDoc-by-Code</con:setting>
-    <con:setting id="2cb2ca9b-a99b-4f81-9061-00cb72c9acb4fileName">Customer-NO-IDDoc-by-Code</con:setting>
+<con:testCase xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="58ca4460-983a-429b-87c6-22b33eb6c50a" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="Customer NO IDDoc by Code" searchProperties="true" timeout="0" maxResults="6">
+  <con:settings id="4c03f069-62a2-4db7-8c6d-d794e67b89d5">
+    <con:setting id="58ca4460-983a-429b-87c6-22b33eb6c50afileName">Customer-NO-IDDoc-by-Code</con:setting>
   </con:settings>
-  <con:testStep type="restrequest" name="Customer NO IDDoc by Code" id="511cc80b-6583-4bb5-837c-0b727376719d">
+  <con:testStep type="restrequest" name="Customer NO IDDoc by Code" id="fc3ba8dd-0731-4101-8e07-9ac8a91ce002">
     <con:settings/>
-    <con:config service="https://multiservices-be-cld-ts.moneytrans.eu 2" resourcePath="/api/b2b/customer/5450468/document/4935274" methodName="4935274" xsi:type="con:RestRequestStep">
-      <con:restRequest name="Customer NO IDDoc by Code" id="65c4636b-7c13-4a50-b497-2fbd2d8bf769" mediaType="application/json">
+    <con:config service="https://b2bapi-sandbox.moneytrans.eu 2" resourcePath="/v2/persona/persona/5450468/documents/4935274" methodName="4935274" xsi:type="con:RestRequestStep">
+      <con:restRequest name="Customer NO IDDoc by Code" id="79c7515e-ce28-48b7-bdc0-6d34e386fea5" mediaType="application/json">
         <con:settings/>
-        <con:endpoint>https://multiservices-be-cld-ts.moneytrans.eu</con:endpoint>
+        <con:endpoint>https://b2bapi-sandbox.moneytrans.eu</con:endpoint>
         <con:request/>
-        <con:assertion type="Valid HTTP Status Codes" id="e9482195-5fe1-46f4-883e-6d5679ac51a4" name="Valid HTTP Status Codes">
+        <con:originalUri>https://b2bapi-sandbox.moneytrans.eu/v2/persona/persona/5450468/documents/4935274</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="4ed98650-434c-4e1c-897f-476c7fad3354" name="Valid HTTP Status Codes">
           <con:settings/>
           <con:configuration>
             <codes>200</codes>
           </con:configuration>
         </con:assertion>
-        <con:assertion type="Response SLA Assertion" id="7a07b1d0-34c8-4717-899d-d5385da697f3" name="Response SLA">
+        <con:assertion type="Response SLA Assertion" id="a1ea274d-5c34-4972-9e2d-1ad43f10958d" name="Response SLA">
           <con:configuration>
             <SLA>200</SLA>
           </con:configuration>
@@ -27,12 +27,14 @@
           <con:authType>No Authorization</con:authType>
         </con:credentials>
         <con:parameters>
-          <con:entry key="Authorization" value="${#Project#authBack}"/>
-          <con:entry key="MT-DELEGATED-AUTH" value="1"/>
+          <con:entry key="Authorization" value="${#Project#authMule}"/>
+          <con:entry key="clientId" value="${#Project#clientId}"/>
+          <con:entry key="Content-Type" value="application/json"/>
         </con:parameters>
         <con:parameterOrder>
+          <con:entry>Content-Type</con:entry>
+          <con:entry>clientId</con:entry>
           <con:entry>Authorization</con:entry>
-          <con:entry>MT-DELEGATED-AUTH</con:entry>
         </con:parameterOrder>
       </con:restRequest>
     </con:config>

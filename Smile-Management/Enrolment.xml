@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="81108ee6-8d2f-43c6-9054-24fb2d069f85" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="Enrolment" searchProperties="true" timeout="0" maxResults="6">
+  <con:settings id="8bcf4f43-3e3c-4cf4-836e-8f189d262a4c">
+    <con:setting id="81108ee6-8d2f-43c6-9054-24fb2d069f85fileName">Enrolment</con:setting>
+  </con:settings>
+  <con:testStep type="restrequest" name="Enrolment" id="c41bd64e-7ab5-49f7-8738-073920091d4e">
+    <con:settings/>
+    <con:config service="https://multiservices-be-cld-ts.moneytrans.eu 2" resourcePath="/api/b2b/pac/enroll" methodName="Enroll" xsi:type="con:RestRequestStep">
+      <con:restRequest name="Enrolment" id="c2a7e857-f631-413a-9293-d6c75ae21764" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Accept" value="application/json" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
+        </con:settings>
+        <con:endpoint>https://multiservices-be-cld-ts.moneytrans.eu</con:endpoint>
+        <con:request>{\r
+    "Iban": "BE15500600037730",\r
+    "MaintenanceType": "MONTHLY",\r
+    "PaymentMode": "CASH",\r
+    "ScaCode": "154601",\r
+    "Amount": {\r
+        "Value":10,\r
+        "CurrencyISOCode": "EUR"\r
+    }\r
+}</con:request>
+        <con:originalUri>https://multiservices-be-cld-ts.moneytrans.eu/api/b2b/pac/enroll</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="4e684f97-c0e9-4887-a515-15aa2fe80340" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="50b20e5e-8841-4dce-84d0-39504c19fc12" name="Response SLA">
+          <con:configuration>
+            <SLA>2500</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters>
+          <con:entry key="Authorization" value="${#[Test Engine#Engine Runner#mule v2]#authBack}"/>
+          <con:entry key="Content-Type" value="application/json"/>
+          <con:entry key="MT-DELEGATED-AUTH" value="1"/>
+        </con:parameters>
+        <con:parameterOrder>
+          <con:entry>Content-Type</con:entry>
+          <con:entry>Authorization</con:entry>
+          <con:entry>MT-DELEGATED-AUTH</con:entry>
+        </con:parameterOrder>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties>
+    <con:property>
+      <con:name>method</con:name>
+      <con:value>POST</con:value>
+    </con:property>
+    <con:property>
+      <con:name>requestPath</con:name>
+      <con:value>/api/b2b/pac/enroll</con:value>
+    </con:property>
+  </con:properties>
+  <con:reportParameters/>
+</con:testCase>

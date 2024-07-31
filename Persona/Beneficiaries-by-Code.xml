@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="f3e8c6dc-3883-4c30-a3fb-229814f81bac" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="Beneficiaries by Code" searchProperties="true" timeout="0" maxResults="6">
+  <con:settings id="9f285250-bcdd-4b89-ae14-31b1f414e356">
+    <con:setting id="f3e8c6dc-3883-4c30-a3fb-229814f81bacfileName">Beneficiaries-by-Code</con:setting>
+  </con:settings>
+  <con:testStep type="restrequest" name="Beneficiaries by Code" id="44ad3932-4622-41a9-96d3-b8c1a481c866">
+    <con:settings/>
+    <con:config service="https://multiservices-be-cld-ts.moneytrans.eu 2" resourcePath="/api/b2b/customer/remote" methodName="Remote" xsi:type="con:RestRequestStep">
+      <con:restRequest name="Beneficiaries by Code" id="07573b3a-7ce4-463d-bd2a-21063249b84a" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;con:entry key="Accept" value="application/json" xmlns:con="http://eviware.com/soapui/config"/></con:setting>
+        </con:settings>
+        <con:endpoint>https://multiservices-be-cld-ts.moneytrans.eu</con:endpoint>
+        <con:request/>
+        <con:originalUri>https://multiservices-be-cld-ts.moneytrans.eu/api/b2b/customer/remote</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="645e7176-f346-4b2e-8780-29d047476714" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="3a2e3a79-ce6d-47f0-a679-2471b542bcd2" name="Response SLA">
+          <con:configuration>
+            <SLA>600</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters>
+          <con:entry key="Authorization" value="${#[Test Engine#Engine Runner#mule v2]#authBack}"/>
+          <con:entry key="Code" value="5335711"/>
+          <con:entry key="MT-DELEGATED-AUTH" value="1"/>
+        </con:parameters>
+        <con:parameterOrder>
+          <con:entry>Code</con:entry>
+          <con:entry>Authorization</con:entry>
+          <con:entry>MT-DELEGATED-AUTH</con:entry>
+        </con:parameterOrder>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties>
+    <con:property>
+      <con:name>method</con:name>
+      <con:value>GET</con:value>
+    </con:property>
+    <con:property>
+      <con:name>requestPath</con:name>
+      <con:value>/api/b2b/customer/remote</con:value>
+    </con:property>
+  </con:properties>
+  <con:reportParameters/>
+</con:testCase>

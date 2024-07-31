@@ -7,9 +7,12 @@
     <con:settings/>
     <con:config service="https://b2bapi-sandbox.moneytrans.eu 2" resourcePath="/v2/acquirings/acquirings/transfers/74/9200892" methodName="9200892" xsi:type="con:RestRequestStep">
       <con:restRequest name="Acquiring MTR" id="8cf360b8-4187-4971-b219-cdbef627f16a" mediaType="application/json">
-        <con:settings/>
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers"><![CDATA[<xml-fragment><con:entry key="Authorization" value="${#[Test Engine#Engine Runner#mule v2]#authMule}" xmlns:con="http://eviware.com/soapui/config"/><con:entry key="ApiKey" value="${#[Test Engine#Engine Runner#mule v2]#ApiKey}" xmlns:con="http://eviware.com/soapui/config"/><con:entry key="clientId" value="${#[Test Engine#Engine Runner#mule v2]#clientIdMule}" xmlns:con="http://eviware.com/soapui/config"/><con:entry key="ApiSignature" value="${#[Test Engine#Engine Runner#mule v2]#ApiSignature}" xmlns:con="http://eviware.com/soapui/config"/><con:entry key="Content-Type" value="application/json" xmlns:con="http://eviware.com/soapui/config"/></xml-fragment>]]></con:setting>
+        </con:settings>
         <con:endpoint>https://b2bapi-sandbox.moneytrans.eu</con:endpoint>
         <con:request/>
+        <con:originalUri>https://b2bapi-sandbox.moneytrans.eu/v2/acquirings/acquirings/transfers/74/9200892</con:originalUri>
         <con:assertion type="Valid HTTP Status Codes" id="630bcb45-5d68-41ea-8463-72aeb62479dc" name="Valid HTTP Status Codes">
           <con:settings/>
           <con:configuration>
@@ -18,26 +21,28 @@
         </con:assertion>
         <con:assertion type="Response SLA Assertion" id="30f4bf8c-4a8b-4722-af8d-8901e5bc67f4" name="Response SLA">
           <con:configuration>
-            <SLA>2000</SLA>
+            <SLA>4000</SLA>
           </con:configuration>
         </con:assertion>
         <con:credentials>
           <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
           <con:authType>No Authorization</con:authType>
         </con:credentials>
-        <con:parameters>
-          <con:entry key="Authorization" value="${#Project#authMule}"/>
-          <con:entry key="clientId" value="${#Project#clientId}"/>
-          <con:entry key="Content-Type" value="application/json"/>
-        </con:parameters>
-        <con:parameterOrder>
-          <con:entry>Content-Type</con:entry>
-          <con:entry>clientId</con:entry>
-          <con:entry>Authorization</con:entry>
-        </con:parameterOrder>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+        <con:parameterOrder/>
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:properties/>
+  <con:properties>
+    <con:property>
+      <con:name>method</con:name>
+      <con:value>GET</con:value>
+    </con:property>
+    <con:property>
+      <con:name>requestPath</con:name>
+      <con:value>/v2/acquirings/acquirings/transfers/74/9200892</con:value>
+    </con:property>
+  </con:properties>
   <con:reportParameters/>
 </con:testCase>

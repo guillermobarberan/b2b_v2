@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="848d23ae-997e-4a09-8a35-f212a70219a2" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="Get Transfer by Code" searchProperties="true" timeout="0">
+  <con:settings id="1014a4f7-2976-4566-bb79-139da889ff65">
+    <con:setting id="848d23ae-997e-4a09-8a35-f212a70219a2fileName">Get-Transfer-by-Code</con:setting>
+  </con:settings>
+  <con:testStep type="restrequest" name="Get Transfer by Code" id="5e32a793-036c-4605-bf75-91b0dc025ce1">
+    <con:settings/>
+    <con:config service="TransferManagement" resourcePath="/transfers/{code}" methodName="Get Transfer By Code" xsi:type="con:RestRequestStep">
+      <con:restRequest name="Get Transfer by Code" id="96744b2b-5184-4d52-b76c-5c176138a215" mediaType="application/json">
+        <con:settings/>
+        <con:endpoint>https://b2bapi-sandbox.moneytrans.eu</con:endpoint>
+        <con:request/>
+        <con:assertion type="Valid HTTP Status Codes" id="ca6505d0-3d1d-4f98-b0a8-4f59067390f2" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="d140cefe-b3bb-42d2-bc55-ca8111a1ae8f" name="Response SLA">
+          <con:configuration>
+            <SLA>200</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testCase>

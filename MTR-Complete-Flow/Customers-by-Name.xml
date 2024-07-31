@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="4887cc63-d7e4-4c71-98cf-30cf4c22a3fb" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="Customers by Name" searchProperties="true" timeout="0">
+  <con:settings id="80c6ff11-b04a-4f95-b4cd-86b7f2106ad9">
+    <con:setting id="4887cc63-d7e4-4c71-98cf-30cf4c22a3fbfileName">Customers-by-Name</con:setting>
+  </con:settings>
+  <con:testStep type="properties" name="mule v2" id="43be967f-3518-4d59-b099-27c08973c243">
+    <con:settings/>
+    <con:config xsi:type="con:PropertiesStep" saveFirst="true">
+      <con:properties>
+        <con:property>
+          <con:name>ApiKey</con:name>
+          <con:value>MtH7QzFHJx93798344h5Uzi4RvtTOp092p</con:value>
+        </con:property>
+        <con:property>
+          <con:name>multiservices</con:name>
+          <con:value>https://multiservices-be-cld-ts.moneytrans.eu/api</con:value>
+        </con:property>
+        <con:property>
+          <con:name>baseMuleUrl</con:name>
+          <con:value>b2bapi-sandbox.moneytrans.eu</con:value>
+        </con:property>
+        <con:property>
+          <con:name>apiSecret</con:name>
+          <con:value>642f06870d99A68b349c2e4c319f53F839Af939695F530647bF9B20132AdD9D3</con:value>
+        </con:property>
+        <con:property>
+          <con:name>ApiSignature</con:name>
+          <con:value>6NmyP5O5RXxZTFGWOUbfYlIGoyJNPKkVPai51MVRlPw=</con:value>
+        </con:property>
+        <con:property>
+          <con:name>clientIdBack</con:name>
+          <con:value>diaspo-agente-1</con:value>
+        </con:property>
+        <con:property>
+          <con:name>authBack</con:name>
+          <con:value>${mule v2#clientIdBack}@${#[TokenManagement]#back_access_token}</con:value>
+        </con:property>
+        <con:property>
+          <con:name>authMule</con:name>
+          <con:value>Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJORTBJSmw4eGpabkNXb3NSeEhZdXAtUVBfWGtNVVd6Q182TTFxbVdLWmxjIn0.eyJleHAiOjE3MjEzMDIyNjIsImlhdCI6MTcyMTMwMTk2MiwianRpIjoiODIzMzBiODctOTY4ZC00YzcwLTlmMjYtYWRlYmY1ZjRjMjI4IiwiaXNzIjoiaHR0cHM6Ly9zc28ubW9uZXl0cmFucy5ldS9yZWFsbXMvYjJiIiwic3ViIjoiN2MyYjkyZTEtM2U5My00Zjk3LTlhMTAtZjU3YWUyMmUyYjUzIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiZGlhc3BvLWFnZW50ZS0xIiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6WyIvKiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiZGlhc3BvIl19LCJzY29wZSI6InVwZGF0ZS1zbWlsZSByZWFkLXRyYW5zZmVyLWNhdGFsb2cgcmVhZC1maW5hbnRpYWwgdXBkYXRlLXRyYW5zZmVycyByZWFkLWNhdGFsb2cgdXBkYXRlLWN1c3RvbWVycyByZWFkLWFjcXVpcmluZyByZWFkLXNtaWxlLWNhdGFsb2ciLCJjbGllbnRIb3N0IjoiMTguMjAwLjE3Ni4xNTUiLCJjbGllbnRBZGRyZXNzIjoiMTguMjAwLjE3Ni4xNTUiLCJjbGllbnRfaWQiOiJkaWFzcG8tYWdlbnRlLTEifQ.bg-qhxcMw5Fd14CXx8b3pUHxWKVDjjQgrZmsr8XjLzjhbOXTBUU9a2Gw8oeawA-3mc2zJbghW6F2m9vuETW4m8NHlBJpW2KN6wW_uMBn9X4Rw0aYUwo_5tUYtO6bAeC-8yU4l331iD1LdynZa36fwPCdKFz6uXkJGi3Hqgn7Qi61i1JN_V0c1177qoTomJ9IfgwNTkbAlry9KGFpDTEDba--YtOMo6mmOKHwVwf_Esw9prJzDLY8O5srJn-swXjqeGOfg4o04C3S13mbNkQA2o_uzgAunaAGA1P2D8lBrwMKhquNggnlTdFaRcNupv6GdPYULsxz3rtW-ttUAr1vNg</con:value>
+        </con:property>
+        <con:property>
+          <con:name>clientIdMule</con:name>
+          <con:value>diaspo-agente-1</con:value>
+        </con:property>
+      </con:properties>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="Customers by Name" id="c11569bb-9af4-449f-920a-f0698e307c95">
+    <con:settings/>
+    <con:config service="https://b2bapi-sandbox.moneytrans.eu 2" resourcePath="/v2/persona/beneficiaries" methodName="Beneficiaries 2" xsi:type="con:RestRequestStep">
+      <con:restRequest name="Customers by Name" id="272f5ee1-2c75-4552-9f49-a67eb65ff4ea" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:endpoint>https://b2bapi-sandbox.moneytrans.eu</con:endpoint>
+        <con:request/>
+        <con:originalUri>https://b2bapi-sandbox.moneytrans.eu/v2/persona/beneficiaries</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="319ab62e-1015-4e59-80ef-8dbfaf80aebd" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="76cdd0ae-0b94-4881-94ca-54ab87c27ee4" name="Response SLA">
+          <con:configuration>
+            <SLA>20000</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters>
+          <con:entry key="searchField" value="NAME"/>
+          <con:entry key="criteria" value="TESTER"/>
+        </con:parameters>
+        <con:parameterOrder>
+          <con:entry>searchField</con:entry>
+          <con:entry>criteria</con:entry>
+        </con:parameterOrder>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="groovy" name="MTR Complete Flow" id="30e4abbe-0fe2-4324-b2af-fd70c8706146" disabled="true">
+    <con:settings/>
+    <con:config>
+      <script>import javax.crypto.Mac
+import javax.crypto.spec.SecretKeySpec
+import java.security.InvalidKeyException
+import java.security.NoSuchAlgorithmException
+import groovy.json.JsonSlurper
+import java.time.Instant
+import java.util.*
+
+// Función para ejecutar un Test Step y obtener la respuesta
+def runTestStep(testStepName) {
+    def testStep = testRunner.testCase.getTestStepByName(testStepName)
+
+    if (testStep == null) {
+        log.error "Test Step '${testStepName}' no encontrado"
+        return null
+    }
+
+    def testStepResult = testStep.run(testRunner, context)
+
+    if (testStepResult.getStatus().toString() == "FAILED") {
+        log.error "El Test Step '${testStepName}' falló"
+        return null
+    } else {
+        log.info "El Test Step '${testStepName}' se ejecutó correctamente"
+    }
+
+    def responseContent = testStepResult.getResponse().getContentAsString()
+    log.info "Respuesta del Test Step '${testStepName}': ${responseContent}"
+
+    return responseContent
+}
+
+// Función para extraer un valor de una respuesta JSON
+def extractValueFromJsonResponse(response, key) {
+    def jsonSlurper = new groovy.json.JsonSlurper()
+    def jsonResponse = jsonSlurper.parseText(response)
+    return jsonResponse[key]
+}
+
+// Ejecución del flujo basado en el documento proporcionado
+
+// Paso 1: Buscar Cliente por Nombre/ID
+
+	 
+def searchCustomerResponse = runTestStep("Customers by Name")
+
+// Evaluar una variable en el switch
+def stepName = "Customers by Name"  // Puedes cambiar esto según lo que necesites evaluar
+
+switch (stepName) {
+    case "Customers by Name":
+        stringToSignTokenMule(context.expand('${#[TokenManagement]#method}'), context.expand('${#[TokenManagement]#requestPath}'),  context.expand('${#[TokenManagement]#bodyMule}'))
+        stringToSignLayerMule(context.expand('${#[MTR Complete Flow#Customers by Name]#method}'),  context.expand('${#[MTR Complete Flow#Customers by Name]#requestPath}'), '')
+      
+        break
+ }
+    // Puedes añadir más casos según tus necesidades
+  /*  case "Otro Caso":
+        // Lógica para otro caso
+        break
+
+    default:
+        log.warn("Caso no manejado: ${stepName}")
+        break
+}*/
+
+log.info("Script completado")
+
+	             
+if (searchCustomerResponse == null) return
+	             
+// Paso 2: Guardar Cliente
+def saveCustomerResponse = runTestStep("SaveCustomer")
+if (saveCustomerResponse == null) return
+
+// Paso 3: Actualizar Cliente
+def updateCustomerResponse = runTestStep("UpdateCustomer")
+if (updateCustomerResponse == null) return
+
+// Paso 4: Obtener Beneficiarios por Código de Cliente
+def getBeneficiariesByCustomerCodeResponse = runTestStep("GetBeneficiariesByCustomerCode")
+if (getBeneficiariesByCustomerCodeResponse == null) return
+
+// Paso 5: Buscar Beneficiario por Nombre
+def searchBeneficiaryByNameResponse = runTestStep("SearchBeneficiaryByName")
+if (searchBeneficiaryByNameResponse == null) return
+
+// Paso 6: Añadir Relación Cliente-Beneficiario
+def addCustomerBeneficiaryRelationshipResponse = runTestStep("AddCustomerBeneficiaryRelationship")
+if (addCustomerBeneficiaryRelationshipResponse == null) return
+
+// Paso 7: Actualizar Beneficiario
+def updateBeneficiaryResponse = runTestStep("UpdateBeneficiary")
+if (updateBeneficiaryResponse == null) return
+
+// Paso 8: Guardar Beneficiario
+def saveBeneficiaryResponse = runTestStep("SaveBeneficiary")
+if (saveBeneficiaryResponse == null) return
+
+// Paso 9: Buscar Transferencias por Código de Cliente
+def searchTransfersByCustomerCodeResponse = runTestStep("SearchTransfersByCustomerCode")
+if (searchTransfersByCustomerCodeResponse == null) return
+
+// Paso 10: Hacer Cálculo de Transferencia
+def makeTransferCalculationResponse = runTestStep("MakeTransferCalculation")
+if (makeTransferCalculationResponse == null) return
+
+// Paso 11: Hacer Transferencia
+def makeTransferResponse = runTestStep("MakeTransfer")
+if (makeTransferResponse == null) return
+
+// Paso 12: Obtener Transferencia por Código
+def getTransferByCodeResponse = runTestStep("GetTransferByCode")
+if (getTransferByCodeResponse == null) return
+
+// Paso 13: Modificar Transferencia
+def amendTransferResponse = runTestStep("AmendTransfer")
+if (amendTransferResponse == null) return
+
+// Paso 14: Cancelar Transferencia
+def cancelTransferResponse = runTestStep("CancelTransfer")
+if (cancelTransferResponse == null) return
+
+log.info "Flujo de trabajo completado exitosamente."
+
+def stringToSignTokenBack (String method, String requestPath, String back_access_token, String clientIdBack){
+	def envBaseUrl = context.expand( '${mule v2#baseMuleUrl}' )
+	def secret = context.expand( '${mule v2#apiSecret}' )
+	def apiKey = context.expand( '${mule v2#ApiKey}' )
+
+	def stringToSign = method + ":" + envBaseUrl + requestPath + ":"
+	def fecha = Instant.now().toEpochMilli() / 100000 as long
+
+	stringToSign += fecha
+	log.info " fecha: " + fecha
+	log.info " Groovy stringToSign: " +stringToSign  
+	
+	def signBytes = hmacSha256(stringToSign, secret)
+	def signHex = signBytes.encodeBase64().toString()
+
+	log.info " Groovy computed signature: " +signHex + "." + " Text signed: " + stringToSign 
+	testRunner.testCase.getTestStepByName("mule v2").setPropertyValue("ApiSignature",signHex)
+	testRunner.testCase.getTestStepByName("mule v2").setPropertyValue("authBack", clientIdBack + "@" + back_access_token )
+}
+
+
+
+def stringToSignTokenMule (String method, String requestPath, String Body){
+	def envBaseUrl = context.expand( '${mule v2#baseMuleUrl}' )
+	def secret = context.expand( '${mule v2#apiSecret}' )
+	def apiKey = context.expand( '${mule v2#ApiKey}' )
+
+	def stringToSign = method + ":" + envBaseUrl + requestPath + ":"
+	def fecha = Instant.now().toEpochMilli() / 100000 as long
+
+	if (method == "PUT" || method == "POST") {
+		log.info " Body: " + Body 
+		stringToSign += Body
+	}
+
+	stringToSign += fecha
+	log.info " fecha: " + fecha
+	log.info " Groovy stringToSign: " +stringToSign  
+	
+	def signBytes = hmacSha256(stringToSign, secret)
+	def signHex = signBytes.encodeBase64().toString()
+
+	log.info " Groovy computed signature: " +signHex + "." + " Text signed: " + stringToSign 
+	testRunner.testCase.getTestStepByName("mule v2").setPropertyValue("ApiSignature",signHex)
+	TestCaseEnginne('TokenManagement', 'Token mule')
+	testRunner.testCase.getTestStepByName("mule v2").setPropertyValue("authMule", "Bearer " + context.expand( '${#[TokenManagement]#mule_access_token}' ) )
+}
+
+def stringToSignLayerMule (String method, String requestPath, String Body){
+	def envBaseUrl = context.expand( '${mule v2#baseMuleUrl}' )
+	def secret = context.expand( '${mule v2#apiSecret}' )
+	def apiKey = context.expand( '${mule v2#ApiKey}' )
+
+	def stringToSign = method + ":" + envBaseUrl + requestPath + ":"
+	def fecha = Instant.now().toEpochMilli() / 100000 as long
+
+	if (method == "PUT" || method == "POST") {
+		log.info " Body: " + Body 
+		stringToSign += Body
+	}
+
+	stringToSign += fecha
+	log.info " fecha: " + fecha
+	log.info " Groovy stringToSign: " +stringToSign  
+	
+	def signBytes = hmacSha256(stringToSign, secret)
+	def signHex = signBytes.encodeBase64().toString()
+
+	log.info " Groovy computed signature: " +signHex + "." + " Text signed: " + stringToSign 
+	testRunner.testCase.getTestStepByName("mule v2").setPropertyValue("ApiSignature",signHex)
+}
+
+
+def OurBody (String TestSuiteByName, String TestCaseByName){
+	
+	def testSuite = testRunner.testCase.testSuite.project.getTestSuiteByName(TestSuiteByName);           
+	def testCase = testSuite.getTestCaseByName(TestCaseByName);                                                       
+	def totalTestSteps = testCase.getTestSteps().size();  
+	def TestStepByName = testCase.getTestStepByName(TestCaseByName)
+	def LocalResponse = TestStepByName.getPropertyValue("Request")
+
+return LocalResponse
+}
+
+// There is  statement defined for TestCaseEnginne Runner
+def TestCaseEnginne(String TestSuiteByName, String TestCaseByName) {
+	
+	def testSuite = testRunner.testCase.testSuite.project.getTestSuiteByName(TestSuiteByName);           
+	def testCase = testSuite.getTestCaseByName(TestCaseByName);    
+	def totalTestSteps = testCase.getTestSteps().size();   
+
+		log.info testSuite
+		log.info testCase
+		log.info totalTestSteps
+		
+		for(n in (0..totalTestSteps - 1))
+		{    
+		    log.info "------------------------------------------------------------" 
+		    def testStepName = testCase.getTestStepAt(n).name;
+		    log.info testStepName
+		    log.info n
+		   
+				    if(n>=0){
+				    		if (testCase.getTestStepByName(testStepName).disabled != true) {
+							log.info "testStepName: " + n + ": " + testStepName;
+				          	def testStep = testCase.getTestStepByName(testStepName);
+				        		runner = testStep.run(testRunner, context);
+				        		log.info ("testStep   >>> 1   " + runner.getStatus().toString());
+				            }
+				    }
+		}
+}
+
+
+def hmacSha256(String data, String key) {
+    try {
+        Mac mac = Mac.getInstance("HmacSHA256")
+        SecretKeySpec secretKeySpec = new SecretKeySpec(key.getBytes(), "HmacSHA256")
+        mac.init(secretKeySpec)
+        return mac.doFinal(data.getBytes())
+    } catch (NoSuchAlgorithmException | InvalidKeyException e) {
+        throw new RuntimeException("Error al calcular HMAC SHA256", e)
+    }
+}</script>
+    </con:config>
+  </con:testStep>
+  <con:properties>
+    <con:property>
+      <con:name>method</con:name>
+      <con:value>GET</con:value>
+    </con:property>
+    <con:property>
+      <con:name>RequestPath</con:name>
+      <con:value>/v2/persona/beneficiaries</con:value>
+    </con:property>
+  </con:properties>
+  <con:reportParameters/>
+</con:testCase>

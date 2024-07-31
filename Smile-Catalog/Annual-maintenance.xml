@@ -5,7 +5,7 @@
   </con:settings>
   <con:testStep type="restrequest" name="Annual maintenance" id="1117085f-af5d-42e2-aa94-1202c8b33b21">
     <con:settings/>
-    <con:config service="https://multiservices-be-cld-ts.moneytrans.eu 2" resourcePath="/api/b2b/catalog/pac/enroll/price/ANNUAL/5463354" methodName="5463354" xsi:type="con:RestRequestStep">
+    <con:config service="https://multiservices-be-cld-ts.moneytrans.eu 2" resourcePath="/api/b2b/catalog/pac/maintenance/price/ANNUAL/5463354" methodName="5463354" xsi:type="con:RestRequestStep">
       <con:restRequest name="Annual maintenance" id="172098ea-aa03-45b6-a079-e4d240962211" mediaType="application/json">
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
@@ -49,7 +49,7 @@
     </con:property>
     <con:property>
       <con:name>requestPath</con:name>
-      <con:value>/api/b2b/catalog/pac/enroll/price/ANNUAL/5463354</con:value>
+      <con:value>/api/b2b/catalog/pac/maintenance/price/ANNUAL/5463354</con:value>
     </con:property>
   </con:properties>
   <con:reportParameters/>

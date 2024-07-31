@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="/customers/{code}" path="/customers/{code}" id="c3fe8e4c-3e50-4028-ab34-37fe3c509034">
+  <con:settings id="34e509e9-6cf7-41b0-8f84-c7b5cf6f97b0">
+    <con:setting id="c3fe8e4c-3e50-4028-ab34-37fe3c509034fileName">%2Fcustomers%2F%7Bcode%7D</con:setting>
+  </con:settings>
+  <con:parameters>
+    <con:parameter required="true">
+      <con:name>code</con:name>
+      <con:style>TEMPLATE</con:style>
+      <con:description xsi:nil="true"/>
+    </con:parameter>
+  </con:parameters>
+  <con:method name="Get Customer By Code" id="387d8e2f-7da2-4419-85cd-5c38bb32feca" method="GET">
+    <con:description>Get Customer details by Code</con:description>
+    <con:settings/>
+    <con:parameters>
+      <con:parameter>
+        <con:name>showIdentityDocumentContent</con:name>
+        <con:style>QUERY</con:style>
+        <con:dataType>boolean</con:dataType>
+        <con:description>Indicates if you want to receive identity document content. By default it is false</con:description>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>ApiKey</con:name>
+        <con:style>HEADER</con:style>
+        <con:description>Identifier of the payment gateway. It is a fixed value. Moneytrans will commmunicate this value to the consumer after during on-boarding.</con:description>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>ApiSignature</con:name>
+        <con:style>HEADER</con:style>
+        <con:description>This signature is generated with the SHA256 algorithm and sent in the header.</con:description>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>clientId</con:name>
+        <con:style>HEADER</con:style>
+        <con:description>clientId used to request the access token</con:description>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>Authorization</con:name>
+        <con:style>HEADER</con:style>
+        <con:description>Bearer access token</con:description>
+      </con:parameter>
+    </con:parameters>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:sampleContent>{
+  "code" : "651321",
+  "firstName" : "Name",
+  "lastName" : "Surname",
+  "telephone" : "+34622835864",
+  "email" : "mail@mailprovider.com",
+  "birthDate" : "2009-11-27T20:10:50.175Z",
+  "gender" : "MALE",
+  "occupationCode" : "OCCU_BEAUTY_HAIR",
+  "sourceOfFundsCode" : "TRANSFER_SOURCE_OF_FUNDS_SALARY",
+  "nationalCitizenNumber" : "541321",
+  "fiscalCode" : "541321",
+  "nationalityCountryCode" : "ESP",
+  "address" : {
+    "cityCode" : "MA",
+    "countryCode" : "ESP",
+    "postalCode" : "28043",
+    "street" : "Roman",
+    "streetLetter" : "B",
+    "streetNumber" : 1
+  },
+  "identityDocument" : {
+    "deliveryDate" : "2020-11-27T15:49:52.795Z",
+    "documentNumber" : "50770750K",
+    "expiryDate" : "2032-11-27T15:49:52.795Z",
+    "code" : "513",
+    "deliveryCountryCode" : "ESP",
+    "deliveryCityCode" : "MAD",
+    "documentTypeCode" : "NICD",
+    "isDefault" : true
+  },
+  "identityDocumentContent" : [ {
+    "fileContent" : "qwerqwerqwer",
+    "type" : "IDENTITY_DOCUMENT_FRONT"
+  }, {
+    "fileContent" : "2347guwbjf",
+    "type" : "IDENTITY_DOCUMENT_BACK"
+  } ]
+}</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>500</con:status>
+      <con:params/>
+      <con:sampleContent>{
+  "code" : 29500,
+  "message" : "Internal error",
+  "reason" : "Something went wrong in the system during the execution"
+}</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>401</con:status>
+      <con:params/>
+      <con:sampleContent>{
+  "code" : 29401,
+  "message" : "Unauthorized",
+  "reason" : "Security parameter is missing or requestor doesn't have permissions to call this resource"
+}</con:sampleContent>
+    </con:representation>
+    <con:representation type="REQUEST">
+      <con:mediaType>application/json</con:mediaType>
+      <con:params/>
+    </con:representation>
+    <con:request name="Request 1" id="b130d574-6517-45a9-8155-e24b8af9ed19" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>https://b2bapi-sandbox.moneytrans.eu</con:endpoint>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+</con:resource>
